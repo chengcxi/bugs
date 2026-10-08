@@ -1,4 +1,0 @@
-{from "pattern light_headgear"
-	{desc "Cossack cap"}
-	{entity "fura_cossack"}
-}

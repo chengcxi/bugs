@@ -6,7 +6,7 @@
 
 {from "90mm_m3"			; L/55 "90mm_m2"
 
-	("range_220")																								;//ARm 080326 +
+	("range_220_aa")																								;//ARm 080326 +
 
 	("reload time" seconds(6))
 

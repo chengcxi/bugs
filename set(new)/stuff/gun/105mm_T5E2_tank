@@ -1,4 +1,0 @@
-(include "/set/arm_extra_macros.inc")
-{from "105mm_T5E1_tank"	
-	("reload time" seconds(15))
-}

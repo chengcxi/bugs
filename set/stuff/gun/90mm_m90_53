@@ -12,7 +12,7 @@
 	{fireSoundclose "gun/gun_88"}
 	{reloadSound "tank/reload_big"}
 ;//	("range_220")
-	("range_220")																								;//ARm 080326 +
+	("range_220_aa")																								;//ARm 080326 +
 	{calibre 90}
 	("heavy_aa")
 ;//	{range 500 500}									;//+ARm

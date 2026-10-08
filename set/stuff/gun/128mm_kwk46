@@ -7,7 +7,7 @@
 ;=========================================
 
 
-{from "pattern gun"			; L/66 "E-100"
+{from "pattern gun"			; L/66 "E-100�"
 	{filling "bulletger_128_c"}
 	{fireSound "cannon/s4/d1/Shared/Cannon_105to130mm/"}
 	{fireSoundclose "cannon/s4/3p/Shared/Cannon_105to130mm/"}

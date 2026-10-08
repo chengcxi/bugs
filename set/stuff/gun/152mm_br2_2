@@ -13,7 +13,7 @@
 	{reloadSound "utility/"}
 	("range_210_howitzer")	
 ;//	("super_heavy_artillery")																								;120226-
-	("medium_artillery")																						;120226+
+	("counter_battery_howitser")																						;120226+
 	{calibre 152}
 ;//	{range 520 520} ; // 24.7km				;//ARM-			
 	{range 1040 1040} ; // 24.7km				;//ARM+

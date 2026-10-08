@@ -13,7 +13,7 @@
 	{fireSoundClose "cannon/s5/3p/Shared/Cannon_150to210mm/"}
 	{reloadSound "utility/"}
 ;//	("heavy_artillery")																						;120226-
-	("heavy_artillery")																						;120226+
+	("very_long_howitser")																						;120226+
 	{calibre 155}
 ;//	{range 505 505} ; // 23.51km
 	{range 1010 1010} ; // 23.51km

@@ -1,5 +1,0 @@
-{weapon_bombing
-	("plane_bomb_weapon")
-	{filling "ammo air_bomb_ussr_zab100_40p 100" 1}
-	{fillingVisible "bomb"}
-}

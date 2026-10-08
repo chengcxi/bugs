@@ -165,7 +165,7 @@
 ;// TIER V // Reserved for special singleplayer hero breeds
 
 (define "tier5_standard"
-	{"health" "100%"}											;//-250%
+	{"health" "100%"}															;//-250%
 	{"health_regeneration" "20%"}
 	{"stamina" "300%"}
 	{"stamina_regeneration" "250%"}

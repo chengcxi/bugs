@@ -1,8 +1,0 @@
-(include "/set/arm_extra_macros.inc")
-;_________________________________________
-; Long barreled german medium AT gun
-;=========================================
-
-
-{from "75mm_pak39"			; L/48 "panzer4h"
-}

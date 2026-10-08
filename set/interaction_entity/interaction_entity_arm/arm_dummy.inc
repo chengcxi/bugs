@@ -517,6 +517,21 @@
     	}
     	{tags add "dynamite_set"}
     }
+    {on "armce_barrage_240_hedgehog"
+        ; + ARM 06.10.2026: 240mm artillery strike on player hedgehog
+        ; + ARM 07.10.2026 DBG: prove handler fires
+        {spawn "artillery_barrage_240_ai"}
+    }
+}
+
+;============== TEST 08.10.2026 - prop-keyed overlay =============
+{"antitank_hedgehog"
+    {on spawn
+        {tags add "player_hedgehog"}
+    }
+    {on "armce_barrage_240_hedgehog"
+        {spawn "artillery_barrage_240_ai"}
+    }
 }
 
 {"spawn_pointflag11-3a"

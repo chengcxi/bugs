@@ -1,7 +1,0 @@
-;SDL
-{units
-	(include "roster_early.set")
-	(include "roster_mid.set")
-	(include "roster_late.set")
-;//	(include "roster_mace.set")
-}

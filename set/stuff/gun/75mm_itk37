@@ -11,7 +11,7 @@
 	{fireSoundclose "cannon/s3/d1/Shared/Cannon_75to76mm/"}
 	{reloadSound "tank/reload_medium"}
 ;//	("range_200")
-	("range_220")																								;//ARm 080326 +
+	("range_220_aa")																								;//ARm 080326 +
 	{calibre 75}
 ;//	{range 420 420} 																								;//ARm+
 	

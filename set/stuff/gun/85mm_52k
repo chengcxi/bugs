@@ -12,7 +12,7 @@
 	{fireSound "cannon/s4/d1/Shared/Cannon_85to100mm/"}
 	{fireSoundclose "cannon/s4/3p/Shared/Cannon_85to100mm/"}
 	{reloadSound "utility/"}
-	("range_220")																								;//ARm 080326 +
+	("range_220_aa")																								;//ARm 080326 +
 	
 ;//	{range 455 455} 																								;290126
 

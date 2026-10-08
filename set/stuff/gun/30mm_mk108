@@ -13,7 +13,7 @@
 	{fireSoundclose "cannon/s1/1p/Shared/Autocannon_20to30mm/"}
 	{reloadSound "interior/large/auto_reload_interior"}
 ;//	("range_aircraft_gun")												;150226-
-;//	("range_aircraft_gun_15s-20s-30s")									;150226+
+	("range_aircraft_gun_15s-20s-30s")									;150226+
 	{cursor "ironsights/aa"}
 	{calibre 23}
 

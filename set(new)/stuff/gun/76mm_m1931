@@ -1,7 +1,0 @@
-(include "/set/arm_extra_macros.inc")
-;_________________________________________
-; USSR long-barreled early AA gun
-;=========================================
-
-{from "76mm_m1938"			; L/55 "m1931 AA"
-}

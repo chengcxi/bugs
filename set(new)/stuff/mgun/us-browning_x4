@@ -1,6 +1,0 @@
-{from "us-browning"
-	{filling "ammo 12x99" 400}
-	{rechargeTime 20}	
-
-	("burst_aa_quad")
-}

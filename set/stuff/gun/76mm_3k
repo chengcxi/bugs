@@ -8,7 +8,7 @@
 	{fireSoundclose "cannon/s3/3p/Shared/Cannon_75to76mm/"}
 	{reloadSound "utility/"}
 ;	("range_200")
-	("range_210")
+	("range_210_aa")
 	{calibre 76.2}
 	("heavy_aa")
 	("reload time" seconds(6))

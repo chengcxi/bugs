@@ -14,7 +14,7 @@
 	{reloadSound "tank/reload_big"}
 ;//	{reloadSound "utility/"}
 ;//	("range_210")
-	("range_230")																								;//ARm 080326 +
+	("range_230_aa")																								;//ARm 080326 +
 ;//	("heavy_artillery")
 	("heavy_aa")
 	{calibre 105}

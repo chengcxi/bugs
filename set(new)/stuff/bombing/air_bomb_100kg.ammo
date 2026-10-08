@@ -1,9 +1,0 @@
-{from "pattern air_bomb"
-	{entity "sc_100"}
-	{tag "size2"}
-	{mass 100}
-
-;//	("he_level_6" weight(103) filler(36))	;//AR filler(36) -> filler(62)
-	("he_level_5" weight(103) filler(36))	;//AR filler(62) -> filler(36)
-
-}

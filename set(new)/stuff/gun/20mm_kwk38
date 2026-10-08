@@ -1,9 +1,0 @@
-(include "/set/arm_extra_macros.inc")
-;_________________________________________
-; German 20mm AT gun
-;=========================================
-
-
-{from "20mm_kwk30"		; L/55  "panzer2l"
-	("fire rate" rpm(420))
-}

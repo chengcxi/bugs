@@ -1,4 +1,0 @@
-{from "pattern light_headgear"
-	{desc "Cap"}
-	{entity "roa_civ_cap"}
-}

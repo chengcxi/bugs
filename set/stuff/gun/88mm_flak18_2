@@ -8,6 +8,6 @@
 
 {from "88mm_flak18"			; L/56 "sdkfz8_flak18"
 	("accuracy_direct" r1(0.70) range_ap(210) range_he(210) range_heat(210))
-	("range_210")																								;//ARm 080326 +
+	("range_210_aa")																								;//ARm 080326 +
 	("reload time" seconds(8.0))																						;(6)-(7.5)-(8.0)
 }

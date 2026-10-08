@@ -10,7 +10,7 @@
 	{fireSoundclose "cannon/s4/3p/Shared/Cannon_85to100mm/"}
 	{reloadSound "utility/"}
 ;	("range_210")
-	("range_220")
+	("range_220_aa")
 	{calibre 94}
 	("heavy_aa")
 

@@ -1,8 +1,0 @@
-{from "pattern rpg_ammo"
-	{tag "no_ricochet"}
-	{entity "piat_mki_HEAT"}
-	{view "piat_mki_HEAT"
-		{tail "bazooka_tail" ""}
-	}
-	{mass 1.10}
-}

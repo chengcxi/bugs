@@ -1,6 +1,0 @@
-{from "KPV"
-
-	("burst_aa")
-	("spreading_mounted")
-	{traceFreq 4}
-}

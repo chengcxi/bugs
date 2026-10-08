@@ -1,7 +1,0 @@
-{from "pattern air_bomb" ;//SD500 stats
-	{entity "sc_500"}
-	{tag "size3"}
-	{mass 500}
-
-	("he_level_7" weight(500) filler(230))
-}

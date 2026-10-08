@@ -19,7 +19,7 @@
 	{fireSoundclose "cannon/s4/3p/Shared/Cannon_85to100mm/"}
 	{reloadSound "utility/"}
 ;//	("range_210")
-	("range_210")																									;//ARm+
+	("range_210_aa")																									;//ARm+
 	{calibre 88}
 	("heavy_aa")
 ;//	{range 450 450} 																									;//ARm+

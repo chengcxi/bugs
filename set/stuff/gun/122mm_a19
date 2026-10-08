@@ -11,7 +11,7 @@
 	{fireSoundclose "cannon/s4/3p/Shared/Cannon_105to130mm/"}
 	{reloadSound "utility/"}
 ;//	("heavy_artillery")																								;120226-
-	("medium_artillery")																											;120226+
+	("counter_battery_howitser")																											;120226+
 	{calibre 122}
 ;//	{range 465 465} ; // 20.4km
 	{range 930 930} ; // 20.4km
