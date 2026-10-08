@@ -2581,7 +2581,3 @@
 		("heat_slope_multiplier")
 	}
 )
-
-; ARM-only range macros. Loaded from .presets so leftover vanilla/MACE
-; guns ARM does not overlay (e.g. 37mm_sh37) still see them.
-(include "/set/arm_extra_macros.inc")

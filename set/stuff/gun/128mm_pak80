@@ -1,3 +1,4 @@
+(include "/set/arm_extra_macros.inc")
 ;_________________________________________
 ; German late-war long-barreled Heavy TD gun
 ;=========================================

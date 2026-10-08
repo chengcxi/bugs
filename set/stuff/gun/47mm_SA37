@@ -1,3 +1,4 @@
+(include "/set/arm_extra_macros.inc")
 ;LR Arm edited
 {from "pattern gun"			
 	{filling "bulletger_47"}
@@ -17,3 +18,4 @@
 	("57_slope_multipliers")
 	("accuracy_direct" r1(0.65) range_ap(190) range_he(170) range_heat(160))
 }
+

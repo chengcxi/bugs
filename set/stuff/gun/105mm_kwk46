@@ -1,3 +1,4 @@
+(include "/set/arm_extra_macros.inc")
 ;LR Arm edited
 ;28.01.2026
 ;
@@ -28,5 +29,6 @@
 
 	("accuracy_direct" r1(0.55) range_ap(220) range_he(220) range_heat(220))
 }
+
 
 

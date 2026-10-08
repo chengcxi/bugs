@@ -1,3 +1,4 @@
+(include "/set/arm_extra_macros.inc")
 ;_________________________________________
 ;Soviet Fast-firing tank cannon (T60)
 ;=========================================

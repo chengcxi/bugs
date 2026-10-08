@@ -1,3 +1,4 @@
+(include "/set/arm_extra_macros.inc")
 ;_________________________________________
 ; Short barreled german 50mm AT gun
 ;=========================================

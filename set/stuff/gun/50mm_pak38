@@ -1,3 +1,4 @@
+(include "/set/arm_extra_macros.inc")
 ;LR Arm edited
 ;_________________________________________
 ; Long barreled german 50mm AT gun

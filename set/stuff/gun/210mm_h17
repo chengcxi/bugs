@@ -1,3 +1,4 @@
+(include "/set/arm_extra_macros.inc")
 ;LR Arm edited
 ;_________________________________________
 ; ARTY - 210mm H/17 Finnish heavy gun
