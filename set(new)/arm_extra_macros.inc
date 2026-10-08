@@ -392,3 +392,33 @@
 	{SyncedProjectiles 0}		;// not for automatic weapons
 )
 
+(define "range_210_aa"								;//ARm
+	("standard_firing_arc")
+	; {range 210 210}
+	{range 420 420}
+	{parameters "he"
+		{range 400 500}								; ARm 070926 ( 280 420 - 280 500 - 400 500 )
+	}
+	("direct_settings")
+)
+
+(define "range_220_aa"								;ARm 080326+
+	("standard_firing_arc")
+	; {range 220 220}
+	{range 440 440}
+	{parameters "he"
+		{range 420 520}								; ARm 070926 ( 300 440 - 320 520 - 420 520 )
+	}
+	("direct_settings")
+)
+
+(define "range_230_aa"								;ARm 080326+						
+	("standard_firing_arc")
+	; {range 230 230}
+	{range 450 460}									
+	{parameters "he"
+		{range 440 540}								; ARm 070926 ( 340 460 - 340 540 - 440 540 )
+	}
+	("direct_settings")
+)
+
