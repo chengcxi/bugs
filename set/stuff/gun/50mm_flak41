@@ -1,4 +1,4 @@
-(include "/set/stuff/gun/arm_extra_macros.inc")
+(include "/set/arm_extra_macros.inc")
 ;LR Arm edited
 ;29.01.2026
 ;_________________________________________

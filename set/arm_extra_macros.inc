@@ -1,6 +1,6 @@
 ; ARM-only gun macros.
 ; Loaded from ARM gun files so they still exist if MACE overwrites .presets.
-; Do not overlay this filename from other mods.
+; Kept outside set/stuff/gun/ so GEM does not treat this file as a gun entity.
 
 (define "range_220_l"								;ARm 070326+
 	("standard_firing_arc")
