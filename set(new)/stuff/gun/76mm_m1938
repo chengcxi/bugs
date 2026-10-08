@@ -21,7 +21,7 @@
 
 	("velocity m/s" ap(813) apcr(1) he(813) heat(1))
 	("armor health" damage(200))
-	("armor health custom" shell(aphebc) damage(200) filler(119))
+	("armor health custom" shell(aphebc) damage(200) velocity(813) filler(119))
 	("76_rus_slope_multipliers")
 
 	; BR-361

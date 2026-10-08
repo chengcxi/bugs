@@ -20,7 +20,7 @@
 
 	("velocity m/s" ap(1) apcr(1) he(240) heat(1))
 	("armor health" damage(450))
-	("armor health custom" shell(he) damage(480) filler(765))
+	("armor health custom" shell(he) damage(480) velocity(240) filler(765))
 
 	
 	{parameters "sm"

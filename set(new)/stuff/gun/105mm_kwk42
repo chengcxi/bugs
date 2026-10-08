@@ -16,7 +16,7 @@
 
 	("velocity m/s" ap(1005) apcr(1150) he(900) heat(900))
 	("armor health" damage(335))
-	("armor health custom" shell(apcbche) damage(335) filler(240))
+	("armor health custom" shell(apcbche) damage(335) velocity(1005) filler(240))
 
 	; Pzgr.41
 	("penetration_long" shell(apcbche) range(220) a(271) b(258) c(254) d(239) e(225))

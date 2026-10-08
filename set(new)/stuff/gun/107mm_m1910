@@ -19,7 +19,7 @@
 
 	("velocity m/s" ap(670) apcr(1) he(213) heat(1)) 		;// real HE 670m/s
 	("armor health" damage(310))
-	("armor health custom" shell(apcbche) damage(310) filler(440))
+	("armor health custom" shell(apcbche) damage(310) velocity(670) filler(440))
 	("105_slope_multipliers")
 
 	("penetration_long" shell(apcbche) range(190) a(117) b(111) c(103) d(95) e(89))  ; // RHA

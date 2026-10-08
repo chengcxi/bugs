@@ -19,7 +19,7 @@
 
 	("velocity m/s" ap(390) apcr(1) he(200) heat(496))
 	("armor health" damage(310))
-	("armor health custom" shell(aphe) damage(310) filler(230))
+	("armor health custom" shell(aphe) damage(310) velocity(390) filler(230))
 	("105_slope_multipliers")
 
 	; Pzgr. Rot

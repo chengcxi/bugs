@@ -17,8 +17,8 @@
 
 	("velocity m/s" ap(895) apcr(1) he(885) heat(1))
 	("armor health" damage(290))
-	("armor health custom" shell(aphe) damage(290) filler(93))
-	("armor health custom" shell(aphebc) damage(290) filler(93))
+	("armor health custom" shell(aphe) damage(290) velocity(895) filler(93))
+	("armor health custom" shell(aphebc) damage(290) velocity(895) filler(93))
 	("100_rus_slope_multipliers")
 
 	; BR–412

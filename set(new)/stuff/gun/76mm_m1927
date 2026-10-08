@@ -15,7 +15,7 @@
 	{range 350 360} ; // 4km
 	("velocity m/s" ap(387) apcr(1) he(262) heat(311))
 	("armor health" damage(200))
-	("armor health custom" shell(aphebc) damage(200) filler(155))
+	("armor health custom" shell(aphebc) damage(200) velocity(387) filler(155))
 	("76_rus_slope_multipliers")
 
 	; BR-350A

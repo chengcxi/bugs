@@ -22,7 +22,7 @@
 
 	("penetration_long" shell(aphe) range(210) a(330) b(307) c(294) d(284) e(269))
 	("armor health" damage(350))
-	("armor health custom" shell(aphe) damage(350) filler(2340))
+	("armor health custom" shell(aphe) damage(350) velocity(830) filler(2340))
 	("128_slope_multipliers")
 	("velocity m/s" ap(830) apcr(1) he(238) heat(1))	; // historical velocity (830)(1)(925)(1)
 

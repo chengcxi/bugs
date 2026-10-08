@@ -21,7 +21,7 @@
 
 	("velocity m/s" ap(830) apcr(0) he(830) heat(0))
 	("armor health" damage(260))
-	("armor health custom" shell(apcbche) damage(260) filler(102))
+	("armor health custom" shell(apcbche) damage(260) velocity(830) filler(102))
 	("90_slope_multipliers")
 
 	; mod.43

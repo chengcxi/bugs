@@ -17,7 +17,7 @@
 
 	("velocity m/s" ap(1) apcr(990) he(570) heat(450))
 	("armor health" damage(200))
-	("armor health custom" shell(apcbche) damage(200) filler(29))
+	("armor health custom" shell(apcbche) damage(200) velocity(990) filler(29))
 	("75_ger_slope_multipliers")
 
 	; Pzgr.39

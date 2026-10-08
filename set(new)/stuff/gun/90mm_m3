@@ -21,7 +21,7 @@
 
 	("velocity m/s" ap(823) apcr(1018) he(823) heat(1))
 	("armor health" damage(240))
-	("armor health custom" shell(apcbche) damage(240) filler(133))
+	("armor health custom" shell(apcbche) damage(240) velocity(823) filler(133))
 	{parameters "apbc"
 		("apbc_90_t33_slope_multiplier")
 	}

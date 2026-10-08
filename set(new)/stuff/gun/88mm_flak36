@@ -22,8 +22,8 @@
 
 	("velocity m/s" ap(780) apcr(930) he(820) heat(600))
 	("armor health" damage(240))
-	("armor health custom" shell(apcbche) damage(240) filler(102))
-	("armor health custom" shell(apcbche2) damage(240) filler(160))
+	("armor health custom" shell(apcbche) damage(240) velocity(780) filler(102))
+	("armor health custom" shell(apcbche2) damage(240) velocity(780) filler(160))
 	("88_ger_slope_multipliers")
 
 	; Pzgr.39 ;late war Flak ammo used after mid 1942

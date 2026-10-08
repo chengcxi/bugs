@@ -17,8 +17,8 @@
 
 	("velocity m/s" ap(612) apcr(892) he(612) heat(1))
 	("armor health" damage(200))
-	("armor health custom" shell(aphebc) damage(200) filler(150))
-	("armor health custom" shell(aphebc2) damage(200) filler(88))
+	("armor health custom" shell(aphebc) damage(200) velocity(612) filler(150))
+	("armor health custom" shell(aphebc2) damage(200) velocity(612) filler(88))
 	("76_rus_slope_multipliers")
 
 	; BR-350A

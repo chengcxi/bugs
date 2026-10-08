@@ -18,7 +18,7 @@
 
 	("velocity m/s" ap(920) apcr(1) he(900) heat(1))
 	("armor health" damage(340))
-	("armor health custom" shell(apcbc) damage(340) filler(177))
+	("armor health custom" shell(apcbc) damage(340) velocity(920) filler(177))
 
 	;apcbc
 	("penetration_long" shell(apcbc) range(313) a(309) b(294) c(276) d(260) e(244))
