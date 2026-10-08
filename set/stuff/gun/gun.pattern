@@ -1,5 +1,9 @@
 {weapon_bullet										;// Example / Default Settings
 
+	; ARM-only range macros. Inherited by every {from "pattern gun"} weapon,
+	; including vanilla/MACE leftovers ARM does not overlay (e.g. 37mm_sh37).
+	(include "/set/arm_extra_macros.inc")
+
 	;/*=========== Generic Settings Begin ===========*/
 
 	{tag "weapon build_in gun bullet tank_gun"}
