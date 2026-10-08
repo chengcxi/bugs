@@ -1,4 +1,3 @@
-(include "/set/breed/presets/perks/arm_extra_perks.inc")
 {breed
 	{behaviour soldier}
 	{skin "fin_smock_sissi_mg"}
@@ -10,6 +9,7 @@
 
 	{perks
 		(include "ability.inc")
+		(include "/set/breed/presets/perks/arm_extra_perks.inc")
 		("mg_skill_rank_5")("tier4_standard")
 							("mgunner_fin_dt")		
 		("stealth")

@@ -1,4 +1,3 @@
-(include "/set/breed/presets/perks/arm_extra_perks.inc")
 {breed
 	{behaviour soldier}
 ;//	{skin "ger_luft_39_fj_smg_2a"}
@@ -13,6 +12,7 @@
 	}
 	{perks
 		(include "ability.inc")
+		(include "/set/breed/presets/perks/arm_extra_perks.inc")
 		("smg_skill_rank_2")
 		("engineer_heavy_ger")
 		("tier2_standard")

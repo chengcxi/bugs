@@ -1,4 +1,3 @@
-(include "/set/breed/presets/perks/arm_extra_perks.inc")
 {breed
 	{behaviour soldier}
 	{skin "ger_heer_39_gd_pio_mg"}
@@ -12,6 +11,7 @@
 	}
 	{perks
 		(include "ability.inc")
+		(include "/set/breed/presets/perks/arm_extra_perks.inc")
 		("mg_skill_rank_3")("tier3_standard")
 							("mgunner_ger")		
 	}

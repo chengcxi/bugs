@@ -1,4 +1,3 @@
-(include "/set/breed/presets/perks/arm_extra_perks.inc")
 {breed
 	{behaviour soldier}
 	{skin "fin_m36_sig_wc_rfl"}
@@ -12,6 +11,7 @@
 	}
 	{perks
 		(include "ability.inc")
+		(include "/set/breed/presets/perks/arm_extra_perks.inc")
 		("rifle_skill_rank_4")("tier3_standard")
 
 		("signaller_f")

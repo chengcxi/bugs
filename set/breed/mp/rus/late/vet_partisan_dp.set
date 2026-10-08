@@ -1,4 +1,3 @@
-(include "/set/breed/presets/perks/arm_extra_perks.inc")
 {breed
 	{behaviour soldier}
 	{skin "sov_43_smock_svt_1"}
@@ -12,6 +11,7 @@
 	}
 	{perks
 		(include "ability.inc")
+		(include "/set/breed/presets/perks/arm_extra_perks.inc")
 		("mg_skill_rank_1")("tier1_standard")
 						("mgunner_ussr")		
 	}
