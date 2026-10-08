@@ -959,16 +959,6 @@
 	}
 	("direct_settings")
 )
-(define "range_210"
-	("standard_firing_arc")
-	; {range 210 210}
-	{range 420 420}
-	{parameters "he"
-		{range 420 420}
-	}
-	("direct_settings")
-)
-
 (define "range_220_l"								;ARm 070326+
 	("standard_firing_arc")
 	; {range 220 220}
@@ -978,16 +968,6 @@
 	}
 	("direct_settings")
 )
-(define "range_220"
-	("standard_firing_arc")
-	; {range 220 220}
-	{range 430 440}
-	{parameters "he"
-		{range 430 430}
-	}
-	("direct_settings")
-)
-
 (define "range_220_h"								;ARm 070326+
 	("standard_firing_arc")
 	; {range 220 220}
@@ -1004,16 +984,6 @@
 	{range 445 460}
 	{parameters "he"
 		{range 445 445}
-	}
-	("direct_settings")
-)
-
-(define "range_230"								;ARm 070326+						
-	("standard_firing_arc")
-	; {range 230 230}
-	{range 450 460}
-	{parameters "he"
-		{range 450 450}
 	}
 	("direct_settings")
 )
