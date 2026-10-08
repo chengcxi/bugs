@@ -1,3 +1,4 @@
+(include "/set/breed/presets/perks/arm_extra_perks.inc")
 {breed
 	{behaviour soldier}
 	{skin "sov_42_rkka_recon_mg_2"}
