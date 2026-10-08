@@ -1,0 +1,38 @@
+{breed
+	{behaviour soldier}
+	{skin "ger_heer_43_pz_pio_mg_ammo"}
+	{portrait "ger_pionier"}
+	{icon "mg"}
+	{icon_priority 0}
+	{tags "soldier"}
+	{nationality ger}
+	{armors
+		{head ger_stalhelm_m43_gog_b_up}
+	}
+	{perks
+		(include "ability.inc")
+		("mg_skill_rank_2")
+		("tier3_recon")	
+				("binocular_vision")
+							("mgunner_ger42")
+	}
+	{veterancy
+		(include "ability.inc")
+		("veterancy_lvl_0")
+	}
+	{inventory
+		{item "p38" filled}
+		{item "pistol ammo" 16 8}
+		
+		{item "mg42_belt" filling "mgun_ger belt ap ammo" 250}
+		{item "mgun_ger belt ap ammo" 600}
+		{item "m24_smoke_supplies grenade" 1}
+
+		{item "binocular"}
+
+		{item "bandage_ger" 3.5 0.5}
+		{item "shovel_ger"}
+							{item "mg_lafette_kit_42_ger"}
+		{in_hands 0}
+	}
+}

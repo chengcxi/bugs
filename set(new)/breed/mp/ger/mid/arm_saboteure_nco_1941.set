@@ -1,0 +1,47 @@
+{breed
+	{behaviour soldier}
+	{skin "ger_heer_45_liberm_smg_1"}
+	{portrait "ger_scout"}
+	{icon "rifle"}
+	{icon_priority 5}
+	{tags "soldier"}
+	{nationality ger_fusilier}
+	
+	{armors
+		{head ger_stalhelm_m43_cover_sumpf_band}
+	}
+
+	{perks
+		(include "ability.inc")
+		("rifle_skill_rank_4")
+		("tier4_recon")
+		("stealth")
+		("sniper_vision")
+	}
+	{veterancy
+		(include "ability.inc")
+		("veterancy_lvl_8")
+	}
+	{inventory
+;//		{item "mosin_silencer" filled}
+;//		{item "rifle_rus clip ammo" 60 5}
+
+		{item "leuchtpistole34" filled}
+		{item "flare ammo" 10}
+
+		{item "hdm" filled}
+		{item "hdm_mag ammo" 40}
+			
+		{item "m24_smoke grenade" 2.25 0.5}
+		{item "m24_splinter grenade" 2.25 0.5}
+		{item "m24_geballteladung grenade" 0.8 0.5}
+
+		{item "bandage_ger" 5.5 0.5}
+		{item "shovel_ger"}
+		
+		{item "german_radio"}
+
+		{in_hands 1}
+	}
+
+}

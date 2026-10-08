@@ -1,0 +1,14 @@
+{from "pattern smoke_barrel"
+	{entity "ussr_barrel"}
+	{tag "range_40"}
+	{tag "smoke missile smallitemin1hand throwable"}
+	;("filling" ussr_barrel(1))	;// 6-8 seconds of fuel
+	{filling "ussr_barrel"}
+	{mass 22.7}
+
+	{inventory
+		{size 2 6}
+	}
+
+	{range 40 41}
+}

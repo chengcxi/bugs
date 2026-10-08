@@ -1,0 +1,27 @@
+;_________________________________________
+; American heavy assault gun
+;=========================================
+
+
+{from "pattern gun"			; L/40 T30
+	{filling "bulletusa_155_l40"}
+	{fireSound "cannon/s5/d1/Shared/Cannon_150to210mm/"}
+	{fireSoundClose "cannon/s5/3p/Shared/Cannon_150to210mm/"}
+	{reloadSound "utility/"}
+	("range_220")
+	{calibre 155}
+
+	("reload time" seconds(28))
+
+	("velocity m/s" ap(670) apcr(1106) he(717) heat(1))
+	("armor health" damage(450))
+	("armor health custom" shell(apcbche) damage(380) velocity(670) filler(640))
+
+	("penetration_long" shell(apcbche) range(220) a(193) b(183) c(175) d(168) e(160))
+
+	("penetration_long" shell(hvap) range(220) a(292) b(274) c(257) d(239) e(221))
+
+	("accuracy_direct" r1(0.55) range_ap(220) range_he(220) range_heat(220))
+
+	("85-155_slope_multipliers")
+}

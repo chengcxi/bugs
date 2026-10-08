@@ -1,0 +1,9 @@
+{from "pattern air_bomb"
+	{entity "zab_100"}
+;//	{tag "super mortar ic"}
+	{tag "super2 mortar ic"}
+	{mass 380}
+
+;//	("he_level_6" weight(380) filler(24.4))
+	("he_level_6" weight(5) filler(1))
+}

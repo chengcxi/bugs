@@ -1,0 +1,24 @@
+;LR Arm edited
+;01.12.25
+
+{from "pattern gun"			;
+	{filling "bulletrus_76"}
+	{fireSound "cannon/s3/d1/Shared/Cannon_75to76mm/"}
+	{fireSoundclose "cannon/s3/3p/Shared/Cannon_75to76mm/"}
+	{reloadSound "utility/"}
+;	("range_200")
+	("range_210_aa")
+	{calibre 76.2}
+	("heavy_aa")
+	("reload time" seconds(6))
+	{aimingTolerance 3}
+;	{range 380 380} 															;//ARm+
+	
+	("velocity m/s" ap(813) apcr(1) he(813) heat(1))
+	("armor health" damage(200))
+
+	; aphe
+	
+	("penetration_long" shell(aphebc) range(200) a(119) b(109) c(98) d(88) e(79)) 
+	("accuracy_direct" r1(0.72) range_ap(200) range_he(200) range_heat(180))
+}

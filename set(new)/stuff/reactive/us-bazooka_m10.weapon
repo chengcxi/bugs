@@ -1,0 +1,32 @@
+{weapon_bullet
+	{fireSound "reactive/bazooka/"}
+	{fillingVisible "rocket"}
+	{AimingTolerance 0.1}
+	{cursorReloading "gun_heat"}
+	{speed 500}
+	{aimtype direct}
+	{burst {min 2} {noaiming}}
+	{tag "-gun"}	
+	{filling "ammo bazooka" 3}
+	{fillingVisible "rocket"}
+	{gravity 0.15}
+	{spreading 2}
+	{foresight "Foresight3"}
+;//	{range 170 180}
+	{range 310 320}
+	{AimingTolerance 3}
+	{SpreadTolerance 0}		
+	{rechargeTime 1.5}
+	{recoveryTime 0.01}
+	{RelaxationTime 0}
+	{inventory
+		{weight 20000}
+		{fsm "belt"}
+		{size 4 2}
+	}
+	{mass 0.01}
+	{DisableRicochet}
+	{projectileDamage 76}
+	{projectileDamageTable {999 76}}
+	{reactive}
+}

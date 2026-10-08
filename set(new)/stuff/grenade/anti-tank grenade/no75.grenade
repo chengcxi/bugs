@@ -1,0 +1,31 @@
+{from "pattern anti-tank"
+	{entity "no75"}
+	{tag "grenade dropboxed antipersonnel mine"}
+	;{tag  "size2"}	; Explosive Filling 		= 0.45 kg
+	{tag "size1"}		; Explosive filling - 0.060kg of TNT
+	{tag  "grenade at"}  ;IAEMadd
+	{mass 0.80}
+
+	{inventory {size 2 1}}
+
+	{damage blastwave
+		{energy 3.1}
+		{area 0.45 0.5}
+		{ground_interaction_radius 0}
+	}
+	{damage add blastwave
+		{energy 3.1}
+		{area 0.45 0.5}
+		{ground_interaction_radius 0}
+	}
+	{damage add blastwave
+		{energy 1.0}
+		{area 0.6 2}
+		{ground_interaction_radius 0.5}
+	}
+	{damage add blastwave
+		{energy 0.51}
+		{area 2.5 5}
+		{ground_interaction_radius 0} ;// value is multiplied by 2nd value of area to deterimine is blast is close enough to ground to trigger terrain fx
+	}
+}

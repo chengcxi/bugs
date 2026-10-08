@@ -1,0 +1,35 @@
+{breed
+	{behaviour soldier}
+	{skin "ger_heer_45_liberm_nco_smg_1"}
+	{portrait "ger_jager"}
+	{icon "smg"}
+	{icon_priority 0}
+	{tags "soldier"}
+	{nationality ger}
+	{armors
+		{head ger_officer_cap_goggles}
+	}
+	{perks
+		(include "ability.inc")
+		("smg_skill_rank_2")
+				("tier3_recon")	
+				("binocular_vision")
+	}
+	{veterancy
+		(include "ability.inc")
+		("veterancy_lvl_4")
+	}
+	{inventory
+		{item "mp41" filled}
+		{item "mp40 ammo" 192}
+
+		{item "binocular"}
+
+		{item "bandage_ger" 4.5 0.5}
+		{item "m24_smoke_supplies grenade" 1}
+		{item "german_radio"}			
+		
+		{in_hands 0}
+		
+	}
+}

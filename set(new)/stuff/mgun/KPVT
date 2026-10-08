@@ -1,0 +1,12 @@
+{from "KPV"
+	{inventory {size 7 3}}
+	{filling "hmgun_rus2" 50}
+	{entity "KPVT_AA"}
+	{fireSound "smallarms/s4/d1/RUS/PTR/"}
+	{fireSoundclose "smallarms/s4/3p/RUS/PTR/"}
+;//	{fireSound "smallarms/s4/d1/RUS/DShK38/"}
+;//	{fireSoundClose "smallarms/s4/d1/RUS/DShK38/"}
+	{reloadSound "interior/small/dt_reload_interior"}
+
+	("reload time" seconds(7))
+}

@@ -1,0 +1,12 @@
+;SDL
+;// CP + Scores + CW
+
+;////////////////// INSTRUCTIONS //////////////////
+; In this file onee configures the humans which are spawned in vehicles or squads
+; The humans have a CP and cost associated with them which collectively add up for the final squad value
+; Check ../settings.set for syntax instructions!!
+;//////////////////////////////////////////////////
+
+
+		{"mp/rus/early/soviet_fortifier_private"		("inf_soviet_fortifier_private" 	side(rus) period(early) cost(50.0))}
+		{"mp/rus/early/artilleryman_private"			("inf_rus_artilleryman_private" 		side(rus) period(early) cost(15.0))}		

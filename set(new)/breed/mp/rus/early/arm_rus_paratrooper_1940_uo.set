@@ -1,0 +1,41 @@
+{breed
+	{behaviour soldier}
+;//	{skin "rus_paratrooper"}
+;//	{skin "rus_pilot"}
+	{skin "sov_41_rkka_rec_smg_drum_1_nco"}
+	{portrait "rus_paratrooper"}
+	{icon "smg"}
+	{icon_priority 0}
+	{tags "soldier"}
+	{nationality rus_elite}
+	{armors
+		{head soviet_tankist_cap}
+	}
+	{perks
+		(include "ability.inc")
+		("smg_skill_rank_4")
+		("tier4_recon")	
+		("binocular_vision")		
+	}
+	{veterancy
+		(include "ability.inc")
+		("veterancy_lvl_6")
+	}
+	{inventory
+		{item "ppd40" filled}
+		{item "ppd_drum ammo" 213}
+		
+		{item "tt33" filled}
+		{item "tt33 ammo" 16}
+
+		{item "rgd33 grenade" 2.25 0.5}
+		{item "rdg1_smoke_supplies grenade" 1}
+
+		{item "bandage_rus" 5.5 0.5}
+		
+		{item "binocular"}
+		{item "veshmeshok_regular"}
+
+		{in_hands 0}
+	}
+}

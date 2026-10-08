@@ -1,0 +1,17 @@
+;LR Arm edited
+;03.02.2026
+;
+;_________________________________________
+; German Aircraft Autocannon
+;=========================================
+
+
+{from "20mm_mg151"		;  "BF110E-2" 	6x Barrels
+	("range_aircraft_gun_15s-20s-30s")
+	{filling "bullet_20_auto aphe" 120}
+	("fire rate" rpm(4080))				;680x4						;150226 (680) -(4080)
+
+	("reload time" seconds(0.5))												;150226 (20) - (5) - (0.5)
+
+	("velocity" mps(585))
+}

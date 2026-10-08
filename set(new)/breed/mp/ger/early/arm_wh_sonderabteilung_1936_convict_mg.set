@@ -1,0 +1,33 @@
+{breed
+	{behaviour soldier}
+	{skin "ger_collab_1"}
+	{portrait "ger_penal"}
+	{icon "mg"}
+	{icon_priority 0}
+	{tags "soldier"}
+	{nationality ger}
+	{armors
+		{head ger_poa_helmet_strap}
+	}
+	{perks
+		(include "ability.inc")
+		("penal")															;//ARM+			
+		("mg_skill_rank_1")
+		("tier1_standard")
+;//									("mgunner_ger")							;//ARM-
+	}
+	{veterancy
+		(include "ability.inc")
+		("veterancy_lvl_0")
+	}
+	{inventory
+		{item "mg13_no_bipod" filled}
+		{item "mgun_ger mg13 ammo" 600}
+
+		{item "m24 grenade" 0.50 0.5}
+
+		{item "bandage_ger" 2.5 0.5}
+;//							{item "mg_lafette_kit_ger"}						;//ARM-
+		{in_hands 0}
+	}
+}

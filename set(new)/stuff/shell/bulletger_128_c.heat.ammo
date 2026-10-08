@@ -1,0 +1,12 @@
+{from "pattern heat"
+	{tag "size3 122to128 shell"}
+	{inventory {size 4 1}}
+	{entity "128mm_ger_c_heat"}
+	{mass 28}
+
+	{view "howitzer_shell_105-150"
+		{tail "shell_tracer_100-152_he" "tail"}
+	}
+
+	("heat_large_blast" args 9)
+}

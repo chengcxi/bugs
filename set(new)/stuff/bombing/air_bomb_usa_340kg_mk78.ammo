@@ -1,0 +1,7 @@
+{from "pattern air_bomb"
+	{entity "340kg_mk78_bomb"}
+	{tag "super mortar ic"}
+	{mass 60}
+
+	("he_level_6" weight(5) filler(3.4))
+}

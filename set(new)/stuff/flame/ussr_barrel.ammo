@@ -1,0 +1,13 @@
+{bullet
+	{tag "flame"}
+	{entity "ussr_barrel"}
+	{inventory
+		{weight 50}
+		{block 1}
+		{size 5 5}
+		{fsm "belt"}
+	}
+	{mass 0.006}
+	{preloaded}
+
+}

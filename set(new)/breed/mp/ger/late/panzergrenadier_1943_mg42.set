@@ -1,0 +1,37 @@
+{breed
+	{behaviour soldier}
+	{skin "ger_heer_45_liberm_mg_asst_1"}
+	{portrait "ger_pzgrenadier"}
+	{icon "mg"}
+	{icon_priority 0}
+	{tags "soldier"}
+	{nationality ger}
+	{armors
+		{head ger_m42_helmet_marsh}
+	}
+	{perks
+		(include "ability.inc")
+		("mg_skill_rank_2")
+				("tier2_defense")
+							("mgunner_ger42")	
+	}
+	{veterancy
+		(include "ability.inc")
+		("veterancy_lvl_3")
+	}
+	{inventory
+		{item "mg42_belt" filling "mgun_ger belt ammo" 250}
+		{item "mgun_ger belt ammo" 300}
+
+		;{item "p38" filled}
+		;{item "pistol ammo" 16}
+
+		{item "m24 grenade" 0.25 0.5}
+		{item "m24_smoke grenade" 0.25 0.5}
+
+		{item "bandage_ger" 3.5 0.5}
+		{item "shovel_ger"}
+							{item "mg_lafette_kit_42_ger"}
+		{in_hands 0}
+	}
+}

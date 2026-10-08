@@ -1,0 +1,157 @@
+(include "\set\small_firearms_accuracy.inc")
+
+;/*=========================*/
+
+(define "burst_short"
+	{burst
+        {short 4 1}      ; 3–5 выстрелов на дальних дистанциях (минимум 4 с учётом логики: при отклонении -1 будет 3, но это нижний предел; чтобы строго гарантировать минимум 4, см. примечание ниже)
+        {long 6 2}       ; 4–8 выстрелов на ближних дистанциях (минимум 4)
+        {rangeKoef 0.5}  ; макс. дистанция длинной очереди = 50 % от aimRange
+	}
+)
+
+(define "burst_medium"
+	{burst
+        {short 8 1}      ; 7–9 выстрелов на дальних дистанциях (минимум 7, но см. корректировку ниже для строгого минимума 8)
+        {long 10 2}      ; 8–12 выстрелов на ближних дистанциях (минимум 8)
+        {rangeKoef 0.5}
+	}
+)
+
+(define "burst_long"						
+	{burst
+        {short 12 1}     ; 11–13 выстрелов на дальних дистанциях (минимум 11, но см. корректировку ниже для строгого минимума 12)
+        {long 14 2}      ; 12–16 выстрелов на ближних дистанциях (минимум 12)
+        {rangeKoef 0.5}
+	}
+)
+
+(define "burst_stand"
+	{burst
+        {short 10 4}      ; 6–14 выстрелов
+        {long 20 5}     	; 15–25 выстрелов
+        {rangeKoef 0.75}
+	}
+)
+
+(define "burst_aa"
+	{burst
+		{short 12 0}
+		{long 25 3}
+		{rangeKoef 0.5}
+	}
+)
+
+(define "burst_aa_quad"
+	{burst
+		{short 30 0}
+		{long 150 3}
+		{rangeKoef 0.5}
+	}
+)
+
+;/*=========================*/
+;// Станковые пулеметы -------------------------
+;// Триноги и станки среднего калибра
+(define "spreading_mounted_low"
+	{spreading
+		{BurstAccuracy 100 98 92 88 84 77 70 62 57 52 47}					;150226 (100 98 95 93 90 88 85 83 80) 					- (100 98 85 83 70 68 65 63 60)						- (100 98 92 88 84 77 70 62 57 52 47 42)
+	}
+)
+
+;// Триноги и станки тяжелого калибра
+(define "spreading_mounted"
+	{spreading
+		{BurstAccuracy 100 95 89 85 81 74 67 59 52 47 42 38}				;150226 (100 98 95 91 86 81 76 70) 						- (100 96 90 86 80 76 72 68)						- (100 95 89 85 81 74 67 59 52 47 42 38)
+	}
+)
+
+;// Триноги и станки тяжелого калибра x2 x4
+(define "spreading_mounted_hight"
+	{spreading
+		{BurstAccuracy 100 96 90 86 80 76 72 68}							;160226 (100 96 90 86 80 76 72 68) 						- (100 80 70 50 40 35 30 25 20 15 10)
+	}
+)
+
+;// Ручные пулеметы ----------------------------
+;// Ручные пулеметы в зафиксированном положении
+(define "spreading_low"
+	{spreading
+		{BurstAccuracy 100 98 84 68 63 56 52 47 41 36 30 25 20 15 10}		;160226 (100 98 94 88 83 76 72 67 61 56 50 45 40 35 30) - (100 98 84 68 63 56 52 47 41 36 30 25 20 15 10) 	- ()
+	}
+)
+
+;// Ручные пулеметы в удобном положении
+(define "spreading_medium"
+	{spreading 
+		{BurstAccuracy 100 95 90 84 78 64 58 50 44 40 35 30 25 20 15 10}	;150326 (100 95 90 84 78 70 64 60 55 50 45 40 35 30) 	- (100 95 80 64 58 50 44 40 35 30 25 20 15 10)		- (100 95 90 84 78 64 58 50 44 40 35 30 25 20 15 10)
+	}
+)
+
+;// Ручные пулеметы
+(define "spreading_high"
+	{spreading 
+		{BurstAccuracy 100 93 85 81 75 60 54 47 44 35 30 25 20 15 10}		;150326 (100 90 80 70 60 55 50 45 40 35 30) 			- (100 80 70 50 40 35 30 25 20 15 10)				- (100 93 85 81 75 60 54 47 44 35 30 25 20 15 10)
+	}
+)
+
+;/*=========================*/
+
+(define "reload_belt"
+	("reload time" seconds(8.5))
+)
+
+(define "penetration"
+	{projectileDamageTable {20 %0} {100 %1} {155 %2} {250 %3} {400 %4}}
+)
+
+(define "armor health"
+	{minimumDamageModifier (* 1.0 %damage)}
+)
+
+(define "ger_ap_bullets"
+	("penetration" args 11.5 5.5 3 2 0) ;// SmK L'spur / ball belts
+
+	{parameters "ap"
+		("penetration" args 18 8.8 5.3 2 0) ;// SmK
+		("armor health" damage(5))
+		{cursorReloading "gun_ap"}
+	}
+	{parameters "ap2"
+		("penetration" args 25.9 12.7 7.7 3 0) ;// SmK(H)
+		("armor health" damage(5))
+		{cursorReloading "gun_ap"}
+	}
+)
+
+(define "rus_ap_bullets"
+	{parameters "ap"
+		("penetration" args 17.8 8.6 4.2 2 0) ;// B-30
+		("armor health" damage(5))
+		{cursorReloading "gun_ap"}
+	}
+	{parameters "api"
+		("penetration" args 17.8 8.6 4.2 2 0) ;// B-32
+		("armor health" damage(6))
+		{cursorReloading "gun_api"}
+		("human health" damage(100))
+	}
+)
+
+(define "airborne_mg"
+;//	{range 140 140}
+	{range 380 380}
+	(mod not "mp"
+		{range 300 500}
+	)
+
+	{spreading
+		{SpreadPower 1.5}																	;160226 (1.5)
+		{BurstRecoveryTime 0.5}
+		{BurstAccuracy 100 95 90 85 80}														;160226 (100 95 90 85 80)
+		{SpreadXYRatio	1.00}																;160226 (1.00)
+	}
+	{AimingTolerance 20}
+
+	("accuracy_mg_plane")
+)

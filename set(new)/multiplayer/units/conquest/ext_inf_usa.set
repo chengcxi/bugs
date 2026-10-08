@@ -1,0 +1,231 @@
+
+; "vs(...)" corresponds to a define found in the settings down this file
+; v() If squad is motorised, this is the vehicle that carries the men.
+; cd() corresponds to countdown delay to spawn the unit once battle begins
+; ci() corresponds to cooldown to buy unit once again
+; side() corresponds to side (faction)
+; n() corresponds to number of crew in the unit, the type of crew is defined in the "vs"
+; g() corresponds to group, which is for classification and collective cooldowns
+; sc() corresponds to the score given to the player upon killing this unit
+; b() corresponds to the button where this unit is located in the menus
+; i() corresponds to icon order
+; cw() corresponds to capture weight for flags
+; cp() corresponds to CP, that is, the value that units have that fill up how many troops can be fielded
+; {cost -} corresponds to MP cost of the unit
+; {level 6} Corresponds to player XP progress in player profile from steam
+; {research_stage 4} corresponds to research stage of dynamic campaign
+; {squad_cost_factor 1} - adds the cost of the crew / the cost of the squad members with this factor
+; scf() - adds the cost of the crew / the cost of the squad members with this factor
+; {score_factor 0.05} - when the unit is killed, it will have an impact on the MP score of 0.05*Cost. This only works if {squad_cost_factor 1}. With a fixed cost for the squad such (= scf 0), you need to adjust the scores of the individual units manually
+; {score 20} - when the unit is killed, it will have an impact on the MP score of 20
+; {round_multiple 5.0} - the cost of the unit is rounded up or down to this multiple
+
+
+
+;;=================================== USA =====================================================
+;;----------------------------------- ORIGINAL ------------------------------------------------
+
+;;=================================== USA =====================================================
+;;----------------------------------- USA Modded ----------------------------------------------
+;;----------------------------------- USA Modded AI -------------------------------------------
+
+{"mp/usa/late/signaller_ai"				    ("inf_officer" side(usa) lvl() r(99) rm(99) cost(300.0))}
+
+;;----------------------------------- USA Modded ----------------------------------------------
+;;----------------------------------- USA Modded SPECIALISTS ----------------------------------
+;//Tier=[2]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)		
+
+;------------(1939-1945) Ger_tankman [ single ]
+(define "inf_tankman"
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 0.5}
+	{score_factor 0.10}
+) 
+
+;EARLY
+;//		{"mp/usa/early/vehicle_crew"										("inf_tankman" 									period(early)	side(usa)		lvl2())		{cp 0.0}		{cost 24.0}}
+;//		{"mp/usa/early/vehicle_crew_m1"										("inf_tankman" 									period(early)	side(usa)		lvl2())		{cp 0.0}		{cost 24.0}}
+;//		{"mp/usa/early/vehicle_com"											("inf_tankman" 									period(early)	side(usa)		lvl3())		{cp 0.0}		{cost 42.0}}
+
+		{"mp/usa/early/tankman"												("inf_tankman" 									period(early)	side(usa)		lvl2())		{cp 0.0} 		{cost 34.0}}
+		{"mp/usa/early/tank_commander"										("inf_tankman" 									period(early)	side(usa)		lvl3())		{cp 0.0} 	 	{cost 62.0}}	;com	
+
+;MID
+		{"mp/usa/mid/vehicle_crew"											("inf_tankman" 									period(mid)		side(usa)		lvl2())		{cp 0.0}		{cost 24.0}}
+		{"mp/usa/mid/vehicle_crew_m1"										("inf_tankman" 									period(mid)		side(usa)		lvl2())		{cp 0.0}		{cost 24.0}}
+		{"mp/usa/mid/vehicle_com"											("inf_tankman" 									period(mid)		side(usa)		lvl3())		{cp 0.0}		{cost 42.0}}	;com
+
+		{"mp/usa/mid/tankman"												("inf_tankman" 									period(mid)		side(usa)		lvl2())		{cp 0.0}		{cost 34.0}}
+		{"mp/usa/mid/tank_commander"										("inf_tankman" 									period(mid)		side(usa)		lvl3())		{cp 0.0} 	 	{cost 62.0}}	;com		
+		{"mp/usa/mid/tank_com"												("inf_tankman" 									period(mid)		side(usa)		lvl3())		{cp 0.0} 	 	{cost 62.0}}	;com		
+		{"mp/usa/mid/tankman_m1"											("inf_tankman" 									period(mid)		side(usa)		lvl2())		{cp 0.0}		{cost 34.0}}
+		{"mp/usa/mid/tank_com_m1"											("inf_tankman" 									period(mid)		side(usa)		lvl3())		{cp 0.0} 	 	{cost 62.0}}	;com		
+		{"mp/usa/mid/tankman_smg"											("inf_tankman" 									period(mid)		side(usa)		lvl2())		{cp 0.0}		{cost 34.0}}
+		{"mp/usa/mid/tank_com_smg"											("inf_tankman" 									period(mid)		side(usa)		lvl3())		{cp 0.0}		{cost 62.0}}	
+
+;LATE
+		{"mp/usa/late/vehicle_crew"											("inf_tankman" 									period(late)	side(usa)		lvl2())		{cp 0.0}		{cost 24.0}}
+		{"mp/usa/late/vehicle_com"											("inf_tankman" 									period(late)	side(usa)		lvl3())		{cp 0.0}		{cost 42.0}}	;com
+		{"mp/usa/late/vehicle_crew_m1"										("inf_tankman" 									period(late)	side(usa)		lvl2())		{cp 0.0}		{cost 24.0}}
+		{"mp/usa/late/vehicle_crew_m1_gren"									("inf_tankman" 									period(late)	side(usa)		lvl2())		{cp 0.0}		{cost 24.0}}
+		{"mp/usa/late/vehicle_com_m1"										("inf_tankman" 									period(late)	side(usa)		lvl3())		{cp 0.0}		{cost 42.0}}	;com
+		{"mp/usa/late/vehicle_com_m1a1"										("inf_tankman" 									period(late)	side(usa)		lvl3())		{cp 0.0}		{cost 42.0}}
+		{"mp/usa/late/vehicle_crew_m3"										("inf_tankman" 									period(late)	side(usa)		lvl2())		{cp 0.0}		{cost 24.0}}	
+		{"mp/usa/late/vehicle_com_m3"										("inf_tankman" 									period(late)	side(usa)		lvl3())		{cp 0.0}		{cost 42.0}}	;com
+		
+
+		{"mp/usa/late/tankman"												("inf_tankman" 									period(late)	side(usa)		lvl2())		{cp 0.0}	 	{cost 34.0}}
+		{"mp/usa/late/tank_commander"										("inf_tankman" 									period(late)	side(usa)		lvl3())		{cp 0.0} 	 	{cost 62.0}}		
+		{"mp/usa/late/tank_com"												("inf_tankman" 									period(late)	side(usa)		lvl3())		{cp 0.0} 	 	{cost 62.0}}	;com		
+		{"mp/usa/late/tankman_m1"											("inf_tankman" 									period(late)	side(usa)		lvl2())		{cp 0.0}	 	{cost 34.0}}
+		{"mp/usa/late/tank_com_m1"											("inf_tankman" 									period(late)	side(usa)		lvl3())		{cp 0.0} 	 	{cost 62.0}}		
+		{"mp/usa/late/tankman_m3"											("inf_tankman" 									period(late)	side(usa)		lvl2())		{cp 0.0}	 	{cost 34.0}}
+		{"mp/usa/late/tank_com_m3"											("inf_tankman" 									period(late)	side(usa)		lvl3())		{cp 0.0} 	 	{cost 62.0}}
+		
+;------------(1942-1943) squad_mech_tankman_mid(usa) [ squad ]
+(define "squad_mech_tankman_mid(usa)"
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 0.5}
+	{score_factor 0.10}
+)
+
+		{"mp/usa/mid/tankman_pfc"											("squad_mech_tankman_mid(usa)" 					period(mid)		side(usa)		lvl2())		{cp 1.0}		{cost 34.0}}
+		{"mp/usa/mid/tankman_cpl"											("squad_mech_tankman_mid(usa)" 					period(mid)		side(usa)		lvl2())		{cp 1.0}		{cost 34.0}}
+		{"mp/usa/mid/tankman_t4"											("squad_mech_tankman_mid(usa)" 					period(mid)		side(usa)		lvl2())		{cp 1.0}		{cost 34.0}}
+		{"mp/usa/mid/tankman_t5"											("squad_mech_tankman_mid(usa)" 					period(mid)		side(usa)		lvl2())		{cp 1.0}		{cost 34.0}}	
+
+;------------(1944-1945) squad_mech_tankman_late(usa) [ squad ]
+(define "squad_mech_tankman_late(usa)"
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 0.5}
+	{score_factor 0.10}
+)
+
+		{"mp/usa/late/tank_com_cpt_m3"										("squad_mech_tankman_late(usa)" 				period(late)	side(usa)	lvl3())		{cp 1.0}		{cost 62.0}}
+		{"mp/usa/late/tankman_cpl"											("squad_mech_tankman_late(usa)" 				period(late)	side(usa)	lvl2())		{cp 1.0}		{cost 34.0}}
+		{"mp/usa/late/tankman_cpl_m1"										("squad_mech_tankman_late(usa)" 				period(late)	side(usa)	lvl2())		{cp 1.0}		{cost 34.0}}
+		{"mp/usa/late/tankman_cpl_m3"										("squad_mech_tankman_late(usa)" 				period(late)	side(usa)	lvl2())		{cp 1.0}		{cost 34.0}}		
+		{"mp/usa/late/tankman_pfc_m1"										("squad_mech_tankman_late(usa)" 				period(late)	side(usa)	lvl2())		{cp 1.0}		{cost 34.0}}	
+		{"mp/usa/late/tankman_pfc_m3"										("squad_mech_tankman_late(usa)" 				period(late)	side(usa)	lvl2())		{cp 1.0}		{cost 34.0}}			
+
+;------------(1941-1945) squad_arm_usa_signaller [ single ]
+(define "squad_arm_usa_signaller"
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 0.5}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.70}
+)
+
+;//		{"mp/usa/mid/82nd_platoon_radio"							("squad_arm_usa_signaller" 						period(mid)		side(usa)		lvl3())		{cp 1.0} 		{cost 750.0}}
+		{"mp/usa/early/arm_usa_1941_signaller"						("squad_arm_usa_signaller" 						period(early)	side(usa)		lvl3())		{cp 1.0} 		{cost 750.0}}
+
+;------------(1943-1944) squad_arm_usa_1943_signaller [ single ]
+(define "squad_arm_usa_1943_signaller"
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 0.5}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.70}
+)
+
+		{"mp/usa/mid/arm_usa_1943_signaller"						("squad_arm_usa_1943_signaller" 				period(mid)		side(usa)		lvl3())		{cp 1.0} 		{cost 1150.0}}
+
+;------------(1945) squad_arm_usa_1945_signaller [ single ]
+(define "squad_arm_usa_1945_signaller"
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 0.5}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.70}
+)
+
+		{"mp/usa/late/arm_usa_1945_signaller"						("squad_arm_usa_1945_signaller" 				period(late)	side(usa)		lvl3())		{cp 1.0} 		{cost 1650.0}}
+
+;------------(1943-1945) squad_usa_major_2
+;------------(1945-1945) squad_usa_officers
+(define "squad_usa_officers"
+;//	{tags "early %side infantry man %lvl"}
+	{tags "%period %side infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{cw 1.0}
+	{score_factor 0.05}
+)
+		{"mp/usa/late/officer_ltc"									("squad_usa_officers" 										period(late)		side(usa) 		lvl5()) 		{cp -20.0}		{cost 7150.0}}
+		{"mp/usa/late/officer_maj"									("squad_usa_officers" 										period(late)		side(usa) 		lvl4()) 		{cp -15.0}		{cost 5250.0}}
+		{"mp/usa/late/officer_cpt"									("squad_usa_officers" 										period(late)		side(usa) 		lvl3()) 		{cp -10.0}		{cost 3250.0}}
+		
+(define "squad_heavy_artilleryman" ; tier 3
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 1.5}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.05}
+)
+		{"mp/usa/early/arm_usa_artilleryman_heavy_uo"				("squad_heavy_artilleryman"									period(early)		side(usa) 		lvl1()) 		{cp 1.0}		{cost 40.0}}
+		{"mp/usa/early/arm_usa_artilleryman_heavy"					("squad_heavy_artilleryman" 								period(early)		side(usa) 		lvl2())			{cp 1.0}		{cost 30.0}} 
+
+
+;;----------------------------------- USA REGULAR ARMY (Tier 1) ----------------------------------
+;------------(1940-1941) squad_45th_rifle_con				;// оборонный отряд 45-й див.
+{"mp/usa/mid/45th_rifle"										("inf_tier1" 									side(usa) lvl(lvl1 lvl2 lvl3) r(1) rm(8) cost(25.0))} ; m1 garand
+{"mp/usa/mid/45th_rifle_at_asst"								("inf_tier1" 									side(usa) lvl() 				r(1) rm(8) cost(25.0))} ; m1 garand + bazooka ammo
+{"mp/usa/mid/45th_rifle_at_m1a1"								("inf_tier1" 									side(usa) lvl() 				r(1) rm(8) cost(52.0))} ; m1 garand + m1a1 bazooka
+{"mp/usa/mid/45th_rifle_band"									("inf_tier1" 									side(usa) lvl(lvl1 lvl2 lvl3) r(1) rm(8) cost(25.0))} ; m1 garand
+{"mp/usa/mid/45th_rifle_bar"									("inf_tier1" 									side(usa) lvl(lvl1 lvl2 lvl3) r(1) rm(8) cost(35.0))} ; m1918a2 bar
+{"mp/usa/mid/45th_rifle_bar_ammo"								("inf_tier1" 									side(usa) lvl(lvl1 lvl2 lvl3) r(1) rm(8) cost(25.0))} ; m1 garand + bar ammo
+{"mp/usa/mid/45th_rifle_bar_asst"								("inf_tier1" 									side(usa) lvl(lvl1 lvl2 lvl3) r(1) rm(8) cost(25.0))} ; m1 garand + bar ammo
+{"mp/usa/mid/45th_rifle_gren"									("inf_tier1" 									side(usa) lvl(lvl1 lvl2 lvl3) r(1) rm(8) cost(20.0))} ; m1903 + rifle grenade
+{"mp/usa/mid/45th_rifle_sniper"									("inf_tier1" 									side(usa) lvl(lvl1 lvl2 lvl3) r(1) rm(8) cost(35.0))} ; m1903a4
+{"mp/usa/mid/45th_sl_asst"										("inf_tier1" 									side(usa) lvl(lvl1 lvl2 lvl3) r(1) rm(8) cost(25.0))} ; m1 garand
+{"mp/usa/mid/45th_sl_asst_gren"									("inf_tier1" 									side(usa) lvl(lvl1 lvl2 lvl3) r(1) rm(8) cost(30.0))} ; m1903 + rifle grenade
+{"mp/usa/mid/45th_sl_rifle"										("inf_tier1" 									side(usa) lvl(lvl1 lvl2 lvl3) r(1) rm(8) cost(25.0))} ; m1 garand
+{"mp/usa/mid/45th_sl_smg"										("inf_tier1" 									side(usa) lvl(lvl1 lvl2 lvl3) r(1) rm(8) cost(30.0))} ; m1 thompson 20
+
+;------------(1940-1941) squad_arm_usa_mgsupport_1941		;// 
+(define "squad_arm_usa_mgsupport_1941" ; tier 2
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 1.5}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.05}
+)
+		{"mp/usa/mid/arm_usa_ranger_mgun_1941"					("squad_arm_usa_mgsupport_1941" 				period(mid)		side(usa) 		lvl(lvl1 lvl2 lvl3)		r(7) rm(99))	{cp 1.0}	{cost 60.0}}
+		{"mp/usa/mid/arm_usa_ranger_mgun_asst_1941"				("squad_arm_usa_mgsupport_1941" 				period(mid)		side(usa) 		lvl(lvl1 lvl2 lvl3)		r(7) rm(99))	{cp 1.0}	{cost 25.0}}
+
+	
+;;================== /USA ==================

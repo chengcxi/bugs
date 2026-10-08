@@ -1,0 +1,4 @@
+{from "pattern light_headgear"
+	{desc "Kubanka ROA"}
+	{entity "kubanka_tilt_01"}
+}

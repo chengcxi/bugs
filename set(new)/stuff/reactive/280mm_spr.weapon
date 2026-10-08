@@ -1,0 +1,50 @@
+;_________________________________________
+; German Heavy Rocket
+;=========================================
+
+
+{from "pattern reactive"		; 
+	{filling "ammo 280mm_nebelwerfer" 1}
+	{fillingVisible "rocket"}
+	{fireSound "reactive/nebel_burst/"}
+	{calibre 280}
+
+;	{spreading
+;		{radiusTable
+;			{0 0}
+;			{100 10}
+;			{200 20}
+;			{249.99 26} ;// max range
+;			{250 100}
+;			{310 200}
+;		}
+;	}
+	
+	{spreading
+		{radiusTable
+			; {0 0}
+			; {100 10}
+			; {200 20}
+			; {249.99 26} ;// max range
+			; {250 100}
+			; {310 200}
+			{0 0}
+			{200 20}
+			{400 40}
+			{499.9 52} ;// max range
+			{505 200}
+			{620 400}
+		}
+	}
+
+;	{gravity 2}
+	{gravity 1}
+
+	{minRange 50}
+	;{aimRange 250}
+	;{maxRange 250} ;//1.95km. 250m minimum arty range for game scale
+	{aimRange 500}
+	{maxRange 500} ;//1.95km. 250m minimum arty range for game scale
+	("reload time" seconds(320))
+	("velocity" mps(230))
+}

@@ -1,0 +1,33 @@
+{breed
+	{behaviour soldier}
+	{skin "ger_heer_45_liberm_g43_1"}
+	{portrait "ger_pzgrenadier"}
+	{icon "smg"}
+	{icon_priority 0}
+	{tags "soldier"}
+	{nationality ger}
+	{armors
+		{head ger_m43_cap_gebirgs}
+	}
+	{perks
+		(include "ability.inc")
+		("rifle_skill_rank_2")
+		("engineer")
+				("tier4_defense")
+	}
+	{veterancy
+		(include "ability.inc")
+		("veterancy_lvl_3")
+	}
+	{inventory
+		{item "mp40_unfolded" filled}
+		{item "mp40 ammo" 192}
+
+		{item "bandage_ger" 3.5 0.5}
+		{item "wirecutters"}
+		{item "shovel_ger"}
+		{item "pickaxe"}
+
+		{in_hands 0}
+	}
+}

@@ -1,0 +1,32 @@
+;LR Arm edited
+;12.04.26
+;
+;_________________________________________
+; ARTY - US 8-inch(203mm) M1 howitzer
+;=========================================
+
+
+{from "pattern gun"			; L/25 "203_m1"
+	{filling "bulletusa_240"}
+	{fireSound "cannon/s5/d1/Shared/Cannon_150to210mm/"}
+	{fireSoundClose "cannon/s5/3p/Shared/Cannon_150to210mm/"}
+	{reloadSound "utility/"}
+	("super_heavy_artillery")
+	{calibre 240}
+;//	{range 495 495} ; // 16.926km
+	{range 657 657} ; // 32km
+
+	("reload time" seconds(105))																		;120426 (85) - (105)
+
+	("velocity" mps(245))
+	
+	("accuracy_indirect"	; // Applies logic for accuracy of indirect weapons over 200m
+		r1(1.50)			; // Accuracy radius for direct-fire munitions
+		r2(8)				; // Accuracy radius for indirect fire										;120426 (12) - (8)
+		rmax(24)			; // Accuracy radius for indirect fire at maximum range						;120426 (30) - (24)
+		range_ap(310)		; // Range after which accuracy drops to prevent farshooting.
+		range_heat(310)		; // Range after which accuracy drops to prevent farshooting.
+		range_he(495)		; // Range after which accuracy drops to prevent farshooting.
+	)
+
+}

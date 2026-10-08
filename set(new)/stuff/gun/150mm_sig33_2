@@ -1,0 +1,54 @@
+;LR Arm edited
+;29.01.2026
+;_________________________________________
+; German early-war heavy infantry support gun
+;=========================================
+
+
+{from "pattern gun"			; L/11 "grille_k"
+	{filling "bulletger_150_l11"}
+	{fireSound "cannon/s5/d1/Shared/Cannon_150to210mm/"}
+	{fireSoundClose "cannon/s5/3p/Shared/Cannon_150to210mm/"}
+	{reloadSound "utility/"}
+;//	("heavy_artillery")
+;//	("range_210_howitzer")
+	("range_260_howitzer_short")
+	{calibre 150}
+;// {range 280 280} ; // 4.7km
+;//	{range 560 560} ; // 4.7km
+
+	("reload time" seconds(21))
+
+	("velocity m/s" ap(1) apcr(1) he(240) heat(1))														;310126 (280) - (240)
+	("armor health" damage(450))
+	("85-155_slope_multipliers")
+
+	; Gr.39 Hl/A
+	("penetration_medium" shell(heat) range(170) a(185) b(185) c(185) d(185) e(185))
+
+	; ("accuracy_indirect"   ; // Applies logic for accuracy of indirect weapons over 200m
+	; 	r1(1.25) 				; // Accuracy radius for direct-fire munitions
+	; 	r2(8.25) 				; // Accuracy radius for indirect fire
+	; 	rmax(22) 				; // Accuracy radius for indirect fire at maximum range
+	; 	range_ap(170) 			; // Range after which accuracy drops to prevent farshooting.
+	; 	range_heat(170) 		; // Range after which accuracy drops to prevent farshooting.
+	; 	range_he(280)			; // Range after which accuracy drops to prevent farshooting.
+	; )
+	{spreading
+			; {radiusTable {0 0} {50 5} {100 10} {150 15} {155 50}}
+			{radiusTable {0 0} {100 7.5} {240 15} {340 22.5} {560 25}  {570 100}}
+	}
+
+	{parameters "he2" ;// stielgranate 42
+		("reload time" seconds(21))
+		{speed 100}
+		{gravity 3}														;//ARM+
+;//		{range 150 150}
+		{range 420 520}
+		{spreading
+;//			{radiusTable {0 0} {50 5} {100 10} {150 15} {155 50}}
+;//			{radiusTable {0 0} {100 10} {200 20} {300 30} {310 100}}
+			{radiusTable {0 0} {100 7.5} {240 15} {340 22.5} {560 25}  {570 100}}
+		}
+	}
+}

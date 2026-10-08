@@ -1,0 +1,49 @@
+(define "pistol_trace"   
+	{trace
+		{view "/texture/fx/tracer_new/trace_solid_orange"
+		{ScaleY 0.019}
+			{Light 1}
+		}
+		{length 2.5}
+	}
+)
+	
+(define "rifle_trace" 
+	{trace
+		{view "/texture/fx/tracer_new/trace_solid_orange"
+			{ScaleY 0.05}
+			{Light 1}
+		}
+		{length 2}
+	}
+)
+
+(define "mgun_trace" 
+	{trace
+		{view "/texture/fx/tracer_new/trace_solid_orange"
+			{ScaleY 0.07}
+			{Light 1}
+		}
+		{length 3}
+	}
+)
+
+(define "hmg_trace" 
+	{trace
+		{view "/texture/fx/tracer_new/trace_scattered_orange"
+			{ScaleY 0.099}
+			{Light 1}
+		}
+		{length 6.0}
+	}
+)
+
+(define "ptr_trace" 
+	{trace
+		{view "/texture/fx/tracer_new/trace_solid_red"
+			{ScaleY 0.1}
+			{Light 1}
+		}
+		{length 5}
+	}
+)

@@ -1,0 +1,18 @@
+{from "pattern mgun"
+	{filling "mgun_ger" 100}
+	{entity "mg45_drum"}
+	{fireSound "mgun/mg42"}
+	{desc "MG-45 Double drum"}
+	{fireSoundclose "mgun/mg42"}
+	{reloadSound "mg42"}
+	{calibre 7.92}
+	{mass 10.00}
+
+	("fire rate" rpm(1400))
+	("velocity" mps(790))
+
+	("reload_belt")
+
+	("burst_long")
+	("spreading_low")
+}

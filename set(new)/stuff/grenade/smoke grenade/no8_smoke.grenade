@@ -1,0 +1,7 @@
+{from "pattern smoke"
+	{tag "smoke launcher"}
+	{tag "smoke"}
+	{inventory {size 2 2}}
+	{entity "no8_smoke"}
+	{mass 1.0}
+}

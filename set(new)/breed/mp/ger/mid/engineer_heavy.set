@@ -1,0 +1,36 @@
+{breed
+	{behaviour soldier}
+;//	{skin "ger_luft_44_pio_rfl_builder"}
+	{skin "ger_km_marine_mg_asst"}
+	{portrait "ger_feldg"}
+	{icon "tech"}
+	{icon_priority 1}
+	{tags "soldier"}
+	{nationality ger_pzpio}
+	{armors
+;//		{head ger_stalhelm_lw_gog_b_up}
+		{head ger_stalhelm_m39_km_gog_b_up}
+	}
+	{perks
+		(include "ability.inc")
+		("smg_skill_rank_2")
+		("engineer_heavy_ger_late")
+		("tier1_standard")
+	}
+	{veterancy
+		(include "ability.inc")
+		("veterancy_lvl_1")
+	}
+	{inventory
+		{item "mp40_unfolded" filled}
+		{item "mp40 ammo" 192}
+
+		{item "bandage_fin" 3.5 0.5}
+		{item "wirecutters"}
+		
+;				{item "shovel_engineer_ger" 1}
+				{item "shovel_engineer_ger_late" 1}	
+		
+		{in_hands 0}
+	}
+}
