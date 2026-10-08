@@ -165,7 +165,7 @@
 ;// TIER V // Reserved for special singleplayer hero breeds
 
 (define "tier5_standard"
-	{"health" "100%"}															;//-250%
+	{"health" "100%"}											;//-250%
 	{"health_regeneration" "20%"}
 	{"stamina" "300%"}
 	{"stamina_regeneration" "250%"}
@@ -174,3 +174,7 @@
 	("standard_vision")
 	{"speed" 1.00}
 )
+
+; ARM-only perk macros. Loaded here because skills.inc (vanilla and MACE)
+; includes health.inc, while MACE can replace skills.inc itself.
+(include "/set/breed/presets/perks/arm_extra_perks.inc")

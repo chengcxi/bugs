@@ -11,7 +11,6 @@
 	}
 	{perks
 		(include "ability.inc")
-		(include "/set/breed/presets/perks/arm_extra_perks.inc")
 		("rifle_skill_rank_2")
 		("engineer_heavy_fin")
 				("tier1_standard")

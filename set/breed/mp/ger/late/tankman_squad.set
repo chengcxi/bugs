@@ -12,7 +12,6 @@
 	}
 	{perks
 		(include "ability.inc")
-		(include "/set/breed/presets/perks/arm_extra_perks.inc")
 		("tankman")
 				("tier3_defense")
 				("tankman_allnations")

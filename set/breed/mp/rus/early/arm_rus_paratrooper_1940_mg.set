@@ -13,7 +13,6 @@
 	}
 	{perks
 		(include "ability.inc")
-		(include "/set/breed/presets/perks/arm_extra_perks.inc")
 		("mg_skill_rank_4")
 		("tier3_defense")
 						("mgunner_ussr")		

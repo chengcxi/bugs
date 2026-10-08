@@ -11,7 +11,6 @@
 	}
 	{perks
 		(include "ability.inc")
-		(include "/set/breed/presets/perks/arm_extra_perks.inc")
 		("mg_skill_rank_3")("tier3_defense")
 							("mgunner_ger42")		
 	}

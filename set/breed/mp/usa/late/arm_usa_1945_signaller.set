@@ -11,7 +11,6 @@
 	}
 	{perks
 		(include "ability.inc")
-		(include "/set/breed/presets/perks/arm_extra_perks.inc")
 ;//		("rifle_skill_rank_4")("tier4_standard")						;//ARm-
 		("rifle_skill_rank_4")("tier3_standard")
 			("signaller_f")												;//ARm+

@@ -11,7 +11,6 @@
 	}
 	{perks
 		(include "ability.inc")
-		(include "/set/breed/presets/perks/arm_extra_perks.inc")
 		("mg_skill_rank_5")("tier4_standard")
 							("mgunner_fin_dt")		
 	}

@@ -13,7 +13,6 @@
 	}
 	{perks
 		(include "ability.inc")
-		(include "/set/breed/presets/perks/arm_extra_perks.inc")
 		("smg_skill_rank_2")
 		("engineer_heavy_ger_late")
 		("tier1_standard")

@@ -11,7 +11,6 @@
 	}
 	{perks
 		(include "ability.inc")
-		(include "/set/breed/presets/perks/arm_extra_perks.inc")
 		("loader_skill_smg_rank_2")
 		("skilled_repair")
 		("skilled_gun")
