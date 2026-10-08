@@ -1,0 +1,12 @@
+(include "/set/arm_extra_macros.inc")
+;LR Arm edited
+;_________________________________________
+; USSR Heavy AT gun
+;=========================================
+
+
+{from "122mm_d25"			; L/48 "ISU-122s"
+	("range_230_l")
+	("reload time" seconds(16))
+
+}

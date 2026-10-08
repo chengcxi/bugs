@@ -1,0 +1,33 @@
+;ARm edited
+;
+{from "pattern throwable"
+	{tag "at"}
+	{tag  "grenade at"}  ;IAEMadd
+	{inventory {size 3 2}}
+
+	;{throw;;;;;;;;;;;;;;IAEMadd
+	;	{range 38}
+	;	{startAngle 40}
+	;	{Spreading 0.05
+	;		{SpreadPower 2}
+	;	}
+	;	{constantSpeed 17}
+	;};;;;;;;;;;;;;;IAEMadd
+
+	{throw;;;;;;;;;;;;;;IAEMadd
+;//		{range 32} ;in-game 32m
+		{range 32} ;in-game 32m													;ARm 200226 (27) - (32)
+		{startAngle 35}
+		;{spreading 8.0
+		;               {SpreadPower     0.05}
+		;               {SpreadXYRatio   1.00}
+		;               {radiusTable {0 2}{10 4}{30 6}{40 8}{40 10}}
+		;}
+		{Spreading 0.05
+			{SpreadPower 2}
+		}
+		{constantSpeed 16}
+	};;;;;;;;;;;;;;IAEMadd
+
+                ;{possibleDamageRadius 1.5}
+}

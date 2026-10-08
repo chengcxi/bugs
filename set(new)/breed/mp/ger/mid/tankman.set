@@ -1,0 +1,35 @@
+{breed
+	{behaviour soldier}
+	{skin "ger_heer_43_pzwaffe_1"}
+	{portrait "ger_tankman"}
+	{icon "tech"}
+	{icon_priority 0}
+	{tags "crew"}
+	{nationality ger_pzlehr}
+	{armors
+		{head ger_fieldcap_m43_panzer_var2}
+	}
+	{perks
+		(include "ability.inc")
+		("tankman")
+				("tier3_defense")
+				("tankman_allnations")
+	}
+	{veterancy
+		(include "ability.inc")
+		("veterancy_lvl_0")
+	}
+	{inventory
+		{item "mp38_folded" filled}
+		{item "mp40 ammo" 64}
+
+		{item "p38" filled}
+		{item "pistol ammo" 24 8}
+		
+						{item "shovel_tankman"}
+
+		{item "bandage_ger" 2.5 0.5}
+
+		{in_hands 0}
+	}
+}

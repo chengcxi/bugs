@@ -1,0 +1,24 @@
+(include "/set/arm_extra_macros.inc")
+;_________________________________________
+; British Aircraft Autocannon
+;=========================================
+
+
+{from "pattern gun"			; "typhoon_mk1b"
+	{filling "bullet_20_auto aphe" 572}
+	{fireSound "cannon/s1/d1/Shared/Autocannon_20to30mm/Multi_Barrel/Head/"}
+	{fireSoundclose "cannon/s1/d1/Shared/Autocannon_20to30mm/Multi_Barrel/Head/"}
+	{reloadSound "interior/large/auto_reload_interior"}
+	("range_aircraft_gun")
+	{cursor "ironsights/aa"}
+	{calibre 20}
+
+	("fire rate" rpm(2600))			;// 650 per gun irl
+	("reload time" seconds(20))
+
+	("velocity" mps(700))							;//placeholder
+	("armor health" damage(40))
+	("20_slope_multipliers")
+
+	("penetration" a(28) b(19) c(16) d(12) e(7))	;//placeholder
+}

@@ -1,0 +1,38 @@
+{breed
+	{behaviour soldier}
+	{skin "ger_luft_44_fj_nco_smg"}
+	{portrait "ger_jager"}
+	{icon "smg"}
+	{icon_priority 0}
+	{tags "soldier"}
+	{nationality ger_fallschirmjaeger}
+	{armors
+;//		{head ger_m38_helmet}
+		{head ger_off_cap_luft_fielddiv_em_2}
+	}
+	{perks
+		(include "ability.inc")
+		("smg_skill_rank_4")
+				("tier3_recon")	
+				("binocular_vision")
+	}
+	{veterancy
+		(include "ability.inc")
+		("veterancy_lvl_6")
+	}
+	{inventory
+		{item "leuchtpistole34" filled}
+		{item "flare ammo" 1}
+
+		{item "stg44_scope" filled}
+		{item "stg44 ammo" 180}
+		
+		{item "bandage_ger" 4.5 0.5}
+		{item "m24_smoke_supplies grenade" 1}
+	;	{item "binocular"}
+		{item "german_radio"}	
+	
+		{in_hands 1}
+		
+	}
+}

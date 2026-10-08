@@ -1,0 +1,4566 @@
+; File: 		ext_units_rus.set
+; Catalog: 		set\multiplayer\units\conquest
+; Created by: 	Max Drechsler
+; Created:		x.xx.xxxx
+; Modify by:	Max Drechsler
+; Modify:		02.09.2026
+; Version:		x.x
+; Description: 
+; DSL GEM ENGINE 2 Gates of Hell
+
+;========================================================================== Modded ==========================================================================
+
+; "vs(...)" corresponds to a define found in the settings down this file
+; v() If squad is motorised, this is the vehicle that carries the men.
+; cd() corresponds to countdown delay to spawn the unit once battle begins
+; ci() corresponds to cooldown to buy unit once again
+; side() corresponds to side (faction)
+; n() corresponds to number of crew in the unit, the type of crew is defined in the "vs"
+; g() corresponds to group, which is for classification and collective cooldowns
+; sc() corresponds to the score given to the player upon killing this unit
+; b() corresponds to the button where this unit is located in the menus
+; i() corresponds to icon order
+; cw() corresponds to capture weight for flags
+; cp() corresponds to CP, that is, the value that units have that fill up how many troops can be fielded
+; {cost -} corresponds to MP cost of the unit
+; {level 6} Corresponds to player XP progress in player profile from steam
+; {research_stage 4} corresponds to research stage of dynamic campaign
+; {squad_cost_factor 1} - adds the cost of the crew / the cost of the squad members with this factor
+; scf() - adds the cost of the crew / the cost of the squad members with this factor
+; {score_factor 0.05} - when the unit is killed, it will have an impact on the MP score of 0.05*Cost. This only works if {squad_cost_factor 1}. With a fixed cost for the squad such (= scf 0), you need to adjust the scores of the individual units manually
+; {score 20} - when the unit is killed, it will have an impact on the MP score of 20
+; {round_multiple 5.0} - the cost of the unit is rounded up or down to this multiple
+
+;//	Ящик с боеприпасами - 50 AP
+;//	Ящик фортификаторов - 300 AP
+
+;//	Тележка малая - 75 AP
+;//	Тележка средняя - 150 AP
+;//	Тележка большая - 325 AP
+
+;//	Грузовик малый - 300 AP
+;//	Грузовик средний - 425 AP
+;//	Грузовик тяжелый - 625 AP
+;//	Грузовик сверхтяжелый - 750 AP
+
+;//	Грузовик легкий инженерный - 100 AP
+;//	Грузовик средний инженерный - 225 AP
+
+;//	Грузовик снабжения оружием - 800 AP
+
+;//	Машина полевого ремонта - 550 AP
+
+;//	Бензовоз - 500 AP
+
+;--																															39(1-4)
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+
+;//	("generic_v_conquest" side(rus) r(%min_stage) mr(%max_stage) cw(%cw) cp(%cp))
+;//	{content "* ( mp/%side/%period/%crew )"}
+;//	{conditions "%condition"}
+;//	{action "%action"}
+;//	{button "vehicles"}
+
+{"main_ARM(rus)"
+	("squad_with1types_conquest" side(rus) period(late) min_stage(0) max_stage(99) 	c1(officer:1)
+	)
+}
+
+;==================================================== USSR ========================================================================
+;==================================================== USSR VANILLA ================================================================
+;;--------------------------------------------------- USSR VANILLA Squads ---------------------------------------------------------
+
+;--																															39(1-4)
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+("squad_with2types_conquest" 
+	side(rus) 
+	period(mid) 
+	min_stage(1) max_stage(10) 
+	name(squad_conscripts_con)		
+	c1(conscript_nco:1) 
+		c2(conscript_rifle:8)
+)
+
+;;--------------------------------------------------- USSR VANILLA Squads Single ---------------------------------------------------
+
+;--																															39(1-4)
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+("squad_with1types_conquest" 
+	side(rus) 
+	period(mid) 
+	min_stage(3) max_stage(99) 
+	name(single_officer)		
+	c1(commisar:1)
+)
+
+;--																															39(1-4)
+;--																															40(5-6)
+;--																															41(7-8)
+("squad_with5types_conquest" 
+	side(rus) period(mid) 
+	min_stage(2) max_stage(8) 
+	name(squad_nkvd_rifle_con)		
+	c1(nkvd_nco_rifle:1) 
+		c2(nkvd_senior_rifle:1) 
+			c3(nkvd_rifle:4) 
+				c4(nkvd_mg:1) 
+					c5(nkvd_mg_asst:1)
+)
+
+;--																															41(7-8)
+;--																															42(9-10)
+("squad_with3types_conquest" 
+	side(rus) period(mid) 
+	min_stage(7) max_stage(10) 
+	name(squad_nkvd_at_rifle_con)		
+	c1(nkvd_nco_rifle:1) 
+		c2(nkvd_at_rifle:3) 
+			c3(nkvd_at_asst:3)
+)
+
+;--																															39(1-4)
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+("squad_with5types_conquest" 
+	side(rus) period(mid) 
+	min_stage(1) max_stage(8) 
+	name(squad_sapper_con)				
+	c1(sapper_nco_rifle:1) 
+		c2(sapper_builder:1) 
+			c3(sapper_mine_at:1) 
+				c4(sapper_mine_ap:1) 
+					c5(sapper_rifle:4)
+)
+
+
+;--																															41(7-8)
+;--																															42(9-10)
+("squad_with2types_conquest" 
+	side(rus) 
+	period(mid) 
+	min_stage(7) 
+	max_stage(10) 
+	name(single_at)		
+	c1(antitank_1:2) 							;PTRD
+		c2(antitank_2:1)
+)
+
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+("squad_with9types_conquest" 
+	side(rus) period(late) 
+	min_stage(13) max_stage(99) 
+	name(squad_sapper_44_con)		
+	c1(sapper_nco:1) 
+		c2(sapper_senior:1) 
+			c3(sapper_smg_pps43:2) 
+				c4(sapper_rifle:1) 
+					c5(sapper_builder:1) 
+						c6(sapper_miner_ap:1) 
+							c7(sapper_miner_at:1) 
+								c8(sapper_flamer:1) 
+									c9(sapper_smg_stick:1)
+)
+
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+("squad_with2types_conquest" 
+	side(rus) 
+	period(mid) 
+	min_stage(7) max_stage(12) 
+	name(single_at2)			
+	c1(antitank_ptrs:1) 						;PTRS
+		c2(antitank_2:1)
+)
+
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+("squad_with2types_conquest" 
+	side(rus) 
+	period(late) 
+	min_stage(13) max_stage(99) 
+	name(single_at_pzs_late_con)	
+	c1(antitank_asst2:1)
+		c2(antitank_5:1)
+)
+ 
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+("squad_with2types_conquest" 
+	side(rus) 
+	period(late) 
+	min_stage(13) max_stage(99) 
+	name(single_at_late_con)	
+	c1(antitank_3:1) 
+		c2(antitank_4:1)
+)
+
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+("squad_with2types_conq_scf" 
+	side(rus) 
+	period(mid) 
+	min_stage(5) max_stage(12) 
+	name(single_riflegrenade)	
+	c1(antitank_3:1) 
+		c2(antitank_4:1) 
+	scf(1.38)
+)
+
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+("squad_with2types_conquest" 
+	side(rus) 
+	period(mid) 
+	min_stage(5) max_stage(99) 
+	name(single_flamer)		
+	c1(flamer:1) 
+		c2(rifleman_1:2)
+)
+
+;--																															39(1-4)
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+("squad_with1types_conquest" 
+	side(rus) 
+	period(mid) 
+	min_stage(3) max_stage(99) 
+	name(single_sniper)		
+	c1(sniper:3)
+)
+
+;--																															39(1-4)
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+("squad_with1types_conquest" 
+	side(rus) 
+	period(mid) 
+	min_stage(1) max_stage(99) 
+	name(single_medic)		
+	c1(medic:2)
+)
+
+;--																															39(1-4)
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+("squad_with1types_conquest" 
+	side(rus) 
+	period(mid) 
+	min_stage(2) max_stage(99) 
+	name(single_ap_miner)		
+	c1(miner-ap:2)
+)
+
+;--																															39(1-4)
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+("squad_with1types_conquest" 
+	side(rus) 
+	period(mid) 
+	min_stage(3) 
+	max_stage(99) 
+	name(single_at_miner)		
+	c1(miner-at:2)
+)
+
+;--																															39(1-4)
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+("squad_with2types_conquest" 
+	side(rus) 
+	period(mid) 
+	min_stage(4) max_stage(99) 
+	name(single_engineer)		
+	c1(engineer_1:1) c2(engineer_2:1)
+)
+
+;--																															39(1-4)
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+;	("squad_with2types_conquest" 
+;		side(rus) 
+;		period(mid) 
+;		min_stage(0) max_stage(0)  
+;		name(single_tankman)		
+;		c1(tank_commander:1) 
+;			c2(tankman:3)
+;	)
+
+
+;--																															39(1-4)
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+("squad_with3types_conquest" 
+	side(rus) 
+	period(mid)
+	min_stage(1) max_stage(99) 
+	name(squad_officer_con)	
+	c1(nco:1) 
+		c2(commisar:1) 
+			c3(sniper:2)
+)
+
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"squad_officer_gaz_con"
+	("squad_vehicle3"		 
+	side(rus) 
+	period(mid) 
+	min_stage(5) max_stage(99) 
+	cw(3) cp(2) 
+	vehicle(gaz67) 
+	crew1(nco:1) 
+		crew2(commisar:1) 
+			crew3(sniper:2)
+	) 
+}
+
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+("squad_with3types_conquest" 
+	side(rus) 
+	period(mid) 
+	min_stage(1) max_stage(99) 
+	name(squad_border)			
+	c1(militia_1:2)	
+		c2(militia_2:2)  
+			c3(militia_3:2)
+)
+
+;--																															39(1-4)
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+("squad_with2types_conquest" 
+	side(rus) 
+	period(mid) 
+	min_stage(1) max_stage(99) 
+	name(squad_recon_con)				
+	c1(recon_nco:1) 
+		c2(recon_rifle:5)
+)
+
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+("squad_with4types_conquest" 
+	side(rus) 
+	period(mid) 
+	min_stage(5) max_stage(12) 
+	name(squad_rifleunit_alt_con)		
+	c1(nco_rifle:1) 
+		c2(senior_sa:1) 
+			c3(rifleman_3:8) 
+				c4(smg_3:1)
+)
+
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+("squad_with4types_conquest" 
+	side(rus) 
+	period(mid) 
+	min_stage(7) max_stage(12) 
+	name(squad_at_rifle_con)			
+	c1(nco:1) 
+		c2(antitank_ptrs:1) 
+			c3(antitank_1:2) 
+				c4(antitank_2:3)
+)
+
+;--																															39(1-4)
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+("squad_with5types_conquest" 
+	side(rus) 
+	period(mid) 
+	min_stage(1) max_stage(12) 
+	name(squad_rifleunit_con)			
+	c1(nco:1) 
+		c2(senior_sa:1) 
+			c3(rifleman_3:7) 
+				c4(mgun_1:1) 
+					c5(mgun_2:1)
+)
+
+;--																															39(1-4)
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+{"squad_rifle_motorised_con" 
+	("squad_vehicle6"		 
+		side(rus) 
+		period(mid) 
+		min_stage(2) max_stage(10) 
+		vehicle(zis5) 
+		cw(1) cp(1) 
+		crew1(rifleman_1:1) 
+			crew2(nco_42:1) 
+				crew3(senior_sa:1) 
+					crew4(rifleman_3:5) 
+						crew5(mgun_1:1) 
+							crew6(mgun_2:1)
+	)
+}
+
+;--																															43(11-12)
+;--																															44(13-14)
+("squad_with6types_conquest" 
+	side(rus) 
+	period(late) 
+	min_stage(11) max_stage(14) 
+	name(squad_rifle_43_con)			
+	c1(nco:1) 
+		c2(senior_sa:1) 
+			c3(rifleman_3:1) 
+				c4(rifleman_2:4) 
+					c5(mgun_1:1) 
+						c6(mgun_2:1)
+)
+
+;--																															43(11-12)
+;--																															44(13-14)
+("squad_with6types_conquest" 
+	side(rus) 
+	period(late) 
+	min_stage(11) max_stage(14) 
+	name(squad_rifle_43_heavy_con)	
+	c1(nco:1) 
+		c2(senior_sa:1) 
+			c3(rifleman_3:1) 
+				c4(rifleman_2:2) 
+					c5(mgun_1:2) 
+						c6(mgun_2:2)
+)
+
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+{"squad_guardsrifle_motorised_con" 
+	("squad_vehicle7"		
+		side(rus) 
+		period(mid) 
+		min_stage(7) max_stage(12)
+		vehicle(zis5) 
+		cw(1) cp(1) 
+		crew1(guard_1:1) 
+			crew2(guard_nco:1) 
+				crew3(guard_senior:1) 
+					crew4(guard_2:1) 
+						crew5(guard_1:4)
+							crew6(guard_4:1) 
+								crew7(guard_5:1)
+	)
+}
+
+;--																															39(1-4)
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+("squad_with4types_conquest" 
+	side(rus) 
+	period(mid) 
+	min_stage(3) max_stage(12) 
+	name(squad_smg_con)			
+	c1(nco:1) 
+		c2(smg_1:1) 
+			c3(smg_2:3) 
+				c4(smg_3:5)
+)
+
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+("squad_with6types_conquest" 
+	side(rus) 
+	period(mid) 
+	min_stage(7) max_stage(12) 
+	name(squad_mountainrifles_con)	
+	c1(mountain_nco:1) 
+		c2(mountain_senior:1) 
+			c3(mountain_1:2) 
+				c4(mountain_3:3) 
+					c5(mountain_mg:1) 
+						c6(mountain_mg_asst:1)
+)
+
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+("squad_with6types_conquest" 
+	side(rus) 
+	period(mid) 
+	min_stage(7) max_stage(12) 
+	name(squad_guardsrifle_con)	
+	c1(guard_nco:1) 
+		c2(guard_senior:1)
+			c3(guard_2:1) 
+				c4(guard_1:4) 
+					c5(guard_4:1) 
+						c6(guard_5:1)
+)
+
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+("squad_with6types_conquest" 
+	side(rus) 
+	period(mid) 
+	min_stage(7) max_stage(12) 
+	name(squad_guards_smg_con)	
+	c1(guard_nco:1) 
+		c2(guard_senior:1) 
+			c3(guard_2:2) 
+				c4(guard_3:4) 
+					c5(guard_4:1) 
+						c6(guard_5:1)
+)
+
+
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+("squad_with3types_conquest" 
+	side(rus) 
+	period(mid) 
+	min_stage(7) max_stage(14) 
+	name(squad_nkvd_recon_con)		
+	c1(nkvd_recon_nco:1) 
+		c2(nkvd_recon_smg:1) 
+			c3(nkvd_recon_rifle:9)
+)
+
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+("squad_with6types_conquest" 
+	side(rus) 
+	period(late) 
+	min_stage(13) max_stage(99) 
+	name(squad_smg_mg_44_con)		
+	c1(nco:1) 
+		c2(senior_smg_pps43:1) 
+			c3(smg_2:2) 
+				c4(smg_3:1) 
+					c5(mgun_1:1) 
+						c6(mgun_3:1)
+)
+
+;--																															43(11-12)
+;--																															44(13-14)
+("squad_with6types_conquest" 
+	side(rus) period(late) 
+	min_stage(11) max_stage(14) 
+	name(squad_smg_mg_43_con)		
+	c1(nco_stick:1) 
+		c2(senior_smg:1) 
+			c3(smg_2:3) 
+				c4(smg_3:2) 
+					c5(mgun_1:1) 
+						c6(mgun_3:1)
+)
+
+;--																															43(11-12)
+;--																															44(13-14)
+("squad_with6types_conquest" 
+	side(rus) period(late) 
+	min_stage(11) max_stage(14) 
+	name(squad_smg_mg_43_heavy_con)	
+	c1(nco_stick:1) 
+		c2(senior_smg_stick:1) 
+			c3(smg_2:2) 
+				c4(smg_3:1) 
+					c5(mgun_1:2) 
+							c6(mgun_3:2)
+)
+
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+("squad_with6types_conquest" 
+	side(rus) 
+	period(late) 
+	min_stage(13) max_stage(99) 
+	name(squad_guardsrifle_44_con)	
+	c1(guards_nco:1) 
+		c2(guards_senior_sa:1) 
+			c3(guards_rifleman_3:1) 
+				c4(guards_rifleman_2:2) 
+					c5(guards_mgun_1:1) 
+						c6(guards_mgun_2:1)
+)
+
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+("squad_vehicle_with7types_conquest" 
+	side(rus) 
+	period(late) 
+	min_stage(13) max_stage(99) 
+	name(squad_guardsrifle_44_motor_con) 
+;//	vehicle(zis5) 
+	vehicle(cckw_ussr) 
+	c1(guards_rifleman_2:1) 
+		c2(guards_nco:1) 
+			c3(guards_senior_sa:1) 
+				c4(guards_rifleman_3:2) 
+					c5(guards_rifleman_2:2) 
+						c6(guards_mgun_1:1) 
+							c7(guards_mgun_2:1)
+)
+
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+("squad_with6types_conquest" 
+	side(rus) 
+	period(late) 
+	min_stage(13) max_stage(99) 
+	name(squad_guards_smg_mg_44_con)	
+	c1(guards_nco:1) 
+		c2(guards_senior_smg:1) 
+			c3(guards_smg_2:2) 
+				c4(guards_smg_stick:1) 
+					c5(guards_mgun_1:1) 
+						c6(guards_mgun_3:1)
+)
+
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+("squad_vehicle_with7types_conquest" 
+	side(rus) 
+	period(late) 
+	min_stage(13) max_stage(99) 
+	name(squad_guards_smg_mg_44_motor_con) 
+;//	vehicle(zis5) 
+	vehicle(cckw_ussr)	
+	c1(guards_rifleman_2:1) 
+		c2(guards_nco:1) 
+			c3(guards_senior_smg:1) 
+				c4(guards_smg_2:2) 
+					c5(guards_smg_stick:2) 
+						c6(guards_mgun_1:1) 
+							c7(guards_mgun_3:1)
+)
+
+;--																															39(1-4)
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+("squad_with6types_conquest" 
+	side(rus) 
+	period(mid) 
+	min_stage(3) max_stage(10) 
+	name(squad_nkvd_mountain_con)	
+	c1(nkvd_mountain_nco:1) 
+		c2(nkvd_mountain_senior:1) 
+			c3(nkvd_mountain_sa:1) 
+				c4(nkvd_mountain_rifle:7) 
+					c5(nkvd_mountain_mg:1)
+						c6(nkvd_mountain_mg_asst:1)
+)
+
+
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+("squad_with7types_conquest" 
+	side(rus) 
+	period(late) 
+	min_stage(13) max_stage(99) 
+	name(squad_guards_cav_44_con)	
+	c1(guards_cav_nco:1) 
+		c2(guards_cav_senior_sa:1) 
+			c3(guards_cav_smg_drum:2) 
+				c4(guards_cav_sa:1) 
+					c5(guards_cav_rifle:1) 
+						c6(guards_cav_mg:1) 
+							c7(guards_cav_mg_asst:1)
+)
+
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+("squad_with8types_conquest" 
+	side(rus) 
+	period(late) 
+	min_stage(13) max_stage(99) 
+	name(squad_guards_marines_44_con)	
+	c1(guards_marine_nco:1) 
+		c2(guards_marine_senior:1) 
+			c3(guards_marine_smg:1) 
+				c4(guards_marine_sa:1) 
+					c5(guards_marine_sa_pzf:2) 
+						c6(guards_marine_rifle:1) 
+							c7(guards_marine_mg:1) 
+								c8(guards_marine_mg_asst:1)
+)
+
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+("squad_with7types_conquest" 
+	side(rus) 
+	period(mid) 
+	min_stage(2) max_stage(10) 
+	name(squad_nkvd_mountain_cav_con)	
+	c1(nkvd_mountain_cav_nco:1) 
+		c2(nkvd_mountain_cav_senior:1) 
+			c3(nkvd_mountain_cav_smg:1) 
+				c4(nkvd_mountain_cav_sa:1) 
+					c5(nkvd_mountain_cav_rifle:1) 
+						c6(nkvd_mountain_cav_mg:1) 
+							c7(nkvd_mountain_cav_mg_asst:1)
+)
+
+;--																															40(5-6)
+;--																															41(7-8)
+("squad_with6types_conquest" 
+	side(rus) period(mid) 
+	min_stage(5) max_stage(8) 
+	name(squad_marines_reg_con)	
+	c1(marine_reg_nco:1)
+		c2(marine_reg_senior:1) 
+			c3(marine_reg_smg_m1928:2) 
+				c4(marine_reg_rifle:4) 
+					c5(marine_reg_mg:1) 
+						c6(marine_reg_mg_asst:1)
+)
+
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+("squad_with7types_conquest" 
+	side(rus) 
+	period(late) 
+	min_stage(13) max_stage(99) 
+	name(squad_cav_44_con)	
+	c1(cav_nco_stick:1) 
+		c2(cav_senior_sa:1) 
+			c3(cav_smg_pps43:1)
+				c4(cav_smg_drum:1) 
+					c5(cav_rifle:2) 
+						c6(cav_mg:1)
+							c7(cav_mg_asst:1)
+)
+
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+("squad_with4types_conquest" 
+	side(rus) 
+	period(late) 
+	min_stage(13) max_stage(99) 
+	name(squad_assaultsappers_con)	
+	c1(assault-sap_sl:1) 
+		c2(assault-sap_sl_asst_mg:1) 
+			c3(assault-sap_3:1) 
+				c4(assault-sap_1:7)
+)
+
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+("squad_vehicle_with7types_conquest" 
+	side(rus) 
+	period(late) 
+	min_stage(13) max_stage(99) 
+	name(squad_elite_guardsrifle_44_motor_con) 
+	vehicle(m3a1e1_scout) 
+	c1(elite_guards_rifle:1) 
+		c2(elite_guards_nco:1) 
+			c3(elite_guards_senior_sa:1) 
+				c4(elite_guards_sa:1) 
+					c5(elite_guards_rifle:2) 
+						c6(elite_guards_mg:1) 
+							c7(elite_guards_mg_asst:1)
+)
+
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+("squad_vehicle_with7types_conquest" 
+	side(rus) period(late) 
+	min_stage(13) max_stage(99) 
+	name(squad_elite_guards_smg_mg_44_motor_con) 
+	vehicle(m3a1e1_scout_mgun) 
+	c1(elite_guards_rifle:1) 
+		c2(elite_guards_nco:1) 
+			c3(elite_guards_senior_smg:1)
+				c4(elite_guards_smg_drum:1) 
+					c5(elite_guards_smg_pps43:2) 
+						c6(elite_guards_mg:1) 
+							c7(elite_guards_mg_asst_smg:1)
+)
+
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+("squad_with7types_conquest" 
+	side(rus) period(late) 
+	min_stage(15) max_stage(99) 
+	name(squad_mountain_cav_44_con)	
+	c1(mountain_cav_nco:1) 
+		c2(mountain_cav_senior:1) 
+			c3(mountain_cav_smg:1) 
+				c4(mountain_cav_sa:1) 
+					c5(mountain_cav_rifle:1) 
+						c6(mountain_cav_mg:1) 
+							c7(mountain_cav_mg_asst:1)
+)
+
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+("squad_with3types_conquest" 
+	side(rus) 
+	period(late) 
+	min_stage(13) max_stage(99) 
+	name(squad_assaultsappers_flame_con)	
+	c1(assault-sap_sl:1) 
+		c2(assault-sap_sl_asst:2) 
+			c3(assault-sap_4:4)
+)
+
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+("squad_with3types_conquest" 
+	side(rus) 
+	period(late) 
+	min_stage(15) max_stage(99) 
+	name(squad_assaultsappers_at_con)	
+	c1(assault-sap_sl:1) 
+		c2(assault-sap_at:6) 
+				c3(assault-sap_4:2)
+)
+
+;--																															42(9-10)
+;--																															43(11-12)
+("squad_with7types_conquest" 
+	side(rus) 
+	period(mid) 
+	min_stage(9) max_stage(12) 
+	name(squad_paras_con)			
+	c1(para_nco:1) 
+		c2(para_1:2) 
+			c3(para_2:3) 
+				c4(para_4:1) 
+					c5(para_5:3) 
+						c6(para_mg:1) 
+							c7(para_mg_asst:1)
+)
+
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+("squad_with3types_conquest" 
+	side(rus) 
+	period(mid) 
+	min_stage(7) max_stage(99) 
+	name(squad_spetsnaz)		
+	c1(spetsnaz_1:2) 
+		c2(spetsnaz_2:2) 
+			c3(spetsnaz_3:1)
+)
+
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+("squad_with6types_conquest" 
+	side(rus) 
+	period(mid) 
+	min_stage(7) max_stage(12) 
+	name(squad_marines_con)	
+	c1(marine_2:1) 
+		c2(marine_senior:1) 
+			c3(marine_4:2) 
+				c4(marine_smg_m1928:4)
+					c5(marine_3:1) 
+						c6(marine_mg_asst:1)
+)
+
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+("squad_vehicle_with7types_conquest" 
+	side(rus) 
+	period(late) 
+	min_stage(13) max_stage(99) 
+	name(squad_guardsrifle_44_motor_con) 
+	vehicle(zis5) 
+	c1(guards_rifleman_2:1) 
+		c2(guards_nco:1) 
+			c3(guards_senior_sa:1) 
+				c4(guards_rifleman_3:2) 
+					c5(guards_rifleman_2:2) 
+						c6(guards_mgun_1:1)
+							c7(guards_mgun_2:1)
+ )
+
+
+;--																															42(9-10)
+;--																															43(11-12)
+("squad_with7types_conquest" 
+	side(rus) 
+	period(mid) 
+	min_stage(9) max_stage(12) 
+	name(squad_guards_paras_con)		
+	c1(guard_para_nco:1) 
+		c2(guard_para_nco_asst_sa:1) 
+			c3(guard_para_smg:2) 
+				c4(guard_para_sa:2) 
+					c5(guard_para_rifle:2) 
+						c6(guard_para_mg_dt:1) 
+							c7(guard_para_mg_asst_dt:1)
+)
+
+;==================================================== USSR MODDED ================================================================
+;;--------------------------------------------------- USSR MODDED Squads ---------------------------------------------------------
+;--																															39(1-4)
+{"squad_colonel(rus)"  
+	("squad_vehicle2" 
+	side(rus) 
+	period(early) 
+	min_stage(1) max_stage(99) 
+	vehicle(gaz67) 
+	cw(3) cp(0) 	
+		crew1(nkvd_1:2)			
+			crew2(rus_colonel:1)	
+	)
+	{cost_sp 25}
+}
+
+;--																															39(1-4)
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"squad_artillerymen(rus)"  
+	("squad_vehicle2" 
+	side(rus) 
+	period(mid) 
+	min_stage(1) max_stage(99) 
+;//	vehicle(zis5_open) 
+	vehicle(voroshilovets)
+	cw(3) cp(10) 	
+		crew1(artilleryman_ls:1)	
+			crew2(artilleryman_private:9)	
+	)
+}
+
+;--																															39(1-4)
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"squad_soviet_fortifiers(rus)"  
+	("squad_vehicle3" 
+	side(rus) 
+	period(early) 
+	min_stage(1) max_stage(99) 
+	vehicle(t20) 
+	cw(3) cp(2) 
+	crew1(engineer_2:2)			
+		crew2(soviet_fortifier_ls:1)	
+			crew3(soviet_fortifier_private:3)	
+	)
+	{cost_ap 500}
+	{cost_sp 10}
+	{not_for_ai_sale 1}
+}
+
+;--																															39(1-4)
+;//	{"squad_soviet_fortifiers(rus)"  
+;//		("squad_vehicle3" 
+;//		side(rus) 
+;//		period(early) 
+;//		min_stage(1) max_stage(99) 
+;//		vehicle(gaz_aaa_open) 
+;//		cw(3) cp(10) 	
+;//		crew1(soviet_fortifier_private:1)			
+;//		crew2(soviet_fortifier_ls:1)	
+;//		crew3(soviet_fortifier_private:8)	
+;//		)
+;//	}
+
+;--																															39(1-4)
+;--																															40(5-6)	
+("squad_with11types_conquest" 
+	side(rus) 
+	period(early) 
+	min_stage(5) max_stage(6) 
+	name(squad_arm_rkka_militia_1939)	
+	c1(nco:1)
+	c2(arm_rkka_militia_1939_civ_1:1)	
+		c3(arm_rkka_militia_1939_civ_2:1)	
+			c4(arm_rkka_militia_1939_civ_3:2)	
+				c5(arm_rkka_militia_1939_civ_4:1)	
+					c6(arm_rkka_militia_1939_civ_5:1)	
+						c7(arm_rkka_militia_1939_civ_6:1)	
+							c8(arm_rkka_militia_1939_civ_7:1)	
+								c9(arm_rkka_militia_1939_civ_8:1)	
+									c10(arm_rkka_militia_1939_civ_9:1)	
+										c11(arm_rkka_militia_1939_civ_10:1)	
+)
+
+;--																															39(1-4)
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"squad_engineer(rus)"  
+	("squad_vehicle2" 
+	side(rus) 
+	period(early) 
+	min_stage(1) max_stage(99) 
+	vehicle(gaz_aaa_open) 
+	cw(3) cp(10) 	
+	crew1(engineer_2:1)	
+		crew2(engineer_2:7)		
+	)
+}
+
+;--																															39(1-4)
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+("squad_with1types_conquest" 
+	side(rus) 
+	period(early) 
+	min_stage(1) max_stage(10) 
+	name(squad_miner_ap)
+	c1(miner-ap:8)
+)
+
+;--																															39(1-4)
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+("squad_with1types_conquest" 
+	side(rus) 
+	period(early) 
+	min_stage(1) max_stage(10) 
+	name(squad_miner_at)
+	c1(miner-at:8)
+)
+
+;--																															39(1-4)
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+("squad_with7types_conquest" 
+	side(rus) 
+	period(early) 
+	min_stage(1) max_stage(4) 
+	name(squad_rkka_infantry_1939)
+	c1(rkka_commisar_1939:1)
+		c2(rkka_soldier_1939_2:3)	
+			c3(rkka_soldier_1939:4)
+				c4(rifle-avs:1)
+					c5(rkka_soldier_1939_rfl_gren:1)
+						c6(rkka_soldier_1939_mg:1)
+							c7(medic:1)
+)
+
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"squad_gaz67_medic(rus)"  
+	("squad_vehicle2" 
+	side(rus) 
+	period(early) 
+	min_stage(5) max_stage(99) 
+	vehicle(gaz67_open) 
+	cw(3) cp(0) 	
+	crew1(medic:1)			
+		crew2(medic:3)	
+	)
+}
+
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															45(15-99) ;99+
+;sign
+("squad_with2types_conquest" 
+	side(rus) 
+	period(mid) 
+	min_stage(5) max_stage(99) 
+	name(single_signaller_extcq)	
+	c1(nco:1)	
+		c2(signaller:1)
+;	{cost_sp 2}	
+)	
+
+;--																															42(9-10)
+;--																															43(11-12)
+("squad_with2types_conquest" 
+	side(rus)
+	period(mid) 
+	min_stage(9) max_stage(12) 
+	name(squad_penal_con) 			
+	c1(nkvd_1:1) 
+		c2(penal_rifle:11) 
+)
+
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+("squad_with4types_conquest" 
+	side(rus) 
+	period(mid) 
+	min_stage(7) max_stage(12) 
+	name(squad_border_1941)			
+	c1(arm_rus_border_1940_arifle:4)
+		c2(arm_rus_border_1940_rifle:4)
+			c3(arm_rus_border_1940_mg:1)
+				c4(medic:1)
+				
+)
+
+;--																															39(1-4)
+;--																															40(5-6)
+;--																															41(7-8)
+("squad_with8types_conquest" 
+	side(rus) 
+	period(mid) 
+	min_stage(1) max_stage(8) 
+	name(squad_nkvd_1940) 			
+	c1(nkvd_recon_nco:1) 
+		c2(nkvd_recon_smg:3)
+			c3(nkvd_recon_rifle:2)
+				c4(nkvd_senior_rifle:2) 
+					c5(nkvd_sapper_builder:1)
+						c6(nkvd_at_rifle:1)
+							c7(nkvd_mg:1)
+								c8(nkvd_mg_asst:1)	
+)
+
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+("squad_with7types_conquest" 
+	side(rus) 
+	period(early) 
+	min_stage(4) max_stage(12) 
+	name(squad_rus_paratroopers_1940) 			
+	c1(arm_rus_paratrooper_1940_uo:1) 
+		c2(arm_rus_paratrooper_1940_sign:1)
+			c3(arm_rus_paratrooper_1940_smg:2)
+				c4(arm_rus_paratrooper_1940_arifle:3)
+					c5(arm_rus_paratrooper_1940_grlauncher:1)
+						c6(arm_rus_paratrooper_1940_mg:1)
+							c7(arm_rus_paratrooper_1940_eng:1)
+)
+
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)	
+("squad_with5types_conquest" 
+	side(rus) 
+	period(mid) 
+	min_stage(7) max_stage(12) 
+	name(squad_partisan_con)		
+	c1(nco:1) 
+		c2(partisan_1:4) 
+			c3(partisan_2:3) 
+				c4(partisan_3:3) 
+					c5(partisan_4:3)
+)
+
+;--																															41(7-8)	
+;--																															42(9-10)
+("squad_with5types_conquest" 
+	side(rus) 
+	period(mid) 
+	min_stage(7) max_stage(10) 
+	name(squad_rkka_infantry_1941)			
+	c1(rkka_commisar_1941:1) 
+		c2(rkka_smg_soldier_1941:3) 
+			c3(rkka_soldier_1941:5) 
+				c4(rkka_mg_soldier_1941:2) 
+;//	c5(rkka_engineer_1941:1)
+					c5(medic:1)
+)
+
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"squad_soviet_fortifiers_late(rus)"  
+	("squad_vehicle3" 
+	side(rus) 
+	period(late) 
+	min_stage(1) max_stage(99) 
+	vehicle(dshk_carrier_rus) 
+	cw(3) cp(2) 	
+	crew1(engineer_2:2)			
+		crew2(soviet_fortifier_ls:1)	
+			crew3(soviet_fortifier_private:3)	
+	)
+	{cost_ap 750}
+	{cost_sp 15}	
+	{not_for_ai_sale 1}
+}
+
+
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+("squad_with5types_conquest" 
+	side(rus) 
+	period(mid) 
+	min_stage(7) max_stage(12) 
+	name(squad_assault_soldiers)
+	c1(assault_soldier_1:2) 
+		c2(assault_soldier_2:1) 
+			c3(assault_soldier_svt:2) 
+				c4(assault_soldier_mg:2)
+					c5(medic:1)
+)
+
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+	
+("squad_with2types_conquest" 
+	side(rus) 
+	period(mid) 
+	min_stage(9) max_stage(99) 
+	name(squad_rifleunit_elite)			
+	c1(nco:1) 
+		c2(rifleman_3_elite:4)
+)
+
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+("squad_with5types_conquest" 
+	side(rus) 
+	period(late) 
+	min_stage(9) max_stage(14) 
+	name(squad_vmf_marines)
+	c1(vmf_marine_prapor:1) 
+		c2(vmf_marine_smg:4) 
+			c3(vmf_marine:5) 
+				c4(vmf_marine_mg:1) 
+					c5(vmf_marine_flamer:1)
+)
+
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+("squad_with7types_conquest" 
+	side(rus) 
+	period(early) 
+	min_stage(11) max_stage(99) 
+	name(squad_cossacks_con)
+	c1(cossack_recon_nco:1) 
+		c2(cossack_recon_rifle:2) 
+			c3(cossack_recon_sa:2)
+				c4(cossack_2:1) 
+					c5(cossack_3:1)
+						c6(cossack_mg:2)
+							c7(cossack_mg_asst:1)
+)
+
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"squad_assaultsappers_extcq(rus)" 
+	("squad_vehicle8" 
+	side(rus) 
+	period(late) 
+	min_stage(9) max_stage(99) 
+	vehicle(m3a1e1_scout_mgun) 
+	cw(0) cp(0) 
+	crew1(engineer_1:1) 
+		crew2(medic:1) 
+			crew3(assault-sap_sl:1) 
+				crew4(assault-sap_sl_asst_mg:1) 
+					crew5(assault-sap_1:1) 
+						crew6(assault-sap_at:1) 
+							crew7(assault-sap_atr:1) 
+								crew8(assault-sap_4:1)
+	)
+}
+
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+	
+("squad_with2types_conquest" 
+	side(rus) 	
+	period(mid) 
+	min_stage(11) max_stage(99) 
+	name(squad_rus_atminer_1943)			
+	c1(arm_at_miner_nco_smg_1943:1) 
+		c2(arm_at_miner_smg_1943:7) 
+)
+
+;--																															39(1-4)
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+("squad_with2types_conquest" 
+	side(rus) 
+	period(early) 
+	min_stage(1) max_stage(12) 
+	name(squad_assault_mg)
+	c1(mgun_3:1)
+		c2(mgun_2:1)			
+)
+
+;--																															43(11-12)
+;--																															44(13-14)
+("squad_with7types_conquest" 
+	side(rus) 
+	period(mid) 
+	min_stage(11) max_stage(14) 
+	name(squad_rkka_infantry_1943)
+	c1(arm_rus_rkka_1943_nco:1)	
+		c2(arm_rus_rkka_1943_smg:3)
+			c3(arm_rus_rkka_1943_rfl:4)
+				c4(arm_rus_rkka_1943_mg:1)
+					c5(arm_rus_rkka_1943_mg2:1)
+						c6(arm_rus_rkka_1943_at:1)
+							c7(arm_rus_rkka_1943_medic:1)	
+)
+
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+("squad_with2types_conquest" 
+	side(rus) 
+	period(late) 
+	min_stage(13) max_stage(99) 
+	name(squad_arm_rus_mgsupport_1944)
+	c1(mgun_1:2)
+		c2(mgun_3:1)
+)
+
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+("squad_with7types_conquest" 
+	side(rus) 
+	period(late) 
+	min_stage(15) max_stage(99) 
+	name(squad_rkka_infantry_1945)
+	c1(arm_rus_rkka_1945_nco:1)	
+		c2(arm_rus_rkka_1945_smg:4)
+			c3(arm_rus_rkka_1945_rfl:3)
+				c4(arm_rus_rkka_1945_mg:1)
+					c5(arm_rus_rkka_1945_mg2:1)
+						c6(arm_rus_rkka_1945_at:1)
+							c7(arm_rus_rkka_1945_medic:1)	
+;//	c8(arm_rus_rkka_1945_at:1)
+)
+
+;==================================================== USSR MODDED ================================================================
+;;--------------------------------------------------- USSR MODDED Squads Ai ------------------------------------------------------
+
+;--																															39(1-4);3
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															45(15-99) ;99+
+("squad_with1types_conquest_nobuy" 
+	side(rus) 
+	period(late) 
+	min_stage(3) 
+	max_stage(99) 
+	name(single_signaller_nobuy) 	
+	c1(signaller_ai:1)
+)
+
+;==================================================== USSR MODDED ================================================================
+;;--------------------------------------------------- USSR MODDED Squads Mech ----------------------------------------------------
+
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+;radio
+{"ba20_scout(rus)" 
+	("squad_vehicle2" 
+	side(rus) 
+	period(early) 
+	min_stage(5) max_stage(99) 
+	vehicle(ba20_command) 
+	cw(0) cp(0) 
+	crew1(tankman:2) 
+		crew2(tank_commander:1)
+	)
+	{cost 450}
+	{cost_sp 2}
+}
+
+;--																															39(1-4)
+;--																															40(5-6)
+;--																															41(7-8)
+{"squad_mech_tankman_early_rus" 
+	("squad_vehicle2" 
+	side(rus) 
+	period(early) 
+	min_stage(1) max_stage(8) 
+	vehicle(m72) 
+	cw(0) cp(0) 
+	crew1(tank_commander_squad:1)
+		crew2(tankman_squad:2) 
+	)
+}
+
+;--																															42(9-10)
+;--																															43(10-11)
+{"squad_mech_tankman_mid_rus" 
+	("squad_vehicle2" 
+	side(rus) 
+	period(mid) 
+	min_stage(9) max_stage(11) 
+	vehicle(gaz67) 
+	cw(0) cp(0) 
+	crew1(tank_commander_squad:1)
+		crew2(tankman_squad:3) 
+	)
+}
+
+;--																															44(12-13)
+;--																															45(14-15);99
+{"squad_mech_tankman_late_rus" 
+	("squad_vehicle2" 
+	side(rus) 
+	period(late) 
+	min_stage(12) max_stage(99) 
+	vehicle(m3a1e1_scout) 
+	cw(0) cp(0) 
+	crew1(tank_commander_squad:1)
+		crew2(tankman_squad:5) 
+	)
+}
+
+;;============================================================ ARM MECH-SQUADS =============================================================
+
+;--																															39(1-4)
+{"ussr_mechsquad5_light_39_1"
+	("squad_5vehicle2" side(rus) period(early) 
+		min_stage(1) max_stage(4) 
+		cw(0) cp(36) 
+		vehicle1(t26_31:1) 
+			crew1(tankman:2) crew2(tank_commander:1) 
+		vehicle2(t26_31:1) 
+			crew3(tankman:2) crew4(tank_commander:1) 
+		vehicle3(t26_33:1) 
+			crew5(tankman:2) crew6(tank_commander:1)
+		vehicle4(t26_33:1) 
+			crew7(tankman:2) crew8(tank_commander:1)
+		vehicle5(t26_39:1) 
+			crew9(tankman:2) crew10(tank_commander:1)			
+	)
+	{cost 1415} 	;// 275 + 275 + 285 + 285 + 295
+;//	CP 60 = 5 + 5 + 8 + 8 + 10	
+;//	{cost_ap 225}
+	{not_for_player_sale 1}
+}
+
+
+;--																															40(5-6)
+;--																															41(7-8)
+{"ussr_mechsquad5_light_40_1"
+	("squad_5vehicle2" side(rus) period(early) 
+		min_stage(5) max_stage(8) 
+		cw(0) cp(74) 
+		vehicle1(bt5:1) 
+			crew1(tankman:2) crew2(tank_commander:1) 
+		vehicle2(bt5:1) 
+			crew3(tankman:2) crew4(tank_commander:1) 
+		vehicle3(bt7:1) 
+			crew5(tankman:2) crew6(tank_commander:1)
+		vehicle4(bt7:1) 
+			crew7(tankman:2) crew8(tank_commander:1)
+		vehicle5(bt7a:1) 
+			crew9(tankman:2) crew10(tank_commander:1)			
+	)
+	{cost 2620} 	
+;// MP 2620 	= 550 + 550 + 500 + 500 + 520
+;//	CP 74 		= 12 + 12 + 15 + 15 + 20	
+;//	{cost_ap 225}
+	{not_for_player_sale 1}
+}
+
+;--																															41(7-8)
+;--																															42(9-10)
+{"ussr_mechsquad4_medium_41_1"
+	("squad_4vehicle2" side(rus) period(mid) 
+		min_stage(7) max_stage(10) 
+		cw(0) cp(85) 
+		vehicle1(t3476_40:1) 
+			crew1(tankman:3) crew2(tank_commander:1) 
+		vehicle2(t3476_41:1) 
+			crew3(tankman:3) crew4(tank_commander:1) 
+		vehicle3(t3457_41:1) 
+			crew5(tankman:3) crew6(tank_commander:1)
+		vehicle4(t3476_41e:1) 
+			crew7(tankman:3) crew8(tank_commander:1)	
+	)
+	{cost 2825} 	
+;// MP 2825 	= 700 + 700 + 725 + 700
+;//	CP 85 		= 25 + 20 + 20 + 20	
+;//	{cost_ap 225}
+	{not_for_player_sale 1}
+}
+
+;--																															42(9-10)
+;--																															43(11-12)
+{"ussr_mechsquad5_light_42_2"
+	("squad_5vehicle2" side(rus) period(mid) 
+		min_stage(9) max_stage(12) 
+		cw(0) cp(48) 
+		vehicle1(t70:1) 
+			crew1(tankman:1) crew2(tank_commander:1) 
+		vehicle2(t70:1) 
+			crew3(tankman:1) crew4(tank_commander:1) 
+		vehicle3(t60:1) 
+			crew5(tankman:1) crew6(tank_commander:1)
+		vehicle4(t30:1) 
+			crew7(tankman:1) crew8(tank_commander:1)
+		vehicle5(t40:1) 
+			crew9(tankman:1) crew10(tank_commander:1)			
+	)
+	{cost 1890} 	
+;// MP 1890 	= 375 + 375 + 420 + 400 + 320
+;//	CP 48 		= 10 + 10 + 10 + 8 + 10	
+;//	{cost_ap 225}
+	{not_for_player_sale 1}
+}
+
+;--																															42(11-12)
+;--																															43(13-14)
+{"ussr_mechsquad3_heavy_42_1"
+	("squad_3vehicle2" side(rus) period(mid) 
+		min_stage(11) max_stage(13) 
+		cw(0) cp(75) 
+		vehicle1(kv1_42:1) 
+			crew1(tankman:4) crew2(tank_commander:1) 
+		vehicle2(kv1s:1) 
+			crew3(tankman:4) crew4(tank_commander:1) 
+		vehicle3(kv1s:1) 
+			crew5(tankman:4) crew6(tank_commander:1)
+	)
+	{cost 2930} 	
+;// MP 2930 	= 1050 + 940 + 940
+;//	CP 75 		= 25 + 25 + 25	
+;//	{cost_ap 225}
+	{not_for_player_sale 1}
+}
+
+;--																															43(11-12)
+{"ussr_mechsquad4_medium_43_1"
+	("squad_4vehicle2" side(rus) period(mid) 
+		min_stage(11) max_stage(12) 
+		cw(0) cp(65) 
+		vehicle1(t3476_42:1) 
+			crew1(tankman:3) crew2(tank_commander:1) 
+		vehicle2(t3476_43:1) 
+			crew3(tankman:3) crew4(tank_commander:1) 
+		vehicle3(t3457_43:1) 
+			crew5(tankman:3) crew6(tank_commander:1)
+		vehicle4(t3476_43_flame:1) 
+			crew7(tankman:3) crew8(tank_commander:1)	
+	)
+	{cost 2825} 	
+;// MP 2825 	= 700 + 700 + 725 + 700
+;//	CP 65 		= 15 + 15 + 15 + 20	
+;//	{cost_ap 225}
+	{not_for_player_sale 1}
+}
+
+;--																															44(13-14)
+;--																															45(15-16)
+{"ussr_mechsquad4_medium_44_1"
+	("squad_4vehicle2" side(rus) period(late) 
+		min_stage(13) max_stage(16) 
+		cw(0) cp(60) 
+		vehicle1(t3485_44a:1) 
+			crew1(tankman:4) crew2(tank_commander:1) 
+		vehicle2(t3485_44b:1) 
+			crew3(tankman:4) crew4(tank_commander:1) 
+		vehicle3(t3485_44_flame:1) 
+			crew5(tankman:4) crew6(tank_commander:1)
+		vehicle4(t3485_44a_flame:1) 
+			crew7(tankman:4) crew8(tank_commander:1)	
+	)
+	{cost 2960} 	
+;// MP 2960 	= 710 + 710 + 790 + 750
+;//	CP 60 		= 15 + 15 + 15 + 15	
+;//	{cost_ap 225}
+	{not_for_player_sale 1}
+}
+
+;--																															45(15-99)
+{"ussr_mechsquad3_heavy_45_1"
+	("squad_3vehicle2" side(rus) period(late) 
+		min_stage(15) max_stage(99) 
+		cw(0) cp(84) 
+		vehicle1(is2_44:1) 
+			crew1(tankman:3) crew2(tank_commander:1) 
+		vehicle2(is2_45:1) 
+			crew3(tankman:3) crew4(tank_commander:1) 
+		vehicle3(is2_45:1) 
+			crew5(tankman:3) crew6(tank_commander:1)	
+	)
+	{cost 4350} 	
+;// MP 4350 	= 1450 + 1450 + 1450
+;//	CP 84 		= 30 + 27 + 27	
+;//	{cost_ap 225}
+	{not_for_player_sale 1}
+}
+
+
+
+
+;==================================================== USSR MODDED =================================================================
+;;--------------------------------------------------- USSR MODDED Units Ai --------------------------------------------------------
+
+{"bm13_studebaker_bot"
+	("vehicle"  side(rus) period(mid) min_stage(8) max_stage(99) cw(0) cp(10) crew(tankman:2))
+	{cost 1500}{not_for_player_sale 1}
+}
+
+;==================================================== USSR Modded+MACE Units =====================================================
+;;--------------------------------------------------- USSR Modded+MACE Units Mortar strikes --------------------------------------
+
+{"82mm_bm37_mortar_barrage"
+	("squad_vehicle" side(rus) period(mid)  min_stage(1) max_stage(99) cw(0) cp(0) crew(artilleryman:0) vehicle(82mm_bm37))
+	{cost -250} ;82mm_bm37 cost 250 - [0] = 250
+	{cost_sp 3}												;//SP	
+	{cost_ap 50}											;//AP	
+	{round_multiple 1.0}
+	{action "airstrike:conquest_mortar_barrage_80"}
+}
+{"120mm_pm38_mortar_barrage"
+	("squad_vehicle" side(rus) period(mid)  min_stage(5) max_stage(99) cw(0) cp(0) crew(artilleryman:0) vehicle(120mm_pm38))
+	{cost -450} ;120mm_pm38 cost 450 - [0] = 450
+	{cost_sp 3}												;//SP
+	{cost_ap 75}											;//AP	
+	{round_multiple 1.0}
+	{action "airstrike:conquest_mortar_barrage_120"}
+}
+
+{"122mm_m1910_smoke_barrage"
+	("squad_vehicle" side(rus) period(mid)  min_stage(3) max_stage(99) cw(0) cp(5) crew(artilleryman:0) vehicle(122mm_m1910))
+	{cost -700} ;122mm_m1910 cost 700 - [1] = 699
+	{cost_sp 1}	
+	{cost_ap 50}											;//AP		
+	{round_multiple 1.0}
+	{action "airstrike:conquest_smoke_barrage_122_rus"}
+}
+{"122mm_m1910_artillery_barrage"
+	("squad_vehicle" side(rus) period(mid)  min_stage(3) max_stage(99) cw(0) cp(0) crew(artilleryman:0) vehicle(122mm_m1910))
+	{cost -700} ;122mm_m1910 cost 700 - [0] = 700
+	{cost_sp 3}												;//SP
+	{cost_ap 125}											;//AP		
+	{round_multiple 1.0}
+	{action "airstrike:conquest_artillery_barrage_122_rus"}
+}
+
+{"152mm_ml20_artillery_barrage"
+	("squad_vehicle" side(rus) period(mid)  min_stage(4) max_stage(99) cw(0) cp(0) crew(artilleryman:0) vehicle(152mm_ml20))
+	{cost -1000} ;152mm_ml20 cost 1000 - [0] = 1000
+	{cost_sp 3}												;//SP
+	{cost_ap 175}												;//AP	
+	{round_multiple 1.0}
+	{action "airstrike:conquest_artillery_barrage_152_rus"}
+}
+
+;;------------------------------------------------------------ USSR Paradrop Air Support ------------------------------------------------------------
+
+;//	{"supply_drop_76mm_m43"
+;//		("squad_vehicle" side(rus) period(mid) min_stage(1) max_stage(99) cw(0) cp(-7) crew(tankman:2) vehicle(c47_d))
+;//		{cost 3}{round_multiple 1.0}
+;//		{action "airstrike:paradrop_76mm_m43"}
+;//	}
+
+;//	{"supply_drop_bpk"
+;//		("squad_vehicle" side(rus) period(mid) min_stage(1) max_stage(99) cw(0) cp(-7) crew(tankman:2) vehicle(c47_d))
+;//		{cost 2}{round_multiple 1.0}
+;//		{action "airstrike:paradrop_bpk"}
+;//	}
+
+;//	{"supply_drop_maxim"
+;//		("squad_vehicle" side(rus) period(mid) min_stage(1) max_stage(99) cw(0) cp(-7) crew(tankman:2) vehicle(c47_d))
+;//		{cost 1}{round_multiple 1.0}
+;//		{action "airstrike:paradrop_maxim"}
+;//	}
+
+;;------------------------------------------------------------ USSR VANILLA Air Support ------------------------------------------------------------
+{"conquest_po2"
+	("squad_vehicle" side(rus) period(mid) min_stage(1) max_stage(99) cw(0) cp(1) crew(pilot:2) vehicle(po2))
+	{cost 0}
+	{cost_sp 1}	
+	{cost_ap 50}											;//AP
+	{round_multiple 1.0}
+	{action "airstrike:reconnaissance_150"}
+;// CP 3 = 1 + 2(2)	
+}
+	{"po2" {tags "conquest conquestonly"} {score 0} {cw 0} {cp 1} {cost 0} {not_for_sale 1}}
+
+;--																															39(1-4)
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"conquest_yak1"
+	("squad_vehicle" side(rus) period(mid) min_stage(1) max_stage(99) cw(0) cp(5) crew(pilot:1) vehicle(yak1_ser69))
+	{cost 0}
+	{cost_sp 4}	
+	{cost_ap 75}											;//AP
+	{round_multiple 1.0}
+;//	{action "airstrike:sc_50"}
+	{action "airstrike:m30_100lb"}	
+}
+	{"yak1_ser69" {tags "conquest conquestonly"} {score 0} {cw 0} {cp 9} {cost 0} {not_for_sale 1}}
+
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"conquest_il2"
+	("squad_vehicle" side(rus) period(mid) min_stage(7) max_stage(99) cw(0) cp(20) crew(pilot:1) vehicle(il2_mod42))
+	{cost 0}
+	{cost_sp 8}
+	{cost_ap 125}											;//AP	
+	{round_multiple 1.0}
+;//	{action "airstrike:sc_250_mp"}
+;//	{action "airstrike:sc_100"}
+;//	{action "airstrike:sc_250"}	
+	{action "airstrike:zab_100"}	
+}
+	{"il2_mod42" {tags "conquest conquestonly"} {score 0} {cw 0} {cp 9} {cost 0} {not_for_sale 1}}
+
+;;------------------------------------------------------------ USSR Modded Air Support------------------------------------------------------------
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"conquest_il2_arm"
+	("squad_vehicle" side(rus) period(mid) min_stage(5) max_stage(99) cw(0) cp(14) crew(pilot:1) vehicle(il2_mod41))
+	{cost 0}
+	{cost_sp 0}	
+	{cost_ap 20}											;//AP
+	{round_multiple 1.0}
+	{action "airstrike:nobomb"}
+}
+	{"il2_mod41" {tags "conquest conquestonly"} {score 0} {cw 0} {cp 14} {cost 0} {not_for_sale 1}}
+
+
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"conquest_li-2_rus_bomber"
+	("squad_vehicle" side(rus) coalition(allies rus) period(mid) min_stage(9) max_stage(99) cw(0) cp(0) crew(pilot:2) vehicle(li-2))
+	{cost 0}
+	{cost_sp 12}
+	{cost_ap 300}											;//AP	
+	{round_multiple 1.0}
+	{action "airstrike:sc_500"}
+;// CP 25 = (23) + 2
+}
+	{"li-2" {tags "conquest conquestonly"} 	{score 0} {cw 0} {cp 23} {cost 0} {not_for_sale 1}}
+
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"conquest_b25_rus_bomber"
+	("squad_vehicle" side(rus) coalition(allies rus) period(mid) min_stage(11) max_stage(99) cw(0) cp(0) crew(pilot:4) vehicle(rus-b25))
+	{cost 0}
+	{cost_sp 10}
+	{cost_ap 200}											;//AP	
+	{round_multiple 1.0}
+	{action "airstrike:sc_250_mp"}
+;// CP 20 = (16) + 4
+}
+	{"rus-b25" {tags "conquest conquestonly"}{score 0} {cw 0} {cp 16} {cost 0} {not_for_sale 1}}
+
+;;------------------------------------------------------------ USSR Modded AI Air Support ------------------------------------------------------------
+;--																															39(1-4)
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"ai_po2"
+	("vehicle"  side(rus) period(mid) min_stage(1) max_stage(99) cw(0) cp(3) crew(pilot:1))
+	{cost 4}{not_for_player_sale 1}
+}
+
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"po2_rocket_ai"
+	("vehicle"  side(rus) period(mid) min_stage(9) max_stage(99) cw(0) cp(3) crew(pilot:1))
+	{cost 4}{not_for_player_sale 1}
+}
+
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"po2_flame_ai"
+	("vehicle"  side(rus) period(mid) min_stage(9) max_stage(99) cw(0) cp(3) crew(pilot:1))
+	{cost 4}{not_for_player_sale 1}
+}
+
+;--																															39(1-4)
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"yak1_ser69_ai"
+	("vehicle"  side(rus) period(mid) min_stage(1) max_stage(99) cw(0) cp(5) crew(pilot:1))
+	{cost 6}{not_for_player_sale 1}
+}
+
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"ussr-p-39_ai"
+	("vehicle"  side(rus) period(mid) min_stage(7) max_stage(99) cw(0) cp(5) crew(pilot:1))
+	{cost 6}{not_for_player_sale 1}
+}
+;//	{"us-p-39_ai" {tags "conquest conquestonly"} {score 0} {cw 0} {cp 9} {cost 0} {not_for_player_sale 1}}
+
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"il2_mod41_ai"
+	("vehicle"  side(rus) period(mid) min_stage(5) max_stage(99) cw(0) cp(20) crew(pilot:1))
+	{cost 7}{not_for_player_sale 1}
+}
+
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"rus-b25_ai"
+	("vehicle"  side(rus) period(mid) min_stage(9) max_stage(99) cw(0) cp(20) crew(pilot:4))
+	{cost 12}{not_for_player_sale 1}	
+}
+
+
+;;------------------------------------------------------------ USSR Modded and Vanilla AIRCRAFT ------------------------------------------------------------
+
+{"c47_d" 					{tags "conquest conquestonly"} 			{score 0} {cw 0} {cp 9} 	{cost 0} 	{not_for_sale 1}}	
+	
+;============================================================= USSR Modded units ==========================================================================
+;;=============================== Modded Special
+;--																															39(1-4) /99
+{"inf_eng_crate_rus"
+	("vehicle"  side(rus) period(early) min_stage(1) max_stage(99) cw(1) cp(2) crew(engineer_1:2))
+	{cost 485}
+}
+
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															99(17-99)
+;//{"ammo_trailer_eng"
+;//	("vehicle"  side(rus) period(mid) min_stage(7) max_stage(99) crew(artilleryman_private:2) cw(1) cp(0))
+;//	{cost 200}
+;//;// CP 2 = 0 + 2(2)		
+;//}
+
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															99(17-99)
+{"ammo_trailer_eng(rus)" 
+	("squad_vehicle" 
+	side(rus) 
+	period(mid) 
+	min_stage(7) max_stage(99) 
+	vehicle(ammo_trailer_eng) 
+	cw(0) cp(0) 
+	crew(artilleryman_private:0)
+	)
+;// CP 0 = 0 + 0(2)		
+}
+
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+;R40
+{"zp_3154b" ; // Searchlight
+	("vehicle" side(rus) period(mid) min_stage(7) max_stage(99) cw(1) cp(1) crew(artilleryman_private:2))
+	{cost 275}
+;// CP 3 = 1 + 2(2)	
+}
+
+;;=============================== Modded+MACE MGs
+
+;--																															39(1-4)
+;--																															40(5-6)
+;--																															41(7-8)
+{"broneschitok_2_dp"
+	("vehicle" side(rus) period(early) min_stage(1) max_stage(8) cw(2) cp(0) crew(mgun_2:1))
+	{cost 30}
+;// CP 1 = 1 + 0(1)	
+}
+
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"kpv_1944"
+	("vehicle" side(rus) period(mid) min_stage(11) max_stage(99) name(14mm_kpv_inf) cw(2) cp(0) crew(mgun_2:2))
+	{cost 105}
+	{cost_ap 50}	
+;// CP 2 = 0 + 2(2)	
+}
+
+;;------------------------------------------------------------ Modded/MACE Mortars
+
+;--																															40(5-6)
+{"125mm_pma40_prot"
+	("vehicle"  side(rus) period(early) min_stage(5) max_stage(99) cw(2) cp(6) crew(artilleryman_private:2))
+	{cost 400}
+	{cost 20}	
+;//	{tags "limit2"}
+;// CP 8 = 6 + 2(2)
+}
+
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"160mm_mt_13_mortar"
+	("vehicle2"  side(rus) period(mid) min_stage(11) max_stage(99) cw(1) cp(8) crew1(artilleryman_private:3) crew2(artilleryman_ls:1))
+	{cost 1250}
+	{cost 100}	
+;//	{tags "limit3"}
+;// CP 12 = 8 + 4(4)
+}
+
+;;------------------------------------------------------------ Modded/MACE Cannons
+
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"57mm_zis2_late"
+	("vehicle2"  side(rus) period(mid) min_stage(11) max_stage(16) cw(1) cp(11) crew1(artilleryman_private:3) crew2(artilleryman_ls:1))
+	{cost 400}
+;//	{squad_cost_factor 0}
+;//	CP 15 = 11 + 4(4)
+}
+
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"d-44"
+	("vehicle2" side(rus) period(mid) min_stage(13) max_stage(99) cw(8) cp(11) crew1(artilleryman_private:3) crew2(artilleryman_ls:1))
+	{cost 545}
+;//	CP 15 = 11 + 4(4)
+}
+
+;;------------------------------------------------------------ Modded/MACE Vehicles
+
+;--																															40(6-7)
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+{"m72o"
+	("vehicle3" side(rus) period(mid) min_stage(7) max_stage(99) cw(3) cp(1) crew1(assault-sap_2:1) crew2(assault-sap_4:1) crew3(assault-sap_1:1))
+	{cost 175}
+}
+
+;--																															42(11-12)
+{"gaz67_open"    
+	("vehicle" side(rus) period(mid)  min_stage(11)  max_stage(99) cw(1) cp(0) crew(artilleryman:1)) 
+	{cost 25}
+}
+
+;--																															39(1-4)
+{"gaz_aaa_open"    
+	("vehicle" side(rus) period(early)  min_stage(1)  max_stage(99) cw(1) cp(1) crew(artilleryman:1)) 
+	{cost 25}
+}
+
+;--																															39(1-4)
+;--																															40(5-6)
+{"gaz_su12"    
+	("vehicle2" side(rus) period(early)  min_stage(1)  max_stage(6) cw(1) cp(6) crew1(artilleryman_private:3) crew2(artilleryman_ls:1)) 
+	{cost 240}
+;// CP 10 = [6] + 4(4)	
+}
+
+;--																															39(1-4)
+{"zis5_open"
+	("vehicle" side(rus) period(early)  min_stage(1)  max_stage(99) cw(1) cp(1) crew(artilleryman:1)) 
+	{cost 20}
+}
+
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"zis5_61k"
+	("vehicle2"  side(rus) period(mid) min_stage(7) max_stage(99) cw(2) cp(7) crew1(artilleryman_private:4) crew2(rifleman_1:7))	
+	{cost 545}
+;// CP 13 = 10 + 3[7(0+7)/2] = 	
+;//	{tags "limit1"}
+}
+
+;--																															39(1-4)
+{"stalinetz60"    
+	("vehicle" side(rus) period(early)  min_stage(1)  max_stage(99) cw(1) cp(1) crew(artilleryman:1)) 
+	{cost 20}
+}
+
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"m2_halftrack_rus"
+	("vehicle2" side(rus) period(mid) min_stage(7) max_stage(99) crew1(mg_crew:1) crew2(mg_crew_asst:1) cw(6) cp(2))
+	{cost 280}
+}
+
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+;R44
+{"cckw_ussr"
+	("vehicle"  side(rus) period(mid) min_stage(13) max_stage(99) crew(artilleryman:1) cw(1) cp(1))
+	{cost 30}
+;// CP 1 = 0 + 1(1)		
+}
+
+
+;--																															44(13-14)
+{"94km"
+	("vehicle"  side(rus) period(mid) min_stage(13) max_stage(99) cw(2) cp(6) crew(artilleryman_private:4))
+	{cost 425}
+	{cost_ap 125}
+;// CP 10 = 6 + 4(4)	
+}
+
+;;------------------------------------------------------------ Modded+VALOR Armor Vihicles
+
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"voroshilovets"
+	("vehicle" side(rus) period(mid) min_stage(7) max_stage(99) cw(1) cp(0) crew(artilleryman:1))
+	{cost 45}
+;// CP 1 = 0 + 1(0)
+}
+
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+{"ba11"
+	("vehicle2" side(rus) period(mid) min_stage(5) max_stage(10) cw(3) cp(7) crew1(tankman:3) crew2(tank_commander:1))
+	{cost 425}
+}
+
+;--																															43(11-12)
+{"dshk_carrier_rus"
+	("vehicle3" side(rus) period(mid) min_stage(11) max_stage(99) cw(3) cp(2) crew1(tankman:1) crew2(artilleryman:1) crew3(artilleryman:1))
+	{cost 225}
+}
+
+;--																															43(11-12)
+{"m3a1e1_dshk"
+	("vehicle3" side(rus) period(mid) min_stage(11) max_stage(99) cw(3) cp(2) crew1(tankman:1) crew2(artilleryman:1) crew3(artilleryman:1))
+	{cost 250}
+}
+
+;--																															43(11-12)
+{"m3a1e1_scout"
+	("vehicle"  side(rus) period(mid) min_stage(11) max_stage(99) cw(3) cp(2) crew(artilleryman:1))
+	{cost 160}
+}
+
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															45(16-99);99
+{"ba64d"
+	("vehicle2" side(rus) period(mid) min_stage(11) max_stage(99) cw(3) cp(7) crew1(tankman:1) crew2(tank_commander:1))
+	{cost 425}
+	{cost_ap 50}
+;//	CP 7 = 4 + 2(0)
+}
+
+;;------------------------------------------------------------ Modded Tanks
+;;------------------------------------------------------------ Modded+MACE Light Tanks
+
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+{"bt2_25mm_auto_rus"
+	("vehicle3" side(rus) period(early) min_stage(5) max_stage(16) cw(0) cp(12) crew1(artilleryman:4) crew2(tankman:1) crew3(artilleryman:3))
+	{cost 575}
+	{cost_ap 100}	
+;//	{tags "limit1"}
+;// CP 12 = 12 + 0(4+1+1)	
+}
+
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+;R40
+{"rbt_5"
+	("vehicle2" side(rus) period(early) min_stage(5) max_stage(10) cw(0) cp(30) crew1(tankman:2) crew2(tank_commander:1))
+	{cost 3190}
+	{cost_ap 300}
+	{cost_sp 8}	
+;//	{tags "limit1"}
+}
+
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+{"t50e"
+	("vehicle2" side(rus) period(early) min_stage(11) max_stage(16) cw(0) cp(12) crew1(tankman:3) crew2(tank_commander:1))
+	{cost 450}
+;// CP 12 = 12 + 0(3+1)	
+}
+
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+{"zsu_37"
+	("vehicle2" side(rus) period(mid) min_stage(11) max_stage(99) cw(0) cp(15) crew1(tankman:4) crew2(tank_commander:1))
+	{cost 575}
+	{cost_ap 150}
+	{cost_sp 4}	
+;// CP 15 = 15 + 0(4+1)		
+}
+
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"t70_45"
+	("vehicle2" side(rus) period(late) min_stage(15) max_stage(99) cw(0) cp(10) crew1(tankman:1) crew2(tank_commander:1))
+	{cost 380}
+}
+
+
+;;------------------------------------------------------------ Modded+MACE Medium Tanks
+
+;--																															39(1-4)
+;--																															40(5-6)
+{"it_3"
+	("vehicle2" side(rus) period(early) min_stage(1) max_stage(6) cw(0) cp(20) crew1(tankman:3) crew2(tank_commander:1))
+	{cost 650}
+	{cost_ap 100}
+	{cost_sp 2}	
+;//	{tags "limit2"}
+;// CP 20 = 20 + 0(3+1)
+}
+
+;--																															39(1-4)2
+;--																															40(5-6)
+{"a32_39"
+	("vehicle2" side(rus) period(early) min_stage(2) max_stage(6) cw(0) cp(25) crew1(tankman:3) crew2(tank_commander:1))
+	{cost 785}
+	{cost_ap 150}
+	{cost_sp 4}	
+;// CP 25 = 25 + 0(3+1)
+}
+
+;--																															40(5-6)
+;--																															41(7-8)
+{"matilda_f96"
+	("vehicle2" side(rus) period(early) min_stage(5) max_stage(8) cw(0) cp(25) crew1(tankman:3) crew2(tank_commander:1))
+	{cost 960}
+	{cost_ap 400}
+	{cost_sp 10}	
+}
+
+;--																															41(7-8)
+{"t28_85"
+	("vehicle2" side(rus) period(early) min_stage(7) max_stage(8) cw(0) cp(20) crew1(tankman:5) crew2(tank_commander:1))
+	{cost 1450}
+	{cost_ap 175}
+	{cost_sp 2}	
+;//	{tags "limit1"}
+}
+
+;--																															43(11-12)
+{"t3485_43"
+	("vehicle2" side(rus) period(late) min_stage(9) max_stage(11) cw(0) cp(25) crew1(tankman:3) crew2(tank_commander:1))
+	{cost 950}
+	{cost_ap 200}
+	{cost_sp 4}
+}
+
+;--																															44(13-14)
+;--																															45(15-16)
+{"t4485"
+	("vehicle2" side(rus) period(late) min_stage(13) max_stage(15) cw(0) cp(30) crew1(tankman:3) crew2(tankman:1))
+	{cost 1450}
+	{cost_ap 250}
+	{cost_sp 4}	
+}
+
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"t34_100"
+	("vehicle2" side(rus) period(late) min_stage(15) max_stage(99) cw(0) cp(25) crew1(tankman:4) crew2(tank_commander:1))
+	{cost 1150}
+	{cost_ap 100}	
+;// CP 25 = 25 + 0 (4+1)	
+}
+
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"t44_122"
+	("vehicle2" side(rus) period(late) min_stage(15) max_stage(99) cw(0) cp(30) crew1(tankman:3) crew2(tank_commander:1))
+	{cost 1950}
+	{cost_ap 150}
+	{cost_sp 4}	
+}
+
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"t44100"
+	("vehicle2" side(rus) period(late) min_stage(15) max_stage(99) cw(0) cp(30) crew1(tankman:3) crew2(tankman:1))
+	{cost 1650}
+	{cost_ap 250}	
+	{cost_sp 4}
+}
+
+
+;;------------------------------------------------------------ Modded+MACE Heavy Tanks
+
+;--																															39(1-4)
+;--																															40(5-6)
+{"kv2_39"
+	("vehicle2" side(rus) period(early) min_stage(4) max_stage(6) cw(0) cp(35) crew1(tankman:5) crew2(tank_commander:1))
+	{cost 3250}
+	{cost_ap 1500}	
+	{cost_sp 22}
+;//	{tags "limit1"}
+}
+
+;--																															41(7-8)
+;--																															42(9-10)
+{"kv2_zis6"
+	("vehicle2" side(rus) period(mid) min_stage(7) max_stage(10) cw(0) cp(30) crew1(tankman:5) crew2(tank_commander:1))
+	{cost 1950}
+	{cost_ap 600}
+	{cost_sp 8}	
+;//	{tags "limit1"}
+;// CP 30 -6(0) = 26
+}
+
+;--																															39(1-4)
+;--																															40(5-6)
+{"t_42"
+	("vehicle2" side(rus) period(early) min_stage(3) max_stage(6) cw(0) cp(100) crew1(tankman:13) crew2(tank_commander:1))
+	{cost 4250}
+	{cost_ap 800}
+	{cost_sp 6}
+;//	{tags "limit1"}
+	;// CP 100
+}
+
+;--																															41(7-8)
+;--																															42(9-10)
+{"kv1_122"
+	("vehicle2" side(rus) period(mid) min_stage(8) max_stage(10) cw(0) cp(32) crew1(tankman:4) crew2(tank_commander:1))
+	{cost 1450}
+	{cost_ap 500}
+	{cost_sp 8}
+;// CP 35 + 5(0) = 35	
+}
+
+;--																															42(9-10)
+{"kv5"
+	("vehicle2" side(rus) period(mid) min_stage(9) max_stage(10) cw(0) cp(40) crew1(tankman:5) crew2(tank_commander:1))
+	{cost 2050}
+	{cost_ap 1000}	
+	{cost_sp 12}	
+;//	{tags "limit1"}
+;// 40 = 40 + 0(5+1)
+}
+
+;--																															42(9-10)
+;--																															43(11-12)
+{"kv220"
+	("vehicle2" side(rus) period(mid) min_stage(9) max_stage(12) cw(0) cp(30) crew1(tankman:4) crew2(tank_commander:1))
+	{cost 1350}
+	{cost_ap 400}		
+;//	{tags "limit2"}
+}
+
+
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14);13
+{"kv_220"
+	("vehicle2" side(rus) period(mid) min_stage(9) max_stage(13) cw(0) cp(35) crew1(tankman:4) crew2(tank_commander:1))
+	{cost 1650}
+	{cost_ap 400}	
+;//	{tags "limit2"}
+}
+
+;--																															42(9-10)
+;--																															43(11-12)
+;R42
+{"kv-3"
+	("vehicle2" side(rus) period(mid) min_stage(9) max_stage(12) cw(8) cp(35) crew1(tankman:5) crew2(tank_commander:1))
+	{cost 1850}
+	{cost_ap 600}	
+;//	{tags "limit2"}	
+;// 35 = 35 + 0(5+1)	
+	{not_for_sale 1}
+}
+
+;--																															43(11-12)
+;--																															44(13-14)
+{"kv4b"
+	("vehicle2" side(rus) period(mid) min_stage(11) max_stage(14) cw(0) cp(40) crew1(tankman:5) crew2(tank_commander:1))
+	{cost 2150}
+	{cost_ap 750}
+	{cost_sp 14}	
+;//	{tags "limit2"}
+;// 40 = 40 + 0(5+1)
+}
+
+;--																															43(11-12)
+;--																															44(13-14)
+;//{"object248"
+;//	("vehicle3" side(rus) period(late) min_stage(11) max_stage(14) cw(0) cp(35) crew1(tankman:3) crew2(tank_commander:1) crew3(tankman:1))
+;//	{cost 1625}
+;//}
+
+;//																															43(11-12)
+;//																															44(13-14)
+;//{"is_100"
+;//	("vehicle3" side(rus) period(late) min_stage(11) max_stage(14) cw(0) cp(35) crew1(tankman:3) crew2(tank_commander:1) crew3(tankman:1))
+;//	{cost 1625}
+;//;// CP 35 = 35 + 0(3+1+1)	
+;//}
+
+;--																															43(11-12)
+;--																															44(13-14)
+{"kv122"
+	("vehicle2" side(rus) period(late) min_stage(11) max_stage(14) cw(0) cp(30) crew1(tankman:3) crew2(tank_commander:1))
+	{cost 1450}
+	{cost_ap 500}
+	{cost_sp 6}	
+;//	CP 30 - 0 = 30
+}
+
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"is_3"
+	("vehicle2" side(rus) period(late) min_stage(13) max_stage(99) cw(0) cp(35) crew1(tankman:3) crew2(tankman:1))
+	{cost 2140}
+	{cost_ap 600}
+	{cost_sp 10}	
+;//	{tags "limit1"}
+;// 35 = 35 + 0(3+1)		
+}
+
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"is_4_100"
+	("vehicle2" side(rus) period(late) min_stage(14) max_stage(99) cw(0) cp(45) sc(2) crew1(tankman:3) crew2(tank_commander:1))
+	{cost 2640}
+	{cost_ap 550}
+	{cost_sp 12}	
+;//	{tags "limit1"}
+;// 45 = 45 + 0(3+1)	
+}
+
+;--																															45(15-16)
+{"is_4"
+	("vehicle2" side(rus) period(late) min_stage(15) max_stage(99) cw(0) cp(40) crew1(tankman:3) crew2(tankman:1))
+	{cost 2350}
+	{cost_ap 500}
+	{cost_sp 7}	
+;//	{tags "limit1"}
+;// 40 = 40 + 0(3+1)	
+}
+
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"is_6"
+	("vehicle2" side(rus) period(late) min_stage(15) max_stage(99) cw(0) cp(40) crew1(tankman:3) crew2(tank_commander:1))
+	{cost 2375}
+	{cost_ap 525}
+	{cost_sp 8}
+;// 40 = 40 + 0(3+1)	
+}
+
+;--																															45(15-16) ;16
+;--																															46(17-99) ;99+
+{"is_7"
+	("vehicle2" side(rus) period(late) min_stage(16) max_stage(99) cw(8) cp(50) crew1(tankman:4) crew2(tank_commander:1))
+	{cost 4350}
+	{cost_ap 1750}
+	{cost_sp 24}
+;//	{tags "limit1"}
+;// 50 = 50 + 0(4+1)	
+}
+
+;;------------------------------------------------------------ Modded+MACE SPG/HMC/GMS
+
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+;R39
+{"su5"
+	("vehicle3" side(rus) period(early) min_stage(5) max_stage(10) cw(0) cp(22) crew1(tankman:1) crew2(tank_commander:1) crew3(artilleryman_private:3))
+	{cost 790}
+	{cost_ap 400}
+	{cost_sp 2}	
+;//	{tags "limit1"}
+;// CP 25 = 22 + 3 	
+}
+
+;--																															39(1-4)
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+;R39
+{"su14"
+	("vehicle3" side(rus) period(early)  min_stage(3) max_stage(99) cw(0) cp(23) crew1(tankman:1) crew2(tank_commander:1) crew3(artilleryman_private:7))
+	{cost 1800}  
+	{cost_ap 400}
+	{cost_sp 4}	
+;//	{tags "limit1"}
+;// CP 30 = 23 + 7(1+1+7)
+;//	{not_for_sale 1}
+}
+
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															43(13-14)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+;R40
+{"su14_2"
+	("vehicle2" side(rus) period(early) min_stage(7) max_stage(99) cw(0) cp(24) crew1(artilleryman_private:6) crew2(tank_commander:1))
+	{cost 1975}
+	{cost_ap 400}
+	{cost_sp 4}	
+;//	{tags "limit1"}
+;//CP 30 = 24 + 6(6+1)
+}
+
+;--																															41(7-8)
+;R41
+{"su122e"
+	("vehicle2" side(rus) period(mid) min_stage(7) max_stage(8) cw(0) cp(25) crew1(tankman:4) crew2(tank_commander:1))
+	{cost 740}
+;//	{tags "limit2"}
+}
+
+;;------------------------------------------------------------ Modded+MACE Tank-destroyers
+
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+{"su100y"    
+	("vehicle2" side(rus) period(early) min_stage(5) max_stage(10) cw(0) cp(35) crew1(tankman:5) crew2(tank_commander:1)) 
+	{cost 2650}
+	{cost_ap 800}
+	{cost_sp 12}
+;//	{tags "limit1"}
+;// CP 35 = 35 + 0(5+1)	
+}
+
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+{"marder139_rus"
+	("vehicle2" side(rus) period(mid) min_stage(8) max_stage(12) cw(0) cp(15) crew1(tankman:3) crew2(tank_commander:1))
+	{cost 630}
+	;// CP 15 + 4(0) = 15
+}
+
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+{"su57b"
+	("vehicle2" side(rus) period(mid) min_stage(9) max_stage(14) cw(0) cp(15) crew1(tankman:3) crew2(tank_commander:1))
+	{cost 650}
+;//	{tags "limit2"}
+}
+
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"su122p"
+	("vehicle2" side(rus) period(late) min_stage(13) max_stage(99) cw(0) cp(25) crew1(tankman:3) crew2(tank_commander:1))
+	{cost 1575}
+;//	{tags "limit2"}
+;// CP 25 = 25 + 0(4+1)		
+}
+
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+{"wolverine"
+	("vehicle2" side(rus) period(mid)  min_stage(11)  max_stage(15) cw(0) cp(25) crew1(tankman:4) crew2(tank_commander:1))
+	{cost 875}
+;//	{tags "limit1"}
+;// CP 20 = 20 + 0(4+1)	
+}
+
+;--																															44(13-14);13
+;R44
+{"su152_late"
+	("vehicle2" side(rus) period(late) min_stage(13) max_stage(14) cw(0) cp(25) crew1(tankman:4) crew2(tank_commander:1))
+	{cost 1150}
+;//	{tags "limit2"}	
+;// CP 25 = 25 + 0(4+1)	
+}
+
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"isu_152_2"
+	("vehicle2" side(rus) period(late) min_stage(15) max_stage(99) cw(8) cp(30) sc(2) sc(2) crew1(tankman:4) crew2(tank_commander:1))
+	{cost 1850}
+	{cost_ap 400}
+	{cost_sp 8}	
+;//	{tags "limit2"}	
+} 
+
+;;------------------------------------------------------------ GER ARM Beute-Tanks
+
+;--																															43(11-12)
+;--																															44(13-14)
+{"t_v_85"
+	("vehicle2" side(rus) period(mid) min_stage(11) max_stage(14) cw(0) cp(25) crew1(tankman:4) crew2(tank_commander:1))
+	{cost 1650}
+	{cost_ap 300}
+;//	{tags "limit1"}
+}
+
+;--																															45(14-15)
+{"panther_5"
+	("vehicle2" side(rus) period(late) min_stage(14) max_stage(15) cw(0) cp(20) crew1(tankman:4) crew2(tank_commander:1))
+	{cost 1350}
+	{cost_ap 150}	
+;//	{tags "limit1"}
+}
+
+;;------------------------------------------------------------ Modded+MACE special tanks
+
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+;// SUPPLY AMMO
+{"bt2_supply_rus"
+	("vehicle3" side(rus) period(early) min_stage(5) max_stage(99) cw(0) cp(7) crew1(tankman:1) crew2(mgun_1:1) crew3(engineer_1:2))
+	{cost 675}
+	{cost_ap 625}
+	{cost_sp 3}	
+;//	("supply_ap" supply(625)) ;// cost
+;//	{tags "limit1"}
+}
+
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+;// SUPPLY REP
+{"t34_44supply"
+	("vehicle"  side(rus) period(mid) min_stage(43) max_stage(99) cw(0) cp(15) crew(tankman:2))
+	{cost 1230}
+	{cost_ap 750}
+	{cost_sp 4}
+;//	{tags "limit1"}
+;// CP = 15 = 15 + 2(0)	
+}
+
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+;// SUPPLY WEP
+{"t34_44nohead"
+	("vehicle"  side(rus) period(mid) min_stage(11) max_stage(99) cw(0) cp(10) crew(tankman:2))
+	{cost 2500}
+	{cost_ap 800}
+;//	("supply_ap" supply(800)) ;// cost
+;//	{tags "limit1"}
+;// CP 10 = 10 + 0(2)		
+}
+
+;========================================================================== / ARM units ==========================================================================
+
+
+;========================================================================== Original Units ==========================================================================
+;// SUPPLY AMMO
+{"inf_crate_rus"
+	("vehicle"  side(rus) period(mid) min_stage(1) max_stage(99) cw(1) cp(0) crew(rifleman_1:0))
+	{cost 25}
+	{cost_ap 50}
+;//	("supply_ap" supply(50)) ;// cost
+}
+
+;// SUPPLY AMMO
+{"ap_2"
+	("vehicle"  side(rus) period(mid) min_stage(1) max_stage(99) cw(1) cp(0) crew(rifleman_1:2))
+	{cost 150}
+	{cost_ap 300}
+;//	("supply_ap" supply(300)) ;// cost
+}
+
+;;------------------------------------------------------------ Original MG-cannons
+;--																															39(1-4)
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+{"maxim"
+	("vehicle2" side(rus) period(mid) min_stage(1) max_stage(10) cw(2) cp(0) scf(20) crew1(mg_crew:1) crew2(mg_crew_asst:1))
+	{cost 75}
+;// CP 2 = 0 + 2	
+}
+
+;--																															39(1-4)
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+{"ds39_stand"
+;	("vehicle2" side(rus) period(mid) min_stage(3) max_stage(12) cw(2) cp(0) crew1(mg_crew:1) crew2(mg_crew_asst:1))
+	("vehicle2" side(rus) period(mid) min_stage(3) max_stage(12) cw(2) cp(0) crew1(mg_crew:1) crew2(mg_crew_asst:0))
+	{cost 90}
+;// CP 1 = 0 + 1	
+}
+
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"sg43_stand"
+	("vehicle2" side(rus) period(mid) min_stage(11) max_stage(99) cw(2) cp(0) crew1(mg_crew:1) crew2(mg_crew_asst:1))	
+	{cost 80}
+;// CP 2 = 0 + 2	
+}
+
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"dshk_stan"
+	("vehicle2" side(rus) period(mid) min_stage(7) max_stage(99) cw(2) cp(1) crew1(mg_crew:1) crew2(mg_crew_asst:1))
+	{cost 150}
+	{cost_ap 25}	
+;// CP 3 = 1 + 2	
+}
+
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"dshk_aa"
+	("vehicle2" side(rus) period(mid) min_stage(9) max_stage(99) cw(2) cp(1) crew1(mg_crew:1) crew2(mg_crew_asst:1))
+	{cost 150}
+	{cost_ap 50}	
+;// CP 3 = 1 + 2	
+}
+
+;;------------------------------------------------------------ Original AA-cannons
+;--																															39(1-4)
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+{"25mm_72k"
+	("vehicle2"  side(rus) period(early) min_stage(2) max_stage(10) cw(0) cp(12) scf(0) crew1(artilleryman_private:2) crew2(artilleryman_ls:1))
+	{cost 275}
+;// CP 15 = 12 + 3	
+;//	{tags "limit2"}
+}
+
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"37mm_61k"
+	("vehicle2"  side(rus) period(early) min_stage(7) max_stage(99) cw(1) cp(12) crew1(artilleryman_private:2) crew2(artilleryman_ls:1))
+	{cost 300}
+	{cost_ap 125}	
+;// CP 15 = 12 + 3		
+;//	{tags "limit1"}
+}
+
+;--																															39(1-4)
+;--																															40(5-6)
+;--																															41(7-8)
+{"76mm_m1938"
+	("vehicle2"  side(rus) period(early) min_stage(2) max_stage(8) cw(1) cp(16) crew1(artilleryman_private:3) crew2(artilleryman_ls:1))
+	{cost 575}
+	{cost_ap 175}	
+;// CP 20 = 16 + 4		
+;//	{tags "limit1"}
+}
+
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"85mm_52k"
+	("vehicle2"  side(rus) period(mid) min_stage(9) max_stage(99) cw(1) cp(16) crew1(artilleryman_private:3) crew2(artilleryman_ls:1))
+	{cost 575}
+	{cost_ap 175}	
+;//	{tags "limit1"}
+;// CP 20 = 16 + 4	
+}
+
+;;------------------------------------------------------------ Original AT WEAPONRY
+;--																															39(1-4)
+;--																															40(5-6)
+;--																															41(7-8)
+{"37mm_m30"
+	("vehicle2"  side(rus) period(early) min_stage(1) max_stage(8) cw(1) cp(6) crew1(artilleryman_private:3) crew2(artilleryman_ls:1))
+	{cost 175}
+;// CP 10 = 6 + 4
+;//	{tags "limit2"}
+}
+
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+{"m41_ampulomet"
+	("vehicle"  side(rus) period(early) min_stage(7) max_stage(12) cw(1) cp(4) crew(artilleryman_private:2))
+	{cost 130}
+;// CP 6 = 4 + 2		
+;//	{tags "limit1"}
+}
+
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+{"45mm_m37"
+	("vehicle2"  side(rus) period(early) min_stage(5) max_stage(10) cw(1) cp(6) crew1(artilleryman_private:3) crew2(artilleryman_ls:1))
+	{cost 180}
+;// CP 10 = 6 + 4	
+}
+
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+{"45mm_m42"
+	("vehicle2"  side(rus) period(early) min_stage(9) max_stage(14) cw(1) cp(6) crew1(artilleryman_private:3) crew2(artilleryman_ls:1))
+	{cost 190}
+;// CP 10 = 6 + 4	
+}
+
+;--																															40(5-6)
+{"76mm_m1933"
+	("vehicle2"  side(rus) period(early) min_stage(5) max_stage(6) cw(1) cp(11) crew1(artilleryman_private:3) crew2(artilleryman_ls:1))
+	{cost 320}
+;// CP 15 = 11 + 4
+}
+
+;--																															40(5-6)
+;--																															41(7-8)
+{"76mm_f22"
+	("vehicle2"  side(rus) period(early) min_stage(5) max_stage(8) cw(1) cp(11) crew1(artilleryman_private:3) crew2(artilleryman_ls:1))
+	{cost 350}
+;// CP 15 = 11 + 4	
+}
+
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+{"57mm_zis2"
+	("vehicle2"  side(rus) period(early) min_stage(7) max_stage(12) cw(1) cp(11) crew1(artilleryman_private:3) crew2(artilleryman_ls:1))
+	{cost 575}
+	{cost_ap 150}
+;// CP 15 = 11 + 4	
+}
+
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+{"76mm_zis3"
+	("vehicle2"  side(rus) period(mid) min_stage(9) max_stage(14) cw(1) cp(11) crew1(artilleryman_private:3) crew2(artilleryman_ls:1))
+	{cost 390}
+;// CP 15 = 11 + 4		
+}
+
+
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"100mm_bs3"
+	("vehicle2"  side(rus) period(late) min_stage(13) max_stage(99) cw(1) cp(16) crew1(artilleryman_private:3) crew2(artilleryman_ls:1))
+	{cost 750}
+	{cost_ap 175}
+	{cost_sp 2}	
+;// CP 20 = 16 + 4		
+}
+
+
+;;------------------------------------------------------------ Original MORTARS
+;--																															39(1-4)
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+{"82mm_bm37"
+	("vehicle"  side(rus) period(early) min_stage(1) max_stage(10) cw(1) cp(6) crew(artilleryman_private:2))
+	{cost 250}
+	{cost_ap 25}	
+}
+
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"82mm_bm37_ai"
+	("vehicle"  side(rus) period(early) min_stage(7) max_stage(99) cw(1) cp(6) crew(artilleryman_private:2))
+	{cost 300}
+	{not_for_player_sale 1}
+}
+
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"120mm_pm38"
+	("vehicle"  side(rus) period(mid) min_stage(7) max_stage(99) cw(1) cp(8) crew(artilleryman_private:2))
+	{cost 450}
+	{cost_ap 75}	
+;//	{tags "limit4"}
+;//	CP 8 + 2 = 10
+}
+
+;;------------------------------------------------------------ Original INF.SUPPORT
+;--																															39(1-4)
+;--																															40(5-6)
+{"76mm_bpk76"
+	("vehicle"  side(rus) period(mid) min_stage(1) max_stage(6) cw(1) cp(4) crew(artilleryman_private:2))
+	{cost 250}
+;// CP 6 = 4 + 2
+}
+
+;--																															39(1-4)
+{"76mm_m1902"
+	("vehicle2"  side(rus) period(early) min_stage(1) max_stage(4) cw(1) cp(11) crew1(artilleryman_private:3) crew2(artilleryman_ls:1))
+	{cost 200}
+;// CP 15 = 11 + 4	
+}
+
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+{"76mm_m1927"
+	("vehicle2"  side(rus) period(early) min_stage(5) max_stage(10) cw(1) cp(11) crew1(artilleryman_private:3) crew2(artilleryman_ls:1))
+	{cost 340}
+;// CP 15 = 11 + 4
+}
+
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"76mm_m43"
+	("vehicle2"  side(rus) period(early) min_stage(11) max_stage(99) cw(1) cp(11) crew1(artilleryman_private:3) crew2(artilleryman_ls:1))
+	{cost 350}
+;// CP 15 = 11 + 4	
+}
+
+;;------------------------------------------------------------ Original HOWITZERS
+;--																															41(7-8)
+;--																															42(9-10)
+{"122mm_m1910"
+	("vehicle2"  side(rus) period(early) min_stage(7) max_stage(10) cw(1) cp(16) crew1(artilleryman_private:3) crew2(artilleryman_ls:1))
+	{cost 700}
+;// CP 20 = 16 + 4		
+;//	{tags "limit2"}
+}
+
+;--																															39(1-4)
+;--																															40(5-6)
+{"107mm_m1910_30"
+	("vehicle2"  side(rus) period(early) min_stage(2) max_stage(6) cw(1) cp(16) crew1(artilleryman_private:3) crew2(artilleryman_ls:1))
+	{cost 400}
+;// CP 20 = 16 + 4	
+;//	{tags "limit1"}
+}
+
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"122mm_m30"
+	("vehicle2"  side(rus) period(early) min_stage(11) max_stage(99) cw(1) cp(16) crew1(artilleryman_private:3) crew2(artilleryman_ls:1))
+	{cost 750}
+;// CP 20 = 16 + 4	
+;//	{tags "limit1"}
+}
+
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"122mm_a19"
+	("vehicle2"  side(rus) period(mid) min_stage(9) max_stage(99) cw(1) cp(15) crew1(artilleryman_private:4) crew2(artilleryman_ls:1))
+	{cost 900}
+;// CP 20 = 15 + 5
+;//	{tags "limit1"}
+}	
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"152mm_ml20"
+	("vehicle2"  side(rus) period(late) min_stage(9) max_stage(99) cw(1) cp(20) crew1(artilleryman_private:4) crew2(artilleryman_ls:1))
+	{cost 1000}
+;// CP 25 = 20 + 5
+;//	{tags "limit1"}
+}
+
+;--																															39(1-4)
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+{"152mm_br2"
+	("vehicle2"  side(rus) period(early) min_stage(3) max_stage(14) cw(1) cp(20) crew1(artilleryman_private:4) crew2(artilleryman_ls:1))
+	{cost 1050}
+;// CP 25 = 20 + 5	
+;//	{tags "limit1"}
+}
+
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"203mm_b4"
+	("vehicle2"  side(rus) period(mid) min_stage(7) max_stage(99) cw(1) cp(25) crew1(artilleryman_private:4) crew2(artilleryman_ls:1))
+	{cost 1500}
+;// CP 30 = 25 + 5	
+;//	{tags "limit1"}
+}
+
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"280mm_br5"
+	("vehicle2"  side(rus) period(late) min_stage(13) max_stage(99) cw(1) cp(30) crew1(artilleryman_private:4) crew2(artilleryman_ls:1))
+	{cost 1750}
+;// CP 35 = 30 + 5		
+;//	{tags "limit1"}
+}
+
+;--																															43(11-12)
+;--																															44(13-14)
+;R43
+{"300mm_m30"
+	("vehicle2"  side(rus) period(mid) min_stage(11) max_stage(14) cw(2) cp(11) crew1(artilleryman_private:3) crew2(artilleryman_ls:1))
+	{cost 1750}	
+	{cost_ap 900}
+	{cost_sp 6}	
+;//	{tags "limit1"}
+;// CP 15= 11 + 4(3+1)		
+}
+
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+;R44
+{"300mm_m31"
+	("vehicle2"  side(rus) period(mid) min_stage(13) max_stage(99) cw(2) cp(21) crew1(artilleryman_private:3) crew2(artilleryman_ls:1))
+	{cost 1550}
+	{cost_ap 1800}
+	{cost_sp 10}	
+;//	{tags "limit1"}
+;// CP 25 = 21 + 4(3+1)		
+}
+
+;;------------------------------------------------------------ Original Wheeled vehicles
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+{"m72"
+	("vehicle2" side(rus) period(mid) min_stage(7) max_stage(99) cw(4) cp(0) crew1(rifleman_1:1) crew2(mgun_2:1))
+	{cost 40}
+}
+
+;--																															39(1-4)
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"gaz_aaa"
+	("vehicle"  side(rus) period(early) min_stage(1) max_stage(5) cw(1) cp(0) crew(rifleman_1:1))
+	{cost 25} 
+;// CP 1 = 0 + 1(1)
+;//	{not_for_player_sale 1}
+}
+
+;--																															39(1-4)
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+;// SUPPLY AMMO
+{"gaz_aaa_supply"
+	("vehicle2"  side(rus) period(early) min_stage(2) max_stage(99) cw(1) cp(1) crew1(rifleman_1:1) crew2(rifleman_1:8))
+	{cost 590}
+	{cost_ap 425}
+	{cost_sp 2}	
+;//	("supply_ap" supply(425)) ;// cost
+;// CP 6	+ (8)/2 =	[10] = 1 + 1(1) + 8(8)
+;//	{tags "limit1"}
+}
+
+;--																															39(1-4)
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+;// SUPPLY AMMO
+{"gaz_fuel"
+	("vehicle2"  side(rus) period(early) min_stage(2) max_stage(99) cw(1) cp(1) crew1(rifleman_1:1) crew2(rifleman_1:6))
+	{cost 480}
+	{cost_ap 500}
+;//	("supply_ap" supply(500)) ;// cost
+;// CP 5	+(6/2) = [8] = 1 + 7(1+6)	
+;//	{tags "limit1"}
+}
+
+;--																															39(1-4)
+;--																															40(5-6)
+;--																															41(7-8)
+{"gaz_aaa_maximx4"
+;//	("vehicle2"  side(rus) period(early) min_stage(1) max_stage(8) cw(2) cp(5) crew(artilleryman_private:3))
+	("vehicle2"  side(rus) period(early) min_stage(1) max_stage(8) cw(2) cp(2) crew1(artilleryman_private:3) crew2(rifleman_1:5))
+	{cost 270}
+;// CP 5	+ (5)/2 = [7] = 2 + 4(0) + 5(5)		
+;//	{tags "limit2"}
+}
+
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+{"zis5_dshk"
+;//	("vehicle"  side(rus) period(mid) min_stage(5) max_stage(14) cw(2) cp(3) crew(artilleryman_private:3))
+	("vehicle2"  side(rus) period(early) min_stage(5) max_stage(14) cw(2) cp(0) crew1(artilleryman_private:3) crew2(rifleman_1:9))
+	{cost 320}
+	{cost_ap 50}	
+;// CP 5 + (9)/2 = [9] = 0 + 3(0) + 9(9)	
+;//	{tags "limit2"}
+}
+
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+{"gaz_aaa_72k"
+;//	("vehicle"  side(rus) period(mid) min_stage(5) max_stage(12) cw(2) cp(6) crew(artilleryman_private:4))
+	("vehicle2"  side(rus) period(mid) min_stage(5) max_stage(12) cw(2) cp(10) crew1(artilleryman_private:4) crew2(rifleman_1:3))	
+	{cost 440}
+	{cost_ap 100}	
+;// CP 12 + (3)/2 = [13] = 10 + 3(0+3)	
+;//	{tags "limit1"}
+}
+
+;--																															39(1-4)
+;--																															40(5-6)
+;--																															41(7-8)
+{"yag10_29k"
+	("vehicle"  side(rus) period(early) min_stage(2) max_stage(8) cw(2) cp(16) crew(artilleryman_private:4))
+	{cost 680}
+	{cost_ap 175}
+	{cost_sp 2}	
+;// CP 15 = 16 + 4	
+;//	{tags "limit1"}
+}
+
+;--																															39(1-4)
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"zis5"
+	("vehicle"  side(rus) period(early) min_stage(1) max_stage(99) cw(1) cp(1) crew(artilleryman:1))
+	{cost 20}
+;// CP 1 = 1 + 0(1)	
+}
+
+;--																															39(1-4)
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+;// SUPPLY ENG
+{"zis5eng"
+;//	("vehicle2" side(rus) period(early) min_stage(2) max_stage(99) cw(1) cp(3) crew1(engineer_1:1) crew2(engineer_2:1))
+	("vehicle3" side(rus) period(mid) min_stage(2) max_stage(99) cw(1) cp(-2) crew1(engineer_1:1) crew2(engineer_2:1) crew3(rifleman_1:8))
+	{cost 350}
+	{cost_ap 425}
+;//	("supply_ap" supply(225)) ;// cost
+;// CP 3 + (10)/2 = [8] = -2 + 2(2) + 8(8)
+;// 8(4+4) = -2 + 10[ 2(1+1) + 8(8/4)]
+;//	{tags "limit1"}
+}
+
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;R11
+{"zis6_bm8_48"
+;//	("vehicle"  side(rus) period(mid) min_stage(7) max_stage(12) cw(2) cp(23) crew(artilleryman_private:2))
+	("vehicle2"  side(rus) period(mid) min_stage(7) max_stage(12) cw(2) cp(15) crew1(artilleryman_private:2) crew2(rifleman_1:3))
+	{cost 850}
+	{cost_ap 600}
+	{cost_sp 4}	
+;//	{tags "limit2"}
+;// CP 23 + 0(2) = 25
+;// CP 23 + (3)/2 = [24] = 21 + 0(2) + 3(3)
+;// CP 20 = 15 + (2)+(3)
+}
+
+;--																															42(9-10)
+;--																															43(11-12)
+;R42
+{"zis6_bm13_16"
+;//	("vehicle"  side(rus) period(mid) min_stage(9) max_stage(12) cw(2) cp(30) crew(artilleryman_private:2))
+	("vehicle2"  side(rus) period(mid) min_stage(9) max_stage(12) cw(2) cp(20) crew1(artilleryman_private:2) crew2(rifleman_1:3))
+	{cost 1150}
+	{cost_ap 900}
+	{cost_sp 4}	
+;//	{tags "limit2"}
+;// CP 30 + (3)/2 = 31 = [31] = 28 + 0(2) + 3(3)
+;// CP 25 = 20 + (2)+(3)
+}
+
+;--																															44(13-14)
+;--																															45(15-16);99
+;R43
+{"bm13_studebaker"
+	("vehicle"  side(rus) period(mid) min_stage(13) max_stage(99) cw(2) cp(18) crew(artilleryman_private:2))
+	{cost 1050}
+	{cost_ap 900}
+	{cost_sp 12}	
+;//	{tags "limit2"}
+;// CP 20 = 18 + (2)+(3)	
+}
+
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+;R45
+{"bm31_12"
+	("vehicle"  side(rus) period(late) min_stage(15) max_stage(99) cw(2) cp(33) crew(artilleryman_private:2))
+	{cost 3400}
+	{cost_ap 2400}
+	{cost_sp 24}	
+;//	{tags "limit1"}
+;// CP 35 = 33 + 2(2)		
+}
+
+;--																															39(1-4)
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"gaz67"
+	("vehicle"  side(rus) period(early) min_stage(1) max_stage(99) cw(1) cp(0) crew(rifleman_1:1))
+	{cost 25} 
+{not_for_player_sale 1}
+}
+
+;--																															39(1-4)
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"gaz67b"
+	("vehicle"  side(rus) period(mid) min_stage(3) max_stage(99) cw(1) cp(1) crew(mgun_2:2))
+	{cost 125}
+}
+
+;;------------------------------------------------------------ Original BTR vehicles
+;--																															39(1-4)
+{"fai_m"
+	("vehicle2" side(rus) period(early) min_stage(1) max_stage(4) cw(3) cp(4) crew1(tankman:2) crew2(tank_commander:1))
+	{cost 140}
+}
+
+;--																															39(1-4)
+{"ba20"
+	("vehicle2" side(rus) period(late) min_stage(1) max_stage(4) cw(3) cp(4) crew1(tankman:2) crew2(tank_commander:1))
+	{cost 155}
+}
+
+;--																															39(1-4)
+;--																															40(5-6)
+{"ba6"
+	("vehicle2" side(rus) period(early) min_stage(1) max_stage(6) cw(3) cp(7) crew1(tankman:3) crew2(tank_commander:1))
+	{cost 270}
+}
+
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+{"ba10"
+	("vehicle2" side(rus) period(early) min_stage(7) max_stage(12) cw(3) cp(7) crew1(tankman:3) crew2(tank_commander:1))
+	{cost 310}
+}
+
+;--																															42(9-10)
+;--																															43(11-12)
+{"ba64"
+	("vehicle2" side(rus) period(mid) min_stage(9) max_stage(12) cw(3) cp(4) crew1(tankman:1) crew2(tank_commander:1))
+	{cost 290}
+}
+
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"universal_carrier_rus"
+	("vehicle2" side(rus) period(mid) min_stage(7) max_stage(99) cw(3) cp(1) crew1(rifleman_1:2) crew2(tank_commander:1))
+	{cost 200}
+;// CP 3 = 1 + 2(2+1)
+}
+
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"mmg_carrier_rus"
+	("vehicle2" side(rus) period(mid) min_stage(7) max_stage(99) cw(3) cp(1) crew1(rifleman_1:2) crew2(tank_commander:1))
+	{cost 225}
+;// CP 3 = 1 + 2(2+1)	
+}
+
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"m3a1e1_scout_mgun"
+	("vehicle"  side(rus) period(mid) min_stage(9) max_stage(99) cw(3) cp(2) crew(rifleman_1:2))
+	{cost 225}
+}
+
+;;------------------------------------------------------------ Original Tankettes
+;--																															39(1-4)
+{"t20"
+	("vehicle"  side(rus) period(early) min_stage(4) max_stage(5) cw(2) cp(2) crew(tankman:2))
+	{cost 75}
+}
+
+;--																															39(1-4)
+;--																															40(5-6)
+{"t27"
+	("vehicle"  side(rus) period(early) min_stage(1) max_stage(6) cw(0) cp(2) crew(tankman:2))
+	{cost 90}
+}
+;;------------------------------------------------------------ Original Light Tanks
+;--																															39(1-4)
+;--																															40(5-6)
+{"t37a"
+	("vehicle2" side(rus) period(early) min_stage(1) max_stage(6) cw(0) cp(3) crew1(tankman:1) crew2(tank_commander:1))
+	{cost 75}
+}
+
+;--																															40(5-6)
+;--																															41(7-8)
+{"t40"
+	("vehicle2" side(rus) period(early) min_stage(5) max_stage(8) cw(0) cp(10) crew1(tankman:1) crew2(tank_commander:1))
+	{cost 320}
+}
+
+;--																															41(7-8)
+;--																															42(9-10)
+{"t30"
+	("vehicle2" side(rus) period(early) min_stage(7) max_stage(10) cw(0) cp(8) crew1(tankman:1) crew2(tank_commander:1))
+	{cost 400}
+}
+
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"t60"
+	("vehicle2" side(rus) period(early) min_stage(9) max_stage(99) cw(0) cp(10) crew1(tankman:1) crew2(tank_commander:1))
+	{cost 420}
+}
+
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16);99
+{"t60_bm8_24"
+	("vehicle2" side(rus) period(mid) min_stage(9) max_stage(99) cw(0) cp(10) crew1(tankman:1) crew2(tank_commander:1))
+	{cost 1350}
+	{cost_ap 450}
+	{cost_sp 4}
+;// CP 10 = 10 + 0 (1+1)	
+;//	{tags "limit3"}
+}
+
+;--																															41(7-8)
+;--																															42(9-10)
+{"t50"
+	("vehicle2" side(rus) period(mid) min_stage(7) max_stage(10) cw(0) cp(15) crew1(tankman:3) crew2(tank_commander:1))
+	{cost 590}
+}
+
+;--																															41(7-8)
+;--																															42(9-10)
+{"t70"
+	("vehicle2" side(rus) period(mid) min_stage(7) max_stage(10) cw(0) cp(10) crew1(tankman:1) crew2(tank_commander:1))
+	{cost 375}
+}
+
+;--																															43(11-12)
+;--																															44(13-14)
+{"t70m"
+	("vehicle2" side(rus) period(late) min_stage(11) max_stage(14) cw(0) cp(10) crew1(tankman:1) crew2(tank_commander:1))
+	{cost 425}
+}
+
+;--																															39(1-4)
+{"bt2_da2"
+	("vehicle2" side(rus) period(early) min_stage(1) max_stage(4) cw(0) cp(10) crew1(tankman:1) crew2(tank_commander:1))
+	{cost 350}
+}
+
+;--																															39(1-4)
+;--																															40(5-6)
+{"bt2"
+	("vehicle2" side(rus) period(early) min_stage(1) max_stage(6) cw(0) cp(15) crew1(tankman:2) crew2(tank_commander:1))
+	{cost 525}
+	{cost_ap 125}	
+}
+
+;--																															39(1-4)
+;--																															40(5-6)
+;--																															41(7-8)7
+{"bt5"
+	("vehicle2" side(rus) period(early) min_stage(2) max_stage(7) cw(0) cp(12) crew1(tankman:2) crew2(tank_commander:1))
+	{cost 550}
+	{cost_ap 100}	
+}
+
+;--																															40(5-6)
+;--																															41(7-8)
+{"bt7"
+	("vehicle2" side(rus) period(early) min_stage(5) max_stage(8) cw(0) cp(15) crew1(tankman:2) crew2(tank_commander:1))
+	{cost 500}
+}
+
+;--																															39(1-4)
+;--																															40(5-6)
+;--																															41(7-8)
+{"bt7a"
+	("vehicle2" side(rus) period(mid) min_stage(1) max_stage(8) cw(0) cp(20) crew1(tankman:2) crew2(tank_commander:1))
+	{cost 520}
+	{cost_ap 125}	
+;// CP 20 = 20 + 0(2+1)
+}
+
+;--																															39(1-4)
+{"t26_31"
+	("vehicle2" side(rus) period(early) min_stage(1) max_stage(4) cw(0) cp(5) crew1(tankman:2) crew2(tank_commander:1))
+	{cost 275}
+	;// CP 5 = 5 + 0
+}
+
+;--																															39(1-4)
+{"kht26"
+	("vehicle2" side(rus) period(early) min_stage(1) max_stage(4) cw(0) cp(15) crew1(tankman:1) crew2(tank_commander:1))
+	{cost 375}
+	;// CP 5 = 5 + 0
+}
+
+;--																															39(1-4)
+{"t26_33"
+	("vehicle2" side(rus) period(early) min_stage(1) max_stage(4) cw(0) cp(8) crew1(tankman:2) crew2(tank_commander:1))
+	{cost 285}
+	;// CP 8 = 8 + 0
+}
+
+;--																															39(1-4)
+{"t26_39"
+	("vehicle2" side(rus) period(early) min_stage(1) max_stage(4) cw(0) cp(10) crew1(tankman:2) crew2(tank_commander:1))
+	{cost 295}
+	;// CP 9 = 9 + 0
+}
+
+;--																															40(5-6)
+{"kht130"
+	("vehicle2" side(rus) period(early) min_stage(7) max_stage(8) cw(0) cp(15) crew1(tankman:2) crew2(tank_commander:1))
+	{cost 385}
+	;// CP 15 = 15 + 0
+}
+
+
+;--																															41(7-8)
+{"m3_stuart_late_rus"
+	("vehicle2" side(rus) period(mid) min_stage(7) max_stage(8) cw(0) cp(15) crew1(tankman:3) crew2(tank_commander:1))
+	{cost 500}
+;// CP 15 = 15 + 0(3+1)		
+}
+
+;--																															42(9-10)
+;--																															43(11-12)
+{"m3a1_stuart_rus"
+	("vehicle2" side(rus) period(mid) min_stage(9) max_stage(12) cw(0) cp(12) crew1(tankman:3) crew2(tank_commander:1))
+	{cost 450}
+;// CP 12 = 12 + 0(3+1)	
+}
+
+;--																															41(7-8)
+{"valentine2"
+	("vehicle2" side(rus) period(early) min_stage(7) max_stage(8) cw(0) cp(15) crew1(tankman:2) crew2(tank_commander:1))
+	{cost 550}
+;// CP 15 = 15 + 0(2+1)	
+}
+
+;--																															42(9-10)
+{"valentine7"
+	("vehicle2" side(rus) period(mid) min_stage(9) max_stage(10) cw(0) cp(20) crew1(tankman:2) crew2(tank_commander:1))
+	{cost 575}
+;// CP 20 = 20 + 0(2+1)	
+}
+
+;--																															43(11-12)
+;--																															44(13-14)
+{"valentine9"
+	("vehicle2" side(rus) period(mid) min_stage(11) max_stage(14) cw(0) cp(15) crew1(tankman:2) crew2(tank_commander:1))
+	{cost 525}
+;// CP 15 = 15 + 0(2+1)		
+}
+
+;;------------------------------------------------------------ Original MEDIUM
+;--																															41(7-8)
+{"m3_lee_rus"
+	("vehicle2" side(rus) period(mid) min_stage(7) max_stage(9) cw(0) cp(20) crew1(tankman:5) crew2(tank_commander:1))
+	{cost 700}
+}
+
+;--																															41(7-8)
+{"m4a2_75_early_rus"
+	("vehicle2" side(rus) period(mid) min_stage(7) max_stage(8) cw(0) cp(20) crew1(tankman:4) crew2(tank_commander:1))
+	{cost 775}
+;// CP 20 = 20 + 0(4+1)	
+}
+
+;--																															42(9-10)
+{"m4a2_75_late_rus"
+	("vehicle3" side(rus) period(mid) min_stage(9) max_stage(10) cw(0) cp(20) crew1(tankman:3) crew2(tank_commander:1) crew3(tankman:1))
+	{cost 600}
+;// CP 20 = 20 + 0(4+1)		
+}
+
+;--																															42(9-10)
+;--																															43(11-12)
+{"m4a2_76w_early_rus"
+	("vehicle3" side(rus) period(mid) min_stage(9) max_stage(12) cw(0) cp(25) crew1(tankman:3) crew2(tank_commander:1) crew3(tankman:1))
+	{cost 820}
+;// CP 25 = 25 + 0(3+1+1)		
+}
+
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"m4a2_76w_late_rus"
+	("vehicle3" side(rus) period(mid) min_stage(11) max_stage(99) cw(0) cp(20) crew1(tankman:4) crew2(tank_commander:1) crew3(arm_rus_rkka_1943_smg:1))
+	{cost 720}
+;// CP 19 = 19 + 1(4+1+1)		
+}
+
+;--																															39(1-4)
+{"t28"
+	("vehicle2" side(rus) period(early) min_stage(1) max_stage(4) cw(0) cp(23) crew1(tankman:5) crew2(tank_commander:1))
+	{cost 645}
+	{cost_ap 100}	
+;//	CP 23 = 23 + 0 	
+}
+
+;--																															40(5-6)
+{"t28_38"
+	("vehicle2" side(rus) period(early) min_stage(5) max_stage(6) cw(0) cp(25) crew1(tankman:5) crew2(tank_commander:1))
+	{cost 725}
+	;//CP 25 = 25 + 0(0)
+}
+
+;--																															41(7-8)
+{"t28e"
+	("vehicle2" side(rus) period(early) min_stage(5) max_stage(7) cw(0) cp(20) crew1(tankman:5) crew2(tank_commander:1))
+	{cost 635}
+}
+
+;--																															40(5-6)
+{"t3476_40"
+	("vehicle2" side(rus) period(early) min_stage(5) max_stage(6) cw(0) cp(25) crew1(tankman:3) crew2(tank_commander:1))
+	{cost 750}
+	{cost_ap 175}
+	{cost_sp 2}	
+}
+
+;--																															41(7-8)
+{"t3476_41"
+	("vehicle2" side(rus) period(mid) min_stage(7) max_stage(8) cw(0) cp(20) crew1(tankman:3) crew2(tank_commander:1))
+	{cost 700}
+}
+
+;--																															41(7-8)
+{"t3457_41"																															
+	("vehicle2" side(rus) period(mid) min_stage(7) max_stage(8) cw(0) cp(22) crew1(tankman:3) crew2(tank_commander:1))
+	{cost 725}
+	{cost_ap 175}
+;// CP 22 = 22 + 0 (3+1)	
+}
+
+;--																															41(7-8)
+;--																															42(9-10)
+{"t3476_41e"
+	("vehicle2" side(rus) period(mid) min_stage(7) max_stage(10) cw(0) cp(20) crew1(tankman:3) crew2(tank_commander:1))
+	{cost 700}
+}
+
+;--																															42(9-10)
+{"t3476_42"
+	("vehicle2" side(rus) period(mid) min_stage(9) max_stage(10) cw(0) cp(15) crew1(tankman:3) crew2(tank_commander:1))
+	{cost 575}
+}
+
+;--																															43(11-12)
+{"t3476_43"
+	("vehicle2" side(rus) period(mid) min_stage(11) max_stage(12) cw(0) cp(15) crew1(tankman:3) crew2(tank_commander:1))
+	{cost 500}
+}
+
+;--																															43(11-12)
+{"t3457_43"
+	("vehicle2" side(rus) period(mid) min_stage(11) max_stage(12) cw(0) cp(20) crew1(tankman:3) crew2(tank_commander:1))
+	{cost 625}	
+}
+
+;--																															43(11-12)
+{"t3476_43_flame"
+	("vehicle2" side(rus) period(mid) min_stage(11) max_stage(12) cw(0) cp(20) crew1(tankman:3) crew2(tank_commander:1))
+	{cost 620}
+	{cost_ap 100}	
+;//	{tags "limit1"}
+}
+
+;--																															44(13-14)
+{"t3485_44"
+	("vehicle2" side(rus) period(late) min_stage(13) max_stage(14) cw(0) cp(20) crew1(tankman:4) crew2(tank_commander:1))
+	{cost 700}
+}
+
+;--																															44(13-14)
+;--																															45(15-16)
+{"t3485_44a"
+	("vehicle2" side(rus) period(late) min_stage(13) max_stage(15) cw(0) cp(20) crew1(tankman:4) crew2(tank_commander:1))
+	{cost 710}
+}
+
+;--																															44(13-14)
+;--																															45(15-16)
+{"t3485_44b"
+	("vehicle2" side(rus) period(late) min_stage(13) max_stage(15) cw(0) cp(20) crew1(tankman:4) crew2(tank_commander:1))
+	{cost 710}
+}
+
+;--																															44(13-14)
+{"t3485_44_flame"
+	("vehicle2" side(rus) period(late) min_stage(13) max_stage(14) cw(0) cp(20) crew1(tankman:4) crew2(tank_commander:1))
+	{cost 790}
+	{cost_ap 100}
+;// CP 20 = 20 + 0(4+1)	
+}
+
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"t3485_44a_flame"
+	("vehicle2" side(rus) period(late) min_stage(15) max_stage(99) cw(0) cp(20) crew1(tankman:4) crew2(tank_commander:1))
+	{cost 750}
+	{cost_ap 100}	
+}
+
+;;------------------------------------------------------------ Original Heavy
+;--																															42(9-10)
+;--																															43(11-12)
+{"churchill3"
+	("vehicle2" side(rus) period(mid) min_stage(11) max_stage(12) cw(0) cp(30) crew1(tankman:4) crew2(tank_commander:1))
+;//	{tags "limit1"}
+	{cost 1350}
+;// CP 30 = 30 + 0(4+1)		
+}
+
+;--																															39(1-4)
+;--																															40(5-6)
+{"t35"
+	("vehicle2" side(rus) period(early) min_stage(1) max_stage(6) cw(0) cp(27) crew1(tankman:9) crew2(tank_commander:1))
+	{cost 1490}
+	{cost_ap 225}	
+	{cost_sp 2}
+;//	27 CP
+}
+
+;--																															39(1-4)3
+;--																															40(5-6)
+;--																															41(7-8)
+{"t35_late"
+	("vehicle2" side(rus) period(early) min_stage(3) max_stage(8) cw(0) cp(30) crew1(tankman:9) crew2(tank_commander:1))
+;//	{tags "limit1"}
+	{cost 1875}
+	{cost_ap 275}	
+	{cost_sp 3}
+;//	30 CP
+}
+
+;--																															39(1-4)2
+;--																															40(5-6)
+{"smk"
+	("vehicle2" side(rus) period(early) min_stage(2) max_stage(6) cw(0) cp(35) crew1(tankman:6) crew2(tank_commander:1))
+;//	{tags "limit1"}
+;// CP 35 = 25 + 0(6+1)	
+	{cost 2460}
+	{cost_ap 750}
+	{cost_sp 8}
+}
+
+;--																															39(1-4)3
+;--																															40(5-6)
+;R39
+{"kv1_39"
+	("vehicle2" side(rus) period(early) min_stage(3) max_stage(6) cw(0) cp(40) crew1(tankman:4) crew2(tank_commander:1))
+;//	{tags "limit1"}
+	{cost 2440}
+	{cost_ap 1150}
+	{cost_sp 10}	
+}
+
+;--																															40(5-6)
+;--																															41(7-8)
+{"kv1_40"
+	("vehicle2" side(rus) period(early) min_stage(5) max_stage(8) cw(0) cp(30) crew1(tankman:4) crew2(tank_commander:1))
+;//	{tags "limit1"}
+	{cost 1960}
+	{cost_ap 900}	
+	{cost_sp 8}	
+}
+
+;--																															40(5-6)
+;--																															41(7-8)
+{"kv2_40"
+	("vehicle2" side(rus) period(early) min_stage(5) max_stage(8) cw(0) cp(30) crew1(tankman:5) crew2(tank_commander:1))
+	{cost 2560}
+	{cost_ap 1500}	
+	{cost_sp 16}		
+;// CP 30 + 6(0) = 30
+;//	{tags "limit1"}
+}
+
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+{"kv1_40e"
+	("vehicle2" side(rus) period(early) min_stage(5) max_stage(10) cw(0) cp(33) crew1(tankman:4) crew2(tank_commander:1))
+	{cost 2250}
+	{cost_ap 1250}	
+	{cost_sp 10}	
+;//	{tags "limit1"}
+;//	CP 33 + 5(0) = 33
+}
+
+;--																															41(7-8)
+;--																															42(9-10)9
+{"kv1_41"
+	("vehicle2" side(rus) period(mid) min_stage(7) max_stage(9) cw(0) cp(30) crew1(tankman:4) crew2(tank_commander:1))
+;//	{tags "limit1"}
+	{cost 1450}
+	{cost_ap 750}
+	{cost_sp 8}	
+}
+
+;--																															42(9-10)
+;--																															43(11-12)
+{"kv8"
+	("vehicle2" side(rus) period(mid) min_stage(9) max_stage(12) cw(0) cp(30) crew1(tankman:4) crew2(tank_commander:1))
+	{cost 1680}
+	{cost_ap 500}	
+;//	{tags "limit1"}
+}
+
+;--																															42(9-10)
+;--																															43(11-12)
+{"kv1_42"
+	("vehicle2" side(rus) period(mid) min_stage(9) max_stage(12) cw(0) cp(25) crew1(tankman:4) crew2(tank_commander:1))
+	{cost 1050}
+	{cost_ap 500}
+	{cost_sp 6}	
+;//	{tags "limit1"}
+}
+
+;--																															42(9-10)
+;--																															43(11-12)
+{"kv1s"
+	("vehicle2" side(rus) period(mid) min_stage(9) max_stage(12) cw(0) cp(20) crew1(tankman:4) crew2(tank_commander:1))
+	{cost 940}
+;//	{tags "limit1"}
+;// CP 20 = 20 + 0(4+1)
+}
+
+;--																															43(11-12)
+;--																															44(13-14)
+{"kv85"
+	("vehicle2" side(rus) period(late) min_stage(11) max_stage(14) cw(0) cp(25) crew1(tankman:3) crew2(tank_commander:1))
+;//	{tags "limit2"}
+	{cost 850}
+}
+
+;--																															43(11-12)
+;R43
+{"is1_43"
+	("vehicle2" side(rus) period(late) min_stage(11) max_stage(12) cw(0) cp(30) crew1(tankman:3) crew2(tank_commander:1))
+	{cost 1050}
+	{cost_ap 350}
+	{cost_sp 4}
+}
+
+;--																															43(11-12)
+;--																															44(13-14)13
+{"is2_43"
+	("vehicle2" side(rus) period(late) min_stage(11) max_stage(13) cw(0) cp(35) crew1(tankman:3) crew2(tank_commander:1))
+	{cost 1725}
+	{cost_ap 600}
+	{cost_sp 8}	
+;// CP 35 = 35 + 0(3+1)	
+}
+
+;--																															44(13-14)
+;--																															45(15-16)
+{"is2_44"
+	("vehicle2" side(rus) period(late) min_stage(13) max_stage(16) cw(0) cp(30) crew1(tankman:3) crew2(tank_commander:1))
+	{cost 1450}
+	{cost_ap 600}
+	{cost_sp 6}	
+;// CP 30 = 30 + 0(3+1)		
+}
+
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"is2_45"
+	("vehicle2" side(rus) period(late) min_stage(15) max_stage(99) cw(0) cp(27) crew1(tankman:3) crew2(tank_commander:1))
+	{cost 1350}	
+;// CP 27 = 27 + 0(3+1)		
+}
+
+;;------------------------------------------------------------ Original AT-SPG
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;-
+{"su26"
+	("vehicle2" side(rus) period(early) min_stage(7) max_stage(12) cw(0) cp(15) crew1(tankman:2) crew2(tank_commander:1))
+	{cost 650}
+	{cost_ap 50}	
+;// CP 15 + 0(2+1) = 15
+}
+
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+{"zis30"
+	("vehicle2" side(rus) period(early) min_stage(7) max_stage(12) cw(0) cp(15) crew1(tankman:3) crew2(tank_commander:1))
+	{cost 475}
+;// CP 15 = 15 + 0(3+1)
+}
+
+;--																															42(9-10)
+;--																															43(11-12)
+{"su76"
+	("vehicle2" side(rus) period(mid) min_stage(9) max_stage(12) cw(0) cp(12) crew1(tankman:3) crew2(tank_commander:1))
+	{cost 490}
+;// CP 12 = 12 + 0(3+1)	
+}
+
+;--																															43(11-12)
+{"su85"
+	("vehicle2" side(rus) period(mid) min_stage(11) max_stage(12) cw(0) cp(20) crew1(tankman:3) crew2(tank_commander:1))
+	{cost 750}
+;//	{tags "limit2"}
+;// CP 20 = 20 + 0(3+1)	
+}
+
+;--																															44(13-14)
+{"su85m"
+	("vehicle2" side(rus) period(mid) min_stage(13) max_stage(14) cw(0) cp(15) crew1(tankman:3) crew2(tank_commander:1))
+	{cost 720}
+;//	{tags "limit2"}
+;// CP 15 = 15 + 0(3+1)	
+}
+
+;--																															44(13-14)
+;--																															45(15-16)
+;R44
+{"su100"
+	("vehicle2" side(rus) period(late) min_stage(13) max_stage(16) cw(0) cp(20) crew1(tankman:3) crew2(tank_commander:1))
+	{cost 950}	
+;//	{tags "limit2"}
+;// CP 20 = 20 + 0(3+1)		
+}
+
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14);13
+;R42
+{"su122"
+	("vehicle2" side(rus) period(mid) min_stage(9) max_stage(13) cw(0) cp(20) crew1(tankman:4) crew2(tank_commander:1))
+	{cost 750}
+;//	{tags "limit2"}
+;// 20 = 20 + 0(4+1)	
+}
+
+;--																															43(11-12)
+;R43
+{"su152"
+	("vehicle2" side(rus) period(late) min_stage(11) max_stage(12) cw(0) cp(30) crew1(tankman:4) crew2(tank_commander:1))
+	{cost 1350}
+	{cost_ap 250}
+	{cost_sp 4}	
+;//	{tags "limit2"}	
+;// CP 30 = 30 + 0(4+1)	
+}
+
+;--																															44(13-14);14
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+;R44
+{"isu152"
+	("vehicle2" side(rus) period(late) min_stage(14) max_stage(99) cw(0) cp(30) crew1(tankman:4) crew2(tank_commander:1))
+	{cost 1350}
+;//	{tags "limit2"}
+;// CP 30 = 30 + 0(4+1)	
+}
+
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+;R44
+{"isu122s"
+	("vehicle2" side(rus) period(late) min_stage(13) max_stage(99) cw(0) cp(30) crew1(tankman:4) crew2(tank_commander:1))
+	{cost 1250}
+	{cost_ap 175}
+	{cost_sp 4}	
+;//	{tags "limit2"}
+;// CP 30 = 30 + 0(4+1)	
+}
+
+
+;;=================================== EMPLACEMENT BOT AI 
+;;------------------------------------------------------------ Emp.MG
+;//{"heavy_mg_maxim"
+;//	("emplacement" side(rus) period(mid) min_stage(1) max_stage(99) cw(2) cp(0) crew(mg_crew:2) condition(barricade) action(heavy_mg_maxim))
+;//	{cost 75}{not_for_player_sale 1}
+;//}
+
+;--																															39(1-4)
+;--																															40(5-6)
+;--																															41(7-8)
+{"heavy_mg_ds39_stand"
+	("emplacement" side(rus) period(mid) min_stage(1) max_stage(8) cw(0) cp(0) cd(5) crew(mgun_2:2) condition(barricade) action(ds39_stand))
+	{cost 2}	
+	{tags "early_stage"}	{not_for_player_sale 1}
+}
+
+;--																															42(9-10)
+;--																															43(11-12)
+{"heavy_mg_dshk_stan"
+	("emplacement" side(rus) period(mid) min_stage(9) max_stage(12) cw(0) cp(0) cd(5) crew(mgun_2:2) condition(barricade) action(dshk_stan))
+	{cost 2}	
+	{tags "mid_stage"}	{not_for_player_sale 1}
+}
+
+;--																															44(13-14)
+;--																															45(15-16)
+{"heavy_mg_sg43_stand"
+	("vehicle" side(rus) period(mid) min_stage(13) max_stage(16) cw(0) cp(5) cd(0) crew(artilleryman:4) condition(barricade) action(sg43_stand))
+	{cost 2}	
+	{tags "late_stage"}	{not_for_player_sale 1}
+}
+
+;;------------------------------------------------------------ Emp.AA-MG
+
+;--																															42(9-10)
+;--																															43(11-12)
+{"heavy_mg_maxim_x4"
+	("emplacement" side(rus) period(mid) min_stage(9) max_stage(12) cw(0) cp(0) cd(5) crew(mgun_2:2) condition(barricade) action(maxim_x4))
+	{cost 2}	
+	{tags "mid_stage"}	{not_for_player_sale 1}
+}
+
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+{"heavy_mg_dshk_aa"
+	("emplacement" side(rus) period(mid) min_stage(9) max_stage(99) cw(0) cp(0) cd(5) crew(mgun_2:2) condition(barricade) action(dshk_aa))
+	{cost 2}	
+	{tags "mid_stage"}	{not_for_player_sale 1}
+}
+
+;;------------------------------------------------------------ Emp.AA-Auto-Cannons
+;--																															39(1-4)
+;--																															40(5-6)
+;--																															40(8-9)
+;--																															41(7-8)
+;--																															42(10-11)
+;--																															43(11-12)
+{"heavy_mg_25mm_72k"
+	("emplacement" side(rus) period(mid) min_stage(2) max_stage(12) cw(0) cp(0) cd(5) crew(artilleryman:3) condition(barricade) action(25mm_72k))
+	{cost 4}	
+	{tags "early_stage"}	{not_for_player_sale 1}
+}
+
+;--																															41(7-8)
+;--																															42(10-11)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"heavy_mg_37mm_61k"
+	("emplacement" side(rus) period(mid) min_stage(7) max_stage(99) cw(0) cp(0) cd(5) crew(artilleryman:3) condition(barricade) action(37mm_61k))
+	{cost 6}	
+	{tags "mid_stage"}	{not_for_player_sale 1}
+}
+
+;;------------------------------------------------------------ Emp.AA-Cannons
+
+;--																															39(1-4)
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"heavy_mg_ZP_3154B"
+	("emplacement" side(rus) period(mid) min_stage(1) max_stage(99) cw(0) cp(0) cd(5) crew(artilleryman:2) condition(barricade) action(ZP_3154B))
+	{cost 4}
+	{tags "early_stage"}	{not_for_player_sale 1}
+}
+
+;--																															39(1-4)
+;--																															40(5-6)
+;--																															41(7-8)
+{"heavy_mg_76mm_m1938"
+	("emplacement" side(rus) period(early) min_stage(4) max_stage(8) cw(0) cp(0) cd(5) crew(artilleryman:4) condition(barricade) action(76mm_m1938))
+	{cost 6}	
+	{tags "early_stage"}	{not_for_player_sale 1}
+}
+
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+{"heavy_mg_maxim"
+	("emplacement" side(rus) period(mid) min_stage(7) max_stage(99) cw(2) cp(0) crew(artilleryman:4) condition(barricade) action(85mm_52k_bot))
+	{cost 2}	
+	{tags "mid_stage"}	{not_for_player_sale 1}
+;// REPLACER 85mm_52k_bot
+}
+
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+{"heavy_mg_85mm_52k"
+	("emplacement" side(rus) period(mid) min_stage(9) max_stage(99) cw(0) cp(0) cd(5) crew(artilleryman:4) condition(barricade) action(85mm_52k))
+	{cost 6}	
+	{tags "mid_stage"}	{not_for_player_sale 1}
+}
+
+;//;--																															39(1-4)
+;//;--																															40(5-6)
+;//;--																															41(7-8)
+;//{"broneschitok_1"
+;//	("emplacement" side(rus) period(mid) min_stage(1) max_stage(8) cw(0) cp(0) cd(5) crew(artilleryman:4) condition(barricade) action(broneschitok_1))
+;//	{cost 1}	
+;//	{tags "early_stage"}	{not_for_player_sale 1}
+;//}
+
+;;------------------------------------------------------------ Emp.Cannons
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;//{"heavy_mg_76mm_m43"
+;//	("emplacement"  side(rus) period(mid) min_stage(11) max_stage(99) cw(0) cp(0) crew(artilleryman:4) condition(barricade) action(76mm_m43))
+;//	{cost 6}	
+;//	{tags "mid_stage"}	{not_for_player_sale 1}
+;//}
+
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;//{"heavy_mg_m41_ampulomet"
+;//	("emplacement" side(rus)period(mid) min_stage(5) max_stage(12) cw(0) cp(0) cd(5) crew(artilleryman:2) condition(barricade) action(m41_ampulomet))
+;//	{cost 2}	
+;//	{tags "early_stage"}	{not_for_player_sale 1}
+;//}
+
+;--																															39(1-4)
+;--																															40(5-6)
+{"heavy_mg_45mm_m37"
+	("emplacement" side(rus)period(mid) min_stage(1) max_stage(6) cw(0) cp(0) cd(5) crew(artilleryman:4) condition(barricade) action(45mm_m37))
+	{cost 5}	
+	{tags "early_stage"}	{not_for_player_sale 1}
+}
+
+;--																															39(1-4)
+{"heavy_mg_76mm_m1902"
+	("emplacement" side(rus)period(early) min_stage(1) max_stage(4) cw(0) cp(0) cd(5) crew(artilleryman:4) condition(barricade) action(76mm_m1902))
+	{cost 5}	
+	{tags "early_stage"}	{not_for_player_sale 1}
+}
+
+;--																															39(1-4)
+;--																															40(5-6)
+{"heavy_mg_76mm_m1933"
+	("emplacement" side(rus)period(early) min_stage(3) max_stage(6) cw(0) cp(0) cd(5) crew(artilleryman:4) condition(barricade) action(76mm_m1933))
+	{cost 5}	
+	{tags "early_stage"}	{not_for_player_sale 1}
+}
+
+;--																															40(5-6)
+;--																															41(7-8)
+{"heavy_mg_76mm_f22"
+	("emplacement" side(rus)period(early) min_stage(5) max_stage(8) cw(0) cp(0) cd(5) crew(artilleryman:4) condition(barricade) action(76mm_f22))
+	{cost 5}	
+	{tags "early_stage"}	{not_for_player_sale 1}
+}
+
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;//{"heavy_mg_45mm_m42"
+;//	("emplacement" side(rus)period(mid) min_stage(7) max_stage(12) cw(0) cp(0) cd(5) crew(artilleryman:4) condition(barricade) action(45mm_m42))
+;//	{cost 6}	
+;//	{tags "early_stage"}	{not_for_player_sale 1}
+;//}
+
+;--																															42(9-10)
+;--																															43(11-12)
+{"heavy_mg_57mm_zis2"
+	("emplacement" side(rus) period(mid) min_stage(9) max_stage(12) cw(0) cp(0) cd(5) crew(artilleryman:4) condition(barricade) action(57mm_zis2))
+	{cost 5}	
+	{tags "mid_stage" "mid_stage"}	{not_for_player_sale 1}
+}
+
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+{"heavy_mg_76mm_zis3"
+	("emplacement" side(rus) period(mid) min_stage(7) max_stage(12) cw(0) cp(0) cd(5) crew(artilleryman:4) condition(barricade) action(76mm_zis3))
+	{cost 5}	
+	{tags "early_stage"}	{not_for_player_sale 1}
+}
+
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"heavy_mg_57mm_zis2_late"
+	("emplacement" side(rus) period(late) min_stage(13) max_stage(99) cw(0) cp(0) cd(5) crew(artilleryman:4) condition(barricade) action(57mm_zis2_late))
+	{cost 5}	
+	{tags "late_stage"}	{not_for_player_sale 1}
+}
+
+;--																															44(13-14)14
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"heavy_mg_d-44"
+	("emplacement"  side(rus) period(mid) min_stage(14) max_stage(99) cw(20) cp(0) crew(artilleryman:4) condition(barricade) action(d-44))
+	{cost 5}	
+	{tags "late_stage"}	{not_for_player_sale 1}
+}
+
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"heavy_mg_100mm_bs3"
+	("emplacement"  side(rus) period(mid) min_stage(13) max_stage(99) cw(20) cp(0) crew(artilleryman:4) condition(barricade) action(100mm_bs3))
+	{cost 5}	
+	{tags "late_stage"}	{not_for_player_sale 1}
+}
+
+;;------------------------------------------------------------ Emp.Support
+;--																															40(5-6)
+;--																															41(7-8)
+;//{"heavy_mg_76mm_bpk76"
+;//	("emplacement" side(rus) period(mid) min_stage(5) max_stage(10) cw(0) cp(0) cd(5) crew(artilleryman:2) condition(barricade) action(76mm_bpk76))
+;//	{cost 2}	
+;//	{tags "early_stage"}	{not_for_player_sale 1}
+;//}
+
+
+;--																															39(1-4)
+;--																															40(5-6)
+{"heavy_mg_76mm_m1902"
+	("emplacement" side(rus) period(mid) min_stage(1) max_stage(6) cw(0) cp(0) cd(5) crew(artilleryman:4) condition(barricade) action(76mm_m1902))
+	{cost 4}	
+	{tags "early_stage"}	{not_for_player_sale 1}
+}
+
+;--																															41(7-8)
+;--																															42(9-10)
+{"heavy_mg_76mm_m1927"
+	("emplacement" side(rus) period(mid) min_stage(7) max_stage(10) cw(0) cp(0) cd(5) crew(artilleryman:4) condition(barricade) action(76mm_m1927))
+	{cost 4}	
+	{tags "early_stage"}	{not_for_player_sale 1}
+}
+
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"heavy_mg_76mm_m43"
+	("emplacement" side(rus) period(mid) min_stage(11) max_stage(99) cw(0) cp(0) cd(5) crew(artilleryman:4) condition(barricade) action(76mm_m43))
+	{cost 4}	
+	{tags "mid_stage"}	{not_for_player_sale 1}
+}
+
+;;------------------------------------------------------------ Emp.Mortars
+;--																															39(1-4)
+;--																															40(5-6)
+;--																															41(7-8)
+{"heavy_mg_82mm_bm37"
+	("emplacement"  side(rus) period(mid) min_stage(1) max_stage(8) cw(0) cp(0) cd(5) crew(artilleryman:2) condition(barricade) action(82mm_bm37))
+	{cost 4}	
+	{tags "early_stage"}	{not_for_player_sale 1}
+}
+
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"heavy_mg_82mm_bm37_ai"
+	("emplacement"  side(rus) period(mid) min_stage(9) max_stage(99) cw(0) cp(0) cd(5) crew(artilleryman:2) condition(barricade) action(82mm_bm37_ai))
+	{cost 4}	
+	{tags "mid_stage"}	{not_for_player_sale 1}
+}
+
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"heavy_mg_120mm_pm38"
+	("emplacement"  side(rus) period(mid) min_stage(9) max_stage(99) cw(0) cp(0) cd(5) crew(artilleryman:2) condition(barricade) action(120mm_pm38))
+	{cost 4}	
+	{tags "mid_stage"}	{not_for_player_sale 1}
+}
+
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"heavy_mg_160mm_mt_13_mortar"
+	("emplacement"  side(rus) period(late) min_stage(11) max_stage(99) cw(0) cp(0) cd(5) crew(artilleryman:4) condition(barricade) action(160mm_mt_13_mortar))
+	{cost 4}	
+	{tags "mid_stage"}	{not_for_player_sale 1}
+}
+
+;;------------------------------------------------------------ Emp.Artillery
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+;--																															46(17-99) ;99+
+{"heavy_mg_122mm_a19"
+	("emplacement"  side(rus) period(mid) min_stage(9) max_stage(99) cw(0) cp(0) cd(5) crew(artilleryman:5) condition(barricade) action(122mm_a19))
+	{cost 6}	
+	{tags "mid_stage"}	{not_for_player_sale 1}
+}	
+
+
+;--																															39(1-4)
+;--																															40(5-6)
+;--																															41(7-8)
+{"heavy_mg_107mm_m1910_30"
+	("emplacement"  side(rus) period(mid) min_stage(3) max_stage(8) cw(0) cp(0) cd(5) crew(artilleryman:4) condition(barricade) action(107mm_m1910_30))
+	{cost 6}	
+	{tags "early_stage"}	{not_for_player_sale 1}
+}
+
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+{"heavy_mg_122mm_m1910"
+	("emplacement"  side(rus) period(mid) min_stage(9) max_stage(16) cw(0) cp(0) cd(5) crew(artilleryman:4) condition(barricade) action(122mm_m1910))
+	{cost 6}	
+	{tags "mid_stage"}	{not_for_player_sale 1}
+}
+
+;;------------------------------------------------------------ Emp.Reactive Artillery
+
+;//;--																															44(13-14)
+;//;--																															45(15-16)
+;//;--																															46(17-99) ;99+
+;//{"heavy_mg_300mm_m30"
+;//	("emplacement"  side(rus) period(late) min_stage(13) max_stage(99) cw(0) cp(0) cd(5) crew(artilleryman:4) condition(barricade) action(300mm_m30_stand))
+;//	{cost 25}	
+;//	{tags "late_stage"}	{not_for_player_sale 1}
+;//}
+
+;//;--																															44(13-14)
+;//;--																															45(15-16)
+;//;--																															46(17-99) ;99+
+;//{"heavy_mg_300mm_m31"
+;//	("emplacement"  side(rus) period(late) min_stage(13) max_stage(99) cw(0) cp(0) cd(5) crew(artilleryman:4) condition(barricade) action(300mm_m31))
+;//	{cost 25}	
+;//	{tags "late_stage"}	{not_for_player_sale 1}
+;//}
+
+;;------------------------------------------------------------ Emp.Tanks
+;;------------------------------------------------------------ Emp.Tanks Light
+;--																															39(1-4)
+;//{"heavy_mg_bt5"	;3
+;//	("emplacement"  side(rus) period(early) min_stage(1) max_stage(4) cw(0) cp(0) cd(5) crew(artilleryman:0) condition(barricade) action(bt5))
+;//	{cost 1}
+;//	{tags "early_stage"}	{not_for_player_sale 1}
+;//}
+
+;;------------------------------------------------------------ Emp.Tanks Medium
+
+;--																															39(1-4)
+{"heavy_mg_t28_38"	;6
+	("emplacement"  side(rus) period(early) min_stage(1) max_stage(4) cw(0) cp(0) cd(5) crew(artilleryman:6) condition(barricade) action(t28_38))
+	{cost 1}		
+	{tags "early_stage"}	{not_for_player_sale 1} 
+}
+
+;--																															40(5-6)
+{"heavy_mg_t28e"	;6
+	("emplacement"  side(rus) period(early) min_stage(1) max_stage(4) cw(0) cp(0) cd(5) crew(artilleryman:6) condition(barricade) action(t28e))
+	{cost 1}		
+	{tags "early_stage"}	{not_for_player_sale 1}
+}
+
+;--																															41(7-8)
+;//{"heavy_mg_t3457_41"		;4
+;//	("emplacement"  side(rus) period(mid) min_stage(7) max_stage(8) cw(0) cp(0) cd(5) crew(artilleryman:4) condition(barricade) action(t3457_41))
+;//	{cost 1}	
+;//	{tags "early_stage"}	{not_for_player_sale 1}
+;//}
+
+;--																															44(13-14)
+;--																															45(15-16)
+;//{"heavy_mg_t3485_44a"	;5
+;//	("emplacement"  side(rus) period(mid) min_stage(13) max_stage(16) cw(0) cp(0) cd(5) crew(artilleryman:5) condition(barricade) action(t3485_44a))
+;//	{cost 1}	
+;//	{tags "late_stage"}	{not_for_player_sale 1}
+;//}
+
+;--																															44(13-14)
+;--																															45(15-16)
+{"heavy_mg_m4a2_75_late_rus"	;5
+	("emplacement"  side(rus) period(mid) min_stage(13) max_stage(99) cw(0) cp(0) cd(5) crew(artilleryman:5) condition(barricade) action(m4a2_75_late_rus))
+	{cost 1}	
+	{tags "late_stage"}	{not_for_player_sale 1} 	
+}
+
+;;------------------------------------------------------------ Emp.Tanks Heavy
+
+;--																															40(5-6)
+{"heavy_mg_kv1_40e"		;5
+	("emplacement"  side(rus) period(early) min_stage(5) max_stage(6) cw(0) cp(0) cd(5) crew(artilleryman:5) condition(barricade) action(kv1_40e))
+	{cost 1}		
+	{tags "early_stage"}	{not_for_player_sale 1}
+}
+
+;--																															41(7-8)
+;//{"heavy_mg_kv1_41"	;5
+;//	("emplacement"  side(rus) period(early) min_stage(7) max_stage(8) cw(0) cp(0) cd(5) crew(artilleryman:5) condition(barricade) action(kv1_41))
+;//	{cost 1}	
+;//	{tags "early_stage"}	{not_for_player_sale 1} 
+;//}
+
+;--																															41(7-8)
+{"heavy_mg_kv2_40"	;6
+	("emplacement"  side(rus) period(early) min_stage(5) max_stage(6) cw(0) cp(0) cd(5) crew(artilleryman:6) condition(barricade) action(kv2_40))
+	{cost 1}	
+	{tags "early_stage"}	{not_for_player_sale 1}
+}
+
+;--																															42(9-10)
+{"heavy_mg_kv85"	;4
+	("emplacement"  side(rus) period(mid) min_stage(9) max_stage(10) cw(0) cp(0) cd(5) crew(artilleryman:4) condition(barricade) action(kv85))
+	{cost 1}
+	{tags "mid_stage"}	{not_for_player_sale 1} 	
+}
+
+;--																															43(11-12)
+{"heavy_mg_is2_43"	;4
+	("emplacement"  side(rus) period(mid) min_stage(11) max_stage(12) cw(0) cp(0) crew(artilleryman:4) condition(barricade) action(is2_43))
+	{cost 1}
+	{tags "mid_stage"}	{not_for_player_sale 1}	
+}
+
+
+;--																															44(13-14)
+{"heavy_mg_is2_44"	;4
+	("emplacement"  side(rus) period(mid) min_stage(13) max_stage(14) cw(0) cp(0) crew(artilleryman:4) condition(barricade) action(is2_44))
+	{cost 1}	
+	{tags "late_stage"}	{not_for_player_sale 1}	
+}
+
+;--																															45(15-16)
+;--																															--(16-99)
+{"heavy_mg_is_3"	;4
+	("emplacement"  side(rus) period(mid) min_stage(15) max_stage(99) cw(0) cp(0) crew(artilleryman:4) condition(barricade) action(is_3))
+	{cost 1}
+	{tags "late_stage"}	{not_for_player_sale 1}	
+}
+
+;;------------------------------------------------------------ Emp.Tanks SPG
+
+;--																															43(11-12)
+{"heavy_mg_su152"	;5
+	("emplacement"  side(rus) period(mid) min_stage(11) max_stage(12) cw(0) cp(0) cd(5) crew(artilleryman:5) condition(barricade) action(su152))
+	{cost 1}	
+	{tags "mid_stage"}	{not_for_player_sale 1}
+}
+
+;--																															44(13-14)
+{"heavy_mg_isu152"	;5
+	("emplacement"  side(rus) period(mid) min_stage(13) max_stage(14) cw(0) cp(0) cd(5) crew(artilleryman:5) condition(barricade) action(isu152))
+	{cost 1}	
+	{tags "late_stage"}	{not_for_player_sale 1}
+}
+
+;--																															45(15-16)
+;--																															--(16-99)
+{"heavy_mg_isu122s"	;5
+	("emplacement"  side(rus) period(mid) min_stage(15) max_stage(99) cw(0) cp(0) cd(5) crew(artilleryman:5) condition(barricade) action(isu122s))
+	{cost 1}	
+	{tags "late_stage"}	{not_for_player_sale 1}
+}

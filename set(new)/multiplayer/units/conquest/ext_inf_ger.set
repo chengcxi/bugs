@@ -1,0 +1,798 @@
+
+; "vs(...)" corresponds to a define found in the settings down this file
+; v() If squad is motorised, this is the vehicle that carries the men.
+; cd() corresponds to countdown delay to spawn the unit once battle begins
+; ci() corresponds to cooldown to buy unit once again
+; side() corresponds to side (faction)
+; n() corresponds to number of crew in the unit, the type of crew is defined in the "vs"
+; g() corresponds to group, which is for classification and collective cooldowns
+; sc() corresponds to the score given to the player upon killing this unit
+; b() corresponds to the button where this unit is located in the menus
+; i() corresponds to icon order
+; cw() corresponds to capture weight for flags
+; cp() corresponds to CP, that is, the value that units have that fill up how many troops can be fielded
+; {cost -} corresponds to MP cost of the unit
+; {level 6} Corresponds to player XP progress in player profile from steam
+; {research_stage 4} corresponds to research stage of dynamic campaign
+; {squad_cost_factor 1} - adds the cost of the crew / the cost of the squad members with this factor
+; scf() - adds the cost of the crew / the cost of the squad members with this factor
+; {score_factor 0.05} - when the unit is killed, it will have an impact on the MP score of 0.05*Cost. This only works if {squad_cost_factor 1}. With a fixed cost for the squad such (= scf 0), you need to adjust the scores of the individual units manually
+; {score 20} - when the unit is killed, it will have an impact on the MP score of 20
+; {round_multiple 5.0} - the cost of the unit is rounded up or down to this multiple
+
+;--																															39(1-4)
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+
+{"mp/ger/late/tankman"													("ger_tankman_late" 										side(ger)							r(99) rm(99)) 		{cost 20.0}}
+{"mp/ger/late/artilleryman"												("ger_tankman_late" 										side(ger)							r(99) rm(99)) 		{cost 15.0}}
+{"mp/ger/late/mgun_2"													("ger_regular_late" 										side(ger) lvl(lvl1 lvl2)			r(99) rm(99)) 		{cost 8.0}}
+{"mp/ger/late/rifleman_1"												("ger_regular_late" 										side(ger) lvl(lvl1 lvl2) 			r(99) rm(99))		{cost 8.0}}
+{"mp/ger/late/antitank_1"												("ger_regular_late" 										side(ger) lvl(lvl1 lvl2)			r(11) rm(99)) 		{cost 80.0}}
+{"mp/ger/late/antitank_2"												("ger_regular_late" 										side(ger) lvl(lvl1 lvl2 lvl3 lvl4)	r(11) rm(99)) 		{cost 25.0}}
+{"mp/ger/late/engineer_1"												("ger_regular_advanced_late" 								side(ger) lvl()						r(11) rm(99)) 		{cost 50.0}}
+{"mp/ger/late/engineer_2"												("ger_regular_advanced_late" 								side(ger) lvl()						r(11) rm(99)) 		{cost 50.0}}
+{"mp/ger/late/medic"													("ger_medic_late" 											side(ger)							r(99) rm(99)) 		{cost 40.0}}
+{"mp/ger/late/officer"													("ger_officer_late" 										side(ger)							r(99) rm(99))	 	{cost 100.0}}
+{"mp/ger/late/sniper"													("ger_sniper_late" 											side(ger)							r(11) rm(99)) 		{cost 150.0}}
+
+{"mp/ger/late/signaller"    											("ger_officer_late" 										side(ger)							r(99) rm(99)) 		{cost 800.0}}
+{"mp/ger/late/sniper_elite"												("ger_sniper_late" 											side(ger)							r(4) rm(99))		{cost 150.0}}
+
+{"mp/ger/late/fallsch_sl"	               								("ger_fallschirmjaeger_late" 								side(ger)							r(12) rm(99)) 		{cost 20.0}}
+{"mp/ger/late/fallsch_sl_asst"	           								("ger_fallschirmjaeger_late" 								side(ger)							r(12) rm(99)) 		{cost 40.0}}
+{"mp/ger/late/fallsch_sa"	              								("ger_fallschirmjaeger_late" 								side(ger)							r(12) rm(99)) 		{cost 20.0}}
+{"mp/ger/late/fallsch_sa_scope"	           								("ger_fallschirmjaeger_late" 								side(ger)							r(12) rm(99)) 		{cost 40.0}}
+{"mp/ger/late/fallsch_mg"			       								("ger_fallschirmjaeger_late" 								side(ger)							r(12) rm(99)) 		{cost 40.0}}
+{"mp/ger/late/fallsch_rifle_grenadier"     								("ger_fallschirmjaeger_late" 								side(ger)							r(12) rm(99)) 		{cost 40.0}}
+
+{"mp/ger/late/gd_pzgren_sl"	     										("ger_pzgren_gd_late" 										side(ger) lvl(lvl3)					r(11) rm(99)) 		{cost 40.0}}
+{"mp/ger/late/gd_pzgren_sl_asst" 										("ger_pzgren_gd_late" 										side(ger) lvl(lvl3)					r(11) rm(99)) 		{cost 40.0}}
+{"mp/ger/late/gd_pzgren_stg"	 										("ger_pzgren_gd_late" 										side(ger) lvl(lvl3)					r(11) rm(99)) 		{cost 20.0}}
+{"mp/ger/late/gd_pzgren_mg"	     										("ger_pzgren_gd_late" 										side(ger) lvl(lvl3)					r(11) rm(99)) 		{cost 40.0}}
+{"mp/ger/late/gd_pzgren_mg_asst" 										("ger_pzgren_gd_late" 										side(ger) lvl(lvl3)					r(11) rm(99)) 		{cost 20.0}}
+
+{"mp/ger/late/recon_sl_smg"		 										("ger_regular_late" 										side(ger) lvl(lvl1 lvl2 lvl3)		r(11) rm(99)) 		{cost 10.0}}
+{"mp/ger/late/recon_sl_asst_stg" 										("ger_regular_late" 										side(ger) lvl(lvl1 lvl2)			r(11) rm(99)) 		{cost 20.0}}
+{"mp/ger/late/recon_mg"	         										("ger_regular_late" 										side(ger) lvl(lvl1 lvl2)			r(11) rm(99))		{cost 40.0}}
+{"mp/ger/late/recon_mg_asst"     										("ger_regular_late" 										side(ger) lvl(lvl1 lvl2)			r(11) rm(99)) 		{cost 10.0}}
+
+{"mp/ger/early/officer"													("ger_regular_late"											side(ger) lvl(lvl1 lvl2)			r(99) rm(99)) 		{cost 200.0}}
+
+
+{"mp/ger/mid/rifleman_1"												("ger_regular" 												side(ger) lvl(lvl1 lvl2)			r(99) rm(99)) 		{cost 12.0}} ; k98
+{"mp/ger/mid/rifleman_2"												("ger_regular" 												side(ger) lvl(lvl1 lvl2)			r(99) rm(99)) 		{cost 24.0}} ; k98
+{"mp/ger/mid/rifleman_3"												("ger_regular" 												side(ger) lvl(lvl1 lvl2)			r(99) rm(99)) 		{cost 24.0}} ; k98
+
+;;----------------------------------- GER AI ----------------------------------
+
+{"mp/ger/late/signaller_ai"					    					("inf_tier2" 					side(ger) r(3) rm(99) period(late) 													cost(300.0))}
+
+
+;;----------------------------------- GER ----------------------------------
+;//Tier=[6]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;------------(1939-1945) Squad_oberst
+(define "squad_oberst"
+;//	{tags "%period %side %level infantry man"}
+	{tags "%period %side infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 1.0}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 1.00}
+)
+
+		{"mp/ger/early/ger_oberst"									("squad_oberst" 								period(early)	side(ger) 		lvl7()		r(99) rm(99))		{cp -28.0}		 {cost 10250.0}}
+		{"mp/ger/early/feldgendarmerie"								("squad_oberst" 								period(early)	side(ger) 		lvl6()		r(4) rm(99))		{cp 1.0} 		 {cost 95.0}}
+
+;;----------------------------------- GER PENAL  ----------------------------------
+;//Tier=[1]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;------------ (1939) squad_arm_wh_sonderabteilung_1936(ger)
+(define "squad_arm_wh_sonderabteilung_1936"
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 0.5}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.03}
+)
+		{"mp/ger/early/arm_wh_sonderabteilung_1936_convict_0"		("squad_arm_wh_sonderabteilung_1936"			period(early)	side(ger) 		lvl3()		r(99) rm(99))		{cp 1.0}		{cost 30.0}}
+		{"mp/ger/early/arm_wh_sonderabteilung_1936_convict_1"		("squad_arm_wh_sonderabteilung_1936"			period(early)	side(ger) 		lvl1()		r(99) rm(99))	 	{cp 0.25} 		{cost 16.0}}
+		{"mp/ger/early/arm_wh_sonderabteilung_1936_convict_2"		("squad_arm_wh_sonderabteilung_1936"			period(early)	side(ger) 		lvl1()		r(99) rm(99))	 	{cp 0.25}		{cost 15.0}}
+;//		{"mp/ger/early/arm_wh_sonderabteilung_1936_convict_3"		("squad_arm_wh_sonderabteilung_1936"			period(early)	side(ger) 		lvl1()		r(99) rm(99))  		{cp 0.25}		{cost 14.0}}
+		{"mp/ger/early/arm_wh_sonderabteilung_1936_convict_4"		("squad_arm_wh_sonderabteilung_1936"			period(early)	side(ger) 		lvl1()		r(99) rm(99)) 	 	{cp 0.25}		{cost 16.0}}	
+		{"mp/ger/early/arm_wh_sonderabteilung_1936_convict_mg"		("squad_arm_wh_sonderabteilung_1936"			period(early)	side(ger) 		lvl1()		r(99) rm(99)) 	 	{cp 0.25}		{cost 18.0}}	
+
+;//Tier=[1]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;------------ (1940) ger_strafbatallion(ger)
+(define "ger_strafbatallion"
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 0.5}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.03}
+)
+		{"mp/ger/mid/convict_3"										("ger_strafbatallion" 							period(mid)		side(ger) 		lvl2()		r(99) rm(99))		{cp 1.0}		{cost 30.0}}
+		{"mp/ger/mid/convict_1"										("ger_strafbatallion" 							period(mid)		side(ger) 		lvl0()		r(99) rm(99)) 	   	{cp 0.25}		{cost 15.0}}
+		{"mp/ger/mid/convict_2"										("ger_strafbatallion" 							period(mid)		side(ger) 		lvl0()		r(99) rm(99)) 	 	{cp 0.25} 		{cost 17.0}} 
+
+;//Tier=[1]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;------------ (1941) squad_arm_wh_bewahrungstruppe540_1940(ger)
+(define "squad_arm_wh_bewahrungstruppe540_1940"
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}	
+	{cw 0.5}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.03}
+)
+		{"mp/ger/early/arm_wh_bewahrungstruppe540_1940_convict_0"	("squad_arm_wh_bewahrungstruppe540_1940"		period(early)	side(ger) 		lvl2()		r(99) rm(99)) 		{cp 1.0}		{cost 30.0}}
+		{"mp/ger/early/arm_wh_bewahrungstruppe540_1940_convict_1"	("squad_arm_wh_bewahrungstruppe540_1940"		period(early)	side(ger)  		lvl0()		r(99) rm(99)) 	    {cp 0.25}		{cost 18.0}}
+		{"mp/ger/early/arm_wh_bewahrungstruppe540_1940_convict_2"	("squad_arm_wh_bewahrungstruppe540_1940"		period(early)	side(ger)  		lvl0()		r(99) rm(99)) 	    {cp 0.25} 		{cost 16.0}}
+;//		{"mp/ger/early/arm_wh_bewahrungstruppe540_1940_convict_3"	("squad_arm_wh_bewahrungstruppe540_1940"		period(early)	side(ger)  		lvl0()		r(99) rm(99)) 	    {cp 0.25} 		{cost 15.0}}
+		{"mp/ger/early/arm_wh_bewahrungstruppe540_1940_convict_4"	("squad_arm_wh_bewahrungstruppe540_1940"		period(early)	side(ger)  		lvl0()		r(99) rm(99)) 	    {cp 0.25}		{cost 16.0}}	
+		{"mp/ger/early/arm_wh_bewahrungstruppe540_1940_convict_mg"	("squad_arm_wh_bewahrungstruppe540_1940"		period(early)	side(ger)  		lvl0()		r(99) rm(99)) 	   	{cp 0.25}		{cost 19.0}}
+
+;//Tier=[0]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;------------ (1945) squad_volkssturm(ger)
+(define "squad_volkssturm"
+;//	{tags "%period %side infantry man lvl3 lvl4"}	
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}	
+	{cw 0.3}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.01}	
+)
+		{"mp/ger/late/volkssturm_pol"								("squad_volkssturm" 							period(late)	side(ger)		lvl0()		r(15) rm(99)) 	{cp 1.0} 		{cost 8.0}}
+		{"mp/ger/late/volkssturm_1"									("squad_volkssturm" 							period(late)	side(ger)		lvl0()		r(15) rm(99)) 	{cp 0.0} 		{cost 8.0}}
+		{"mp/ger/late/volkssturm_2"									("squad_volkssturm" 							period(late)	side(ger)		lvl0()		r(15) rm(99))	{cp 0.0} 		{cost 8.0}}
+		{"mp/ger/late/volkssturm_3"									("squad_volkssturm" 							period(late)	side(ger)		lvl0()		r(15) rm(99))	{cp 0.0} 		{cost 8.0}}
+		{"mp/ger/late/volkssturm_4"									("squad_volkssturm" 							period(late)	side(ger)		lvl0()		r(15) rm(99))	{cp 0.0} 		{cost 8.0}}
+		{"mp/ger/late/volkssturm_mg"								("squad_volkssturm" 							period(late)	side(ger)		lvl0()		r(15) rm(99))	{cp 0.0} 		{cost 13.0}}
+		{"mp/ger/late/volkssturm_pzf"								("squad_volkssturm" 							period(late)	side(ger)		lvl0()		r(15) rm(99))	{cp 0.0} 		{cost 12.0}}
+		{"mp/ger/late/volkssturm_rifle"								("squad_volkssturm" 							period(late)	side(ger)		lvl0()		r(15) rm(99))	{cp 0.0} 		{cost 8.0}}
+		{"mp/ger/late/volkssturm_rifle2"							("squad_volkssturm" 							period(late)	side(ger)		lvl0()		r(15) rm(99))	{cp 0.0} 		{cost 8.0}}
+		{"mp/ger/late/volkssturm_smg"								("squad_volkssturm" 							period(late)	side(ger)		lvl0()		r(15) rm(99))	{cp 0.0} 		{cost 10.0}}
+		{"mp/ger/late/volkssturm_smg2"								("squad_volkssturm" 							period(late)	side(ger)		lvl0()		r(15) rm(99))	{cp 0.0} 		{cost 10.0}}
+		
+;;----------------------------------- GER REGULAR ARMY (Tier 2) ----------------------------------
+;//Tier=[2]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;---------------(1939-1945) Luftawaffe(ger)
+(define "squad_luft_def"
+;//	{tags "%period %side %level infantry man"}
+	{tags "%period %side infantry man lvl3 lvl4"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 0.5}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.04}
+)
+		{"mp/ger/mid/luft_def_uo"									("squad_luft_def" 								period(mid)		side(ger)		lvl3()		r(1) rm(12))		{cp 1.0}  		{cost 40.0}}
+		{"mp/ger/mid/luft_def_rifle"								("squad_luft_def" 								period(mid)		side(ger)		lvl2()		r(1) rm(12))		{cp 1.0}  		{cost 25.0}}
+		{"mp/ger/mid/luft_def_mg"									("squad_luft_def" 								period(mid)		side(ger)		lvl2()		r(1) rm(12))		{cp 1.0}  		{cost 35.0}}
+		{"mp/ger/mid/luft_def_pt"									("squad_luft_def" 								period(mid)		side(ger)		lvl2()		r(1) rm(12))		{cp 1.0}  		{cost 35.0}}
+		{"mp/ger/mid/luft_def_medic"								("squad_luft_def" 								period(mid)		side(ger)		lvl2()		r(1) rm(12))		{cp 1.0}  		{cost 33.0}}
+
+;//Tier=[2]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;---------------(1941-1944) squad_roa(ger)
+(define "squad_roa"
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{cw 1.0}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.05}
+)
+		{"mp/ger/mid/cossack_nco"									("squad_roa" 									period(mid)		side(ger)		lvl3()		r(8) rm(13))		{cp 1.0}  		{cost 24.0}} ; ppd40
+		{"mp/ger/mid/cossack_1"										("squad_roa" 									period(mid)		side(ger) 		lvl2()		r(8) rm(13))		{cp 1.0} 		{cost 25.0}} ; svt38
+		{"mp/ger/mid/cossack_2"										("squad_roa" 									period(mid)		side(ger) 		lvl2()		r(8) rm(13))		{cp 1.0} 		{cost 27.0}} ; ppd40
+		{"mp/ger/mid/cossack_3"										("squad_roa" 									period(mid)		side(ger) 		lvl2()		r(8) rm(13))		{cp 1.0} 		{cost 22.0}} ; mosin
+
+
+;//Tier=[2]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;---------------(1939-1941) Regulare Infanterie(ger)
+(define "squad_ger_regelmasige_infanterie"		;//Tier 2
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 1.5}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.05}
+)
+		{"mp/ger/early/nco"											("squad_ger_regelmasige_infanterie" 			period(early)	side(ger)		lvl3()		r(1) rm(8))			{cp 1.0} 		{cost 40.0}}
+		{"mp/ger/early/infanterie_1939"								("squad_ger_regelmasige_infanterie" 			period(early)	side(ger) 		lvl2()		r(1) rm(8))			{cp 1.0} 		{cost 25.0}}
+		{"mp/ger/early/mgun_1"										("squad_ger_regelmasige_infanterie" 			period(early)	side(ger) 		lvl2()		r(1) rm(8))			{cp 1.0} 		{cost 35.0}}
+		{"mp/ger/early/antitank_1"									("squad_ger_regelmasige_infanterie" 			period(early)	side(ger) 		lvl2()		r(1) rm(8))			{cp 1.0} 		{cost 35.0}}
+		{"mp/ger/early/medic"										("squad_ger_regelmasige_infanterie" 			period(early)	side(ger) 		lvl2()		r(1) rm(8))			{cp 1.0} 		{cost 33.0}}
+
+;//Tier=[2]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;---------------(1942-1943) Regulare Infanterie(ger)
+(define "squad_ger_regelmasige_infanterie_1942"
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 1.5}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.05}
+)
+		{"mp/ger/mid/infanterie_1942"								("squad_ger_regelmasige_infanterie_1942" 		period(mid) 	side(ger) 		lvl2()		r(9) rm(12))		{cp 1.0}  		{cost 25.0}}		
+
+;//Tier=[2]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;---------------(1944-1945) Regulare Infanterie(ger)
+(define "squad_ger_regelmasige_infanterie_1944"
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 1.5}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.05}
+)
+		{"mp/ger/late/arm_ger_regular_1944_uo"						("squad_ger_regelmasige_infanterie_1944" 		period(late) 	side(ger)		lvl3()		r(13) rm(99))		{cp 1.0} 		{cost 40.0}}
+		{"mp/ger/late/arm_ger_regular_1944_stg"						("squad_ger_regelmasige_infanterie_1944" 		period(late) 	side(ger) 		lvl2()		r(13) rm(99)) 		{cp 1.0}		{cost 30.0}}
+		{"mp/ger/late/arm_ger_regular_1944_ar"						("squad_ger_regelmasige_infanterie_1944" 		period(late) 	side(ger)		lvl2()		r(13) rm(99)) 		{cp 1.0}		{cost 30.0}}
+		{"mp/ger/late/arm_ger_regular_1944_ar2"						("squad_ger_regelmasige_infanterie_1944" 		period(late) 	side(ger)		lvl2()		r(13) rm(99))		{cp 1.0} 		{cost 30.0}}
+		{"mp/ger/late/arm_ger_regular_1944_mg"						("squad_ger_regelmasige_infanterie_1944" 		period(late) 	side(ger) 		lvl2()		r(13) rm(99))		{cp 1.0} 		{cost 35.0}}
+		{"mp/ger/late/arm_ger_regular_1944_pz"						("squad_ger_regelmasige_infanterie_1944" 		period(late) 	side(ger) 		lvl2()		r(13) rm(99))		{cp 1.0} 		{cost 37.0}}
+		{"mp/ger/late/arm_ger_regular_1944_medic"					("squad_ger_regelmasige_infanterie_1944" 		period(late) 	side(ger)		lvl2()		r(13) rm(99))		{cp 1.0} 		{cost 33.0}}
+
+;;----------------------------------- GER REGULAR ARMY SUPPORT (Tier 2) ----------------------------------
+;//Tier=[2]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;---------------(1944-1945) squad_pioneer_mgun(ger)
+(define "squad_pioneer_mgun"
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 1.5}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.05}
+)
+;//		{"mp/ger/mid/pioneer_mgun_uo"								("squad_pioneer_mgun" 							period(mid) 	side(ger) 		lvl1() 			r(9) rm(99))		{cp 1.0} 		{cost 25.0}}
+;//		{"mp/ger/mid/pioneer_mgun_laf"								("squad_pioneer_mgun" 							period(mid) 	side(ger) 		lvl1() 			r(9) rm(99))		{cp 1.0} 		{cost 25.0}}
+		{"mp/ger/mid/mgun_42"										("squad_pioneer_mgun" 							period(mid) 	side(ger) 		lvl2()			r(9) rm(99)) 		{cp 1.0} 		{cost 35.0}}
+		{"mp/ger/mid/mgun_2"										("squad_pioneer_mgun" 							period(mid) 	side(ger) 		lvl1()			r(9) rm(99)) 		{cp 1.0} 		{cost 20.0}}
+		
+;;----------------------------------- GER VETERANS (Tier 3-4)  ----------------------------------
+;//Tier=[3]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;---------------(1941-1943) squad_waffen_ss_1941(ger)
+(define "squad_waffen_ss_1941"
+;//	{tags "%period %side %level infantry man"}
+	{tags "%period %side infantry man lvl3 lvl4"}
+	{cp 0.0}
+	{basic}	
+	{breed}
+	{cw 2.0}	
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.10}
+)
+		{"mp/ger/early/ss_waffen_uo_mp38"							("squad_waffen_ss_1941" 						period(early) 	side(ger)		lvl4()			r(7) rm(12)) 		{cp 1.0}    	{cost 45.0}}
+		{"mp/ger/early/ss_waffen_mp28"								("squad_waffen_ss_1941" 						period(early) 	side(ger)		lvl3()			r(7) rm(12))		{cp 1.0}    	{cost 40.0}}
+		{"mp/ger/early/ss_waffen_g41"								("squad_waffen_ss_1941" 						period(early) 	side(ger)		lvl3()			r(7) rm(12))		{cp 1.0}    	{cost 40.0}}
+		{"mp/ger/early/ss_waffen_mg34"								("squad_waffen_ss_1941" 						period(early) 	side(ger)		lvl3()			r(7) rm(12))		{cp 1.0}    	{cost 55.0}}
+		{"mp/ger/early/ss_waffen_eng_mp38"							("squad_waffen_ss_1941" 						period(early) 	side(ger)		lvl3()			r(7) rm(12))		{cp 1.0}    	{cost 30.0}}
+
+;//Tier=[4]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;---------------(1940-1942) squad_vehicle_arm_wh_panzergrenadier_1940
+(define "squad_vehicle_arm_wh_panzergrenadier_1940"
+	{tags "%period %side infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{cw 2.5}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.10}
+)
+		{"mp/ger/early/pz_sl_smg"									("squad_vehicle_arm_wh_panzergrenadier_1940" 	period(early)	side(ger) 		lvl5()			r(5) rm(10))		{cp 0.75}		{cost 80.0}} 
+		{"mp/ger/early/pz_sl_asst"									("squad_vehicle_arm_wh_panzergrenadier_1940" 	period(early)	side(ger) 		lvl4()			r(5) rm(10))		{cp 0.75}		{cost 40.0}} 
+		{"mp/ger/early/pz_sl"										("squad_vehicle_arm_wh_panzergrenadier_1940" 	period(early)	side(ger) 		lvl4()			r(5) rm(10))		{cp 0.75}		{cost 40.0}} 
+		{"mp/ger/early/pz_rifle"									("squad_vehicle_arm_wh_panzergrenadier_1940" 	period(early)	side(ger) 		lvl4()			r(5) rm(10))		{cp 0.75}		{cost 40.0}} 
+		{"mp/ger/early/pz_recon_sl"									("squad_vehicle_arm_wh_panzergrenadier_1940" 	period(early)	side(ger) 		lvl4()			r(5) rm(10))		{cp 0.75}		{cost 50.0}} 
+		{"mp/ger/early/pz_recon_rifle"								("squad_vehicle_arm_wh_panzergrenadier_1940" 	period(early)	side(ger) 		lvl4()			r(5) rm(10))		{cp 0.75}		{cost 50.0}} 
+		{"mp/ger/early/pz_recon_sl_asst"							("squad_vehicle_arm_wh_panzergrenadier_1940" 	period(early)	side(ger) 		lvl4()			r(5) rm(10))		{cp 0.75}		{cost 50.0}}
+		{"mp/ger/early/pz_mg_ammo"									("squad_vehicle_arm_wh_panzergrenadier_1940" 	period(early)	side(ger) 		lvl4()			r(5) rm(10))		{cp 0.75}		{cost 52.0}}
+		{"mp/ger/early/pz_mg"										("squad_vehicle_arm_wh_panzergrenadier_1940" 	period(early)	side(ger) 		lvl4()			r(5) rm(10))		{cp 0.75}		{cost 58.0}}
+
+
+;//Tier=[3]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;---------------(1942-1944) arm_squad_ger_waffenss_sq1_1942(ger)
+(define "squad_arm_ger_waffenss_sq1_1942"
+;//	{tags "%period %side %level infantry man"}
+	{tags "%period %side infantry man lvl3 lvl4"}
+	{cp 0.0}
+	{basic}	
+	{breed}
+	{cw 2.0}	
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.10}
+)
+		{"mp/ger/mid/arm_ger_waffenss_1942_sq1_uo"					("squad_arm_ger_waffenss_sq1_1942" 				period(mid) 	side(ger)		lvl4()			r(9) rm(14))		{cp 1.0}    	{cost 45.0}}
+		{"mp/ger/mid/arm_ger_waffenss_1942_sq1_smg"					("squad_arm_ger_waffenss_sq1_1942" 				period(mid) 	side(ger)		lvl3()			r(9) rm(14))		{cp 1.0}    	{cost 40.0}}
+		{"mp/ger/mid/arm_ger_waffenss_1942_sq1_r"					("squad_arm_ger_waffenss_sq1_1942" 				period(mid) 	side(ger)		lvl3()			r(9) rm(14))		{cp 1.0}    	{cost 40.0}}
+		{"mp/ger/mid/arm_ger_waffenss_1942_sq1_ar"					("squad_arm_ger_waffenss_sq1_1942" 				period(mid) 	side(ger)		lvl3()			r(9) rm(14))		{cp 1.0}    	{cost 45.0}}
+		{"mp/ger/mid/arm_ger_waffenss_1942_sq1_mg"					("squad_arm_ger_waffenss_sq1_1942" 				period(mid) 	side(ger)		lvl3()			r(9) rm(14))		{cp 1.0}    	{cost 55.0}}
+		{"mp/ger/mid/arm_ger_waffenss_1942_sq1_medic"				("squad_arm_ger_waffenss_sq1_1942" 				period(mid) 	side(ger)		lvl3()			r(9) rm(14))		{cp 1.0}    	{cost 40.0}}
+
+;//Tier=[3]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;---------------(1944-1945) squad_waffen_ss_1944(ger)
+(define "squad_waffen_ss_1944"
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}	
+	{breed}	
+	{cw 2.0}	
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.10}
+)
+		{"mp/ger/late/ss_waffen_stg44"								("squad_waffen_ss_1944" 						period(late) 	side(ger) 		lvl4()			r(15) rm(99))		{cp 1.0}    	{cost 45.0}}
+		{"mp/ger/late/ss_waffen_g43"								("squad_waffen_ss_1944" 						period(late) 	side(ger) 		lvl3()			r(15) rm(99))		{cp 1.0}    	{cost 40.0}}
+		{"mp/ger/late/ss_waffen_g43scope"							("squad_waffen_ss_1944" 						period(late) 	side(ger) 		lvl3()			r(15) rm(99))		{cp 1.0}    	{cost 50.0}}
+		{"mp/ger/late/ss_waffen_mg42"								("squad_waffen_ss_1944" 						period(late) 	side(ger) 		lvl3()			r(15) rm(99))		{cp 1.0}    	{cost 55.0}}
+		{"mp/ger/late/ss_waffen_medic"								("squad_waffen_ss_1944" 						period(late) 	side(ger) 		lvl3()			r(15) rm(99))		{cp 1.0}   		{cost 40.0}}
+		
+;//Tier=[3]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;---------------(1943-1945) squad_waffen_ss_fin_freiwilligen_bat_1943(ger)
+(define "squad_waffen_ss_fin_freiwilligen_bat_1943"	
+	{tags "%period %side infantry man"}
+	{cp 0.0}	
+	{basic}	
+	{breed}	
+	{cw 2.0}	
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.10}
+)
+		{"mp/ger/mid/fin_ss_waffen_suomi"							("squad_waffen_ss_fin_freiwilligen_bat_1943" 	period(mid)		side(ger) 		lvl3()			r(11) rm(99))		{cp 1.0} 		{cost 45.0}}
+		{"mp/ger/mid/fin_ss_waffen_svt38"							("squad_waffen_ss_fin_freiwilligen_bat_1943" 	period(mid)		side(ger) 		lvl3()			r(11) rm(99))		{cp 1.0} 		{cost 40.0}}
+		{"mp/ger/mid/fin_ss_waffen_mosinsc"							("squad_waffen_ss_fin_freiwilligen_bat_1943" 	period(mid)		side(ger) 		lvl3()			r(11) rm(99))		{cp 1.0} 		{cost 40.0}}
+		{"mp/ger/mid/fin_ss_waffen_m26"								("squad_waffen_ss_fin_freiwilligen_bat_1943" 	period(mid)		side(ger) 		lvl3()			r(11) rm(99))		{cp 1.0} 		{cost 55.0}}
+		{"mp/ger/mid/fin_ss_waffen_medic"							("squad_waffen_ss_fin_freiwilligen_bat_1943" 	period(mid)		side(ger) 		lvl3()			r(11) rm(99))		{cp 1.0} 		{cost 40.0}}		
+
+;//Tier=[3]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;---------------(1942-1945) squad_sturm_jaegers(ger)
+(define "squad_sturm_jaegers"
+	{tags "%period %side infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{cw 2.0}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.10}
+)
+		{"mp/ger/mid/sturm_jaegers_lt"								("squad_sturm_jaegers" 							period(mid)		side(ger) 		lvl4()			r(9) rm(14))		{cp 1.0} 	 	{cost 60.0}}
+		{"mp/ger/mid/sturm_jaegers_nco_asst"						("squad_sturm_jaegers" 							period(mid)		side(ger) 		lvl3()			r(9) rm(14))		{cp 1.0} 		{cost 45.0}}
+		{"mp/ger/mid/sturm_jaegers_rifle"							("squad_sturm_jaegers" 							period(mid)		side(ger) 		lvl3()			r(9) rm(14))		{cp 1.0} 		{cost 40.0}}
+		{"mp/ger/mid/sturm_jaegers_sa"								("squad_sturm_jaegers" 							period(mid)		side(ger) 		lvl3()			r(9) rm(14))		{cp 1.0} 		{cost 40.0}}
+		{"mp/ger/mid/sturm_jaegers_mg"								("squad_sturm_jaegers" 							period(mid)		side(ger) 		lvl3()			r(9) rm(14))		{cp 1.0} 		{cost 55.0}}
+		{"mp/ger/mid/sturm_jaegers_mg_asst"							("squad_sturm_jaegers" 							period(mid)		side(ger) 		lvl3()			r(9) rm(14))		{cp 1.0} 		{cost 45.0}}
+		{"mp/ger/mid/sturm_jaegers_en"								("squad_sturm_jaegers" 							period(mid)		side(ger) 		lvl3()			r(9) rm(14))		{cp 1.0} 		{cost 43.0}}
+		{"mp/ger/mid/sturm_jaegers_flamer"							("squad_sturm_jaegers" 							period(mid)		side(ger) 		lvl3()			r(9) rm(14))		{cp 1.0} 		{cost 42.0}}
+		{"mp/ger/mid/mgun_42"										("squad_sturm_jaegers"							period(mid)		side(ger) 		lvl3()			r(9) rm(14))		{cp 1.0} 		{cost 55.0}}
+		{"mp/ger/mid/mgun_2"										("squad_sturm_jaegers" 							period(mid)		side(ger) 		lvl3()			r(9) rm(14))		{cp 1.0}  		{cost 45.0}}
+
+;//Tier=[4]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;---------------(1943-1945) squad_panzergrenadier_1943(ger)
+(define "squad_panzergrenadier_1943"
+	{tags "%period %side infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{cw 2.5}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.10}
+)
+		{"mp/ger/late/panzergrenadier_1943_lt"						("squad_panzergrenadier_1943" 					period(late)	side(ger) 		lvl5()			r(11) rm(99))		{cp 1.0}		{cost 80.0}} 
+		{"mp/ger/late/panzergrenadier_1943_stg"						("squad_panzergrenadier_1943" 					period(late)	side(ger) 		lvl4()			r(11) rm(99))		{cp 1.0}		{cost 55.0}} 
+		{"mp/ger/late/panzergrenadier_1943_gewerh"					("squad_panzergrenadier_1943" 					period(late)	side(ger) 		lvl4()			r(11) rm(99))		{cp 1.0}		{cost 40.0}} 
+		{"mp/ger/late/panzergrenadier_1943_pz"						("squad_panzergrenadier_1943" 					period(late)	side(ger) 		lvl4()			r(11) rm(99))		{cp 1.0}		{cost 53.0}} 
+		{"mp/ger/late/panzergrenadier_1943_mg42"					("squad_panzergrenadier_1943" 					period(late)	side(ger) 		lvl4()			r(11) rm(99))		{cp 1.0}		{cost 58.0}} 
+		{"mp/ger/late/panzergrenadier_1943_flamer"					("squad_panzergrenadier_1943" 					period(late)	side(ger) 		lvl4()			r(11) rm(99))		{cp 1.0}		{cost 60.0}} 
+		{"mp/ger/late/panzergrenadier_1943_eng"						("squad_panzergrenadier_1943" 					period(late)	side(ger) 		lvl4()			r(11) rm(99))		{cp 1.0}		{cost 55.0}} 
+		
+;;----------------------------------- GER VETERANS EXPERTS (Tier 5-6)  ----------------------------------
+;//Tier=[5]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (65-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;---------------[7.Fl.D] 7 Fallschirmjager Flieger-Division (1938-1943)
+(define "squad_arm_fallschirmjager_7d_1940"
+;//	{tags "%period %side %level infantry man"}
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 3.0}
+	;{cost %cost}
+	;;{score (* %cost 0.05)}
+	{score_factor 0.15}
+)
+		{"mp/ger/early/arm_fallschirmjager_7d_1940_uo"				("squad_arm_fallschirmjager_7d_1940" 			period(early)	side(ger)	 	lvl6()			r(3) rm(10))		{cp 1.0} 		 {cost 95.0}}
+		{"mp/ger/early/arm_fallschirmjager_7d_1940_sign"			("squad_arm_fallschirmjager_7d_1940" 			period(early)	side(ger)	 	lvl5()			r(3) rm(10))		{cp 1.0} 		 {cost 65.0}}
+		{"mp/ger/early/arm_fallschirmjager_7d_1940_smg"				("squad_arm_fallschirmjager_7d_1940" 			period(early)	side(ger)	 	lvl5()			r(3) rm(10))		{cp 1.0} 		 {cost 65.0}}
+		{"mp/ger/early/arm_fallschirmjager_7d_1940_rifle"			("squad_arm_fallschirmjager_7d_1940" 			period(early)	side(ger)	 	lvl5()			r(3) rm(10))		{cp 1.0} 		 {cost 65.0}}
+		{"mp/ger/early/arm_fallschirmjager_7d_1940_mg"				("squad_arm_fallschirmjager_7d_1940" 			period(early)	side(ger)	 	lvl5()			r(3) rm(10))		{cp 1.0} 		 {cost 73.0}}
+		{"mp/ger/early/arm_fallschirmjager_7d_1940_eng"				("squad_arm_fallschirmjager_7d_1940" 			period(early)	side(ger)	 	lvl5()			r(3) rm(10))		{cp 1.0} 		 {cost 70.0}}
+
+;//Tier=[5]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (65-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;--------------- squad_ss_fallschirmjager_500_1943 (1943-1945)
+(define "squad_ss_fallschirmjager_500_1943"
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{cw 3.0}
+	;{cost %cost}
+	;;{score (* %cost 0.05)}
+	{score_factor 0.15}
+)
+		{"mp/ger/late/ss_fallschirmjager_500_1943_uo"				("squad_ss_fallschirmjager_500_1943" 			period(late)	side(ger) 		lvl6()			r(11) rm(99))		{cp 1.0}		{cost 115.0}} 
+		{"mp/ger/late/ss_fallschirmjager_500_1943_fg42"				("squad_ss_fallschirmjager_500_1943" 			period(late)	side(ger) 		lvl5()			r(11) rm(99))		{cp 1.0}		{cost 75.0}} 
+		{"mp/ger/late/ss_fallschirmjager_500_1943_g43"				("squad_ss_fallschirmjager_500_1943" 			period(late)	side(ger) 		lvl5()			r(11) rm(99))		{cp 1.0}		{cost 65.0}} 
+		{"mp/ger/late/ss_fallschirmjager_500_1943_pz43"				("squad_ss_fallschirmjager_500_1943" 			period(late)	side(ger) 		lvl5()			r(11) rm(99))		{cp 1.0}		{cost 80.0}} 
+		{"mp/ger/late/ss_fallschirmjager_500_1943_mg42"				("squad_ss_fallschirmjager_500_1943" 			period(late)	side(ger) 		lvl5()			r(11) rm(99))		{cp 1.0}		{cost 83.0}} 
+		{"mp/ger/late/ss_fallschirmjager_500_1943_fmw"				("squad_ss_fallschirmjager_500_1943" 			period(late)	side(ger)		lvl5()			r(11) rm(99))		{cp 1.0}		{cost 80.0}} 
+		
+;//Tier=[5]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (65-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;--------------- squad_sicherung_con
+(define "squad_sicherung_con"
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 2.0}
+	;{cost %cost}
+	;;{score (* %cost 0.05)}
+	{score_factor 0.15}
+)
+		{"mp/ger/late/gebirgs_uo"									("ger_gebirgsjaeger" 							period(late)	side(ger)  		lvl6()			r(13) rm(99))		{cp 1.0}  		{cost 90.0}}
+		{"mp/ger/late/gebirgs_stg"									("ger_gebirgsjaeger" 							period(late)	side(ger)  		lvl5()			r(13) rm(99)) 		{cp 1.0} 		{cost 67.0}}
+		{"mp/ger/late/gebirgs_smg_pzf"								("ger_gebirgsjaeger" 							period(late)	side(ger)  		lvl5()			r(13) rm(99))		{cp 1.0}  		{cost 80.0}}
+		{"mp/ger/late/gebirgs_sl"									("ger_gebirgsjaeger" 							period(late)	side(ger)  		lvl5()			r(13) rm(99)) 		{cp 1.0} 		{cost 60.0}} 
+		{"mp/ger/late/gebirgs_sl_asst"								("ger_gebirgsjaeger" 							period(late)	side(ger) 		lvl5()			r(13) rm(99)) 		{cp 1.0} 		{cost 68.0}}
+		{"mp/ger/late/gebirgs_mg"									("ger_gebirgsjaeger" 							period(late)	side(ger)  		lvl5()			r(13) rm(99))		{cp 1.0} 		{cost 76.0}}
+		{"mp/ger/late/gebirgs_medic"								("ger_gebirgsjaeger" 							period(late)	side(ger)  		lvl5()			r(13) rm(99)) 		{cp 1.0} 		{cost 30.0}}
+
+;;----------------------------------- GER SUPER EXPERTS (Tier 7-8)  ----------------------------------
+;//Tier=[8]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;----------------(1941) Saboteure(ger)
+(define "squad_saboteure_1941"
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 3.0}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.40}
+)
+		{"mp/ger/mid/arm_saboteure_nco_1941"						("squad_saboteure_1941" 						period(mid)		side(ger)		lvl8()			r(99) rm(99))		{cp 1.0}		{cost 400.0}}
+		{"mp/ger/mid/arm_saboteure_schutze_1941"					("squad_saboteure_1941" 						period(mid)		side(ger)		lvl8()			r(99) rm(99)) 		{cp 1.0}		{cost 325.0}}
+
+;----------------(1939-1945) ger_sniper(ger)
+;//Tier=[7]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)			
+(define "ger_sniper"
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 2.5}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.20}
+)
+		{"mp/ger/mid/sniper"										("ger_sniper" 									period(mid)		side(ger)		lvl6()			r(1) rm(99)) 		{cp 1.0}		{cost 125.0}}
+		{"mp/ger/mid/sniper_elite"									("ger_sniper" 									period(mid)		side(ger)		lvl8()			r(3) rm(99)) 		{cp 1.0}		{cost 150.0}}
+		
+;;----------------------------------- GER SPECIALISTS SS ----------------------------------
+;//Tier=[3]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;------------ (1939) arm_ger_waffenss_1939_tanksman [ single ]
+(define "squad_arm_ger_waffenss_1939_mechinf"
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 1.0}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.10}
+)
+		{"mp/ger/early/arm_ger_waffenss_1939_tanksman"				("squad_arm_ger_waffenss_1939_mechinf"			period(early)	side(ger) 		lvl3()			r(99) rm(99)) 		{cp 1.0}		{cost 40.0}}
+		{"mp/ger/early/arm_ger_waffenss_1939_tanksman_nco"			("squad_arm_ger_waffenss_1939_mechinf"			period(early)	side(ger) 		lvl4()			r(99) rm(99)) 		{cp 1.0}		{cost 85.0}}
+		{"mp/ger/early/arm_ger_waffenss_1939_crew"					("squad_arm_ger_waffenss_1939_mechinf"			period(early)	side(ger) 		lvl3()			r(99) rm(99)) 		{cp 1.0}		{cost 32.0}}
+		{"mp/ger/early/arm_ger_waffenss_1939_artilleryman"			("squad_arm_ger_waffenss_1939_mechinf"			period(early)	side(ger) 		lvl3()			r(99) rm(99)) 		{cp 1.0}		{cost 37.0}}		
+
+;//Tier=[3]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;------------(1942) arm_ger_waffenss_1942_tanksman [ single ]
+(define "squad_arm_ger_waffenss_1942_mechinf"
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 1.0}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.10}
+)
+		{"mp/ger/mid/arm_ger_waffenss_1942_tanksman"				("squad_arm_ger_waffenss_1942_mechinf"			period(mid)		side(ger) 		lvl3()			r(99) rm(99)) 		{cp 1.0} 		{cost 40.0}}
+		{"mp/ger/mid/arm_ger_waffenss_1942_tanksman_nco"			("squad_arm_ger_waffenss_1942_mechinf"			period(mid)		side(ger) 		lvl4()			r(99) rm(99)) 		{cp 1.0} 		{cost 85.0}}		
+		{"mp/ger/mid/arm_ger_waffenss_1942_crew"					("squad_arm_ger_waffenss_1942_mechinf"			period(mid)		side(ger) 		lvl3()			r(99) rm(99)) 		{cp 1.0} 		{cost 32.0}}		
+		{"mp/ger/mid/arm_ger_waffenss_1942_artilleryman"			("squad_arm_ger_waffenss_1942_mechinf"			period(mid)		side(ger) 		lvl3()			r(99) rm(99)) 		{cp 1.0} 		{cost 37.0}}		
+
+;//Tier=[3]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)		
+;------------(1944) arm_ger_waffenss_1944_tanksman [ single ]
+(define "squad_arm_ger_waffenss_1944_mechinf"
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 1.0}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.10}
+)
+		{"mp/ger/late/arm_ger_waffenss_1944_tanksman"				("squad_arm_ger_waffenss_1944_mechinf"			period(late)	side(ger) 		lvl3()			r(99) rm(99))  		{cp 1.0}		{cost 40.0}}
+		{"mp/ger/late/arm_ger_waffenss_1944_tanksman_nco"			("squad_arm_ger_waffenss_1944_mechinf"			period(late)	side(ger) 		lvl4()			r(99) rm(99)) 		{cp 1.0} 		{cost 85.0}}
+		{"mp/ger/late/arm_ger_waffenss_1944_crew"					("squad_arm_ger_waffenss_1944_mechinf"			period(late)	side(ger) 		lvl3()			r(99) rm(99)) 		{cp 1.0} 		{cost 32.0}}	
+		{"mp/ger/late/arm_ger_waffenss_1944_artilleryman"			("squad_arm_ger_waffenss_1944_mechinf"			period(late)	side(ger) 		lvl3()			r(99) rm(99))  		{cp 1.0}		{cost 37.0}}
+
+;;----------------------------------- GER SPECIALISTS ----------------------------------
+;//Tier=[2]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)		
+;----------------(1941-1945) feldmechaniken	[ squad ]
+(define "squad_arm_ger_feldmechaniken_1939(ger)"
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 1.0}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.05}
+)
+		{"mp/ger/early/arm_ger_field_mechanic_1939_mch"				("squad_arm_ger_feldmechaniken_1939(ger)" 		period(early)	side(ger)		lvl2()			r(99) rm(99))  	{cp 1.0} 		{cost 89.0}}
+
+;----------------(1939-1945) Medic(ger)	[ single ]
+;//Tier=[2]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)		
+(define "arm_ger_medic_1939"
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 1.0}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.05}
+)
+		{"mp/ger/early/arm_ger_medic_1939"							("arm_ger_medic_1939"							period(early) 	side(ger)		lvl2()			r(99) rm(99))  		{cp 1.0}		{cost 25.0}}		
+
+;----------------(1939-1945) AA flieger(ger) [ single ]
+;//Tier=[1]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)		
+(define "aa_flieger(ger)"
+;//	{tags "%period %side %level infantry man"}
+	{tags "%period %side infantry man lvl3 lvl4"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 1.0}
+	{score_factor 0.05}
+)	
+		{"mp/ger/early/arm_ger_luftwaffe_flakman_rfl"				("aa_flieger(ger)" 								period(early) 	side(ger)		lvl1()			r(1) rm(99))		{cp 0.0} 		{cost 15.0}}
+		{"mp/ger/mid/arm_ger_luftwaffe_flakman_rfl"					("aa_flieger(ger)" 								period(mid) 	side(ger)		lvl1()			r(1) rm(99))		{cp 0.0} 		{cost 15.0}}
+		{"mp/ger/late/arm_ger_luftwaffe_flakman_rfl"				("aa_flieger(ger)" 								period(late) 	side(ger)		lvl1()			r(1) rm(99))		{cp 0.0} 		{cost 15.0}}
+
+;//Tier=[2]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)		
+;------------(1939-1945) Stug Mech Tankman [ squad ]
+(define "squad_mech_tanksman"
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 0}
+	{score_factor 0.10}
+)
+		{"mp/ger/mid/tank_commander_stug"							("squad_mech_tanksman"							period(mid) 	side(ger) 		lvl2()			r(99) rm(99)) 		{cp 0.0}		{cost 62.0}}
+		{"mp/ger/mid/tankman_stug"									("squad_mech_tanksman"							period(mid) 	side(ger) 		lvl2()			r(99) rm(99)) 		{cp 0.0}		{cost 34.0}}
+
+;------------(1939-1945) Ger_tankman [ single ]
+(define "ger_tankman"
+	{tags "%period %side %level infantry man"}
+	{cp 1.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 0.5}
+	{score_factor 0.10}
+)
+
+;//Tier=[2]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)		
+;-------------(1939-1941) squad_mech_tankman_early_ger [ squad ]
+(define "squad_mech_tankman_early_ger"
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{cw 1.0}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.10}
+)
+		{"mp/ger/early/tank_commander_squad"						("squad_mech_tankman_early_ger" 				period(early) 	side(ger)		lvl3()			r(99) rm(99)) 		{cp 1.0}		{cost 62.0}}
+		{"mp/ger/early/tankman_squad"								("squad_mech_tankman_early_ger" 				period(early) 	side(ger) 		lvl2()			r(99) rm(99))		{cp 1.0} 		{cost 34.0}}
+
+;//Tier=[2]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)		
+;-------------(1942-1943) squad_mech_tankman_mid_ger [ squad ]
+(define "squad_mech_tankman_mid_ger"
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 1.0}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.10}
+)
+		{"mp/ger/mid/tank_commander_squad"							("squad_mech_tankman_mid_ger" 					period(mid) 	side(ger)		lvl3()			r(99) rm(99)) 		{cp 1.0} 		{cost 62.0}}		
+		{"mp/ger/mid/tankman_squad"									("squad_mech_tankman_mid_ger" 					period(mid) 	side(ger)		lvl2()			r(99) rm(99)) 		{cp 1.0} 		{cost 34.0}}
+
+;//Tier=[2]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)		
+;-------------(1944-1945) squad_mech_tankman_late_ger [ squad ]
+(define "squad_mech_tankman_late_ger"
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 1.0}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.10}
+)
+		{"mp/ger/late/tank_commander_squad"							("squad_mech_tankman_late_ger" 					period(late) 	side(ger)		lvl3()			r(99) rm(99)) 		{cp 1.0}  		{cost 62.0}}
+		{"mp/ger/late/tankman_squad"								("squad_mech_tankman_late_ger" 					period(late) 	side(ger) 		lvl2()			r(99) rm(99)) 		{cp 1.0}  		{cost 34.0}}
+
+;//Tier=[2]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)		
+;-------------(1942-1944) squad_arm_roa_1942_tanksman [ squad ]
+(define "squad_arm_roa_1942_tanksman"
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{cw 1.0}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.10}
+)
+		{"mp/ger/mid/arm_roa_1942_tank_commander"					("squad_arm_roa_1942_tanksman" 					period(mid) 	side(ger) 		lvl3()			r(99) rm(99)) 		{cp 1.0}  		{cost 62.0}}	
+		{"mp/ger/mid/arm_roa_1942_tanksman"							("squad_arm_roa_1942_tanksman" 					period(mid) 	side(ger)		lvl2()			r(99) rm(99)) 		{cp 1.0}  		{cost 34.0}}
+
+;//Tier=[1]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;-------------(1939-1945) squad_heavy_artilleryman [ single ] [ squad ] 
+(define "squad_heavy_artilleryman"
+;//	{tags "%period %side %level infantry man"}
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 0.5}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.05}
+)
+		{"mp/ger/early/heavy_artilleryman_nco"						("squad_heavy_artilleryman" 					period(early) 	side(ger)		lvl1()			r(1) rm(99)) 		{cp 1.0}   		 {cost 20.0}}
+		{"mp/ger/early/heavy_artilleryman"							("squad_heavy_artilleryman" 					period(early) 	side(ger)		lvl1()			r(1) rm(99)) 		{cp 1.0}  	 	 {cost 15.0}}
+		{"mp/ger/mid/heavy_artilleryman_nco"						("squad_heavy_artilleryman" 					period(mid) 	side(ger)		lvl1()			r(1) rm(99)) 		{cp 1.0} 		 {cost 20.0}}
+		{"mp/ger/mid/heavy_artilleryman"							("squad_heavy_artilleryman" 					period(mid) 	side(ger)		lvl1()			r(1) rm(99)) 		{cp 1.0}  		 {cost 15.0}}
+		{"mp/ger/late/heavy_artilleryman_nco"						("squad_heavy_artilleryman" 					period(late) 	side(ger)		lvl1()			r(1) rm(99)) 		{cp 1.0}  		 {cost 20.0}}
+		{"mp/ger/late/heavy_artilleryman"							("squad_heavy_artilleryman" 					period(late) 	side(ger)		lvl1()			r(1) rm(99)) 		{cp 1.0}  		 {cost 15.0}}
+
+;//Tier=[2]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;-------------(1939-1942) squad_miner_ap [ single ] [ squad ] 
+(define "squad_miner_ap"
+;//	{tags "%period %side %level infantry man"}
+	{tags "%period %side infantry man lvl3 lvl4"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{cw 0.5}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.07}
+)
+		{"mp/ger/early/miner-ap"									("squad_miner_ap" 								period(early)	side(ger)		lvl1()			r(1) rm(99))  		{cp 1.0}		{cost 35.0}}
+		
+;//Tier=[2]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;-------------(1939-1942) squad_miner_at [ single ] [ squad ] 
+(define "squad_miner_at"
+;//	{tags "%period %side %level infantry man"}
+	{tags "%period %side infantry man lvl3 lvl4"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{cw 0.5}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.07}
+)
+		{"mp/ger/early/miner-at"									("squad_miner_at" 								period(early)	side(ger)		lvl1()			r(1) rm(99)) 		{cp 1.0}		{cost 40.0}}
+
+;//Tier=[2]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;-------------(1943-1945) squad_pz_pioneer_atminer_1943 [ squad ] 
+(define "squad_pz_pioneer_atminer_1943"
+;//	{tags "%period %side %level infantry man"}
+	{tags "%period %side infantry man lvl3 lvl4"}
+	{cp 0.0}	
+	{basic}	
+	{breed}	
+	{cw 0.5}	
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.07}	
+)
+		{"mp/ger/mid/arm_pz_pioneer_atminer_nco_smg_1943"			("squad_pz_pioneer_atminer_1943" 				period(mid)		side(ger) 		lvl2()			r(1) rm(99))   		{cp 1.0}		{cost 50.0}}
+		{"mp/ger/mid/arm_pz_pioneer_atminer_smg_1943"				("squad_pz_pioneer_atminer_1943" 				period(mid)		side(ger)		lvl1()			r(1) rm(99))  		{cp 1.0}		{cost 45.0}}
+
+;//Tier=[2]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;-------------(1943-1945) squad_engineer [ squad ] 
+(define "squad_engineer"
+;//	{tags "%period %side %level infantry man"}
+	{tags "%period %side infantry man lvl3 lvl4"}
+	{cp 0.0}	
+	{basic}	
+	{breed}	
+	{cw 0.5}
+	;{cost %cost}	
+	{score_factor 0.07}	
+)
+		{"mp/ger/early/engineer_uo"									("squad_engineer"								period(early)	side(ger) 		lvl2()			r(1) rm(99)) 		{cp 1.0}		{cost 30.0}}
+		{"mp/ger/early/engineer"									("squad_engineer"								period(early)	side(ger) 		lvl1()			r(1) rm(99)) 		{cp 1.0}		{cost 25.0}}

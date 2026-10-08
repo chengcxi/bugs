@@ -1,0 +1,39 @@
+(include "/set/arm_extra_macros.inc")
+;LR Arm edited
+;_________________________________________
+; ARTY - French Heavy Field Gun
+;=========================================
+
+
+{from "pattern gun"			; L/38.2 "155mm_gpf_us" "155mm_gpf_ger" 
+	{filling "bullet_155"}
+	{fireSound "cannon/s5/d1/Shared/Cannon_150to210mm/"}
+	{fireSoundClose "cannon/s5/3p/Shared/Cannon_150to210mm/"}
+	{reloadSound "utility/"}
+;//	("heavy_artillery")																								;120226-
+	("long_howitser")																								;120226+
+	{calibre 155}
+;//	{range 455 455} ; // 19.5km
+	{range 910 910} ; // 19.5km
+
+	("reload time" seconds(36))																						;120226 (23) - (36)
+
+	("velocity m/s" ap(719) apcr(1) he(230) heat(1))
+	("armor health" damage(450))
+	("armor health custom" shell(aphebc) damage(450) filler(620))
+	{parameters "aphebc" ;// if loaded with US 155 AP
+		("ap_155_slope_multiplier")
+	}
+
+	; APBC-HE M112 ;// if loaded with US 155 AP
+	("penetration_long" shell(aphebc) range(210) a(179) b(175) c(169) d(164) e(158))
+
+	("accuracy_indirect"   ; // Applies logic for accuracy of indirect weapons over 200m
+		r1(0.70) 				; // Accuracy radius for direct-fire munitions
+		r2(6.5) 					; // Accuracy radius for indirect fire											;120226 (8) - (6.5)
+		rmax(28) 				; // Accuracy radius for indirect fire at maximum range								;120226 (32) - (28)
+		range_ap(210) 			; // Range after which accuracy drops to prevent farshooting.
+		range_heat(210) 		; // Range after which accuracy drops to prevent farshooting.
+		range_he(600)			; // Range after which accuracy drops to prevent farshooting.	;range x 66%		;120226 (455) - (600)
+	)
+}

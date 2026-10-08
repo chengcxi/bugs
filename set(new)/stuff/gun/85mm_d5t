@@ -1,0 +1,9 @@
+(include "/set/arm_extra_macros.inc")
+;LR Arm edited
+;_________________________________________
+;  USSR long-barreled Medium AT gun
+;=========================================
+
+
+{from "85mm_zis53"			; L/52 "kv85"
+}

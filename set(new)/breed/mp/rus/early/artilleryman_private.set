@@ -1,0 +1,32 @@
+{breed
+	{behaviour soldier}
+	{skin "sov_41_nkvd_mt_cav_mg_asst"}
+	{portrait "rus_artilleryman"}
+	{icon "autorifle"}
+	{icon_priority 0}
+	{tags "soldier"}
+	{nationality rus_unique}
+	{armors
+		{head soviet_adrian}
+	}
+	{perks
+		(include "ability.inc")
+		("rifle_skill_rank_1")
+		("skilled_repair")
+		("expert_gun")
+		("tier1_defense")
+	}
+	{veterancy
+		(include "ability.inc")
+		("veterancy_lvl_0")
+	}
+	{inventory
+		{item "mosin_m27" filled}
+		{item "rifle_rus clip ammo" 70 5}
+
+		{item "bandage_rus" 4.5 05}
+		{item "shovel_rus"}
+
+		{in_hands 0}
+	}
+}

@@ -1,0 +1,9 @@
+(include "/set/arm_extra_macros.inc")
+;_________________________________________
+; German heavy long-barreled AT Gun
+;=========================================
+
+
+{from "88mm_kwk43"			; L/71 "sdkfz182h"
+	("reload time" seconds(10.5))
+}

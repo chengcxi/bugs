@@ -1,0 +1,29 @@
+(include "/set/arm_extra_macros.inc")
+;_________________________________________
+; ARTY - Russian heavy SPG gun
+;=========================================
+
+
+{from "pattern gun"			; IS-7
+	{filling "bulletrus_130"}
+	{fireSound "cannon/s4/d1/Shared/Cannon_105to130mm/"}
+	{fireSoundclose "cannon/s2/1p/Shared/"}
+	{reloadSound "tank/1p/large/"}
+	("range_230")
+	{calibre 130}
+
+	("reload time" seconds(10))
+
+	("velocity m/s" ap(900) apcr(1) he(900) heat(1))
+	("armor health" damage(340))
+	("armor health custom" shell(apcbc) damage(340) filler(177))
+
+	;apcbc
+	("penetration_long" shell(apcbc) range(230) a(313) b(294) c(276) d(260) e(244))
+
+;//	{parameters "he"
+;//		{range 230 230}
+;//	}
+
+	("accuracy_direct" r1(0.55) range_ap(230) range_he(230) range_heat(230))
+}

@@ -1,0 +1,39 @@
+{breed
+	{behaviour soldier}
+	{skin "ger_luft_39_fj_nco_smg"}
+	{portrait "ger_fallsch_recon"}
+	{icon "smg"}
+	{icon_priority 0}
+	{tags "soldier"}
+	{nationality ger_fallschirmjaeger}
+	{armors
+;--		{head ger_m38_helmet_net}
+		{head ger_off_cap_luft_fielddiv_em_2}
+	}
+	{perks
+		(include "ability.inc")
+		("smg_skill_rank_4")
+				("tier3_recon")	
+				("binocular_vision")
+	}
+	{veterancy
+		(include "ability.inc")
+		("veterancy_lvl_6")
+	}
+	{inventory
+		{item "mp38_unfolded" filled}
+		{item "mp40 ammo" 192}
+
+		{item "binocular"}
+
+		{item "bandage_ger" 4.5 0.5}
+		{item "m24_smoke_supplies grenade" 3}
+		{item "shovel_ger"}
+		
+		{item "binocular"}
+	
+	
+		{in_hands 0}
+		
+	}
+}

@@ -1,0 +1,36 @@
+;_________________________________________
+; US calliope Rocket Artillery
+;=========================================
+
+
+{from "pattern reactive"		; "M4 calliope"
+	{filling "ammo 114mm_m8" 60}
+	{fireSound "reactive/katy_burst/"}
+	{calibre 114}
+	("rocket_artillery")
+
+	{spreading
+		{radiusTable
+			{0 0}
+			{200 20}
+			{400 40}
+			{539.9 70} ;// max range, 3.7km
+			{540 100}
+			{580 200}
+		}
+	}
+
+	{burst
+		{min 30}
+		{noaiming}
+	}
+
+	{gravity 1.25}
+
+	{minRange 50}
+	; {range 270 270} ;//3.7km
+	{range 540 540} ;//3.7km
+	("velocity" mps(270))
+	("reload time" seconds(300))
+	("fire rate" rpm(120)) ;// one rocket every 0.5s in "ripple fire". 30s to fire full salvo
+}

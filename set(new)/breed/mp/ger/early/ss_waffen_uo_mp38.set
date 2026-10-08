@@ -1,0 +1,33 @@
+{breed
+	{behaviour soldier}
+	{skin "ger_heer_39_pzwaffe_1_co"}
+	{portrait "ger_ss"}
+	{icon "smg"}
+	{icon_priority 3}
+	{nationality ger_officer}
+	{armors
+;		{head ger_m34_sidecap_tank}
+		{head arm_ger_wss_officer_cap_crusher}
+	}
+	{perks
+		(include "ability.inc")
+		("smg_skill_rank_4")
+		("tier3_recon")	
+		("binocular_vision")
+	}
+	{veterancy
+		(include "ability.inc")
+		("veterancy_lvl_4")
+	}
+	{inventory
+		{item "mp38_folded" filled}
+		{item "mp40 ammo" 192}
+		
+		{item "bandage_ger" 5 2.5}
+		{item "m24_smoke_supplies grenade" 1}
+		{item "binocular"}
+		{item "german_radio"}
+		
+		{in_hands 0}
+	}
+}

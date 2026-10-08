@@ -1,0 +1,18 @@
+{from "pattern mgun"
+	{filling "ammo rpd_magazine" 100}
+	{entity "rpd"}
+	{fireSound "smallarms/s3/d1/GER/MG13/Head/"}
+	{fireSoundclose "smallarms/s3/3p/GER/MG13/"}
+	{reloadSound "mg42"}
+	{calibre 7.92}
+	{mass 7.4}
+
+	("fire rate" rpm(700))
+	("velocity" mps(735))
+
+;//	{range 115 120}
+;//	{range 144 280}
+	{spreading 0.1}
+	("burst_long")
+	("spreading_low")
+}

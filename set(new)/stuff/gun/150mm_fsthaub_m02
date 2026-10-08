@@ -1,0 +1,33 @@
+(include "/set/arm_extra_macros.inc")
+;LR Arm edited
+;01.12.25
+;_________________________________________
+; German early-war heavy infantry support gun
+;=========================================
+
+
+{from "pattern gun"			; L/11 "grille_k"
+	{filling "sgr_m38"}
+	{fireSound "cannon/s5/d1/Shared/Cannon_150to210mm/"}
+	{fireSoundClose "cannon/s5/3p/Shared/Cannon_150to210mm/"}
+	{reloadSound "utility/"}
+	("heavy_artillery")
+	{calibre 150}
+;//	{range 180 180} ; // 4.7km
+	{range 360 360} ; // 4.7km
+
+	("reload time" seconds(25))
+
+	("velocity m/s" ap(1) apcr(1) he(285) heat(280))
+	("armor health" damage(450))
+	("85-155_slope_multipliers")
+
+	("accuracy_indirect"   ; // Applies logic for accuracy of indirect weapons over 200m
+		r1(1.25) 				; // Accuracy radius for direct-fire munitions
+		r2(5.25) 				; // Accuracy radius for indirect fire
+		rmax(12) 				; // Accuracy radius for indirect fire at maximum range
+		range_ap(180) 			; // Range after which accuracy drops to prevent farshooting.
+		range_heat(180) 		; // Range after which accuracy drops to prevent farshooting.
+		range_he(290)			; // Range after which accuracy drops to prevent farshooting.
+	)
+}

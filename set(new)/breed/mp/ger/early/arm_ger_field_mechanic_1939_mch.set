@@ -1,0 +1,35 @@
+{breed
+	{behaviour soldier}
+	{skin "ger_heer_39_pz_pio_rfl_2"}
+	{portrait "ger_luftwaffe"}
+	{icon "forty"}
+	{icon_priority 0}
+	{tags "crew"}
+	{nationality ger_pzpio}
+	{armors
+		{head ger_m34_sidecap_pz_scout_off}
+	}
+	{perks
+		(include "ability.inc")
+		("mechanic_ger")
+	}
+	{veterancy
+		(include "ability.inc")
+		("veterancy_lvl_2")
+	}
+	{inventory
+		{item "p38"}
+		{item "pistol ammo" 24 8}
+		
+;//		{item "mine_detector"}
+		{item "wirecutters"}
+
+		{item "bandage_ger" 2.5 0.5}
+		
+		{item "forty_kit" 2}
+		{item "repair_kit" 2}
+		{item "geballteladung_3kg" 1.15 0.5}
+
+		{in_hands 0}
+	}
+}

@@ -1,0 +1,29 @@
+;ARm edited
+;
+{from "pattern throwable"
+	;{tag "smoke"}
+	{inventory {size 3 1}}
+	{mass 0.6}
+
+	{special
+		{PrepareCursor "grenade_sm"}
+	}
+
+	;{throw;;;;;;;;;;;;;;IAEMadd
+	;	{range 50} ;in-game 50m
+	;	{startAngle 41}
+	;	{spreading 15
+	;		{SpreadPower 0.3}
+	;	}
+	;};;;;;;;;;;;;;;IAEMadd
+
+	{throw;;;;;;;;;;;;;;IAEMadd
+		{range 65} ;in-game 42m																;ARm 200226 (42) - (65)
+		{startAngle 45}
+		{spreading 8.0
+			{SpreadPower     0.1}
+		                {SpreadXYRatio   2.80}
+		                {radiusTable {0 6}{10 8}{20 10}{30 12}{40 14}{50 16}{60 18}}
+		}
+	};;;;;;;;;;;;;;IAEMadd
+}

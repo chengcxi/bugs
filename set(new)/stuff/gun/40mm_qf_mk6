@@ -1,0 +1,8 @@
+(include "/set/arm_extra_macros.inc")
+;_________________________________________
+; British medium AA gun
+;=========================================
+
+
+{from "40mm_qf_mk3"			; "crusader AA"
+}

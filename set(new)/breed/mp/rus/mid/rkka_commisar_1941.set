@@ -1,0 +1,33 @@
+{breed
+	{behaviour soldier}
+	{skin "sov_42_rkka_recon_nco_2"}
+	{portrait "rus_nco"}
+	{icon "smg"}
+	{icon_priority 5}
+	{tags "soldier"}
+	{nationality rus_unique}
+	{armors
+		{head soviet_commisar_cap}
+	}
+	{perks
+		(include "ability.inc")
+		("smg_skill_rank_2")
+		("tier3_recon")	
+				("binocular_vision")
+	}
+	{veterancy
+		(include "ability.inc")
+		("veterancy_lvl_3")
+	}
+	{inventory
+		{item "ppd40" filled}
+		{item "ppd_drum ammo" 213}
+
+		{item "rdg1_smoke_supplies grenade" 1}
+
+		{item "bandage_rus" 3.5 0.5}
+		{item "binocular"}
+
+		{in_hands 0}
+	}
+}

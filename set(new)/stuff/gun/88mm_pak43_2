@@ -1,0 +1,11 @@
+(include "/set/arm_extra_macros.inc")
+;LR ARM edited
+;09.04.2026
+;_________________________________________
+; German heavy long-barreled AT Gun
+;=========================================
+
+
+{from "88mm_kwk43"			; L/71 "Elefant"
+	("reload time" seconds(9.5))
+}

@@ -1,0 +1,21 @@
+{bullet 
+	{tag "bullet small_arms stackable pierce"}
+	{tag "bullet_fx size2"}
+	{inventory
+		{weight 100}
+		{block 30}
+		{size 3 1}
+		{fsm "belt"}
+	}
+	{entity "hotchkiss_m1922_magazine"}
+	{mass 0.03}
+
+	{trace
+		{view "/texture/fx/tracer_new/trace_solid_red.mtl"
+			{ScaleY 0.15}
+			{ScaleX 1.75}
+			{Light 1}
+		}
+		{length 3}
+	}
+}

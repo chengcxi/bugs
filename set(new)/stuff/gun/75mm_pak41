@@ -1,0 +1,38 @@
+(include "/set/arm_extra_macros.inc")
+;LR Arm edited
+;_________________________________________
+; semi-Long barreled german medium AT gun
+;=========================================
+
+
+{from "pattern gun"			
+	{filling "bulletger_p43"}
+	{fireSound "gun/gun_75_105"}
+	{fireSoundclose "gun/gun_75_105"}
+	{reloadSound "tank/reload_medium"}
+	("range_190")
+	{calibre 75}
+
+	("reload time" seconds(5.25))
+
+	("velocity m/s" ap(1) apcr(990) he(570) heat(450))
+	("armor health" damage(200))
+	("armor health custom" shell(apcbche) damage(200) filler(29))
+	("75_ger_slope_multipliers")
+
+	; Pzgr.39
+	("penetration_medium" shell(apcbche) range(200) a(146) b(133) c(118) d(105) e(93))
+
+	; Pzgr.41
+	("penetration_long" shell(apcr) range(200) a(219) b(200) c(179) d(160) e(143))
+
+	; Gr.38 Hl
+	("penetration_medium" shell(heat) range(170) a(52) b(52) c(52) d(52) e(52))
+
+	{parameters "he"
+;//		{range 180 180}
+		{range 360 360}
+	}
+
+	("accuracy_direct" r1(0.70) range_ap(200) range_he(180) range_heat(170))
+}

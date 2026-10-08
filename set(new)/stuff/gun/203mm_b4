@@ -1,0 +1,63 @@
+(include "/set/arm_extra_macros.inc")
+;LR Arm edited
+;_________________________________________
+; ARTY - 203mm B4 Soviet heavy gun
+;=========================================
+
+{from "pattern gun"			; L/25 "203b4"
+	{filling "bulletrus_203"}
+	{fireSound "cannon/s5/d1/Shared/Cannon_150to210mm/"}
+	{fireSoundClose "cannon/s5/3p/Shared/Cannon_150to210mm/"}
+	{reloadSound "utility/"}
+;//	("super_heavy_artillery")
+	("long_howitser")																							;120226+
+	{calibre 203}
+;//	{range 440 440} ; // 18km
+	{range 610 610}																								;310126 (440) - (610)
+
+	("reload time" seconds(60))																					;110226 (70) - (60)
+
+	("velocity" mps(230))																						;310126 (218) - (230)
+
+	{spreading																									;310126
+			{radiusTable {0 0} {100 7.5} {220 12} {340 18.5} {560 22}  {620 50}}
+	}																											;310126
+	
+	("accuracy_indirect"   ; // Applies logic for accuracy of indirect weapons over 200m
+		r1(1.20) 				; // Accuracy radius for direct-fire munitions									;110226 (1.50) - (1.20)
+		r2(8) 					; // Accuracy radius for indirect fire											;310126 (12) - (8)
+		rmax(30) 				; // Accuracy radius for indirect fire at maximum range							;310126 (38) - (30)
+		range_ap(200) 			; // Range after which accuracy drops to prevent farshooting.
+		range_heat(200) 		; // Range after which accuracy drops to prevent farshooting.
+		range_he(457)			; // Range after which accuracy drops to prevent farshooting.	;range x 75%	;120226 (440) - (220) - (440) - (457)
+	)
+
+	{gravity 3}
+}
+
+
+;//	{from "pattern gun"			; L/25 "203b4"
+;//		{filling "bulletrus_203"}
+;//		{fireSound "cannon/s5/d1/Shared/Cannon_150to210mm/"}
+;//		{fireSoundClose "cannon/s5/3p/Shared/Cannon_150to210mm/"}
+;//		{reloadSound "utility/"}
+;//		("super_heavy_artillery")
+;//		{calibre 203}
+;//		;{range 440 440} ; // 18km
+;//		{range 880 880} ; // 18km
+;//	
+;//		("reload time" seconds(70))
+;//	
+;//		("velocity" mps(218))
+;//		
+;//		("accuracy_indirect"   ; // Applies logic for accuracy of indirect weapons over 200m
+;//			r1(1.50) 				; // Accuracy radius for direct-fire munitions
+;//			r2(12) 					; // Accuracy radius for indirect fire
+;//			rmax(38) 				; // Accuracy radius for indirect fire at maximum range
+;//			range_ap(200) 			; // Range after which accuracy drops to prevent farshooting.
+;//			range_heat(200) 		; // Range after which accuracy drops to prevent farshooting.
+;//			range_he(440)			; // Range after which accuracy drops to prevent farshooting.
+;//		)
+;//	
+;//		{gravity 3}
+;//	}

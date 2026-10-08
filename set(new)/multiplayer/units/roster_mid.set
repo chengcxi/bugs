@@ -1,0 +1,52 @@
+;sdl
+
+;	╔════════════════════════════════════════╗
+;	║    MID WAR June 1941 - Sept 1943       ║
+;	╠═══════╦═══════╦═══════╦═══════╦════════╣
+;	║ AXIS  ║ Ger   ║ Ita   ║ Jap   ║  Fin   ║      
+;	╠═══════╬═══════╬═══════╬═══════╬════════╣    
+;	║ ALLIES║ Rus   ║ Eng   ║ usa   ║        ║
+;	╚═══════╩═══════╩═══════╩═══════╩════════╝
+;_________________________________________________________
+;|              GLOBAL  SETTINGS                         |
+;| this loads setting architecture for declaring units   |
+;|_______________________________________________________|
+(include "settings.set")
+;//     (include "settings_MACE.set")
+(include "settings_inf.set")
+;//     (include "settings_inf_MACE.set")
+(include "ext_settings_inf.set")
+;_________________________________________________________
+;|              INF SETTINGS                             |
+;| this configures the CP, flag capture power and kill   |
+;| points of the different breeds that make inf squads   |
+;|_______________________________________________________|
+(include "mid/inf_ger.set") 
+;//		(include "mid/inf_ger_MACE.set") 
+(include "mid/inf_rus.set")
+;//		(include "mid/inf_rus_MACE.set")
+(include "mid/inf_fin.set")
+;//		(include "mid/inf_fin_MACE.set")
+(include "mid/inf_usa.set")
+(include "mid/inf_eng.set")
+;_________________________________________________________
+;|            UNIT ROSTERS                               |
+;| this defines the different squads and units available |
+;| and configs their cost, buy menu, cooldowns, etc      |
+;|_______________________________________________________|
+(include "mid/units_ger.set")
+(include "mid/units_rus.set")
+(include "mid/units_fin.set")
+(include "mid/units_usa.set")
+(include "mid/units_eng.set")
+;
+;---------------------------ARM
+		(include "mid/ext_inf_rus.set")
+		(include "mid/ext_inf_ger.set")
+		(include "mid/ext_inf_fin.set")
+		(include "mid/ext_inf_usa.set")
+
+		(include "mid/ext_units_rus.set")
+		(include "mid/ext_units_ger.set")
+		(include "mid/ext_units_fin.set")
+		(include "mid/ext_units_usa.set")

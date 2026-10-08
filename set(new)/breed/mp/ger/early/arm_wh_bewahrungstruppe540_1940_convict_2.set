@@ -1,0 +1,32 @@
+{breed
+	{behaviour soldier}
+	{skin "ger_heer_43_convict_smg"}
+	{portrait "ger_penal"}
+	{icon "smg"}
+	{icon_priority 0}
+	{tags "soldier"}
+	{nationality ger}
+	{armors
+		{head ger_m40_helmet_volkssturm}
+	}
+	{perks
+		(include "ability.inc")
+		("penal")							;//ARM+
+;//		("smg_skill_rank_1")
+;//		("skill_rank_0")					;//ARM-
+;//		("tier1_standard")					;//ARM-
+
+	}
+	{veterancy
+		(include "ability.inc")
+		("veterancy_lvl_0")
+	}
+	{inventory
+		{item "mp38_unfolded" filled}
+		{item "mp40 ammo" 192}
+
+;//		{item "bandage_ger" 2.5 0.5}
+
+		{in_hands 0}
+	}
+}

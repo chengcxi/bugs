@@ -1,0 +1,44 @@
+{from "pattern throwable"
+	{tag "fg"}
+	{inventory {size 3 1}}
+	{mass 0.6}
+	{damage blastwave
+		{energy 1.5}
+		{area 2 3}
+		{ground_interaction_radius 0.1} ;// value is multiplied by 2nd value of area to deterimine is blast is close enough to ground to trigger terrain fx
+	}
+	{special
+		{PrepareTime 4.0}
+		{PrepareCursor "grenade"}
+		{mode detonate}
+	}
+
+	;{throw;;;;;;;;;;;;;;IAEMadd
+	;	{range 37} ;in-game 37m
+	;	{startAngle 32}
+	;	{spreading 8.0
+	;		{SpreadPower     0.05}
+	;	                {SpreadXYRatio   1.50}
+	;	                {radiusTable {0 2}{10 4}{30 6}{40 8}{40 10}}
+	;	}
+	;	;{spreading
+	;	;                {radiusTable {0 4}{10 6}{20 8}{30 10}{40 12}{50 12}{60 12}}
+	;	;}
+	;};;;;;;;;;;;;;;IAEMadd
+
+	{throw;;;;;;;;;;;;;;IAEMadd
+		{range 29} ;in-game 29m
+		{startAngle 32}
+		;{spreading 7.0
+		;               {SpreadPower     0.05}
+		;               {SpreadXYRatio   1.00}
+		;               {radiusTable {0 2}{10 4}{30 6}{40 8}{40 10}}
+		;}
+		{Spreading 0.05
+			{SpreadPower 2}
+		}
+		{constantSpeed 17}
+	};;;;;;;;;;;;;;IAEMadd
+
+	{possibleDamageRadius 4}
+}

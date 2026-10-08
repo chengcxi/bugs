@@ -1,0 +1,14 @@
+;LR Arm edited
+;03.02.2026
+;
+{from "binocular"
+	{entity "spotlight"}
+	{inventory
+		{size 3 3}
+	}
+;//	{range 600 600}
+	{range 800 800}						;030226+
+	
+	{speed 1000}			; m/s
+}
+

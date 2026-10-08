@@ -1,0 +1,289 @@
+
+; "vs(...)" corresponds to a define found in the settings down this file
+; v() If squad is motorised, this is the vehicle that carries the men.
+; cd() corresponds to countdown delay to spawn the unit once battle begins
+; ci() corresponds to cooldown to buy unit once again
+; side() corresponds to side (faction)
+; n() corresponds to number of crew in the unit, the type of crew is defined in the "vs"
+; g() corresponds to group, which is for classification and collective cooldowns
+; sc() corresponds to the score given to the player upon killing this unit
+; b() corresponds to the button where this unit is located in the menus
+; i() corresponds to icon order
+; cw() corresponds to capture weight for flags
+; cp() corresponds to CP, that is, the value that units have that fill up how many troops can be fielded
+; {cost -} corresponds to MP cost of the unit
+; {level 6} Corresponds to player XP progress in player profile from steam
+; {research_stage 4} corresponds to research stage of dynamic campaign
+; {squad_cost_factor 1} - adds the cost of the crew / the cost of the squad members with this factor
+; scf() - adds the cost of the crew / the cost of the squad members with this factor
+; {score_factor 0.05} - when the unit is killed, it will have an impact on the MP score of 0.05*Cost. This only works if {squad_cost_factor 1}. With a fixed cost for the squad such (= scf 0), you need to adjust the scores of the individual units manually
+; {score 20} - when the unit is killed, it will have an impact on the MP score of 20
+; {round_multiple 5.0} - the cost of the unit is rounded up or down to this multiple
+
+;;----------------------------------- RUS ----------------------------------
+
+;----------------------------------------------------
+(define "squad_1939_stormtroopers_t28" 																			;//check
+	{tags "early %side infantry man"}																			;//check
+	{cp 0.5}
+	{basic}
+	{breed}
+	{cw 2.0}
+	{cost %cost}
+	{score (* %cost 0.05)}
+	;{score_factor 0.05}
+)
+		{"mp/rus/early/smg_1"								("squad_1939_stormtroopers_t28"			side(rus)	cost(25.0))}			;//check 
+		{"mp/rus/early/smg_2"								("squad_1939_stormtroopers_t28"			side(rus)	cost(25.0))}			;//check
+		{"mp/rus/early/smg_3"								("squad_1939_stormtroopers_t28"			side(rus)	cost(25.0))}			;//check
+		
+;----------------------------------------------------
+(define "squad_1939_stormtroopers_kv1_39" 															 	    	;//check
+	{tags "early %side infantry man"}													;//check
+	{cp 0.5}
+	{basic}
+	{breed}
+	{cw 2.0}
+	{cost %cost}
+	{score (* %cost 0.05)}
+	;{score_factor 0.05}
+)
+		{"mp/rus/early/smg_1"								("squad_1939_stormtroopers_kv1_39"		side(rus)	cost(25.0))}			;//check 
+		{"mp/rus/early/smg_2"								("squad_1939_stormtroopers_kv1_39"		side(rus)	cost(25.0))}			;//check
+		{"mp/rus/early/smg_3"								("squad_1939_stormtroopers_kv1_39"		side(rus)	cost(25.0))}			;//check
+			
+;----------------------------------------------------
+(define "squad_1940_stormtroopers_t3476" 															 	    	;//check
+	{tags "early %side infantry man"}													;//check
+	{cp 0.5}
+	{basic}
+	{breed}
+	{cw 2.0}
+	{cost %cost}
+	{score (* %cost 0.05)}
+	;{score_factor 0.05}
+)
+		{"mp/rus/early/smg_1"								("squad_1940_stormtroopers_t3476"		side(rus)	cost(20.0))}			;//check 
+		{"mp/rus/early/smg_2"								("squad_1940_stormtroopers_t3476"		side(rus)	cost(20.0))}			;//check
+		{"mp/rus/early/smg_3"								("squad_1940_stormtroopers_t3476"		side(rus)	cost(20.0))}			;//check
+			
+;----------------------------------------------------
+(define "squad_1940_stormtroopers_kv1_40" 															 	    	;//check
+	{tags "early %side infantry man"}													;//check
+	{cp 0.5}
+	{basic}
+	{breed}
+	{cw 2.0}
+	{cost %cost}
+	{score (* %cost 0.05)}
+	;{score_factor 0.05}
+)
+		{"mp/rus/early/smg_1"								("squad_1940_stormtroopers_kv1_40"		side(rus)	cost(20.0))}			;//check 
+		{"mp/rus/early/smg_2"								("squad_1940_stormtroopers_kv1_40"		side(rus)	cost(20.0))}			;//check
+		{"mp/rus/early/smg_3"								("squad_1940_stormtroopers_kv1_40"		side(rus)	cost(20.0))}			;//check
+			
+;----------------------------------------------------
+(define "squad_1940_stormtroopers_kv1_40e" 															 	    	;//check
+	{tags "early %side infantry man"}													;//check
+	{cp 0.5}
+	{basic}
+	{breed}
+	{cw 2.0}
+	{cost %cost}
+	{score (* %cost 0.05)}
+	;{score_factor 0.05}
+)
+		{"mp/rus/early/smg_1"								("squad_1940_stormtroopers_kv1_40e"		side(rus)	cost(20.0))}			;//check 
+		{"mp/rus/early/smg_2"								("squad_1940_stormtroopers_kv1_40e"		side(rus)	cost(20.0))}			;//check
+		{"mp/rus/early/smg_3"								("squad_1940_stormtroopers_kv1_40e"		side(rus)	cost(20.0))}			;//check
+			
+;----------------------------------------------------
+(define "squad_1941_stormtroopers_t3476_41e" 															 	    	;//check
+	{tags "early %side infantry man"}													;//check
+	{cp 0.5}
+	{basic}
+	{breed}
+	{cw 2.0}
+	{cost %cost}
+	{score (* %cost 0.05)}
+	;{score_factor 0.05}
+)
+		{"mp/rus/early/arm_rus_paratrooper_1940_smg"		("squad_1941_stormtroopers_t3476_41e"	side(rus)	cost(37.0))}			;//check 
+			
+;----------------------------------------------------
+(define "squad_1941_stormtroopers_kv1_41" 															 	    	;//check
+	{tags "early %side infantry man"}													;//check
+	{cp 0.5}
+	{basic}
+	{breed}
+	{cw 2.0}
+	{cost %cost}
+	{score (* %cost 0.05)}
+	;{score_factor 0.05}
+)
+		{"mp/rus/early/arm_rus_paratrooper_1940_smg"		("squad_1941_stormtroopers_kv1_41"		side(rus)	cost(37.0))}			;//check 
+			
+;----------------------------------------------------
+(define "squad_1942_stormtroopers_t3476_42" 															 	    	;//check
+	{tags "mid %side infantry man"}													;//check
+	{cp 0.5}
+	{basic}
+	{breed}
+	{cw 2.0}
+	{cost %cost}
+	{score (* %cost 0.05)}
+	;{score_factor 0.05}
+)
+		{"mp/rus/mid/marine_reg_smg"						("squad_1942_stormtroopers_t3476_42"	side(rus)	cost(29.0))}			;//check 
+		{"mp/rus/mid/marine_reg_smg_m1928"					("squad_1942_stormtroopers_t3476_42"	side(rus)	cost(29.0))}			;//check
+	
+			
+;----------------------------------------------------
+(define "squad_1942_stormtroopers_kv1s" 															 	    	;//check
+	{tags "mid %side infantry man"}													;//check
+	{cp 0.5}
+	{basic}
+	{breed}
+	{cw 2.0}
+	{cost %cost}
+	{score (* %cost 0.05)}
+	;{score_factor 0.05}
+)
+		{"mp/rus/mid/assault-sap_1"							("squad_1942_stormtroopers_kv1s"		side(rus)	cost(35.0))}			;//check 
+		{"mp/rus/mid/assault-sap_2"							("squad_1942_stormtroopers_kv1s"		side(rus)	cost(35.0))}			;//check
+	
+			
+;----------------------------------------------------
+(define "squad_1943_stormtroopers_t3485_43" 															 	    	;//check
+	{tags "mid %side infantry man"}													;//check
+	{cp 0.5}
+	{basic}
+	{breed}
+	{cw 2.0}
+	{cost %cost}
+	{score (* %cost 0.05)}
+	;{score_factor 0.05}
+)
+		{"mp/rus/mid/assault-sap_1"							("squad_1943_stormtroopers_t3485_43"	side(rus)	cost(35.0))}			;//check 
+		{"mp/rus/mid/assault-sap_2"							("squad_1943_stormtroopers_t3485_43"	side(rus)	cost(35.0))}			;//check
+	
+			
+;----------------------------------------------------
+(define "squad_1943_stormtroopers_is1_43" 															 	    	;//check
+	{tags "mid %side infantry man"}													;//check
+	{cp 0.5}
+	{basic}
+	{breed}
+	{cw 2.0}
+	{cost %cost}
+	{score (* %cost 0.05)}
+	;{score_factor 0.05}
+)
+		{"mp/rus/mid/elite_guard_smg_drum"					("squad_1943_stormtroopers_is1_43"		side(rus)	cost(35.0))}			;//check 	
+			
+;----------------------------------------------------
+(define "squad_1943_stormtroopers_is2_43" 															 	    	;//check
+	{tags "mid %side infantry man"}													;//check
+	{cp 0.5}
+	{basic}
+	{breed}
+	{cw 2.0}
+	{cost %cost}
+	{score (* %cost 0.05)}
+	;{score_factor 0.05}
+)
+		{"mp/rus/mid/guard_para_smg"						("squad_1943_stormtroopers_is2_43"		side(rus)	cost(33.0))}			;//check 
+			
+;----------------------------------------------------
+(define "squad_1944_stormtroopers_t4485" 															 	    	;//check
+	{tags "late %side infantry man"}													;//check
+	{cp 0.5}
+	{basic}
+	{breed}
+	{cw 2.0}
+	{cost %cost}
+	{score (* %cost 0.05)}
+	;{score_factor 0.05}
+)
+		{"mp/rus/late/elite_guards_smg_drum"				("squad_1944_stormtroopers_t4485"		side(rus)	cost(32.0))}			;//check 
+		{"mp/rus/late/elite_guards_smg_pps43"				("squad_1944_stormtroopers_t4485"		side(rus)	cost(32.0))}			;//check
+		{"mp/rus/late/elite_guards_smg_stick"				("squad_1944_stormtroopers_t4485"		side(rus)	cost(32.0))}			;//check
+		
+;----------------------------------------------------
+(define "squad_1944_stormtroopers_kv85" 															 	    	;//check
+	{tags "late %side infantry man"}													;//check
+	{cp 0.5}
+	{basic}
+	{breed}
+	{cw 2.0}
+	{cost %cost}
+	{score (* %cost 0.05)}
+	;{score_factor 0.05}
+)
+		{"mp/rus/late/assault-sap_1"						("squad_1944_stormtroopers_kv85"		side(rus)	cost(35.0))}			;//check 
+		{"mp/rus/late/assault-sap_2"						("squad_1944_stormtroopers_kv85"		side(rus)	cost(35.0))}			;//check
+			
+;----------------------------------------------------
+(define "squad_1944_stormtroopers_is2_44" 															 	    	;//check
+	{tags "late %side infantry man"}													;//check
+	{cp 0.5}
+	{basic}
+	{breed}
+	{cw 2.0}
+	{cost %cost}
+	{score (* %cost 0.05)}
+	;{score_factor 0.05}
+)
+		{"mp/rus/late/cav_senior_smg_stick"					("squad_1944_stormtroopers_is2_44"		side(rus)	cost(30.0))}			;//check 
+		{"mp/rus/late/cav_smg_drum"							("squad_1944_stormtroopers_is2_44"		side(rus)	cost(30.0))}			;//check
+		{"mp/rus/late/assault-sap_1"						("squad_1944_stormtroopers_is2_44"		side(rus)	cost(35.0))}			;//check
+		{"mp/rus/late/assault-sap_2"						("squad_1944_stormtroopers_is2_44"		side(rus)	cost(35.0))}			;//check		
+	
+;----------------------------------------------------
+(define "squad_1945_stormtroopers_is2_45" 															 	    	;//check
+	{tags "late %side infantry man"}													;//check
+	{cp 0.5}
+	{basic}
+	{breed}
+	{cw 2.0}
+	{cost %cost}
+	{score (* %cost 0.05)}
+	;{score_factor 0.05}
+)
+		{"mp/rus/late/senior_smg"							("squad_1945_stormtroopers_is2_45"		side(rus)	cost(30.0))}			;//check 
+		{"mp/rus/late/guards_senior_smg"					("squad_1945_stormtroopers_is2_45"		side(rus)	cost(30.0))}			;//check
+		{"mp/rus/late/guards_senior_smg_pps43"				("squad_1945_stormtroopers_is2_45"		side(rus)	cost(30.0))}			;//check
+			
+;----------------------------------------------------
+(define "squad_1945_stormtroopers_is_3" 															 	    	;//check
+	{tags "late %side infantry man"}													;//check
+	{cp 0.5}
+	{basic}
+	{breed}
+	{cw 2.0}
+	{cost %cost}
+	{score (* %cost 0.05)}
+	;{score_factor 0.05}
+)
+		{"mp/rus/late/senior_smg"							("squad_1945_stormtroopers_is_3"		side(rus)	cost(30.0))}			;//check 
+		{"mp/rus/late/guards_senior_smg"					("squad_1945_stormtroopers_is_3"		side(rus)	cost(30.0))}			;//check
+		{"mp/rus/late/guards_senior_smg_pps43"				("squad_1945_stormtroopers_is_3"		side(rus)	cost(30.0))}			;//check
+	
+;----------------------------------------------------
+(define "squad_1945_stormtroopers_is4" 															 	    	;//check
+	{tags "late %side infantry man"}													;//check
+	{cp 0.5}
+	{basic}
+	{breed}
+	{cw 2.0}
+	{cost %cost}
+	{score (* %cost 0.05)}
+	;{score_factor 0.05}
+)
+		{"mp/rus/late/senior_smg"							("squad_1945_stormtroopers_is4"			side(rus)	cost(30.0))}			;//check 
+		{"mp/rus/late/guards_senior_smg"					("squad_1945_stormtroopers_is4"			side(rus)	cost(30.0))}			;//check
+		{"mp/rus/late/guards_senior_smg_pps43"				("squad_1945_stormtroopers_is4"			side(rus)	cost(30.0))}			;//check
+
+;;----------------------------------- /RUS ----------------------------------
+
+

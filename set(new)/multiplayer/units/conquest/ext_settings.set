@@ -1,0 +1,319 @@
+(define "rus_tankman_late"
+	{tags "late %side infantry man"}
+	{cp	0}
+	{basic}
+	{breed}
+	{cw 0.5}
+	{score_factor 0.02}
+)
+(define "rus_basic_late"
+	{tags "late %side infantry man lvl1"}
+	{cp	1}
+	{basic}
+	{breed}
+	{cw 1.0}
+	{score_factor 0.02}
+)
+(define "rus_irregular_late"
+	{tags "late %side infantry man lvl1"}
+	{cp	1}
+	{basic}
+	{breed}
+	{cw 1.0}
+	{score_factor 0.02}
+)
+(define "rus_regular_late"
+	{tags "late %side infantry man %lvl"}
+	{cp	1}
+	{basic}
+	{breed}
+	{cw 1.5}
+	{score_factor 0.03}
+)
+(define "rus_regular_advanced_late"
+	{tags "late %side infantry man %lvl"}
+	{cp	1}
+	{basic}
+	{breed}
+	{cw 2.0}
+	{score_factor 0.06}
+)
+(define "rus_paratroopers_late"
+	{tags "late %side infantry man lvl3 lvl4"}
+	{cp	1}
+	{basic}
+	{breed}
+	{cw 4}
+	{score_factor 0.04}
+)
+(define "rus_guards_late"
+	{tags "late %side infantry man lvl3 lvl4"}
+	{cp	1}
+	{basic}
+	{breed}
+	{cw 4}
+	{score_factor 0.04}
+)
+(define "rus_mountain_late"
+	{tags "late %side infantry man lvl2 lvl3 lvl4"}
+	{cp	1}
+	{basic}
+	{breed}
+	{cw 4.0}
+	{score_factor 0.04}
+)
+(define "rus_marines_late"
+	{tags "late %side infantry man lvl4"}
+	{cp 1}
+	{basic}
+	{breed}
+	{cw 4}
+	{score_factor 0.05}
+)
+(define "rus_spetsnaz_late"
+	{tags "late %side infantry man lvl4"}
+	{cp	1}
+	{basic}
+	{breed}
+	{cw 2}
+	{score_factor 0.05}
+)
+(define "rus_medic_late"
+	{tags "late %side infantry man"}
+	{cp	1}
+	{basic}
+	{breed}
+	{cw 0.5}
+	{score_factor 0}
+)
+
+(define "rus_officer_late"
+	{tags "late %side infantry man officer"}
+	{cp 1}
+	{basic}
+	{breed}
+	{cw 2}
+	{score_factor 0.2}
+)
+(define "rus_sniper_late"
+	{tags "late %side infantry man sniper lvl3 lvl4"}
+	{cp 1}
+	{basic}
+	{breed}
+	{cw 2}
+	{score_factor 0.05}
+)
+(define "rus_assault_sap_late"
+	{tags "late %side infantry man"}
+	{cp	1}
+	{basic}
+	{breed}
+	{cw 5.0}
+	{score_factor 0.05}
+)
+
+;-------------------------------------------------------------------------------------------------------------------------------------
+
+(define "ger_tankman_late"
+	{tags "late %side infantry man"}
+	{cp 0}
+	{basic}
+	{breed}
+	{cw 0.5}
+	{score_factor 0.02}
+)
+
+(define "ger_strafbatallion_late"
+	{tags "late %side infantry man lvl1"}
+	{cp 1}
+	{basic}
+	{breed}
+	{cw 1}
+	{score_factor 0.04}
+)
+
+(define "ger_regular_late"
+	{tags "late %side infantry man %lvl"}
+	{cp 1}
+	{basic}
+	{breed}
+	{cw 1.5}
+	{score_factor 0.04}
+)
+
+(define "ger_regular_advanced_late"
+	{tags "late %side infantry man %lvl"}
+	{cp 1}
+	{basic}
+	{breed}
+	{cw 2}
+	{score_factor 0.06}
+)
+
+(define "ger_pioniere_late"
+	{tags "late %side infantry man lvl2 lvl3 lvl4"}
+	{cp 1}
+	{basic}
+	{breed}
+	{cw 5}
+	{score_factor 0.05}
+)
+
+(define "ger_fallschirmjaeger_late"
+	{tags "late %side infantry man lvl4"}
+	{cp 1}
+	{basic}
+	{breed}
+	{cw 4}
+	{score_factor 0.05}
+)
+
+(define "ger_gebirgsjaeger_late"
+	{tags "late %side infantry man lvl3 lvl4"}
+	{cp 1}
+	{basic}
+	{breed}
+	{cw 4}
+	{score_factor 0.05}
+)
+
+(define "ger_brandenburger_late"
+	{tags "late %side infantry man lvl3 lvl4"}
+	{cp 1}
+	{basic}
+	{breed}
+	{cw 2}
+	{score_factor 0.05}
+)
+
+(define "ger_medic_late"
+	{tags "late %side infantry man"}
+	{cp 1}
+	{basic}
+	{breed}
+	{cw 0.5}
+	{score_factor 0}
+)
+
+(define "ger_officer_late"
+	{tags "late %side infantry man officer"}
+	{cp 1}
+	{basic}
+	{breed}
+	{cw 2}
+	{score_factor 0.2}
+)
+
+(define "ger_sniper_late"
+	{tags "late %side infantry man sniper lvl3 lvl4"}
+	{cp 1}
+	{basic}
+	{breed}
+	{cw 2}
+	{score_factor 0.05}
+)
+
+(define "ger_pzgren_gd_late"
+	{tags "late %side infantry man %lvl"}
+	{cp 1}
+	{basic}
+	{breed}
+	{cw 4.0}
+	{score_factor 0.05}
+)
+
+(define "vehicle3"
+	("generic_v_conquest" t(%side %period) r(%min_stage) mr(%max_stage) cw(%cw) cp(%cp))
+	{content "* ( mp/%side/%period/%crew1 mp/%side/%period/%crew2 mp/%side/%period/%crew3 )"} 
+	{button "vehicles"}
+)
+
+(define "vehicle4"
+	("generic_v_conquest" t(%side %period) r(%min_stage) mr(%max_stage) cw(%cw) cp(%cp))
+	{content "* ( mp/%side/%period/%crew1 mp/%side/%period/%crew2 mp/%side/%period/%crew3 mp/%side/%period/%crew4 )"} 
+	{button "vehicles"}
+)
+
+(define "towed_vehicle3_2"
+	("generic_v_conquest" t(%side %period) r(%min_stage) mr(%max_stage) cw(%cw) cp(%cp)) ;//h
+	{content "%vehicle ( mp/%side/%period/%crew1_v mp/%side/%period/%crew2_v mp/%side/%period/%crew3_v ) %cannon ( mp/%side/%period/%crew1_c mp/%side/%period/%crew2_c )"}
+	{button "vehicles"}
+)
+
+;//---------------------------------------------------------------------------------- emplacements Begin
+; emplacements
+(define "emplacement"
+	("generic_v_conquest" t(%side %period lvl1 lvl2 lvl3 lvl4) r(%min_stage) mr(%max_stage) cw(%cw) cp(%cp))
+	{content "* ( mp/%side/%period/%crew )"}
+	{conditions "%condition"}
+	{action "%action"}
+	{button "vehicles"}
+)
+
+(define "emplacement2"
+	("generic_v_conquest" t(%side %period) r(%min_stage) mr(%max_stage) cw(%cw) cp(0))
+	{content "* ( mp/%side/%period/%crew )"}
+	{conditions "%condition"}
+	{action "%action"}
+	{button "empl"}
+)
+(define "emplacement2_5cp"
+	("generic_v_conquest" t(%side %period) r(%min_stage) mr(%max_stage) cw(%cw) cp(5))
+	{content "* ( mp/%side/%period/%crew )"}
+	{conditions "%condition"}
+	{action "%action"}
+	{button "empl"}
+)
+(define "emplacement2_10cp"
+	("generic_v_conquest" t(%side %period) r(%min_stage) mr(%max_stage) cw(%cw) cp(10))
+	{content "* ( mp/%side/%period/%crew )"}
+	{conditions "%condition"}
+	{action "%action"}
+	{button "empl"}
+)
+(define "emplacement2_20cp"
+	("generic_v_conquest" t(%side %period) r(%min_stage) mr(%max_stage) cw(%cw) cp(20))
+	{content "* ( mp/%side/%period/%crew )"}
+	{conditions "%condition"}
+	{action "%action"}
+	{button "empl"}
+)
+(define "emplacement2_50cp"
+	("generic_v_conquest" t(%side %period) r(%min_stage) mr(%max_stage) cw(%cw) cp(50))
+	{content "* ( mp/%side/%period/%crew )"}
+	{conditions "%condition"}
+	{action "%action"}
+	{button "empl"}
+)
+
+
+(define "emplacement_5cp"
+	("generic_v_conquest" t(%side %period) r(%min_stage) mr(%max_stage) cw(%cw) cp(5))
+	{content "* ( mp/%side/%period/%crew )"}
+	{conditions "%condition"}
+	{action "%action"}
+	{button "empl"}
+)
+(define "emplacement_10cp"
+	("generic_v_conquest" t(%side %period) r(%min_stage) mr(%max_stage) cw(%cw) cp(10))
+	{content "* ( mp/%side/%period/%crew )"}
+	{conditions "%condition"}
+	{action "%action"}
+	{button "empl"}
+)
+(define "emplacement_20cp"
+	("generic_v_conquest" t(%side %period) r(%min_stage) mr(%max_stage) cw(%cw) cp(20))
+	{content "* ( mp/%side/%period/%crew )"}
+	{conditions "%condition"}
+	{action "%action"}
+	{button "empl"}
+)
+(define "emplacement_50cp"
+	("generic_v_conquest" t(%side %period) r(%min_stage) mr(%max_stage) cw(%cw) cp(50))
+	{content "* ( mp/%side/%period/%crew )"}
+	{conditions "%condition"}
+	{action "%action"}
+	{button "empl"}
+)
+
+;//---------------------------------------------------------------------------------- emplacements End

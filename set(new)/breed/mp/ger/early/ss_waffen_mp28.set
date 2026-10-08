@@ -1,0 +1,33 @@
+{breed
+	{behaviour soldier}
+	{skin "ger_heer_39_pz_pio_stg"}
+	{portrait "ger_ss"}
+	{icon "smg"}
+	{icon_priority 3}
+	{nationality ger_unique}
+	{armors
+		{head ger_m40_ss}
+	}
+	{perks
+		(include "ability.inc")
+		("smg_skill_rank_4")
+			("tier4_standard")
+	}
+	{veterancy
+		(include "ability.inc")
+		("veterancy_lvl_3")
+				
+	}
+	{inventory
+		{item "mp28" filled}
+		{item "mp40 ammo" 192}
+		
+		{item "nbk39 grenade" 2.25 0.5}
+		{item "m24" 4.25 0.5}
+		{item "m24_geballteladung" 2.25 0.5}
+
+		{item "bandage_ger" 5 2.5}
+		
+		{in_hands 0}
+	}
+}

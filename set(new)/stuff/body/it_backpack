@@ -1,0 +1,11 @@
+{item
+	{tag "itemin1hand"}
+	{entity "it_backpack"}
+	{inventory
+		{size 2 2}
+		{weight 30}
+		{link_bone "IK_UpDown"}
+		{fsm "stuff"}
+	}
+	{mass 3}
+}

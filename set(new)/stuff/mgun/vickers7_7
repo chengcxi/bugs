@@ -1,0 +1,4 @@
+{from "vickers_inv"
+	{filling "ammo 7x58" 250}
+}
+;Cost=40;

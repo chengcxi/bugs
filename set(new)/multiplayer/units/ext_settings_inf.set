@@ -1,0 +1,79 @@
+;// ================================================================= GER =================================================================
+
+;// ========================================= ARM special inf
+
+(define "inf_ger_engineer_heavy"
+	("inf_settings_general" cost(%cost))
+	{tags "%period %side infantry man"}
+	{cp 3}
+	{cw 1}
+	{score (* %cost 0.02)}
+)
+
+(define "inf_ger_heavy_artilleryman"
+	("inf_settings_general" cost(%cost))
+	{tags "%period %side infantry man"}
+	{cp 1}
+	{cw 1}
+	{score (* %cost 0.02)}
+)
+
+;// ================================================================= USSR =================================================================
+
+;// ========================================= ARM special inf
+
+(define "inf_soviet_fortifier_private"
+	("inf_settings_general" cost(%cost))
+	{tags "%period %side infantry man"}
+	{cp 3}
+	{cw 1}
+	{score (* %cost 0.02)}
+)
+
+(define "inf_rus_artilleryman_private"
+	("inf_settings_general" cost(%cost))
+	{tags "%period %side infantry man"}
+	{cp 1}
+	{cw 1}
+	{score (* %cost 0.02)}
+)
+
+;// ================================================================= FIN =================================================================
+
+;// ========================================= ARM special inf
+
+(define "inf_fin_engineer_heavy"
+	("inf_settings_general" cost(%cost))
+	{tags "%period %side infantry man"}
+	{cp 3}
+	{cw 1}
+	{score (* %cost 0.02)}
+)
+
+(define "inf_fin_artilleryman"
+	("inf_settings_general" cost(%cost))
+	{tags "%period %side infantry man"}
+	{cp 1}
+	{cw 1}
+	{score (* %cost 0.02)}
+)
+
+;// ================================================================= USA =================================================================
+
+;// ========================================= ARM special inf
+
+(define "inf_usa_arm_usa_engineer_heavy"
+	("inf_settings_general" cost(%cost))
+	{tags "%period %side infantry man"}
+	{cp 3}
+	{cw 1}
+	{score (* %cost 0.02)}
+)
+
+(define "inf_usa_arm_usa_artilleryman_heavy"
+	("inf_settings_general" cost(%cost))
+	{tags "%period %side infantry man"}
+	{cp 1}
+	{cw 1}
+	{score (* %cost 0.02)}
+)

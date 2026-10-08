@@ -1,0 +1,39 @@
+(include "/set/arm_extra_macros.inc")
+;LR Arm edited
+;01.12.25
+;_________________________________________
+; Long barreled British medium AT gun
+;=========================================
+
+
+{from "pattern gun"			; M4A4 Firefly
+	{filling "bulleteng_76"}
+	{fireSound "cannon/s3/d1/Shared/Cannon_75to76mm/"}
+	{fireSoundclose "cannon/s3/3p/Shared/Cannon_75to76mm/"}
+	{reloadSound "tank/1p/small_long/"}
+	("range_200")
+	{calibre 76}
+
+	("reload time" seconds(8.5))
+
+	("velocity m/s" ap(900) apcr(1200) he(550) heat(1))
+	("armor health" damage(200))
+	("76_slope_multipliers")
+
+	{parameters "he"
+		;{range 200 200}
+		{range 400 400}
+	}
+	{parameters "sm"
+		("velocity" mps(230))
+		;{range 100 100}
+		{range 200 200}
+	}
+
+	("penetration_medium" shell(ap) range(210) a(171) b(168) c(155) d(139) e(126) f(113))		; Shot Mk.6
+	("penetration_medium" shell(apc) range(210) a(171) b(168) c(155) d(139) e(126) f(113))		; Shot Mk.4
+	("penetration_medium" shell(apcbc) range(210) a(190) b(187) c(172) d(155) e(140) f(126))	; Shot Mk.8
+	("penetration_medium" shell(apds) range(210) a(228) b(226) c(207) d(189) e(159) f(134))		; Shot SV Mk.1
+
+	("accuracy_direct" r1(0.65) range_ap(200) range_he(200) range_heat(200))
+}

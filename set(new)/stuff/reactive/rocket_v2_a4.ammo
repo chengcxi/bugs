@@ -1,0 +1,35 @@
+{bullet
+	{tag "bomb size3 he fg itemin2hands"}
+	{desc "V-2 Rocket"}
+	{inventory
+		{size 14 4}
+		{weight 2000}
+	}	
+	{mass 12500}
+	{entity "v2_a4_rocket"}
+	{desc "V-2"}
+	{view "v2_a4_rocket"
+		{tail "rocket_smoke_st" "tail"}
+
+	}
+	("he_level_7" weight(2170) filler(800))
+	{detonationThickness 1}
+	{applyProjectile}
+	{damage add blastwave	
+		{energy 100}
+		{area 50 50}
+	}
+	{damage add blastwave	
+		{energy 110}
+		{area 46 46}
+	}
+	{damage add blastwave	 
+		{energy 120}
+		{area 46 46}
+	}
+	{damage fire
+		{radius 90}	 
+		{heating 0.5}
+		{time 10}
+	}
+}

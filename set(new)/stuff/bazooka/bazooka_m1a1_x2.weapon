@@ -1,0 +1,42 @@
+{from "pattern rpg_weapon"
+	{filling "ammo bazooka" 2}
+	{entity "bazooka_m1a1"}
+	{fireSound "reactive/d1/Shared/Rocket_Launcher/"}
+	{reloadsound "bazooka"}
+	{calibre 60}
+	{mass 8.2}
+
+	{fillingVisible "rocket"}
+
+	("fire rate" rpm(200)) ;// one rocket every 0.5s in "ripple fire". 30s to fire full salvo
+	("reload time" seconds(5))
+
+	("velocity" mps(80.8))
+
+	("human health" damage(500))
+
+	{parameters "heat"			; M6 Rocket
+		{cursorReloading "gun_heat"}
+		("penetration" args 82)
+		("armor health" damage(300))
+		("pointed_slope")
+	}
+	{parameters "heata"			; M6A1 Rocket
+		{cursorReloading "gun_heat"}
+		("penetration" args 88)
+		("armor health" damage(300))
+		("pointed_slope")
+	}
+
+	{parameters "heatb"			; M6A3 Rocket
+		{cursorReloading "gun_heat"}
+		("penetration" args 102)
+		("armor health" damage(300))
+		("standard_slope")
+	}
+
+	{parameters "wp"			; M10 Rocket
+		{cursorReloading "gun_wp"}
+		("standard_slope")
+	}
+}

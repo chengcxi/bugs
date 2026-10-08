@@ -1,0 +1,40 @@
+(include "/set/arm_extra_macros.inc")
+;LR Arm edited
+;_________________________________________
+; short barreled USSR infantry support gun
+;=========================================
+
+
+{from "76mm_kt26"			; L/16.5 "M1927"
+	{fireSoundclose "cannon/s3/3p/Shared/Cannon_75to76mm_LV/"}
+	{reloadSound "utility/"}
+	("reload time" seconds(6))
+	("medium_artillery")
+;//	{minRange 150}
+	;{range 175 180} ; // 4km
+	{range 350 360} ; // 4km
+	("velocity m/s" ap(387) apcr(1) he(262) heat(311))
+	("armor health" damage(200))
+	("armor health custom" shell(aphebc) damage(200) filler(155))
+	("76_rus_slope_multipliers")
+
+	; BR-350A
+	("penetration_medium" shell(aphebc) range(160) a(34) b(31) c(28) d(26) e(24))
+
+	; BP-350M
+	("penetration_medium" shell(he) range(160) a(75) b(75) c(75) d(75) e(75))	; issued sometime in '43
+	
+	; BP-350M
+	("penetration_medium" shell(heat) range(160) a(75) b(75) c(75) d(75) e(75))	; issued sometime in '43
+
+
+	("accuracy_indirect"   ; // Applies logic for accuracy of indirect weapons over 200m
+		r1(1.20) 				; // Accuracy radius for direct-fire munitions
+		r2(9) 					; // Accuracy radius for indirect fire
+		rmax(27) 				; // Accuracy radius for indirect fire at maximum range
+		range_ap(160) 			; // Range after which accuracy drops to prevent farshooting.
+		range_heat(160) 		; // Range after which accuracy drops to prevent farshooting.
+		range_he(160)			; // Range after which accuracy drops to prevent farshooting.
+	)
+	
+}

@@ -1,0 +1,7 @@
+{from "pattern air_bomb" ;//SD1000 stats
+	{entity "sc_1000"}
+	{tag "size4"}
+	{mass 1000}
+
+	("he_level_8" weight(1000) filler(199))
+}

@@ -1,0 +1,17 @@
+{from "pattern aphe"
+	{tag "shell size1 37to47_he_filler no_throw no_ricochet"}
+	{tag "auto size1"}
+	{inventory
+		{weight 10}
+		{size 2 2}
+		{block 10}
+	}
+	{entity "20x138bmm_ger_auto_aphe"}
+	{mass 0.303}
+
+	{view "howitzer_shell_dummy"
+		{tail "shell_tracer_20_ap" "tail"}
+	}
+
+	("ap_blast" args 0.17)
+}
