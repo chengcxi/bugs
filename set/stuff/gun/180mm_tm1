@@ -1,3 +1,4 @@
+(include "/set/arm_extra_macros.inc")
 ;LR Arm edited
 ;_________________________________________
 ; ARTY - 180mm B-1-K Pattern 1931 Soviet railway gun

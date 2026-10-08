@@ -1,3 +1,4 @@
+(include "/set/arm_extra_macros.inc")
 ;LR Arm edited
 ;_________________________________________
 ; Finnish medium AA gun

@@ -1,3 +1,4 @@
+(include "/set/arm_extra_macros.inc")
 ;LR Arm edited
 ;_________________________________________
 ; ARTY - 280mm Br5 Soviet super-heavy gun

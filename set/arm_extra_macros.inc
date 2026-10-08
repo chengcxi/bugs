@@ -331,3 +331,64 @@
 	{unlimitedRangeTPC 0}	;// restrict range in TPC/FPC
 )
 
+(define "range_autocannon_25-30"
+	("standard_firing_arc")
+	{range 250 365}				;// 080326 (365 - 365) - (250 - 365)
+	{automatic}
+	{aimingTolerance 3}
+	{SpreadTolerance 0}			;// Zeroing up to 0% needed before fire
+	{spreading
+		{BurstRecoveryTime 0.5}
+		{BurstAccuracy 100 98 95 90 85 80 75 70 65 60 55 50 45 40 35}
+		{SpreadXYRatio	0.5}
+	}
+	{burst
+		{short 2 0.75}			;// short burst shots on long distance, rand (+-)shots
+		{long 5 1}				;// long burst shots on short distance, rand (+-)shots
+		{rangeKoef 0.5}			;// rangeKoef * aimRange = max long burst distance
+	}
+	{SyncedProjectiles 0}		;// not for automatic weapons
+	{parameters "ap"
+		("human health" damage(250))
+	}
+	{parameters "apbc"
+		("human health" damage(250))
+	}
+	{parameters "apcr"
+		("human health" damage(250))
+	}
+	{parameters "he"
+		("human health" damage(500))
+		(mod "mp" {unlimitedRangeTPC 1})		;// unrestricts range in TPC/FPC for shooting at aircraft			;ARm 080226
+		(mod not "mp" {unlimitedRangeTPC 1})	;// unrestricts range in TPC/FPC for shooting at aircraft
+		{FalloffStrength 0}
+	}
+)
+
+(define "range_autocannon_37-40"
+	("standard_firing_arc")
+	; {range 160 160}			
+;//	{range 400 400}				;290126
+	{range 265 380}				;//080326	(400) - (380 380) - (250 380)
+	{automatic}
+	{aimingTolerance 3}
+	{SpreadTolerance 0}			;// Zeroing up to 0% needed before fire
+	{spreading
+		{BurstRecoveryTime 0.5}
+		{BurstAccuracy 100 95 88 82 75 68 55 32}
+		{SpreadXYRatio	0.5}
+	}
+	{burst
+		{short 2 0.75}			;// short burst shots on long distance, rand (+-)shots
+		{long 5 1}				;// long burst shots on short distance, rand (+-)shots
+		{rangeKoef 0.85}		;// rangeKoef * aimRange = max long burst distance
+	}
+	{parameters "he"										; SPgGr.												;ARm 080226
+		{range 320 420}							; (325 440) (340 420)
+		(mod "mp" {unlimitedRangeTPC 1})		;// unrestricts range in TPC/FPC for shooting at aircraft
+		(mod not "mp" {unlimitedRangeTPC 1})	;// unrestricts range in TPC/FPC for shooting at aircraft
+		{FalloffStrength 0}
+	}
+	{SyncedProjectiles 0}		;// not for automatic weapons
+)
+
