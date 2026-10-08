@@ -1,0 +1,23 @@
+{from "pattern mgun"
+	{filling "mgun_ger" 50}
+	{entity "mg42_drum"}
+	{fireSound "smallarms/s3/d1/GER/MG42/Head/"}
+	{fireSoundclose "smallarms/s3/3p/GER/MG42/"}
+	{reloadSound "mg34"}
+	{calibre 7.92}
+	{mass 11.57}
+	{traceFreq 7}
+	("fire rate" rpm(1470))
+	("velocity" mps(770))
+
+	("ger_ap_bullets")
+	{burst
+		{short 10 8}
+		{long 14 12}
+		{rangeKoef 0.6}
+	}
+	("spreading_low")
+                ("reload time" seconds(7))
+	;("zoom_mg42_drum")
+	;("iron_sight_view" bone(foresight14) x(0.0) y(-0.125) z(1.2) hide_hitmarker(0) hide_crosshair(1) unlimitedRangeTPC(1))
+}

@@ -1,0 +1,41 @@
+;LR Arm edited
+;03.12.2025
+;_________________________________________
+; German Heavy AA/AT gun
+;=========================================
+
+
+{from "pattern gun"		; L/56 "flak36a"
+	{filling "bulletger_90_ita"}
+	{fireSound "gun/gun_88"}
+	{fireSoundclose "gun/gun_88"}
+	{reloadSound "tank/reload_big"}
+;//	("range_220")
+	("range_220")																								;//ARm 080326 +
+	{calibre 90}
+	("heavy_aa")
+;//	{range 500 500}									;//+ARm
+
+	("reload time" seconds(8))						;//ARM+2
+
+	("velocity m/s" ap(830) apcr(0) he(830) heat(0))
+	("armor health" damage(260))
+	("armor health custom" shell(apcbche) damage(260) velocity(830) filler(102))
+	("90_slope_multipliers")
+
+	; mod.43
+	("penetration_long" shell(apcbche) range(220) a(158) b(147) c(135) d(124) e(114))
+
+
+	{parameters "he"										
+		(mod "mp" {unlimitedRangeTPC 1})	;// unrestricts range in TPC/FPC for shooting at aircraft
+		{FalloffStrength 0}
+	}
+	
+	("accuracy_direct" 								;//+ARm
+		r1(0.65) 									;//+ARm
+		range_ap(250) 								;//+ARm
+		range_he(190) 								;//+ARm
+		range_heat(190)								;//+ARm
+	)												;//+ARm
+}

@@ -1,0 +1,11 @@
+{from "pattern flame_thrower"
+	{entity "ato_41_flame_thrower"}
+	("filling" fuel(80))	;// Panzer3 had 2 Fuel tanks and could hold 1020 Liters. Other 520 liters is in vehicle inventory.
+	{mass 150}
+	{foresight "foresight1"}
+
+	{range 120 120}			;ARm 230226 (80 80) - (120 120)
+	{speed 45}
+
+	{rechargeTime 2}
+}

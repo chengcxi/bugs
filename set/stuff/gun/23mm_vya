@@ -1,0 +1,29 @@
+;LR Arm edited
+;06.12.2025
+;_________________________________________
+; Soviet Wing Cannons for IL-2
+;=========================================
+
+
+{from "pattern gun"			; "Il2"
+	{filling "bullet_20_auto aphe" 300}
+	{fireSound "cannon/s1/d1/Shared/Autocannon_20to30mm/Multi_Barrel/Head/"}
+	{fireSoundclose "cannon/s1/1p/Shared/Autocannon_20to30mm/"}
+	{reloadSound "interior/large/auto_reload_interior"}
+;//	("range_aircraft_gun")
+	("range_aircraft_gun_15-20-30")
+	{cursor "ironsights/aa"}
+	{calibre 23}
+
+	("fire rate" rpm(1100))
+	("reload time" seconds(20))
+
+	("velocity" mps(900))
+	("armor health" damage(65))						;//ARm+ 45-65
+	("20_slope_multipliers")
+
+	{parameters "ap" 										; ?
+;//		("penetration" a(58) b(40) c(35) d(25) e(15))
+		("penetration" a(58) b(58) c(40) d(35) e(25))		
+	}
+}

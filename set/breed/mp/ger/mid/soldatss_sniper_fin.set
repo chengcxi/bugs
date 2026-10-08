@@ -1,0 +1,34 @@
+{breed
+	{behaviour soldier}
+	{skin "mp_ger_ws_smock_rifle_ss_fin"}
+	{portrait "fin_ss"}
+	{icon "sniper"}
+	{icon_priority 4}
+	{nationality fin}
+	{armors
+		{head ger_m40_ss}
+	}
+	{perks
+		(include "ability.inc")
+		("rifle_skill_rank_4")
+				("tier4_recon")
+	}
+	{veterancy
+		(include "ability.inc")
+		("veterancy_lvl_0")
+	}
+	{inventory
+		{item "mosin_m27_scope" filled}
+		{item "rifle_rus clip ammo" 60 5}
+
+		{item "nbk39 grenade" 2.25 0.5}
+		{item "m24" 4.25 0.5}
+		{item "m24_geballteladung" 2.25 0.5}
+		{item "molotov_cocktail_fin grenade" 0.75 0.5}
+
+		{item "bandage_fin" 4.5 0.5}
+		{item "knife_fin"}
+		
+		{in_hands 0}
+	}
+}

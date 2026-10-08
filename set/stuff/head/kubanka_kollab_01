@@ -1,0 +1,4 @@
+{from "pattern light_headgear"
+	{desc "Officer Kubanka"}
+	{entity "kubanka_kollab_01"}
+}

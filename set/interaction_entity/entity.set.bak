@@ -1,0 +1,157 @@
+{entities
+	(include "vehicle/animation-defines.inc")
+	(include "debug.inc")
+	(include "generic.inc")
+	(include "dummy.inc")
+	(include "explosive.inc")
+	(include "grenade.inc")
+	(include "flora.inc")
+	(include "fauna.inc")
+;	(include "human_old.inc")
+	(include "human.inc")
+
+	(include "weapons-defines.inc")
+ 
+	(include "icon.inc")
+
+	(include "vehicle/animation-defines.inc")
+	(include "tank/sound-defines.inc")
+	(include "vehicle/vehicle-main.inc")
+;		(include "vehicle/vehicle-main_paint.inc")												;//ARM-
+	(include "vehicle/car-main.inc")
+	(include "vehicle/moto.inc")
+	(include "tank/tank-main.inc")																; has INC ARm TSL-scripts
+	(include "tank/tank-specifics.inc")
+
+	(include "cannon.inc")
+	(include "airborne.inc")
+	(include "marine.inc")
+	(include "railway.inc")
+	(include "dogs.inc")
+	(include "skirmish.inc")
+	(include "stuff.inc")
+	(include "multiplayer.inc")
+	(include "muzzle.inc")
+	(include "shell.inc")
+
+	(include "construction/post.inc")
+	(include "construction/fence.inc")
+	(include "construction/target.inc")
+	(include "construction/shed.inc")
+	(include "construction/dummy.inc")
+	(include "construction/generic.inc")
+	(include "construction/windows.inc")
+	(include "construction/parts.inc")
+	(include "construction/foxhole.inc")
+	(include "construction/sandbag.inc")
+	(include "construction/staged.inc")
+	(include "construction/special.inc")
+	(include "construction/building.inc")
+	(include "construction/burning.inc")
+	(include "construction/bridge.inc")
+	(include "construction/placement.inc")
+;------------------------------------------------ ARm
+	(include "interaction_entity_arm/arm_defines.inc")	
+;------------------------------------------------ ORIGINAL MODDED
+	(include "airborne.inc")																			;double!
+;------------------------------------------------ ORIGINAL MODDED
+	(include "airborne_MACE.inc")	
+	(include "cannon_mace.inc")	
+	(include "dummy_MACE.inc")																;200226 test
+;	(include "generic_mace.inc")
+;	(include "grenade_mace.inc")
+;	(include "human_mace.inc")       
+	(include "stuff_mace.inc")
+;	(include "weapons-defines_mace.inc")																	;080226
+
+	(include "tank/tank-main_mace.inc")            ;test
+	(include "tank/tank-specifics_MACE.inc")      
+	(include "vehicle/vehicle-main_mace.inc")     ;test
+
+	(include "vehicle/car-main_mace.inc")         ;test
+
+;	(include "construction/placement_mace.inc")
+;	(include "construction/foxhole_mace.inc")
+;------------------------------------------------ INTEGRER
+;human
+;vehicle
+;tank	
+;cannon	
+;airborne		
+;functions										
+	
+;------------------------------------------------ ARM + MACE macros
+;other
+	(include "interaction_entity_arm/arm_explosives.inc")	
+;human
+	(include "interaction_entity_arm/arm_human.inc")
+	(include "interaction_entity_arm/arm_func_human_animation.inc")										;preintegrated Animations	
+;vehicles
+	(include "interaction_entity_arm/arm_sound-defines.inc")
+	(include "interaction_entity_arm/arm_car.inc")														;160226
+	(include "interaction_entity_arm/arm_vehicle.inc")													;050926
+	(include "interaction_entity_arm/arm_vehicle_specific.inc")											;050926
+	(include "interaction_entity_arm/arm_vehicle_TSL_script.inc")										;200226	;not work
+;	(include "interaction_entity_arm/arm_vehicle_def_placement.inc")										;200226	;not work
+;cannons
+	(include "interaction_entity_arm/arm_cannon.inc")
+	(include "interaction_entity_arm/arm_cannon_ext.inc")	
+	(include "interaction_entity_arm/arm_cannon_specific.inc")
+	(include "interaction_entity_arm/arm_cannon_func.inc")												;250226
+;tanks		
+	(include "interaction_entity_arm/tank/arm_tank.inc")	
+	(include "interaction_entity_arm/tank/arm_tank-specifics.inc")
+	(include "interaction_entity_arm/tank/arm_tank-specifics_ext.inc")
+	(include "interaction_entity_arm/tank/arm_tank_specifics_ai.inc")									;080226	
+	(include "interaction_entity_arm/tank/arm_tank-specifics_TSL.inc")									;080226
+;	(include "tank/arm_tank-specifics_TSL2_script.inc")													;200226	
+;	(include "tank/arm_tank-specifics_TSL_script.inc")													;090226
+;	(include "tank/arm_tank-specifics_TSL_cleaner.inc")																;not work
+;airborn	
+	(include "interaction_entity_arm/arm_airborne_sound-defines.inc")									;200226	
+	(include "interaction_entity_arm/arm_airborne.inc")													;200226		
+	(include "interaction_entity_arm/arm_airborne_para.inc")											;new	
+	(include "interaction_entity_arm/arm_airborne_ext.inc")												;190226 ;PO-2 fin injector
+	(include "interaction_entity_arm/arm_airborne_specific.inc")										;210926
+;	(include "interaction_entity_arm/arm_airborne_specific_ger.inc")									;to del
+;	(include "interaction_entity_arm/arm_airborne_specific_ussr.inc")									;to del		
+;	(include "interaction_entity_arm/arm_airborne_specific_fin.inc")									;to del		
+;	(include "interaction_entity_arm/arm_airborne_specific_usa.inc")									;to del		
+;	(include "interaction_entity_arm/arm_airborne_specific_eng.inc")									;to del		
+	(include "interaction_entity_arm/arm_airborne_func.inc")											;200226	
+;functions	
+	(include "interaction_entity_arm/arm_dummy.inc")
+	(include "interaction_entity_arm/arm_func_reverse.inc")	
+	(include "interaction_entity_arm/arm_func_smoke.inc")			
+;construction & textures	
+	(include "construction/interaction_entity_arm_construction/arm_placement.inc")
+	(include "construction/interaction_entity_arm_construction/arm_placement_units.inc")	
+;	(include "construction/interaction_entity_arm_construction/arm_placement_units_static.inc")						;test texmods
+;------------------------------------------------ CE emplacement
+	;(include "emplacement/vehicle_emplacement_set_fin.inc")									;//CE-
+	(include "emplacement/vehicle_emplacement_set_generic.inc")
+	(include "emplacement/vehicle_emplacement_set_ger.inc")
+	(include "emplacement/vehicle_emplacement_set_rus.inc")	
+	(include "emplacement/vehicle_emplacement_set_usa.inc")	
+	(include "emplacement/cannon_emplacement_set_fin.inc")	
+	(include "emplacement/cannon_emplacement_set_generic.inc")
+	(include "emplacement/cannon_emplacement_set_ger.inc")	
+	(include "emplacement/cannon_emplacement_set_rus.inc")	
+	(include "emplacement/cannon_emplacement_set_usa.inc")	
+	(include "emplacement/emplacement_dummy_fin.inc")	
+	(include "emplacement/emplacement_dummy_generic.inc")
+	(include "emplacement/emplacement_dummy_ger.inc")	
+	(include "emplacement/emplacement_dummy_rus.inc")	
+	(include "emplacement/emplacement_dummy_usa.inc")	
+	(include "emplacement/emplacement_generic.inc")	
+	(include "emplacement/gun_shield.inc")
+	(include "emplacement/texmod_concrete.inc")
+	(include "emplacement/texmod_emplacement_fin.inc")	
+	(include "emplacement/texmod_emplacement_generic.inc")	
+	(include "emplacement/texmod_emplacement_ger.inc")
+	(include "emplacement/texmod_emplacement_rus.inc")
+	(include "emplacement/texmod_emplacement_usa.inc")
+	(include "emplacement/texmod_mg_nest&watchtower.inc")
+	(include "emplacement/texmod_stuff.inc")
+
+}

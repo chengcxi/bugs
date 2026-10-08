@@ -1,0 +1,36 @@
+;LR Arm edited
+;29.01.2026
+;_________________________________________
+;Soviet light AA gun
+;=========================================
+
+
+{from "pattern gun"			; L/76.6  "ZIS-12/94KM"
+	{filling "bulletrus_25_auto" 14}
+	{fireSound "cannon/s1/d1/Shared/Autocannon_20to30mm/"}
+	{fireSoundclose "cannon/s1/3p/Shared/Autocannon_20to30mm/"}
+	{reloadSound "tank/reload_small"}
+	("range_autocannon_25-30")												;150226
+;//	{range 165 165}
+;//	{range 350 350}															;150226-
+	{cursor "ironsights/aa"}
+	{calibre 25}
+	("light_aa")
+	{fillingVisible "belt_ammo"}
+	("fire rate" rpm(500))
+	("reload time" seconds(0.75))											;150226 (1.5) - (0.75)
+
+	("velocity" mps(930))
+	("armor health" damage(57))
+	("20_slope_multipliers")
+
+	; BR-132
+	("penetration_short" shell(apbc) range(165) a(50) b(40) c(30) d(25) e(20))
+
+	("accuracy_direct_auto" r1(0.8) range_ap(165) range_he(165) range_heat(165))
+
+	{parameters "he"										; SPgGr.
+		(mod "mp" {unlimitedRangeTPC 1})	;// unrestricts range in TPC/FPC for shooting at aircraft
+		{FalloffStrength 0}
+	}
+}

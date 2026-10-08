@@ -1,0 +1,19 @@
+{difficulty
+	(include "difficulty_generic.inc")
+	{any
+		{health 1.0}				; health multiplier from soldier settings
+		{accuracy 0.5}
+	}
+	{enemy	;// not working in coop
+		{health 1.0}				; health multiplier from soldier settings
+		{accuracy 0.5}
+	}
+	{ally
+		{health 1.0}				; health multiplier from soldier settings
+		{accuracy 0.5}
+	}
+	{player
+		{health 1.0}				; health multiplier from soldier settings
+		{accuracy 0.5}
+	}
+}

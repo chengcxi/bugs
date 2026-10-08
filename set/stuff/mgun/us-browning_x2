@@ -1,0 +1,21 @@
+{from "pattern mgun"
+;//	{filling "ammo 12x99" 200}
+	{filling "hmgun_usa" 200}
+;//	{entity "browningm2"}
+	{entity "browning_m2"}
+	{fireSound "smallarms/s4/d1/USA/M2HB/"}
+	{fireSoundclose "smallarms/s4/d1/USA/M2HB/"}
+	{reloadSound "dt"}
+	{calibre 13.2}
+	{mass 34}
+	
+	("fire rate" rpm(450))
+	("velocity" mps(890))
+	("reload_belt")
+	{rechargeTime 12}	
+	{projectileDamageTable {20 31} {100 19} {165 12} {215 8} {250 6}}
+
+	("burst_aa_quad")
+	("spreading_mounted")
+;//	{traceFreq 4}
+}

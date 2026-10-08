@@ -1,0 +1,133 @@
+;===================================
+;        INSTRUCTIONS    
+;===================================
+
+; In this file onee configures the humans which are spawned in vehicles or squads
+; The humans have a CP and cost associated with them which collectively add up for the final squad value
+; Check ../settings_inf.set for the global defines for CP, capture weight (CW), score, etc.
+
+;===================================
+;        PRICING CHART	       
+;===================================
+
+; // Standard prices below are for tier2 infantry
+
+;mosin			= 8
+;m27 			= 8
+;m39 			= 8
+;svt38/40 		= 13
+;avt40 			= 15
+;pps43 			= 10
+;m20 			= 10
+;m31 stick 		= 11
+;m31 drum 		= 14
+;ppsh41 drum	= 13
+;chauchat 		= 20
+;madsen 		= 35
+;m26 			= 35
+;dt27 			= 40
+;dp 			= 40
+;rifle grenade 	= +20
+;marksman 		= +2
+;any % pzfaust 	= +2
+;any pzfaust 	= +5
+;any flamer		= 60
+;engineer		= 50
+;miner 			= 40
+
+; // price modifiers (If not tier2)
+;tier 0 		= -3, MG -10
+;tier 1 		= -1, MG -10
+;tier 1 vet 	= 0, MG 0
+;tier 2 vet		= +2, MG +5
+;tier 3 		= +5, MG +10
+;tier 3 vet 	= +8, MG +15
+;tier 4 		= +10, MG +20
+;tier 4 vet 	= +13, MG +25
+
+
+;===================================
+;        BREED DECLARATIONS       
+;===================================
+
+{"mp/usa/late/driver_arv"				("inf_tankman" side(usa) cost(5.0))}
+{"mp/usa/late/engineer_builder_little_david"		("inf_tier2" side(usa) cost(50.0))} ; m1 garand + builder
+
+{"mp/usa/late/officer_2lt_para_m22"		("inf_officer" side(usa) cost(125.0))} ; m1 carbine
+
+{"mp/usa/late/tank_commander_usmc"		("inf_tankman" side(usa) cost(10.0))}
+{"mp/usa/late/tankman_usmc"			("inf_tankman" side(usa) cost(4.0))}
+
+{"mp/usa/late/antitank_m20"		("inf_tier2" side(usa)  cost(113.0))}
+{"mp/usa/late/antitank_asst_m20"		("inf_tier2" side(usa)  cost(13.0))}
+
+{"mp/usa/late/antitank_asst_m9a1"		("inf_tier2" side(usa)  cost(13.0))}
+
+{"mp/usa/late/tank_com_fury"		("inf_tankman" side(usa) cost(12.0))}
+
+{"mp/usa/late/usmc_marines_nco"			("inf_tier2" side(usa)  cost(13.0))}
+{"mp/usa/late/usmc_marines_nco_asst"		("inf_tier2" side(usa)  cost(13.0))}
+{"mp/usa/late/usmc_marines_bar"			("inf_tier2" side(usa)  cost(20.0))}
+{"mp/usa/late/usmc_marines_bar_asst"		("inf_tier2" side(usa)  cost(13.0))}
+{"mp/usa/late/usmc_marines_lmg"			("inf_tier2" side(usa)  cost(30.0))}
+{"mp/usa/late/usmc_marines_rifleman_1"		("inf_tier2" side(usa)  cost(13.0))}
+{"mp/usa/late/usmc_marines_rifleman_2"		("inf_tier2" side(usa)  cost(13.0))}
+{"mp/usa/late/usmc_marines_at_grenadier_1"	("inf_tier2" side(usa)  cost(23.0))}
+{"mp/usa/late/usmc_marines_at_grenadier_2"	("inf_tier2" side(usa)  cost(13.0))}
+{"mp/usa/late/usmc_marines_at_rifle_1"		("inf_tier2" side(usa)  cost(30.0))}
+{"mp/usa/late/usmc_marines_at_rifle_2"		("inf_tier2" side(usa)  cost(13.0))}
+{"mp/usa/late/usmc_marines_smg_1"		("inf_tier2" side(usa) cost(10.0))}
+{"mp/usa/late/usmc_marines_shotgun_1"		("inf_tier2" side(usa) cost(12.0))}
+{"mp/usa/late/usmc_marines_grenadier_1"		("inf_tier2" side(usa)  cost(23.0))}
+{"mp/usa/late/usmc_marines_grenadier_2"		("inf_tier2" side(usa)  cost(13.0))}
+
+{"mp/usa/late/vet_usmc_marines_nco"			("inf_tier2" side(usa)  cost(15.0))}
+{"mp/usa/late/vet_usmc_marines_nco_asst"		("inf_tier2" side(usa)  cost(15.0))}
+{"mp/usa/late/vet_usmc_marines_bar"			("inf_tier2" side(usa)  cost(25.0))}
+{"mp/usa/late/vet_usmc_marines_bar_asst"		("inf_tier2" side(usa)  cost(15.0))}
+{"mp/usa/late/vet_usmc_marines_lmg"			("inf_tier2" side(usa)  cost(35.0))}
+{"mp/usa/late/vet_usmc_marines_rifleman_1"		("inf_tier2" side(usa)  cost(15.0))}
+{"mp/usa/late/vet_usmc_marines_rifleman_2"		("inf_tier2" side(usa)  cost(15.0))}
+{"mp/usa/late/vet_usmc_marines_at_grenadier_1"	("inf_tier2" side(usa)  cost(25.0))}
+{"mp/usa/late/vet_usmc_marines_at_grenadier_2"	("inf_tier2" side(usa)  cost(15.0))}
+{"mp/usa/late/vet_usmc_marines_at_rifle_1"		("inf_tier2" side(usa)  cost(30.0))}
+{"mp/usa/late/vet_usmc_marines_at_rifle_2"		("inf_tier2" side(usa)  cost(15.0))}
+{"mp/usa/late/vet_usmc_marines_smg_1"		("inf_tier2" side(usa) cost(12.0))}
+{"mp/usa/late/vet_usmc_marines_shotgun_1"		("inf_tier2" side(usa) cost(14.0))}
+{"mp/usa/late/vet_usmc_marines_grenadier_1"		("inf_tier2" side(usa)  cost(25.0))}
+{"mp/usa/late/vet_usmc_marines_grenadier_2"		("inf_tier2" side(usa)  cost(15.0))}
+
+{"mp/usa/late/usmc_para_nco"			("inf_tier3" side(usa) cost(18.0))}
+{"mp/usa/late/usmc_para_nco_asst"		("inf_tier3" side(usa) cost(18.0))}
+{"mp/usa/late/usmc_para_smg_1"			("inf_tier3" side(usa) cost(20.0))}
+{"mp/usa/late/usmc_para_lmg"			("inf_tier3" side(usa) cost(40.0))}
+{"mp/usa/late/usmc_para_rifleman_1"		("inf_tier3" side(usa) cost(18.0))}
+{"mp/usa/late/usmc_para_rifleman_2"		("inf_tier3" side(usa) cost(16.0))}
+{"mp/usa/late/usmc_para_grenadier_1"		("inf_tier3" side(usa) cost(28.0))}
+{"mp/usa/late/usmc_para_grenadier_2"		("inf_tier3" side(usa) cost(18.0))}
+
+{"mp/usa/late/6th_marine_nco"			("inf_tier3" side(usa) cost(21.0))}
+{"mp/usa/late/6th_marine_nco_asst"		("inf_tier3" side(usa) cost(21.0))}
+{"mp/usa/late/6th_marine_smg_1"			("inf_tier3" side(usa) cost(23.0))}
+{"mp/usa/late/6th_marine_lmg"			("inf_tier3" side(usa) cost(45.0))}
+{"mp/usa/late/6th_marine_rifleman_1"		("inf_tier3" side(usa) cost(18.0))}
+
+{"mp/usa/late/usmc_raider_nco"			("inf_tier4" side(usa) cost(20.0))}
+{"mp/usa/late/usmc_raider_nco_asst"		("inf_tier4" side(usa) cost(20.0))}
+{"mp/usa/late/usmc_raider_smg_1"		("inf_tier4" side(usa) cost(20.0))}
+{"mp/usa/late/usmc_raider_smg_2"		("inf_tier4" side(usa) cost(20.0))}
+{"mp/usa/late/usmc_raider_rifle_1"		("inf_tier4" side(usa) cost(20.0))}
+{"mp/usa/late/usmc_raider_bar"			("inf_tier4" side(usa) cost(40.0))}
+{"mp/usa/late/usmc_raider_bar_asst"		("inf_tier4" side(usa) cost(23.0))}
+{"mp/usa/late/usmc_raider_stinger"			("inf_tier4" side(usa) cost(50.0))}
+{"mp/usa/late/usmc_raider_stinger_asst"		("inf_tier4" side(usa) cost(23.0))}
+{"mp/usa/late/usmc_raider_flamer"		("inf_tier4" side(usa) cost(80.0))}
+{"mp/usa/late/usmc_raider_flamer_asst"		("inf_tier4" side(usa) cost(20.0))}
+
+{"mp/usa/late/guard_nat_bar"			("inf_tier1" side(usa) cost(20.0))}
+{"mp/usa/late/guard_nat_bar_asst"		("inf_tier1" side(usa)  cost(15.0))}
+{"mp/usa/late/guard_nat_nco"			("inf_tier1" side(usa)  cost(12.0))}
+{"mp/usa/late/guard_nat_nco_asst"		("inf_tier1" side(usa) cost(12.0))}
+{"mp/usa/late/guard_nat_rifleman_1"		("inf_tier1" side(usa)  cost(12.0))}
+{"mp/usa/late/guard_nat_rifleman_2"		("inf_tier1" side(usa)  cost(15.0))}
+{"mp/usa/late/guard_nat_smg_1"			("inf_tier1" side(usa)  cost(9.0))}

@@ -1,0 +1,14 @@
+;_________________________________________
+; Soviet Heavy Mortar - 160mm 
+;=========================================
+
+
+{from "pattern mortar"
+	{filling "mortarrus_160"}
+	{fireSound "cannon/s3/d1/Shared/Mortar/"}
+	{fireSoundClose "cannon/s3/d1/Shared/Mortar/"}
+	{fillingVisible "rocket00"}
+	{calibre 160}
+	("heavy_mortar_range")
+	("reload time" seconds(20))
+}

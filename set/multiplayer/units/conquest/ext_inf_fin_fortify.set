@@ -1,0 +1,51 @@
+
+; "vs(...)" corresponds to a define found in the settings down this file
+; v() If squad is motorised, this is the vehicle that carries the men.
+; cd() corresponds to countdown delay to spawn the unit once battle begins
+; ci() corresponds to cooldown to buy unit once again
+; side() corresponds to side (faction)
+; n() corresponds to number of crew in the unit, the type of crew is defined in the "vs"
+; g() corresponds to group, which is for classification and collective cooldowns
+; sc() corresponds to the score given to the player upon killing this unit
+; b() corresponds to the button where this unit is located in the menus
+; i() corresponds to icon order
+; cw() corresponds to capture weight for flags
+; cp() corresponds to CP, that is, the value that units have that fill up how many troops can be fielded
+; {cost -} corresponds to MP cost of the unit
+; {level 6} Corresponds to player XP progress in player profile from steam
+; {research_stage 4} corresponds to research stage of dynamic campaign
+; {squad_cost_factor 1} - adds the cost of the crew / the cost of the squad members with this factor
+; scf() - adds the cost of the crew / the cost of the squad members with this factor
+; {score_factor 0.05} - when the unit is killed, it will have an impact on the MP score of 0.05*Cost. This only works if {squad_cost_factor 1}. With a fixed cost for the squad such (= scf 0), you need to adjust the scores of the individual units manually
+; {score 20} - when the unit is killed, it will have an impact on the MP score of 20
+; {round_multiple 5.0} - the cost of the unit is rounded up or down to this multiple
+
+;;==================- FIN ==================
+
+(define "squad_heavy_engineer_mid_con"
+	{tags "%period %side %level infantry man"}	
+	{cp 0.0}	
+	{basic}	
+	{breed}	
+	{level %lv}
+	{cw 0.5}	
+	;{cost %cost}
+	{score_factor 0.05}
+)
+		{"mp/fin/early/engineer_heavy"				("squad_heavy_engineer_mid_con"						side(fin) 	lvl1()	r(99) rm(99)) 			{cp 4.0}		{cost 475.0}}		
+
+(define "squad_heavy_engineer_mid_con_late"
+	{tags "%period %side %level infantry man"}	
+	{cp 0.0}	
+	{basic}	
+	{breed}	
+	{level %lv}
+	{cw 0.5}	
+	;{cost %cost}
+	{score_factor 0.05}
+)
+		{"mp/fin/late/engineer_heavy"				("squad_heavy_engineer_mid_con_late"				side(fin) 	lvl1()	r(99) rm(99)) 			{cp 4.0}		{cost 475.0}}	
+
+;;================== /FIN ==================
+
+

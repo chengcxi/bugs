@@ -1,0 +1,17 @@
+{from "pattern mgun"
+	{filling "ammo 7x63" 250}
+	{entity "us-browningm1919a4_m2"}
+	{fireSound "mgun/1919_burst/"}
+	{fireSoundclose "mgun/1919_burst/3p/"}
+	{reloadSound "dt"}
+	{calibre 7.62}
+	{mass 9.12}
+
+	("fire rate" rpm(500))
+	("velocity" mps(850))
+
+	("burst_stand")
+	("spreading_mounted_low")
+
+}
+;Cost=40;

@@ -1,0 +1,501 @@
+;SDL
+
+; {position column row}
+
+;-----------------------------------------------------------------------------------------------------------------------;
+; conditions																											;
+;-----------------------------------------------------------------------------------------------------------------------;
+; "vehicle" "tank" "cannon" "tractor" "human"	:	show this control based on actors properties						;
+; "single"										:	show this control only if a single actor is selected				;
+; "multiple"									:	show this control only if multiple actors (squad) is selected		;
+; "commander"									:	show this control only if the selected actor is a squad commander	;
+; "disabled"									:	show this control even if it is disabled							;
+;-----------------------------------------------------------------------------------------------------------------------;
+
+;;;;;;;;;;;;;;;;;;;
+; 
+;  	 0-0 1-0 2-0 3-0
+;  	 0-1 1-1 2-1 3-1
+;  	 0-2 1-2 2-2 3-2
+;//  0-3 1-3 2-3 3-3
+;
+;;;;;;;;;;;;;;;;;;;
+
+
+{panel_control
+
+; ---------------------------------------------------------------------- ARM mod ----------------------------------------------------------------------------------------	
+; =========================== 1 line (y 0) ==============================================================================================		=========================
+; 	FIN			GER			RUS			USA			Engineer		Medic		Signaller		MGunner			TANKMAN			Fieldmech		ALL
+
+																																				;//	{mg_new_foxhole
+																																				;// {position 3 0}
+																																				;// {condition "human barricade"}
+																																				;// }
+
+	{supply_point_fin
+	{position 0 0}
+	{condition "human barricade"}
+	}
+	
+	{fin_concrete_bunker_reg
+	{position 0 0}
+	{condition "human barricade"}
+	}
+
+				{supply_point_ger
+				{position 0 0}
+				{condition "human barricade"}
+				}
+				
+				{ger_concrete_bunker_reg
+				{position 0 0}
+				{condition "human barricade"}
+				}
+				
+							{supply_point_rus
+							{position 0 0}
+							{condition "human barricade"}
+							}
+							
+							{ussr_concrete_bunker_reg
+							{position 0 0}
+							{condition "human barricade"}
+							}
+							
+										{supply_point_usa_reg
+										{position 0 0}
+										{condition "human barricade"}
+										}
+										
+										;//{usa_concrete_bunker_reg
+										;//{position 0 0}
+										;//{condition "human barricade"}
+										;//}
+	
+													{barricade_sq
+													{position 0 0}
+													{condition "human barricade"}
+													}
+													
+													
+																								{ussr_mg_lafette_dp_reg
+																								{position 0 0}
+																								{condition "human barricade"}
+																								}
+																								
+																								{ger_mg_lafette_mg34_reg
+																								{position 0 0}
+																								{condition "human barricade"}
+																								}
+
+																								{ger_mg_lafette_mg42_reg
+																								{position 0 0}
+																								{condition "human barricade"}
+																								}
+
+																								{fin_mg_lafette_dt_reg
+																								{position 0 0}
+																								{condition "human barricade"}
+																								}
+
+	{post_watchtower_reg
+	{position 1 0}
+	{condition "human barricade"}
+	}
+
+				{ger_big_bunker
+				{position 1 0}
+				{condition "human barricade"}
+				}
+
+				{ger_kwk39_position_reg
+				{position 1 0}
+				{condition "human barricade"}
+				}
+				
+;//				{ger_mg_casemate
+;//				{position 1 0}
+;//				{condition "human barricade"}
+;//				}
+	
+							{ussr_mg_casemate
+							{position 1 0}
+							{condition "human barricade"}
+							}
+							
+							{ussr_trench_pillbox
+							{position 1 0}
+							{condition "human barricade"}
+							}
+							
+										{usa_trench_pillbox_reg
+										{position 1 0}
+										{condition "human barricade"}
+										}
+
+													{earth_pillbox
+													{position 1 0}
+													{condition "human barricade"}
+													}
+
+	{fin_panzernest_krab
+	{position 2 0}
+	{condition "human barricade"}
+	}
+		
+	{mg_casemate
+	{position 2 0}
+	{condition "human barricade"}
+	}
+	
+
+				
+				{ger_bunker_reg
+				{position 2 0}
+				{condition "human barricade"}
+				}
+
+				{ger_mg_bunker
+				{position 2 0}
+				{condition "human barricade"}
+				}		
+
+							{reg_ussr_naval_45mm_cannon
+							{position 2 0}
+							{condition "human barricade"}
+							}
+				
+						
+										{usa_mortar_foxhole_reg
+										{position 2 0}
+										{condition "human barricade"}
+										}							
+																	
+													{big_foxhole_reg
+													{position 2 0}
+													{condition "human barricade"}
+													}
+							
+																																				;//	{ger_75at_static_position
+																																				;//	{position 3 0}
+																																				;//	{condition "human barricade"}
+																																				;//	}
+
+	{inf_crate_fin
+	{position 3 0}
+	{condition "human barricade"}
+	}
+
+																																{inf_crate_ger
+																																{position 3 0}
+																																{condition "human barricade"}
+																																}
+				
+							{inf_crate_rus
+							{position 3 0}
+							{condition "human barricade"}
+							}
+							
+										{inf_crate_usa_stand_reg
+										{position 3 0}
+										{condition "human barricade"}
+										}
+			
+													{watch_tower
+													{position 3 0}
+													{condition "human barricade"}
+													}
+
+																	;//{medic_rally
+																	;//{position 3 0}
+																	;//{condition "human disabled"}
+																	;//}
+																	
+																	; Auto-Medic+
+																	{medic_rally_switch
+																	{position 3 0}
+																	{condition "human single medic"}
+																	}
+
+	
+; =========================== 2 line (y 1) ==============================================================================================		=========================
+; 	FIN			GER			RUS			USA			Engineer		Medic		Signaller		MGunner			TANKMAN			Fieldmech		DISABLED
+
+	{fin_flak_gun_stand
+	{position 0 1}
+	{condition "human barricade"}
+	}
+	
+																																
+																																				;//	{fin_bunker_flak_40mm
+																																				;//	{position 0 1}
+																																				;//	{condition "human barricade"}
+																																				;//	}
+
+				{ger_flak38_position
+				{position 0 1}
+				{condition "human barricade"}
+				}
+
+				{flak_gun_stand
+				{position 0 1}
+				{condition "human barricade"}
+				}
+				
+							{ussr_4x_maxima_foxhole
+							{position 0 1}
+							{condition "human barricade"}
+							}			
+							
+										{usa_concrete_bunker_reg
+										{position 0 1}
+										{condition "human barricade"}
+										}
+
+													{hedgehog
+													{position 0 1}
+													{condition "human barricade"}
+													}
+
+	{fin_bunker_at_flak_reg
+	{position 1 1}
+	{condition "human barricade"}
+	}
+		
+				{ger_regelbau_pak_reg
+				{position 1 1}
+				{condition "human barricade"}
+				}
+					
+										{usa_flak_ring_reg
+										{position 1 1}
+										{condition "human barricade"}
+										}
+			
+											
+													{trench_modular
+													{position 1 1}
+													{condition "human barricade"}
+													}
+				
+	{at_static_position
+	{position 2 1}
+	{condition "human barricade"}
+	}
+	
+	{fin_coastal_gun
+	{position 2 1}
+	{condition "human barricade"}
+	}
+			
+				{ger_at_static_position
+				{position 2 1}
+				{condition "human barricade"}
+				}
+				
+				{ger_coastal_gun
+				{position 2 1}
+				{condition "human barricade"}
+				}
+
+							{ussr_at_static_position
+							{position 2 1}
+							{condition "human barricade"}
+							}	
+							
+							{ussr_at_heavy_emplacement_reg
+							{position 2 1}
+							{condition "human barricade"}
+							}
+									
+													{foxhole_big
+													{position 2 1}
+													{condition "human barricade"}
+													}
+													
+																	{f_28cm_wkspr_stan_reg
+																	{position 2 1}
+																	{condition "human barricade"}
+																	}
+													
+												
+	{fin_tower_mg
+	{position 3 1}
+	{condition "human barricade"}
+	}
+	
+				{ger_tower_mg
+				{position 3 1}
+				{condition "human barricade"}
+				}
+	
+							{ussr_tower_mg
+							{position 3 1}
+							{condition "human barricade"}
+							}
+							
+										{usa_tower_mg_reg
+										{position 3 1}
+										{condition "human barricade"}
+										}
+										
+													{guard_tower_small
+													{position 3 1}
+													{condition "human barricade"}
+													}
+													
+																	; Auto-Medic
+																	{medic_switch  ; Nikral
+																	{position 3 1}
+																	{condition "medic"}
+																	}
+
+	
+; =========================== 3 line (y 2) ==============================================================================================		=========================
+; 	FIN			GER			RUS			USA			Engineer		Medic		Signaller		MGunner			TANKMAN			Fieldmech		DISABLED
+	
+	{arty_static_position
+	{position 0 2}
+	{condition "human barricade"}
+	}
+	
+				{ger_arty_static_position
+				{position 0 2}
+				{condition "human barricade"}
+				}
+	
+							{ussr_arty_static_position
+							{position 0 2}
+							{condition "human barricade"}
+							}
+							
+							{ussr_heavy_arty_static_position
+							{position 0 2}
+							{condition "human barricade"}
+							}
+							
+										{usa_arty_static_position_reg
+										{position 0 2}
+										{condition "human barricade"}
+										}
+
+													{mortar_pit
+													{position 0 2}
+													{condition "human barricade"}
+													}
+													
+																	{medic_rally
+																	{position 0 2}
+																	{condition "human medic disabled"}
+																	}
+
+																																				;//	{tank_cover
+																																				;//	{position 0 2}
+																																				;//	{condition "human barricade"}
+																																				;//	}
+							
+																	
+																												{tank_cover_small_reg
+																												{position 0 2}
+																												{condition "human barricade"}
+																												}
+																	
+																				{all_searchlight_150mm_reg
+																				{position 0 2}
+																				{condition "human barricade"}
+																				}
+					
+																																				;//	{fin_bunker
+																																				;//	{position 1 2}
+																																				;//	{condition "human barricade"}
+																																				;//	}
+
+	{mortar_foxhole
+	{position 1 2}
+	{condition "human barricade"}
+	}
+
+	{fin_150mm_rkh41_position_reg
+	{position 1 2}
+	{condition "human barricade"}
+	}
+			
+				{ger_mortar_foxhole
+				{position 1 2}
+				{condition "human barricade"}
+				}
+			
+				{ger_regelbau_arty_bunker
+				{position 1 2}
+				{condition "human barricade"}
+				}
+
+							{ussr_mortar_foxhole
+							{position 1 2}
+							{condition "human barricade"}
+							}
+												
+							{ussr_300mm_m30_position_reg
+							{position 1 2}
+							{condition "human barricade"}
+							}
+							
+										{usa_heavy_arty_static_position_reg
+										{position 1 2}
+										{condition "human barricade"}
+										}
+	
+																															{wired_obstacle4
+																															{position 1 2}
+																															{condition "human barricade"}
+																															}	
+
+																	{medic_hospital
+																	{position 1 2}
+																	{condition "human medic disabled"}
+																	}		
+
+																												{tank_cover
+																												{position 1 2}
+																												{condition "human barricade"}
+																												}																	
+
+
+				
+																														;//	{ger_bunker
+																															;//	{position 2 2}
+																															;//	{condition "human barricade"}
+																															;//	}
+
+
+			
+
+							
+
+							
+													{barbwire
+													{position 2 2}
+													{condition "human barricade"}
+													}
+													
+																															;//	{mound_eng
+																															;//	{position 2 2}
+																															;//	{condition "human barricade"}
+																															;//	}
+													
+																				;//{regelbau_pole_freya_reg
+																				;//{position 2 2}
+																				;//{condition "human barricade"}
+																				;//}
+																				
+
+
+; 	FIN			GER			RUS			USA			Engineer		Medic		Signaller		MGunner			TANKMAN			Fieldmech		DISABLED
+; ---------------------------------------------------------------------- ARM mod ----------------------------------------------------------------------	
+
+	{gc_cp_browse_back
+	{position 3 2}
+	}
+
+}

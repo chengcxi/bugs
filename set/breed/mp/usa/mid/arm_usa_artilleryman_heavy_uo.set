@@ -1,0 +1,31 @@
+{breed
+	{behaviour soldier}
+	{skin "us_m41_1st_special_hs2_rfl_band_at_t4"}
+	{portrait "usa_artilleryman"}
+	{icon "tech"}
+	{icon_priority 0}
+	{tags "crew"}
+	{nationality usa}
+	{armors
+		{head us_m1_327gir_co_b_cpt}
+	}
+	{perks
+		(include "ability.inc")
+		("smg_skill_rank_1")
+		("tier3_defense")
+		("skilled_repair")
+		("expert_gun")
+	}
+	{veterancy
+		(include "ability.inc")
+		("veterancy_lvl_1")
+	}
+	{inventory
+		{item "thompson_m1_20" filling "thompson_mag stick 20 ammo" 20}
+		{item "thompson_mag stick 20 ammo" 120}
+
+		{item "bandage_usa" 2}
+
+		{in_hands 0}
+	}
+}

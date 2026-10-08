@@ -1,0 +1,32 @@
+{breed
+	{behaviour soldier}
+	{skin "fin_m36_pio_wcs_s_mg"}
+
+	{portrait "fin_basic"}
+	{icon "tech"}
+	{icon_priority 0}
+	{tags "crew"}
+	{nationality fin}
+	{armors
+		{head fin_helm_m38_foliage}
+	}
+	{perks
+		(include "ability.inc")
+		("rifle_skill_rank_3")
+		("skilled_repair")
+		("expert_gun")
+		("tier3_defense")
+	}
+	{veterancy
+		(include "ability.inc")
+		("veterancy_lvl_0")
+	}
+	{inventory
+		{item "mosin_m39" filled}
+		{item "rifle_rus clip ammo" 30 5}
+
+		{item "bandage_fin" 1.5 0.5}
+
+		{in_hands 0}
+	}
+}

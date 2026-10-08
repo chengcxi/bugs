@@ -1,0 +1,11 @@
+{from "hand thrower"
+;	{tag "weapon mgun"}
+
+	{rechargeTime 12}
+	{AimingTolerance 3}
+	{aimRange 60}
+	{maxRange 60}
+	{minRange 10}
+
+	{preloaded}
+}

@@ -1,0 +1,30 @@
+{from "pattern mgun"
+	{filling "mgun_ger" 250}
+	{entity "mg42_belt"}
+	{fireSound "smallarms/s3/d1/GER/MG42/"}
+	{fireSoundclose "smallarms/s3/3p/GER/MG42/"}
+	{reloadSound "mg42"}
+	{calibre 7.92}
+	{mass 10.57}
+	{traceFreq 9}
+
+
+	("fire rate" rpm(1470))
+	("velocity" mps(770))
+
+	;("reload_belt")
+	("reload time" seconds(11))
+
+	("ger_ap_bullets")
+
+	;("burst_long")
+	{burst
+		{short 20 12}
+		{long 24 20}
+		{rangeKoef 0.5}
+	}
+	("spreading_low")
+
+	;("zoom_mg42_belt");;;;;;;;;;;;;;;;;;;;;first person mod add
+	;("iron_sight_view" bone(foresight14) x(0.0) y(-0.01) z(1.45) hide_hitmarker(0) hide_crosshair(1) unlimitedRangeTPC(1))
+}

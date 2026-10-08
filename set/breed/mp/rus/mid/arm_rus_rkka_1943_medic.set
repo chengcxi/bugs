@@ -1,0 +1,33 @@
+{breed
+	{behaviour soldier}
+	{skin "sov_42_rkka_guards_senior_sa"}
+	{portrait "rus_medic"}
+	{icon "tech"}
+	{icon_priority 1}
+	{tags "soldier"}
+	{nationality rus}
+	{armors
+		{head soviet_ssh40_medic}
+	}
+	{perks
+		(include "ability.inc")
+		("rifle_skill_rank_2")
+		("tier2_standard")
+		("medic")
+	}
+	{veterancy
+		(include "ability.inc")
+		("veterancy_lvl_2")
+	}
+	{inventory
+		{item "tt33" filled}
+		{item "tt33 ammo" 16}
+
+		{item "bandage_rus" 22.5 2.5}
+		{item "tent_kit" 1}
+		
+		{item "shovel_rus"}		
+		{item "veshmeshok_regular"}		
+		
+	}
+}

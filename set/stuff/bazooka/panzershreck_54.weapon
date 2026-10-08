@@ -1,0 +1,7 @@
+{from "weapon panzershreck_43"
+	{entity "panzershreck_54"}
+	{mass 11}
+	
+	{range 119 185}							;080226 (84 150) - (109 - 175)
+}
+

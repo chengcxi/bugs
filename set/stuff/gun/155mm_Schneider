@@ -1,0 +1,45 @@
+;LR Arm edited
+;16.05.2026
+;_________________________________________
+; American heavy assault gun
+;=========================================
+
+
+{from "pattern gun"			; L/40 T30
+	{filling "bulletger_155"}
+	{fireSound "cannon/s5/d1/Shared/Cannon_150to210mm/"}
+	{fireSoundClose "cannon/s5/3p/Shared/Cannon_150to210mm/"}
+	{reloadSound "utility/"}
+;//	("range_170")
+	("range_170_howitzer_short")
+;//	("heavy_artillery")
+	{calibre 155}
+
+	("reload time" seconds(18))
+
+	("velocity m/s" ap(1) apcr(1) he(240) heat(1))
+	("armor health" damage(450))
+	("armor health custom" shell(he) damage(480) velocity(240) filler(765))
+
+	
+	{parameters "sm"
+;//		{range 160 160}
+		{range 340 340}
+	}
+
+;//	("accuracy_direct" r1(0.95) range_ap(170) range_he(170) range_heat(170))
+
+	 ("accuracy_indirect"   ; // Applies logic for accuracy of indirect weapons over 200m
+	 	r1(1.25) 				; // Accuracy radius for direct-fire munitions
+	 	r2(4.00) 				; // Accuracy radius for indirect fire
+	 	rmax(22) 				; // Accuracy radius for indirect fire at maximum range
+	 	range_ap(1) 			; // Range after which accuracy drops to prevent farshooting.
+	 	range_heat(1) 			; // Range after which accuracy drops to prevent farshooting.
+	 	range_he(140)			; // Range after which accuracy drops to prevent farshooting.
+	 )
+
+	{spreading
+		{radiusTable {0 0} {100 7.5} {240 15} {340 22.5} {345 100}}
+	}
+
+}

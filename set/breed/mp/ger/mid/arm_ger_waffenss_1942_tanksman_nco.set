@@ -1,0 +1,37 @@
+{breed
+	{behaviour soldier}
+;//	{skin "ger_heer_45_liberm_smg_1"}
+	{skin "ger_heer_45_pzwaffe_camo_2_co"}
+;//	{portrait "smg"}
+	{portrait "ger_ss"}	
+	{icon "tech"}
+	{icon_priority 0}
+	{tags "crew"}
+	{nationality ger_officer}
+	{armors
+;		{head ger_m43_cap_gebirgs}
+		{head ger_fieldcap_m43_panzer_gog_a_up}
+	}
+	{perks
+		(include "ability.inc")
+		("tank_commander")
+				("tier3_defense")
+				("binocular_vision")
+	}
+	{veterancy
+		(include "ability.inc")
+		("veterancy_lvl_4")
+	}
+	{inventory
+		{item "mp38_folded" filled}
+		{item "mp40 ammo" 64}
+		
+		{item "p38" filled}
+		{item "pistol ammo" 24 8}
+
+		{item "bandage_ger" 2.5 0.5}
+				{item "binocular"}
+
+		{in_hands 0}
+	}
+}

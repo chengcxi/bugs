@@ -1,0 +1,39 @@
+;LR Arm edited
+;12.04.26
+;
+;_________________________________________
+; ARTY - German heavy gun
+;=========================================
+
+
+{from "pattern gun"			; L/50 "170mm_k18"
+	{filling "bulletger_170"}
+	{fireSound "cannon/s5/d1/Shared/Cannon_150to210mm/"}
+	{fireSoundClose "cannon/s5/3p/Shared/Cannon_150to210mm/"}
+	{reloadSound "utility/"}
+;//	("heavy_artillery")																							;120226-
+	("heavy_artillery")																						;120226+
+	{calibre 170}
+;//	{range 520 520} ; // 29.6km
+	{range 1040 1040} ; // 29.6km
+
+	("reload time" seconds(55))
+
+	("penetration_long" shell(aphe) range(210) a(330) b(307) c(294) d(284) e(269))
+	("armor health" damage(350))
+	("armor health custom" shell(aphe) damage(350) velocity(830) filler(2340))
+	("128_slope_multipliers")
+	("velocity m/s" ap(830) apcr(1) he(238) heat(1))	; // historical velocity (830)(1)(925)(1)
+
+	{parameters "apcbche"
+		("reload time" seconds(55))
+	}
+	("accuracy_indirect"	; // Applies logic for accuracy of indirect weapons over 200m
+		r1(0.9)				; // Accuracy radius for direct-fire munitions									;110226 (0.9) - (0.8)	
+		r2(5)				; // Accuracy radius for indirect fire											;120226 (6) - (5)
+		rmax(18)			; // Accuracy radius for indirect fire at maximum range							;110226 (27) - (18)	
+		range_ap(220)		; // Range after which accuracy drops to prevent farshooting.
+		range_heat(220)		; // Range after which accuracy drops to prevent farshooting.
+		range_he(780)		; // Range after which accuracy drops to prevent farshooting.	;range x 75%	;120226 (520) - (260) - (780)				
+	)
+}

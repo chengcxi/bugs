@@ -1,0 +1,36 @@
+{breed
+	{behaviour soldier}
+	{skin "ger_heer_39_engi_rfl_2"}
+	{portrait "ger_engineer"}
+	{icon "tech"}
+	{icon_priority 0}
+	{tags "soldier"}
+	{nationality ger}
+	{armors
+		{head ger_crusher_cap}
+	}
+	{perks
+		(include "ability.inc")
+		("smg_skill_rank_2")
+		("engineer")
+	}
+	{veterancy
+		(include "ability.inc")
+		("veterancy_lvl_2")
+	}
+	{inventory
+		{item "mp41" filled}
+		{item "mp40 ammo" 192}
+
+		{item "binocular"}
+
+		{item "bandage_ger" 3.5 0.5}
+		{item "wirecutters"}
+		{item "shovel_ger"}
+		{item "pickaxe"}
+		
+		{item "m24_smoke_supplies grenade" 1}
+
+		{in_hands 0}
+	}
+}

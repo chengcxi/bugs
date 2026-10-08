@@ -1,0 +1,42 @@
+{breed
+	{behaviour soldier}
+;--	{skin "ger_pz_scout_auf_rfl_2"}
+;	{skin "ger_heer_45_liberm_mg_1"}
+	{skin "ger_heer_44_gren_sturm_mg_1"}
+
+	{portrait "ger_scout"}
+	{icon "mg"}
+	{icon_priority 0}
+	{tags "soldier"}
+	{nationality ger_jaeger}
+	{armors
+		{head ger_stalhelm_m43_camo1_band_var1}
+
+	}
+	{perks
+		(include "ability.inc")
+		("mg_skill_rank_2")
+				("tier2_defense")
+	}
+	{veterancy
+		(include "ability.inc")
+		("veterancy_lvl_3")
+	}
+	{inventory
+		{item "mg34_belt" filling "mgun_ger belt ammo" 250}
+		{item "mgun_ger belt ammo" 300}
+
+		;{item "p38" filled}
+		;{item "pistol ammo" 16 8}
+
+		{item "m24_splinter grenade" 0.25 0.5}
+		{item "m24_smoke grenade" 0.25 0.5}
+
+		{item "bandage_ger" 4.5 0.5}
+		{item "shovel_ger"}
+		
+		{item "ger_m43_cap_gebirgs"}
+
+		{in_hands 0}
+	}
+}

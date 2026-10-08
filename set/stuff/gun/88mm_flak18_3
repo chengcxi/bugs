@@ -1,0 +1,13 @@
+;LR Arm edited
+;29.01.2026
+;_________________________________________
+; German Heavy AT gun
+;=========================================
+
+
+{from "88mm_flak36"
+	("range_210")																								;//ARm 080326 +
+	("reload time" seconds(10))														;//ARm+
+
+	("accuracy_direct" r1(0.70) range_ap(210) range_he(210) range_heat(210))
+}

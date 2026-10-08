@@ -1,0 +1,42 @@
+;Arm edit
+;_________________________________________
+; Germany Light Aerial Rocket Launcher
+;=========================================
+
+
+{from "pattern reactive"		; "Bf.110F-4"
+	{tag "-gun"}
+	{filling "ammo 82mm_rs82" 8}
+	{fillingVisible "rocket"}
+	{fireSound "reactive/rocket_burst/"}
+	{inventory {noView}}
+	{calibre 82}
+
+	{spreading
+		{SpreadRadius 4}
+		{SpreadXYRatio 5}
+		{SpreadYadjust 0.1}
+		;{radiusFunction
+		;	1		0.1
+		;	300		1
+		;	400		2
+		;}
+
+
+		{radiusTable
+			{0 0}
+			{100 15}									;140226+
+			{200 20}									;140226 (20) - (10)
+			{400 25}									;140226 (40) - (20)
+			{599.9 30} ;// max range					;140226 (40) - (20)
+;//			{700 50}
+		}
+	}
+
+	; {range 1 300}
+	{range 600 600}
+	("fire rate" rpm(600))
+	("reload time" seconds(20))							;140226 (40) - (20)
+	("velocity" mps(340))
+	("aerial gravity")
+}

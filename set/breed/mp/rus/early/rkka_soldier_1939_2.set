@@ -1,0 +1,38 @@
+{breed
+	{behaviour soldier}
+	{skin "sov_41_rkka_smg_stick_2"}
+	{portrait "rus_nco"}
+	{icon "rifle"}
+	{icon_priority 2}
+	{tags "soldier"}
+	{nationality rus}
+	{armors
+		{head soviet_ssh39_helmet}
+	}
+	{perks
+		(include "ability.inc")
+		("rifle_skill_rank_1")
+				("tier2_standard")
+	}
+	{veterancy
+		(include "ability.inc")
+		("veterancy_lvl_2")
+	}
+	{inventory
+		{item "mosin_m27" filled}
+		{item "rifle_rus clip ammo" 70 5}
+
+		{item "rgd33 grenade" 0.5 0.5}
+		{item "molotov_cocktail grenade" 0.15 0.5}
+
+		{item "rpg40 grenade" 1.15 0.5}
+
+		{item "bandage_rus" 3.5 0.5}
+		{item "plash_palatka_b"}
+		
+		{item "shovel_rus"}		
+		{item "soviet_budinovka"}
+
+		{in_hands 0}
+	}
+}

@@ -1,0 +1,26 @@
+;// 12.7x99mm
+
+{bullet
+	{tag "bullet small_arms big hmgun stackable pierce"}
+	{tag "bullet_fx size3"}
+	{inventory
+		{weight 1}
+		{block 100}
+		{size 2 2}
+		{fsm "belt"}
+	}
+	{mass 0.11}
+	{entity "large_cartridge"}
+	{view "flaergun_ammo"
+		{tail "tracer_red" "basis"}
+	}
+	("hmg_trace")
+	{trace
+		{view "/texture/fx/tracer_new/trace_solid_red.mtl"
+			{ScaleY 0.2}
+			{ScaleX 1.75}
+			{Light 1}
+		}
+		{length 3}
+	}
+}

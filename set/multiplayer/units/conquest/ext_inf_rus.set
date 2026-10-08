@@ -1,0 +1,700 @@
+
+; "vs(...)" corresponds to a define found in the settings down this file
+; v() If squad is motorised, this is the vehicle that carries the men.
+; cd() corresponds to countdown delay to spawn the unit once battle begins
+; ci() corresponds to cooldown to buy unit once again
+; side() corresponds to side (faction)
+; n() corresponds to number of crew in the unit, the type of crew is defined in the "vs"
+; g() corresponds to group, which is for classification and collective cooldowns
+; sc() corresponds to the score given to the player upon killing this unit
+; b() corresponds to the button where this unit is located in the menus
+; i() corresponds to icon order
+; cw() corresponds to capture weight for flags
+; cp() corresponds to CP, that is, the value that units have that fill up how many troops can be fielded
+; {cost -} corresponds to MP cost of the unit
+; {level 6} Corresponds to player XP progress in player profile from steam
+; {research_stage 4} corresponds to research stage of dynamic campaign
+; {squad_cost_factor 1} - adds the cost of the crew / the cost of the squad members with this factor
+; scf() - adds the cost of the crew / the cost of the squad members with this factor
+; {score_factor 0.05} - when the unit is killed, it will have an impact on the MP score of 0.05*Cost. This only works if {squad_cost_factor 1}. With a fixed cost for the squad such (= scf 0), you need to adjust the scores of the individual units manually
+; {score 20} - when the unit is killed, it will have an impact on the MP score of 20
+; {round_multiple 5.0} - the cost of the unit is rounded up or down to this multiple
+
+;--																															39(1-4)
+;--																															40(5-6)
+;--																															41(7-8)
+;--																															42(9-10)
+;--																															43(11-12)
+;--																															44(13-14)
+;--																															45(15-16)
+
+;	{"mp/rus/late/mgun_2"			("rus_regular_late" 							side(rus) lvl(lvl1 lvl2)				r(13) rm(99)) {cost 8.0}}
+;	{"mp/rus/late/rifleman_1"		("rus_regular_late" 							side(rus) lvl(lvl1 lvl2)				r(13) rm(99)) {cost 8.0}}
+;	{"mp/rus/late/antitank_4"		("rus_regular_late"         					side(rus) lvl(lvl1 lvl2)				r(13) rm(99)) {cost 25.0}}
+;	{"mp/rus/late/antitank_1"		("rus_regular_late"          					side(rus) lvl(lvl1 lvl2 lvl3 lvl4)		r(13) rm(99)) {cost 80.0}}
+;	{"mp/rus/late/antitank_5"		("rus_regular_late"          					side(rus) lvl(lvl1 lvl2 lvl3 lvl4)		r(13) rm(99)) {cost 80.0}}
+{"mp/rus/late/engineer_1"			("inf_tier2" side(rus) lvl() r(1) rm(8) cost(50.0))}
+{"mp/rus/late/engineer_2"			("inf_tier2" side(rus) lvl() r(1) rm(8) cost(50.0))}
+
+{"mp/rus/late/guard_1"			("inf_tier2_lite" side(rus) lvl(lvl2 lvl3 lvl4) r(1) rm(8) cost(35.0))} ; mosin
+{"mp/rus/late/guard_2"			("inf_tier2_lite" side(rus) lvl(lvl2 lvl3 lvl4) r(1) rm(8) cost(42.0))} ; svt40
+{"mp/rus/late/guard_3"			("inf_tier2" side(rus) lvl(lvl2 lvl3 lvl4) r(1) rm(8) cost(50.0))} ; ppsh41 drum
+{"mp/rus/late/guard_4"			("inf_tier2" side(rus) lvl(lvl2 lvl3 lvl4) r(1) rm(8) cost(55.0))} ; dp27
+{"mp/rus/late/guard_5"			("inf_tier2" side(rus) lvl(lvl2 lvl3 lvl4) r(1) rm(8) cost(30.0))} ; mosin + dp ammo
+{"mp/rus/late/medic"		    ("inf_medic" side(rus) cost(60.0))}
+{"mp/rus/late/signaller"		("rus_officer_late"          					side(rus)								r(13) rm(99)) {cost 800.0}}
+
+;	{"mp/rus/late/recon_nco"		("inf_tier2" 							side(rus) lvl(lvl1 lvl2)				r(13) rm(99)) {cost 25.0}}
+;	{"mp/rus/late/recon_smg"		("inf_tier2" 							side(rus) lvl(lvl1 lvl2)				r(13) rm(99))	 {cost 25.0}}
+;	{"mp/rus/late/recon_sa"			("inf_tier2" 							side(rus) lvl(lvl1 lvl2)				r(13) rm(99)) {cost 17.0}}
+
+;	{"mp/rus/late/engineer_heavy"	("fin_regular_advanced" 					side(rus) lvl()							r(3) rm(99)) {cost 200.0}} ; lahti pistol + special building
+
+;	{"mp/rus/mid/conscript_rifle"	("rus_basic" 									side(rus)								r(7) rm(99)) {cost 12.0}} ; mosin
+;	{"mp/rus/mid/conscript_smg"		("inf_tier1" 									side(rus) lvl(lvl1) 					r(7) rm(8) cost(13.0))} ; ppd40
+;	{"mp/rus/mid/conscript_nco"		("rus_basic" 									side(rus)								r(7) rm(99)) {cost 30.0}} ; ppsh41_drum
+
+;	{"mp/rus/mid/recon_nco"			("rus_regular" 									side(rus) lvl(lvl1 lvl2)				r(7) rm(99)) {cost 35.0}} ; mosin
+;	{"mp/rus/mid/recon_rifle"		("rus_regular" 									side(rus) lvl(lvl1 lvl2)				r(7) rm(99)) {cost 30.0}} ; mosin
+;	{"mp/rus/mid/recon_smg"			("rus_regular" 									side(rus) lvl(lvl1 lvl2)				r(7) rm(99)) {cost 35.0}} ; ppsh41
+
+;;----------------------------------- RUS AI ----------------------------------
+
+{"mp/rus/late/signaller_ai"					    	("rus_officer_late" side(rus) 												r(99) rm(99) period(late) cost(300.0))}
+
+;;----------------------------------- RUS ----------------------------------
+;//Tier=[7]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;------------(1939-1945) squad_colonel
+(define "squad_colonel"
+;//	{tags "early %side infantry man %lvl"}
+	{tags "%period %side infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}	
+	{cw 1.0}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.05}
+)
+		{"mp/rus/early/rus_colonel"									("squad_colonel" 										period(early)		side(rus) 		lvl7()		r(7) rm(99)) 		{cp -25.0}		{cost 10950.0}}
+
+;;----------------------------------- RUS PENAL  ----------------------------------
+;//Tier=[1]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;------------ (1939) squad_arm_rkka_militia_1939(rus)
+(define "squad_arm_rkka_militia_1939"
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 0.2}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.03}
+)
+		{"mp/rus/early/nco"											("squad_arm_rkka_militia_1939"		 					period(early)		side(rus) 		lvl(lvl1 lvl2 lvl3)		r(1) rm(11)) 		{cp 1.0}		{cost 30.0}}
+		{"mp/rus/early/arm_rkka_militia_1939_civ_1"					("squad_arm_rkka_militia_1939"							period(early)		side(rus) 		lvl0()					r(1) rm(11))		{cp 0.0}		{cost 6.0}}
+		{"mp/rus/early/arm_rkka_militia_1939_civ_2"					("squad_arm_rkka_militia_1939"							period(early)		side(rus) 		lvl0()					r(1) rm(11))		{cp 0.0}		{cost 5.0}}
+		{"mp/rus/early/arm_rkka_militia_1939_civ_3"					("squad_arm_rkka_militia_1939"							period(early)		side(rus) 		lvl0()					r(1) rm(11))		{cp 0.0}		{cost 6.0}}
+		{"mp/rus/early/arm_rkka_militia_1939_civ_4"					("squad_arm_rkka_militia_1939"							period(early)		side(rus) 		lvl0()					r(1) rm(11))		{cp 0.0}		{cost 7.0}}
+		{"mp/rus/early/arm_rkka_militia_1939_civ_5"					("squad_arm_rkka_militia_1939"							period(early)		side(rus) 		lvl0()					r(1) rm(11))		{cp 0.0}		{cost 6.0}}
+		{"mp/rus/early/arm_rkka_militia_1939_civ_6"					("squad_arm_rkka_militia_1939"							period(early)		side(rus) 		lvl0()					r(1) rm(11))		{cp 0.0}		{cost 5.0}}
+		{"mp/rus/early/arm_rkka_militia_1939_civ_7"					("squad_arm_rkka_militia_1939"							period(early)		side(rus) 		lvl0()					r(1) rm(11))		{cp 0.0}		{cost 6.0}}
+		{"mp/rus/early/arm_rkka_militia_1939_civ_8"					("squad_arm_rkka_militia_1939"							period(early)		side(rus) 		lvl0()					r(1) rm(11))		{cp 0.0}		{cost 6.0}}
+		{"mp/rus/early/arm_rkka_militia_1939_civ_9"					("squad_arm_rkka_militia_1939"							period(early)		side(rus) 		lvl0()					r(1) rm(11))		{cp 0.0}		{cost 6.0}}
+		{"mp/rus/early/arm_rkka_militia_1939_civ_10"				("squad_arm_rkka_militia_1939"							period(early)		side(rus) 		lvl0()					r(1) rm(11))		{cp 0.0}		{cost 5.0}}
+
+;//Tier=[1]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;------------ (1941) squad_partisan_con(rus)
+(define "squad_partisan_con"
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 0.5}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.03}
+)
+		{"mp/rus/mid/partisan_1"									("squad_partisan_con" 									period(mid)			side(rus) 		lvl0()					r(7) rm(10))		{cp 0.5}		{cost 12.0}}  
+		{"mp/rus/mid/partisan_2"									("squad_partisan_con" 									period(mid)			side(rus) 		lvl0()					r(7) rm(10))		{cp 0.5}		{cost 13.0}} 
+		{"mp/rus/mid/partisan_3"									("squad_partisan_con" 									period(mid)			side(rus) 		lvl0()					r(7) rm(10))		{cp 0.5} 		{cost 11.0}}  
+		{"mp/rus/mid/partisan_4"									("squad_partisan_con" 									period(mid)			side(rus) 		lvl0()					r(7) rm(10))		{cp 0.5}		{cost 10.0}}  
+		{"mp/rus/mid/partisan_5"									("squad_partisan_con" 									period(mid)			side(rus) 		lvl0()					r(7) rm(10))		{cp 0.5} 		{cost 14.0}} 
+
+;//Tier=[1]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;------------ (1941) squad_penal_con(rus)
+(define "squad_penal_con"
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 0.5}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.03}
+)
+	;//	{"mp/rus/mid/penal_rifle"									("squad_penal_con" 										period(mid)			side(rus) 		lvl0()					r(99) rm(99)) 		{cp 0.25}		{cost 14.0}}
+		{"mp/rus/mid/penal_rifle"									("squad_penal_con" 										period(mid)			side(rus) 		lvl0()					r(99) rm(99))		{cp 0.25}		{cost 16.0}} 
+
+;;----------------------------------- RUS REGULAR ARMY (Tier 2) ----------------------------------
+
+;//Tier=[2]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;------------ (1940) squad_nkvd_1940(rus)
+(define "squad_nkvd_1940" ; tier 1
+;//	{tags "%period %side %level infantry man lvl3 lvl4"}
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 1.5}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.20}
+)
+		{"mp/rus/mid/nkvd_recon_nco"								("squad_nkvd_1940"										period(mid)			side(rus) 		lvl3()					r(7) rm(14)) 		{cp 1.0}		{cost 40.0}} 
+		{"mp/rus/mid/nkvd_recon_smg"								("squad_nkvd_1940"										period(mid)			side(rus) 		lvl2()					r(7) rm(14)) 		{cp 1.0}		{cost 20.0}} 
+		{"mp/rus/mid/nkvd_recon_rifle"								("squad_nkvd_1940"										period(mid)			side(rus) 		lvl2()					r(7) rm(14)) 		{cp 1.0}		{cost 20.0}} 
+		{"mp/rus/mid/nkvd_senior_rifle"								("squad_nkvd_1940"										period(mid)			side(rus) 		lvl2()					r(7) rm(14)) 		{cp 1.0}		{cost 33.0}}
+		{"mp/rus/mid/nkvd_sapper_builder"							("squad_nkvd_1940"										period(mid)			side(rus) 		lvl2()					r(7) rm(14)) 		{cp 1.0}		{cost 27.0}}
+		{"mp/rus/mid/nkvd_at_rifle"									("squad_nkvd_1940"										period(mid)			side(rus) 		lvl2()					r(7) rm(14)) 		{cp 1.0}		{cost 25.0}}
+		{"mp/rus/mid/nkvd_mg"										("squad_nkvd_1940"										period(mid)			side(rus) 		lvl2()					r(7) rm(14)) 		{cp 1.0}		{cost 30.0}}
+		{"mp/rus/mid/nkvd_mg_asst"									("squad_nkvd_1940"										period(mid)			side(rus) 		lvl2()					r(7) rm(14)) 		{cp 1.0}		{cost 15.0}}
+
+;//Tier=[2]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;------------ (1941) squad_border_1941(rus)
+(define "squad_border_1941" ; tier 1
+;//	{tags "%period %side %level infantry man lvl3 lvl4"}
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 0.5}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.04}
+)
+		{"mp/rus/mid/arm_rus_border_1940_arifle"					("squad_border_1941" 									period(mid)			side(rus) 		lvl2()					r(5) rm(9)) 		{cp 1.0}		{cost 35.0}}
+		{"mp/rus/mid/arm_rus_border_1940_rifle"						("squad_border_1941" 									period(mid)			side(rus) 		lvl2()					r(5) rm(9)) 		{cp 1.0}		{cost 32.0}}
+		{"mp/rus/mid/arm_rus_border_1940_mg"						("squad_border_1941" 									period(mid)			side(rus) 		lvl2()					r(5) rm(9)) 		{cp 1.0}		{cost 38.0}}
+
+;//Tier=[2]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;------------ (1939-1941) squad_rkka_infantry_1939(rus)
+(define "squad_rkka_infantry_1939" ; tier 1
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 1.5}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.05}
+)
+		{"mp/rus/early/rkka_commisar_1939"							("squad_rkka_infantry_1939" 							period(early)		side(rus) 		lvl3()					r(1) rm(6)) 		 {cp 1.0}		{cost 40.0}}
+		{"mp/rus/early/rkka_soldier_1939"							("squad_rkka_infantry_1939" 							period(early)		side(rus) 		lvl2()					r(1) rm(6))		 	 {cp 1.0}		{cost 25.0}}
+		{"mp/rus/early/rkka_soldier_1939_2"							("squad_rkka_infantry_1939" 							period(early)		side(rus) 		lvl2()					r(1) rm(6)) 		 {cp 1.0}		{cost 25.0}}
+		{"mp/rus/early/rifle-avs"									("squad_rkka_infantry_1939" 							period(early)		side(rus) 		lvl2()					r(1) rm(6)) 		 {cp 1.0}		{cost 35.0}}
+		{"mp/rus/early/rkka_soldier_1939_rfl_gren"					("squad_rkka_infantry_1939" 							period(early)		side(rus) 		lvl2()					r(1) rm(6))			 {cp 1.0}		{cost 35.0}}
+		{"mp/rus/early/rkka_soldier_1939_mg"						("squad_rkka_infantry_1939" 							period(early)		side(rus) 		lvl2()					r(1) rm(6)) 		 {cp 1.0}		{cost 40.0}}
+
+;//Tier=[2]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;------------ (1942-1943) squad_rkka_infantry_1941(rus)
+(define "squad_rkka_infantry_1941"
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 1.5}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.05}
+)
+		{"mp/rus/mid/rkka_commisar_1941"							("squad_rkka_infantry_1941" 							period(mid)			side(rus) 		lvl3())		{cp 1.0}  		{cost 40.0}}
+		{"mp/rus/mid/rkka_smg_soldier_1941"							("squad_rkka_infantry_1941" 							period(mid)			side(rus) 		lvl2()) 	{cp 1.0}  		{cost 25.0}}
+		{"mp/rus/mid/rkka_soldier_1941"								("squad_rkka_infantry_1941" 							period(mid)			side(rus) 		lvl2())		{cp 1.0}  		{cost 25.0}}
+		{"mp/rus/mid/rkka_mg_soldier_1941"							("squad_rkka_infantry_1941" 							period(mid)			side(rus) 		lvl2())		{cp 1.0}  		{cost 30.0}}
+		{"mp/rus/mid/rkka_engineer_1941"							("squad_rkka_infantry_1941" 							period(mid)			side(rus) 		lvl2())		{cp 1.0}  		{cost 30.0}}
+	
+;//Tier=[2]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;------------ (1943) squad_rkka_infantry_1943(rus)
+(define "squad_rkka_infantry_1943"
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 1.5}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.05}
+)
+		{"mp/rus/mid/arm_rus_rkka_1943_nco"							("squad_rkka_infantry_1943" 							period(mid)			side(rus) 		lvl3()			r(11) rm(13)) 		{cp 1.0} 		{cost 40.0}}
+		{"mp/rus/mid/arm_rus_rkka_1943_smg"							("squad_rkka_infantry_1943" 							period(mid)			side(rus) 		lvl2()			r(11) rm(13)) 		{cp 1.0} 		{cost 25.0}}
+		{"mp/rus/mid/arm_rus_rkka_1943_rfl"							("squad_rkka_infantry_1943" 							period(mid)			side(rus) 		lvl2()			r(11) rm(13)) 		{cp 1.0} 		{cost 25.0}}
+		{"mp/rus/mid/arm_rus_rkka_1943_mg"							("squad_rkka_infantry_1943" 							period(mid)			side(rus) 		lvl2()			r(11) rm(13)) 		{cp 1.0} 		{cost 35.0}}
+		{"mp/rus/mid/arm_rus_rkka_1943_mg2"							("squad_rkka_infantry_1943" 							period(mid)			side(rus) 		lvl2()			r(11) rm(13)) 		{cp 1.0} 		{cost 35.0}}
+		{"mp/rus/mid/arm_rus_rkka_1943_at"							("squad_rkka_infantry_1943" 							period(mid)			side(rus) 		lvl2()			r(11) rm(13)) 		{cp 1.0} 		{cost 35.0}}
+		{"mp/rus/mid/arm_rus_rkka_1943_medic"						("squad_rkka_infantry_1943" 							period(mid)			side(rus) 		lvl2()			r(11) rm(13)) 		{cp 1.0}		{cost 40.0}}
+
+;//Tier=[2]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;------------ (1945) squad_rkka_infantry_1945(rus)
+(define "squad_rkka_infantry_1945"
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 1.5}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.05}
+)
+		{"mp/rus/late/arm_rus_rkka_1945_nco"						("squad_rkka_infantry_1945" 							period(late)		side(rus) 		lvl3()			r(14) rm(99)) 		{cp 1.0}		{cost 40.0}}
+		{"mp/rus/late/arm_rus_rkka_1945_smg"						("squad_rkka_infantry_1945" 							period(late)		side(rus) 		lvl2()			r(14) rm(99)) 		{cp 1.0}		{cost 25.0}}
+		{"mp/rus/late/arm_rus_rkka_1945_rfl"						("squad_rkka_infantry_1945" 							period(late)		side(rus) 		lvl2()			r(14) rm(99)) 		{cp 1.0} 		{cost 25.0}}
+		{"mp/rus/late/arm_rus_rkka_1945_mg"							("squad_rkka_infantry_1945" 							period(late)		side(rus) 		lvl2()			r(14) rm(99)) 		{cp 1.0} 		{cost 35.0}}
+		{"mp/rus/late/arm_rus_rkka_1945_mg2"						("squad_rkka_infantry_1945" 							period(late)		side(rus) 		lvl2()			r(14) rm(99)) 		{cp 1.0} 		{cost 35.0}}
+		{"mp/rus/late/arm_rus_rkka_1945_at"							("squad_rkka_infantry_1945" 							period(late)		side(rus) 		lvl2()			r(14) rm(99)) 		{cp 1.0}		{cost 35.0}}
+		{"mp/rus/late/arm_rus_rkka_1945_at2"						("squad_rkka_infantry_1945" 							period(late)		side(rus) 		lvl2()			r(14) rm(99)) 		{cp 1.0} 		{cost 35.0}}		
+		{"mp/rus/late/arm_rus_rkka_1945_medic"						("squad_rkka_infantry_1945" 							period(late)		side(rus) 		lvl2()			r(14) rm(99)) 		{cp 1.0}		{cost 40.0}}
+		
+;;----------------------------------- RUS REGULAR ARMY SUPPORT (Tier 2) ----------------------------------
+;//Tier=[2]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;------------ (1944-1945) squad_arm_rus_mgsupport_1944(rus)
+(define "squad_arm_rus_mgsupport_1944"
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 1.5}
+	{score_factor 0.08}
+)
+		{"mp/rus/late/mgun_1"										("squad_arm_rus_mgsupport_1944"							period(late)		side(rus) 		lvl2()			r(13) rm(99)) 		{cp 1.0}		{cost 45.0}}
+		{"mp/rus/late/mgun_3"										("squad_arm_rus_mgsupport_1944"							period(late)		side(rus) 		lvl1()			r(13) rm(99))		{cp 1.0}		{cost 20.0}}
+		
+;//Tier=[2]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;------------ (1940-1943) squad_assault_mg(rus)
+(define "squad_assault_mg"
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 1.5}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.05}
+)
+		{"mp/rus/early/mgun_3"										("squad_assault_mg"										period(early)		side(rus) 		lvl2()			r(1) rm(7)) 		{cp 1.0}		{cost 35.0}}
+		{"mp/rus/early/mgun_2"										("squad_assault_mg"										period(early)		side(rus) 		lvl1()			r(1) rm(7))			{cp 1.0}		{cost 20.0}}		
+
+;;----------------------------------- RUS VETERANS (Tier 3-4)  ----------------------------------
+;//Tier=[4]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;------------ (1942) squad_assault_soldiers(rus)
+(define "squad_assault_soldiers"
+	{tags "%period %side %level infantry man"}
+;//	{tags "%period %side infantry man lvl3 lvl4"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 2.5}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.10}
+)
+		{"mp/rus/mid/assault_soldier_1"								("squad_assault_soldiers" 								period(mid)			side(rus) 		lvl4()			r(9) rm(16)) 		{cp 1.0} 		{cost 45.0}} ; ppsh41
+		{"mp/rus/mid/assault_soldier_2"								("squad_assault_soldiers" 								period(mid)			side(rus) 		lvl4()			r(9) rm(16)) 		{cp 1.0} 		{cost 45.0}} ; pps
+		{"mp/rus/mid/assault_soldier_svt"							("squad_assault_soldiers" 								period(mid)			side(rus) 		lvl4()			r(9) rm(16)) 		{cp 1.0}  		{cost 50.0}} ; svt40
+		{"mp/rus/mid/assault_soldier_mg"							("squad_assault_soldiers" 								period(mid)			side(rus) 		lvl4()			r(9) rm(16)) 		{cp 1.0}  		{cost 60.0}} ; dp
+
+		{"mp/rus/late/assault-sap_1"		 						("squad_assault_soldiers" 								period(late)		side(rus)		lvl4()			r(13) rm(99))		{cp 1.0} 		{cost 45.0}} ; ppsh41
+		{"mp/rus/late/assault-sap_2"		 						("squad_assault_soldiers" 								period(late)		side(rus)		lvl4()			r(13) rm(99))		{cp 1.0} 		{cost 42.0}} ; pps43
+		{"mp/rus/late/assault-sap_3"		 						("squad_assault_soldiers" 								period(late)		side(rus)		lvl4()			r(13) rm(99))		{cp 1.0} 		{cost 45.0}} ; ppsh41
+		{"mp/rus/late/assault-sap_4"		 						("squad_assault_soldiers" 								period(late)		side(rus)		lvl4()			r(13) rm(99))		{cp 1.0} 		{cost 50.0}} ; flamer
+		{"mp/rus/late/assault-sap_at"								("squad_assault_soldiers" 								period(late)		side(rus)		lvl4()			r(13) rm(99))		{cp 1.0} 		{cost 50.0}} ; ppsh41;pzfaust
+		{"mp/rus/late/assault-sap_atr"		 						("squad_assault_soldiers" 								period(late)		side(rus)		lvl4()			r(13) rm(99))		{cp 1.0} 		{cost 50.0}} ; PTRS
+		{"mp/rus/late/assault-sap_sl"								("squad_assault_soldiers" 								period(late)		side(rus)		lvl4()			r(13) rm(99))		{cp 1.0} 		{cost 42.0}} ; pps43
+		{"mp/rus/late/assault-sap_sl_asst"	 						("squad_assault_soldiers" 								period(late)		side(rus)		lvl4()			r(13) rm(99))		{cp 1.0} 		{cost 42.0}} ; pps43
+		{"mp/rus/late/assault-sap_sl_asst_mg"						("squad_assault_soldiers" 								period(late)		side(rus)		lvl4()			r(13) rm(99))		{cp 1.0} 		{cost 50.0}} ; dp27
+
+;//Tier=[3]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;------------ (1941) rus_marines(rus)
+(define "rus_marines"
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 3.0}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.12}
+)
+		{"mp/rus/late/marine_nco"									("rus_marines" 											period(late)		side(rus) 		lvl4()			r(7) rm(10)) 		{cp 1.0} 		{cost 41.0}}  ; pps43
+;//		{"mp/rus/late/marine_1"										("rus_marines" 											period(late)		side(rus) 		lvl3()			r(7) rm(10)) 		{cp 1.0} 		{cost 25.0}}  ; svt40
+		{"mp/rus/late/marine_2"										("rus_marines" 											period(late)		side(rus) 		lvl3()			r(7) rm(10)) 		{cp 1.0}		{cost 42.0}}  ; ppsh41drum
+		{"mp/rus/late/marine_3"										("rus_marines" 											period(late)		side(rus) 		lvl3()			r(7) rm(10)) 		{cp 1.0} 		{cost 41.0}}  ; dp
+		{"mp/rus/late/marine_4"										("rus_marines" 											period(late)		side(rus) 		lvl3()			r(7) rm(10)) 		{cp 1.0} 		{cost 44.0}}  ; svt40
+		{"mp/rus/late/marine_5"										("rus_marines" 											period(late)		side(rus) 		lvl3()			r(7) rm(10)) 		{cp 1.0} 		{cost 41.0}}  ; mosin
+		{"mp/rus/late/marine_mg_asst"								("rus_marines" 											period(late)		side(rus) 		lvl3()			r(7) rm(10)) 		{cp 1.0} 		{cost 43.0}}  ; mosin
+		{"mp/rus/late/marine_senior"								("rus_marines" 											period(late)		side(rus) 		lvl3()			r(7) rm(10)) 		{cp 1.0} 		{cost 43.0}}  ; ppsh41drum
+
+;//Tier=[3]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;------------ (1941) rus_cossack(rus)
+(define "rus_cossack" ; tier 3
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 3.0}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.12}
+)
+		{"mp/rus/early/cossack_recon_nco"							("rus_cossack" 											period(early)		side(rus) 		lvl4()			r(7) rm(11)) 		{cp 1.0} 		{cost 60.0}}
+		{"mp/rus/early/cossack_recon_rifle"							("rus_cossack" 											period(early)		side(rus) 		lvl3()			r(7) rm(11)) 		{cp 1.0} 		{cost 49.0}}
+		{"mp/rus/early/cossack_recon_sa"							("rus_cossack"											period(early)		side(rus) 		lvl3()			r(7) rm(11)) 		{cp 1.0} 		{cost 43.0}}
+		{"mp/rus/early/cossack_2"									("rus_cossack"											period(early)		side(rus) 		lvl3()			r(7) rm(11)) 		{cp 1.0} 		{cost 42.0}}
+		{"mp/rus/early/cossack_3"									("rus_cossack" 											period(early)		side(rus) 		lvl3()			r(7) rm(11)) 		{cp 1.0} 		{cost 43.0}}
+		{"mp/rus/early/cossack_mg"									("rus_cossack"											period(early)		side(rus) 		lvl3()			r(7) rm(11)) 		{cp 1.0} 		{cost 51.0}}
+		{"mp/rus/early/cossack_mg_asst"								("rus_cossack" 											period(early)		side(rus) 		lvl3()			r(7) rm(11)) 		{cp 1.0} 		{cost 48.0}}
+
+;;----------------------------------- RUS VETERANS EXPERTS (Tier 5-6)  ----------------------------------
+;//Tier=[5]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+(define "squad_rus_paratroopers_1940" ; tier 3
+	{tags "%period %side %level infantry man"}
+;//	{tags "%period %side infantry man lvl3 lvl4"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 2.0}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.15}
+)
+		{"mp/rus/early/arm_rus_paratrooper_1940_uo"					("squad_rus_paratroopers_1940" 							period(early)		side(rus) 		lvl6()			r(5) rm(9)) 		{cp 1.0} 		{cost 95.0}} 
+		{"mp/rus/early/arm_rus_paratrooper_1940_sign"				("squad_rus_paratroopers_1940" 							period(early)		side(rus) 		lvl5()			r(5) rm(9)) 		{cp 1.0} 		{cost 80.0}} 
+		{"mp/rus/early/arm_rus_paratrooper_1940_smg"				("squad_rus_paratroopers_1940" 							period(early)		side(rus) 		lvl5()			r(5) rm(9)) 		{cp 1.0} 		{cost 65.0}} 
+		{"mp/rus/early/arm_rus_paratrooper_1940_arifle"				("squad_rus_paratroopers_1940" 							period(early)		side(rus) 		lvl5()			r(5) rm(9)) 		{cp 1.0} 		{cost 65.0}} 
+		{"mp/rus/early/arm_rus_paratrooper_1940_grlauncher"			("squad_rus_paratroopers_1940" 							period(early)		side(rus) 		lvl5()			r(5) rm(9)) 		{cp 1.0} 		{cost 90.0}} 
+		{"mp/rus/early/arm_rus_paratrooper_1940_mg"					("squad_rus_paratroopers_1940" 							period(early)		side(rus) 		lvl5()			r(5) rm(9)) 		{cp 1.0} 		{cost 80.0}} 
+		{"mp/rus/early/arm_rus_paratrooper_1940_eng"				("squad_rus_paratroopers_1940" 							period(early)		side(rus) 		lvl5()			r(5) rm(9)) 		{cp 1.0} 		{cost 75.0}} 
+
+;//Tier=[6]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+(define "squad_rifleunit_elite"
+;//	{tags "%period %side %level infantry man"}
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 2.0}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.20}
+)
+		{"mp/rus/mid/nco"											("squad_rifleunit_elite" 								period(mid) 	side(rus) 		lvl7()				r(8) rm(99))  	{cp 1.0} 		{cost 89.0}}
+		{"mp/rus/mid/rifleman_3_elite"								("squad_rifleunit_elite" 								period(mid) 	side(rus) 		lvl6()				r(8) rm(99))  	{cp 1.0} 		{cost 81.0}} ; svt40
+
+;//Tier=[7]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;-------------single_signaller_extcq
+(define "single_signaller_extcq"
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 1.0}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.20}
+)
+		{"mp/rus/mid/nco"											("single_signaller_extcq" 								period(mid) 	side(rus) 		lvl8()				r(99) rm(99))  	{cp 1.0} 		{cost 89.0}}
+		{"mp/rus/mid/signaller"										("single_signaller_extcq" 								period(mid) 	side(rus) 		lvl7()				r(99) rm(99))  	{cp 1.0} 		{cost 950.0}}
+
+
+;//Tier=[5]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;------------ (1944) rus_marines(rus)
+(define "squad_vmf_marines"
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 3.0}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.12}
+)
+		{"mp/rus/late/vmf_marine_prapor"							("squad_vmf_marines"									period(late) 	side(rus) 		lvl6()				r(13) rm(99))  	{cp 1.0} 		{cost 80.0}}
+		{"mp/rus/late/vmf_marine"									("squad_vmf_marines" 									period(late) 	side(rus) 		lvl5()				r(13) rm(99))  	{cp 1.0} 		{cost 70.0}}
+		{"mp/rus/late/vmf_marine_smg"								("squad_vmf_marines" 									period(late) 	side(rus) 		lvl5()				r(13) rm(99)) 	{cp 1.0} 		{cost 72.0}}
+		{"mp/rus/late/vmf_marine_mg"								("squad_vmf_marines"									period(late) 	side(rus) 		lvl5()				r(13) rm(99))  	{cp 1.0} 		{cost 73.0}}
+		{"mp/rus/late/vmf_marine_flamer"							("squad_vmf_marines" 									period(late) 	side(rus) 		lvl5()				r(13) rm(99))  	{cp 1.0} 		{cost 78.0}}
+
+
+;------------ (1945) rus_spetsnaz_late(rus)
+(define "rus_spetsnaz_late"
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 3.0}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.12}
+)
+		{"mp/rus/late/spetsnaz_2"									("rus_spetsnaz_late" 									period(late) 	side(rus)		lvl6()				r(13) rm(99)) 	{cp 1.0}		{cost 85.0}}
+		{"mp/rus/late/spetsnaz_4"									("rus_spetsnaz_late" 									period(late) 	side(rus)		lvl5()				r(13) rm(99)) 	{cp 1.0}		{cost 75.0}}
+		{"mp/rus/late/spetsnaz_5"									("rus_spetsnaz_late" 									period(late) 	side(rus)		lvl5()				r(13) rm(99)) 	{cp 1.0}		{cost 85.0}}
+
+;;----------------------------------- RUS SUPER EXPERTS (Tier 7-8)  ----------------------------------
+;//Tier=[7]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;------------ (1939) rus_sniper(rus)
+(define "rus_sniper"
+	{tags "period %side infantry man sniper lvl3 lvl4"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 2.5}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.20}
+)
+		{"mp/rus/mid/sniper"										("rus_sniper" 											period(mid) 	side(rus)							r(1) rm(99))	{cp 1.0}	{cost 135.0}}
+
+
+;;----------------------------------- RUS SPECIALISTS ----------------------------------
+;//Tier=[1]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;------------ (1939-1945) tankman
+(define "rus_tankman"
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 0.5}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.10}
+)
+		{"mp/rus/early/tank_commander"								("rus_tankman"											period(early) 	side(rus) 		lvl3()				r(99) rm(99)) 	{cp 0.0}		{cost 62.0}}
+		{"mp/rus/early/tankman"										("rus_tankman"											period(early) 	side(rus) 		lvl2()				r(99) rm(99))  	{cp 0.0}		{cost 34.0}}
+		{"mp/rus/mid/tank_commander"								("rus_tankman"											period(mid) 	side(rus) 		lvl3()				r(99) rm(99))  	{cp 0.0}		{cost 62.0}}
+		{"mp/rus/mid/tankman"										("rus_tankman"											period(mid) 	side(rus) 		lvl2()				r(99) rm(99))  	{cp 0.0}		{cost 34.0}}
+		{"mp/rus/late/tank_commander"								("rus_tankman"											period(late) 	side(rus) 		lvl3()				r(99) rm(99))  	{cp 0.0}		{cost 62.0}}
+		{"mp/rus/late/tankman"										("rus_tankman"											period(late) 	side(rus) 		lvl2()				r(99) rm(99))  	{cp 0.0}		{cost 34.0}}
+
+;//Tier=[1]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;------------ (1939-1945) heavy_artilleryman
+(define "heavy_artilleryman"
+;//	{tags "%period %side %level infantry man"}
+	{tags "%period %side infantry man lvl3 lvl4"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 0.5}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.05}
+)
+		{"mp/rus/early/heavy_artilleryman"							("heavy_artilleryman" 									period(early) 	side(rus) 		lvl1()				r(1) rm(99))		{cp 0.0}		{cost 20.0}}
+		{"mp/rus/mid/heavy_artilleryman"							("heavy_artilleryman" 									period(early) 	side(rus) 		lvl1()				r(1) rm(99))	  	{cp 0.0}		{cost 20.0}}
+		{"mp/rus/late/heavy_artilleryman"							("heavy_artilleryman" 									period(early) 	side(rus) 		lvl1()				r(1) rm(99))		{cp 0.0}		{cost 20.0}}
+
+;------------ (1939-1945) riflemen
+(define "riflemen"
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 0.5}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.05}
+)
+		{"mp/rus/early/rifleman_1"									("riflemen" 											period(early) 	side(rus) 		lvl1()				r(1) rm(99))		{cp 1.0}	 	{cost 8.0}} ; mosin
+		{"mp/rus/mid/rifleman_1"									("riflemen" 											period(mid) 	side(rus) 		lvl1()				r(1) rm(99))		{cp 1.0}	 	{cost 8.0}} ; mosin
+		{"mp/rus/late/rifleman_1"									("riflemen" 											period(late) 	side(rus) 		lvl1()				r(1) rm(99))		{cp 1.0}	 	{cost 8.0}} ; mosin
+
+;//Tier=[1]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;------------ (1939-1941) squad_artillerymen
+(define "squad_artillerymen"
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 0.5}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.05}
+)
+		{"mp/rus/early/artilleryman_ls"								("squad_artillerymen"									period(early) 	side(rus) 		lvl1()				r(99) rm(99) scf(0))	{cp 1.0}		{cost 20.0}}
+		{"mp/rus/early/artilleryman_private"						("squad_artillerymen"									period(early) 	side(rus) 		lvl1()				r(1) rm(99) scf(0))		{cp 1.0}		{cost 15.0}}
+
+;//Tier=[1]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;------------ (1942-1943) squad_artillerymen
+(define "squad_artillerymen"
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 0.5}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.05}
+)
+		{"mp/rus/mid/artilleryman_ls"								("squad_artillerymen"									period(mid) 	side(rus) 		lvl2()				r(99) rm(99) scf(0))	{cp 1.0}		{cost 20.0}}
+		{"mp/rus/mid/artilleryman_private"							("squad_artillerymen"									period(mid) 	side(rus) 		lvl1()				r(1) rm(99) scf(0))		{cp 1.0}		{cost 15.0}}
+
+;//Tier=[1]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;------------ (1944-1945) squad_artillerymen
+(define "squad_artillerymen"
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 0.5}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.05}
+)
+		{"mp/rus/late/artilleryman_ls"								("squad_artillerymen"									period(late) 	side(rus) 		lvl2()				r(1) rm(99) scf(0))		{cp 1.0}		{cost 20.0}}
+		{"mp/rus/late/artilleryman_private"							("squad_artillerymen"									period(late) 	side(rus) 		lvl1()				r(99) rm(99) scf(0))		{cp 1.0}		{cost 15.0}}
+
+;//Tier=[2]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;------------ (1939-1941) squad_mech_tankman_early_rus
+(define "squad_mech_tankman_early_rus"
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{cw 0.5}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.10}
+)
+		{"mp/rus/early/tank_commander_squad"						("squad_mech_tankman_early_rus" 						period(early) 	side(rus) 		lvl3()				r(99) rm(99)) 		{cp 1.0}		{cost 62.0}}
+		{"mp/rus/early/tankman_squad"								("squad_mech_tankman_early_rus" 						period(early) 	side(rus) 		lvl2()				r(99) rm(99))		{cp 1.0}		{cost 34.0}}
+
+;//Tier=[2]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;------------ (1942-1943) squad_mech_tankman_mid_rus
+(define "squad_mech_tankman_mid_rus"
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{cw 0.5}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.10}
+)
+		{"mp/rus/mid/tank_commander_squad"							("squad_mech_tankman_mid_rus" 							period(mid) 	side(rus) 		lvl3()				r(99) rm(99)) 		{cp 1.0}		{cost 62.0}}		
+		{"mp/rus/mid/tankman_squad"									("squad_mech_tankman_mid_rus" 							period(mid) 	side(rus) 		lvl2()				r(99) rm(99)) 		{cp 1.0}		{cost 34.0}}
+
+;//Tier=[2]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;------------ (1944-1945) squad_mech_tankman_late_rus
+(define "squad_mech_tankman_late_rus"
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{cw 0.5}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.10}
+)
+		{"mp/rus/late/tank_commander_squad"							("squad_mech_tankman_late_rus"							period(late) 	side(rus) 		lvl3()				r(99) rm(99)) 		{cp 1.0}		{cost 62.0}}	
+		{"mp/rus/late/tankman_squad"								("squad_mech_tankman_late_rus" 							period(late) 	side(rus) 		lvl2()				r(99) rm(99)) 		{cp 1.0}		{cost 34.0}}
+
+;//Tier=[2]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;------------ (1944-1945) squad_miner_ap
+(define "squad_miner_ap" ; tier 3
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{cw 0.5}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.07}
+)
+		{"mp/rus/early/miner-ap"									("squad_miner_ap" 										period(early) 	side(rus) 		lvl1()				r(1) rm(10)) 		{cp 1.0}		{cost 35.0}}
+
+;//Tier=[2]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;------------ (1944-1945) squad_miner_at
+(define "squad_miner_at" ; tier 3
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{cw 0.5}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.07}
+)
+		{"mp/rus/early/miner-at"									("squad_miner_at"										period(early) 	side(rus) 		lvl1()				r(1) rm(10)) 		{cp 1.0}		{cost 35.0}}
+
+;//Tier=[2]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;------------ (1943) squad_rus_atminer_1943	
+(define "squad_rus_atminer_1943"
+;//	{tags "%period %side %level infantry man lvl3 lvl4"}
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{cw 0.5}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.07}
+)
+		{"mp/rus/mid/arm_at_miner_nco_smg_1943"						("squad_rus_atminer_1943" 								period(mid) 	side(rus) 		lvl2()				r(11) rm(99)) 		{cp 1.0}		{cost 50.0}}
+		{"mp/rus/mid/arm_at_miner_smg_1943"							("squad_rus_atminer_1943" 								period(mid) 	side(rus) 		lvl1()				r(11) rm(99)) 		{cp 1.0}		{cost 35.0}}
+
+;//Tier=[2]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;------------ (1939) squad_engineer	
+(define "squad_engineer"
+;//	{tags "%period %side %level infantry man lvl3 lvl4"}
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{cw 0.5}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.07}
+)
+		{"mp/rus/early/engineer_2"									("squad_engineer"										period(early) 	side(rus) 		lvl1()				r(1) rm(99)) 		{cp 1.0}		{cost 25.0}}
+	
+;//Tier=[2]										Tier1 (15-30)	Tier2 (25-40)	Tier3 (40-60)	Tier4 (55-80)	Tier5 (70-95)	Tier6 (85-100)	Tier7 (125-150)	Tier8 (250-400)	
+;------------ (1939) squad_gaz67_medic	
+(define "squad_gaz67_medic"
+	{tags "%period %side %level infantry man"}
+	{cp 0.0}
+	{basic}
+	{breed}
+	{level %lv}
+	{cw 1.0}
+	;{cost %cost}
+	;{score (* %cost 0.05)}
+	{score_factor 0.05}
+)
+		{"mp/rus/early/medic"		    							("squad_gaz67_medic"   									period(early) 	side(rus) 		lvl2()				r(99) rm(99)) 		{cp 1.0}		{cost 30.0}}

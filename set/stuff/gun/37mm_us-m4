@@ -1,0 +1,29 @@
+;LR Arm edited
+;10.03.2026
+;
+{from "pattern gun"			; P39 autocannon
+;//	{filling "bullet37_usa_zenite" 30}
+	{filling "bulletusa_37_auto" 30}
+	{fireSound "cannon/s1/d1/Shared/Autocannon_37to40mm/"}
+	{fireSoundclose "cannon/s1/3p/Shared/Autocannon_37to40mm/"}
+	{reloadSound "tank/reload_small"}
+	("range_aircraft_gun_30-45")
+	{cursor "ironsights/aa"}
+	{calibre 37}
+	("medium_aa")
+
+	("fire rate" rpm(240))												;150226 (165)-(320) - (240)
+	("reload time" seconds(1.5))
+
+	("velocity" mps(610))
+	("armor health" damage(43))
+	("37_slope_multipliers_800ms")
+
+	; AP-T		
+	("penetration_medium" shell(ap) range(170) a(40) b(30) c(18) d(15) e(11))
+	("accuracy_direct" r1(0.58) range_ap(170) range_he(170) range_heat(170))
+
+;//	{bullet_view "air_shell"
+;//		{tail "cannone_small_air" "root"}
+;// }
+}

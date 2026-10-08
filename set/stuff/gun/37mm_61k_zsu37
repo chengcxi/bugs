@@ -1,0 +1,37 @@
+;LR Arm edited
+;29.01.2026
+;_________________________________________
+; Soviet medium AA gun
+;=========================================
+
+
+{from "pattern gun"			; "61k", "zsu37"
+	{filling "bulletrus_37_auto" 5} ;// 2 - 5 round clips
+	{fireSound "cannon/s1/d1/Shared/Autocannon_37to40mm/"}
+	{fireSoundclose "cannon/s1/3p/Shared/Autocannon_37to40mm/"}
+	{reloadSound "interior/large/small_reload_interior"}
+	("range_autocannon_37-40")
+	{cursor "ironsights/aa"}
+	{calibre 37}
+	("medium_aa")
+	{fillingVisible "ammo_clip"}
+	
+	{range 410 450}								;//ARm 290126	(380) - (450)
+
+	("fire rate" rpm(195))						;//ARm 070326	(165) - (195)
+	("reload time" seconds(1.0))				;//ARm 070326	(1.5) - (1.0)
+
+	("velocity" mps(860))
+	("armor health" damage(100))
+	("37_slope_multipliers_800ms")
+
+	; BR-167		;//Source http://www.russianammo.org/Russian_Ammunition_Page_37mm.html#20 x AP Slope Multiplier
+	("penetration_medium" shell(ap) range(160) a(50) b(45) c(37) d(28) e(18))
+
+	("accuracy_direct_auto" r1(0.58) range_ap(160) range_he(160) range_heat(160))
+
+	{parameters "he"										; OR-167
+		(mod "mp" {unlimitedRangeTPC 1})	;// unrestricts range in TPC/FPC for shooting at aircraft
+		{FalloffStrength 0}
+	}
+}

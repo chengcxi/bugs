@@ -1,0 +1,35 @@
+{breed
+	{behaviour soldier}
+	{skin "sov_43_smock_assault_eng_mg_asst"}
+	{portrait "rus_assaut_sapper"}
+	{icon "atrifle"}
+	{icon_priority 0}
+	{tags "soldier_atr"}
+	{nationality rus_assp}
+	{armors
+		{head soviet_ssh40_helmet}
+	}
+	{perks
+		(include "ability.inc")
+		("rifle_skill_rank_3")
+		("tier2_defense")	
+						("mgunner_ussr")		
+	}
+	{veterancy
+		(include "ability.inc")
+		("veterancy_lvl_4")
+	}
+	{inventory
+		{item "browning_m19a6" filling "ammo mgun_usa belt" 250}
+		{item "ammo mgun_usa belt" 500}
+
+;--		{item "kpv_14mm_hmgun" filling "ammo atrifle_rus" 50}
+;--		{item "atrifle_rus ammo" 400}
+
+		{item "bandage_rus" 4.5 0.5}
+		{item "shovel_rus"}
+						{item "mg_lafette_kit_rus"}
+		{in_hands 0}
+		
+	}
+}

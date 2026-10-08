@@ -1,0 +1,39 @@
+;LR Arm edited
+;03.02.2026
+;
+{from "pattern hmgun"
+	{inventory {size 7 3}}
+	{filling "ammo hmgun_ger" 200}
+	{entity "mg131"}
+;//	{fireSound "smallarms/s3/d1/GER/MG13/"}
+;//	{fireSoundclose "smallarms/s3/3p/GER/MG13/"}
+	{fireSound 	"smallarms/s3/d1/ENG/BREN_Gun/"}
+	{fireSoundclose "smallarms/s3/3p/ENG/BREN_Gun/"}	
+	{reloadSound "mg42"}
+	{calibre 13}
+	{mass 17}
+
+	("fire rate" rpm(900))
+	("velocity" mps(710))
+
+	("reload_belt")
+
+;//	{projectileDamageTable {20 15} {100 15} {165 12} {215 8} {250 6}} ;// M2 AP				;030226-
+	{projectileDamageTable {20 15} {100 15} {165 15} {215 12} {250 10}} ;// M2 AP				;030226+
+
+;//	{range 155 155}
+;//	{range 186 310}		
+	("penetration" args 20 17 12 10 7)
+	("armor health" damage(13))
+	("human health" damage(95))
+	("reload time" seconds(6))
+	{Spreading
+		{SpreadXYRatio 1.5}
+	}
+
+	
+	("burst_stand")
+
+	("spreading_mounted")
+	{traceFreq 1}
+}

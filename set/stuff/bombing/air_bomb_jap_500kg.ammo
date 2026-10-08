@@ -1,0 +1,7 @@
+{from "pattern air_bomb"
+	{entity "sc_jap_500"}
+	{tag "size3"}
+	{mass 500}
+
+	("he_level_7" weight(500) filler(243))
+}

@@ -1,0 +1,43 @@
+;_________________________________________
+; German Light Rocket Artillery
+;=========================================
+
+
+{from "pattern reactive"		; "sdkfz4"
+	{tag "gun"}
+	{filling "ammo 150mm_nebelwerfer" 10}
+	{fireSound "reactive/nebel_burst/"}
+	{calibre 150}
+
+	("rocket_artillery")
+
+	{spreading
+		{radiusTable
+			; {0 0}
+			; {100 8}
+			; {200 18}
+			; {329.99 20} ;// max range
+			; {330 100}
+			; {350 200}
+			{0 0}
+			{200 16}
+			{400 32}
+			{659.99 40} ;// max range
+			{660 100}
+			{700 200}
+		}
+	}
+
+	{burst
+		{min 10}
+		{noaiming}
+	}
+
+	{minRange 50}
+	{aimRange 310}
+	; {maxRange 310} ;//6,9km
+	{maxRange 620} ;//6,9km
+	("velocity" mps(340))
+	("reload time" seconds(180))
+	("fire rate" rpm(33.3)) ;// 18s to fire full salvo
+}

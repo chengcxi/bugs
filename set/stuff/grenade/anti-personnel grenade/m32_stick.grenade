@@ -1,0 +1,13 @@
+{from "pattern anti-personnel"
+	;{tag "size2"}		; Explosive filling - 0.200kg of TNT
+	{tag "size1"}		; Explosive filling - 0.060kg of TNT
+	{entity "m32_stick"}
+
+	{damage add blastwave
+		{energy 0.70}
+		{area 4 8}
+		{ground_interaction_radius 0} ;// value is multiplied by 2nd value of area to deterimine is blast is close enough to ground to trigger terrain fx
+	}
+
+}
+

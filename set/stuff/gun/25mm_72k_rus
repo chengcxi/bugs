@@ -1,0 +1,34 @@
+;LR Arm edited
+;_________________________________________
+;Soviet light AA gun
+;=========================================
+
+
+{from "pattern gun"			; L/76.6  "25mm_72k"
+	{filling "bulletrus_25_auto" 7}
+	{fireSound "cannon/s1/d1/Shared/Autocannon_20to30mm/"}
+	{fireSoundclose "cannon/s1/3p/Shared/Autocannon_20to30mm/"}
+	{reloadSound "tank/reload_small"}
+;//	("range_autocannon_12-20")
+	("range_autocannon_25-30")												;150226
+	{cursor "ironsights/aa"}
+	{calibre 25}
+	("light_aa")
+
+	("fire rate" rpm(240))
+	("reload time" seconds(1.5))
+
+	("velocity" mps(910))
+	("armor health" damage(38))
+	("20_slope_multipliers")
+
+	; BR-132
+	("penetration_short" shell(apbc) range(180) a(48) b(38) c(30) d(25) e(20))
+
+	("accuracy_direct_auto" r1(0.6) range_ap(180) range_he(180) range_heat(180))
+
+	{parameters "he"										; SPgGr.
+		(mod "mp" {unlimitedRangeTPC 1})	;// unrestricts range in TPC/FPC for shooting at aircraft
+		{FalloffStrength 0}
+	}
+}

@@ -1,0 +1,36 @@
+{breed
+	{behaviour soldier}
+	{skin "ger_heer_44_gren_nco_smg_feldwebel_1"}
+	{portrait "ger_artilleryman"}
+	{icon "tech"}
+	{icon_priority 0}
+	{tags "crew"}
+	{nationality ger}
+	{armors
+		{head ger_m43_cap_gebirgs}
+	}
+	{perks		
+		(include "ability.inc")
+		("smg_skill_rank_2")
+		("skilled_repair")
+		("expert_gun")
+		("tier1_recon")
+			("binocular_vision")
+	}
+	{veterancy
+		(include "ability.inc")
+		("veterancy_lvl_2")
+	}
+	{inventory
+		{item "stg44" filled}
+		{item "stg44 ammo" 180}
+
+		{item "m24 grenade" 2.25 0.5}
+		{item "m24_smoke_supplies grenade" 1}
+		{item "binocular"}
+
+		{item "bandage_ger" 3.5 0.5}
+
+		{in_hands 0}
+	}
+}

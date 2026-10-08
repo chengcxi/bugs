@@ -1,0 +1,88 @@
+;sdl
+{units
+	;_________________________________________________________
+	;|              GLOBAL  SETTINGS                         |
+	;| this loads setting architecture for declaring units   |
+	;|_______________________________________________________|
+	(include "conquest/settings.set")									;// Arm settings replacer
+	(include "conquest/settings_inf.set")								;// Arm settings replacer
+	(include "conquest/settings_mace_cq.set")
+	(include "conquest/settings_inf_mace_cq.set")
+	;_________________________________________________________
+	;|              INF SETTINGS                             |
+	;| this configures the CP, flag capture power and kill   |
+	;| points of the different breeds that make inf squads   |
+	;|_______________________________________________________|
+	(include "conquest/inf_ger.set") 									;// Arm roster replacer
+;//	(include "conquest/inf_ger_MACE.set")
+	(include "conquest/inf_rus.set")									;// Arm roster replacer
+;//	(include "conquest/inf_rus_MACE.set") 
+	(include "conquest/inf_fin.set")									;// Arm roster replacer
+;//	(include "conquest/inf_fin_MACE.set") 
+	(include "conquest/inf_usa.set")									;// Arm roster replacer
+;//	(include "conquest/inf_usa_MACE.set")
+	(include "conquest/inf_eng.set")									;// Arm roster replacer
+	(include "conquest/inf_jap_MACE.set")
+
+	;_________________________________________________________
+	;|            UNIT ROSTERS                               |
+	;| this defines the different squads and units available |
+	;| and configs their cost, buy menu, cooldowns, etc      |
+	;|_______________________________________________________|
+	(include "conquest/units_rus.set")									;// Original + modded
+;//	(include "conquest/units_rus_MACE.set")
+	(include "conquest/units_ger.set")									;// Original + modded
+;//	(include "conquest/units_ger_MACE.set")
+	(include "conquest/units_fin.set")									;// Original + modded
+;//	(include "conquest/units_fin_MACE.set")
+	(include "conquest/units_usa.set")									;// Original + modded
+;//	(include "conquest/units_usa_MACE.set")
+	(include "conquest/units_eng.set")									;// Original + modded	
+;//	(include "conquest/units_eng_MACE.set")
+	(include "conquest/ext_settings.set")								;// Arm settings replacer
+
+	(include "conquest/orig_arm_inf_rus.set")							;// To delete
+	(include "conquest/orig_arm_inf_ger.set")							;// To delete
+	(include "conquest/orig_arm_inf_fin.set")							;// To delete
+	
+	(include "conquest/ext_inf_rus.set")								;// Arm inf ext-roster
+		(include "conquest/ext_inf_rus_fortify.set")					;// Arm inf ext-roster
+		(include "conquest/ext_inf_motorized_rus.set")					;// Arm inf ext-roster
+	(include "conquest/ext_inf_ger.set")								;// Arm inf ext-roster
+		(include "conquest/ext_inf_ger_fortify.set")					;// Arm inf ext-roster
+	(include "conquest/ext_inf_fin.set")								;// Arm inf ext-roster
+		(include "conquest/ext_inf_fin_fortify.set")					;// Arm inf ext-roster
+	(include "conquest/ext_inf_usa.set")								;// Arm inf ext-roster
+		(include "conquest/ext_inf_usa_fortify.set")					;// Arm inf ext-roster
+	(include "conquest/ext_inf_eng.set")								;// Arm inf ext-roster
+	
+	(include "conquest/ext_units_rus.set")								;// Arm units ext-roster
+		(include "conquest/ext_squads_motorized_rus.set")				;// Arm units ext-roster
+	(include "conquest/ext_units_ger.set")								;// Arm units ext-roster
+	(include "conquest/ext_units_fin.set")								;// Arm units ext-roster
+	(include "conquest/ext_units_usa.set")								;// Arm units ext-roster
+	(include "conquest/ext_units_eng.set")								;// Arm units ext-roster
+		(include "conquest/units_jap_MACE.set")
+
+        (include "conquest/scene_var_ce.set")
+	
+;==================================emplacement MOD ROSTERS==================================
+	;_________________________________________________________
+	;|            moded ROSTERS                              |
+	;|_______________________________________________________|
+
+	(include "conquest/inf_ger_moded.set") 
+	(include "conquest/inf_rus_moded.set")
+	(include "conquest/inf_fin_moded.set")
+	(include "conquest/inf_usa_moded.set")	
+
+	;_________________________________________________________
+	;|            Emplacement ROSTERS                        |	
+	;|_______________________________________________________|
+	
+        ;(include "conquest/inf_additional_engineer.set")
+	(include "conquest/units_additional_emplacement_fin.set")
+	(include "conquest/units_additional_emplacement_ger.set")
+	(include "conquest/units_additional_emplacement_rus.set")
+	(include "conquest/units_additional_emplacement_usa.set")
+}

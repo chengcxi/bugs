@@ -1,0 +1,33 @@
+;sdl
+
+;	╔════════════════════════════════════════╗
+;	║      LATE WAR July 1943 - 1945         ║
+;	╠═══════╦═══════╦═══════╦═══════╦════════╣
+;	║ AXIS  ║ Ger   ║ Ita   ║ Jap   ║  Fin   ║     
+;	╠═══════╬═══════╬═══════╬═══════╬════════╣    
+;	║ ALLIES║ Rus   ║ Eng   ║ usa   ║        ║
+;	╚═══════╩═══════╩═══════╩═══════╩════════╝
+;_________________________________________________________
+;|              GLOBAL  SETTINGS                         |
+;| this loads setting architecture for declaring units   |
+;|_______________________________________________________|
+(include "settings.set")
+(include "settings_MACE.set")
+(include "settings_inf.set")
+(include "settings_inf_MACE.set")
+;_________________________________________________________
+;|              INF SETTINGS                             |
+;| this configures the CP, flag capture power and kill   |
+;| points of the different breeds that make inf squads   |
+;|_______________________________________________________|
+(include "mace/inf_ger.set")  
+(include "mace/inf_rus.set")
+(include "mace/inf_usa.set")    
+;________________________________________________________
+;|            UNIT ROSTERS                               |
+;| this defines the different squads and units available |
+;| and configs their cost, buy menu, cooldowns, etc      |
+;|_______________________________________________________|
+(include "mace/units_ger.set")
+(include "mace/units_rus.set")
+(include "mace/units_usa.set")

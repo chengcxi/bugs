@@ -1,0 +1,33 @@
+{breed
+	{behaviour soldier}
+;	{skin "mp_ger_ws_smock_rifle_ss"}
+	{skin "ger_heer_45_liberm_rfl_1"}
+	{portrait "ger_ss"}
+	{icon "sniper"}
+	{icon_priority 5}
+	{nationality ger}
+	{armors
+		{head ger_m40_ss}
+	}
+	{perks
+		(include "ability.inc")
+		("rifle_skill_rank_4")
+				("tier4_recon")
+	}
+	{veterancy
+		(include "ability.inc")
+		("veterancy_lvl_7")
+	}
+	{inventory
+		{item "k98_scope" filled}
+		{item "rifle_ger clip ammo" 60 5}
+
+		{item "nbk39 grenade" 2.25 0.5}
+		{item "m24" 4.25 0.5}
+		{item "m24_geballteladung" 2.25 0.5}
+
+		{item "bandage_ger" 5 2.5}
+		
+		{in_hands 0}
+	}
+}

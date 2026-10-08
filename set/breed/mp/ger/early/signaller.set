@@ -1,0 +1,39 @@
+{breed
+	{behaviour soldier}
+	{skin "ger_heer_39_nco_g41_unterfeld_1"}
+	{portrait "ger_signal"}
+	{icon "signaller"}
+	{icon_priority 0}
+	{tags "soldier"}
+	{nationality ger_officer}
+	{armors
+		{head ger_m43_cap_gebirgs}
+	}
+	{perks
+		(include "ability.inc")
+		("rifle_skill_rank_3")
+		("tier3_standard")
+		("signaller_f")			
+	}
+	{veterancy
+		(include "ability.inc")
+		("veterancy_lvl_0")
+	}
+	{inventory
+		{item "leuchtpistole34" filled}
+		{item "flare ammo" 10}
+	;	{item "ai_flare_pistol" filled}
+		
+		{item "k98" filled}
+		{item "rifle_ger clip ammo" 60 5}
+
+		{item "m24 grenade" 1.25 0.5}
+		{item "m24_smoke grenade" 0.25 0.5}
+
+		{item "bandage_ger" 3.5 0.5}
+		{item "german_radio"}
+		{item "forty_kit" 2}
+
+		{in_hands 0}
+	}
+}

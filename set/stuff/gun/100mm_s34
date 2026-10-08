@@ -1,0 +1,36 @@
+;LR Arm edited
+;_________________________________________
+; USSR heavy long-barreled AT Gun
+;=========================================
+
+
+{from "pattern gun"			; L/55 "Object248"
+	{filling "bulletrus_100"}
+	{fireSound "gun/gun_75_105"}
+	{fireSoundclose "interior/large/big_reload_interior"}
+	{reloadSound "tank/reload_big"}
+	("range_220")
+	{calibre 100}
+
+	("reload time" seconds(10))
+
+	("velocity m/s" ap(895) apcr(1) he(885) heat(1))
+	("armor health" damage(290))
+	("armor health custom" shell(aphe) damage(290) velocity(895) filler(93))
+	("armor health custom" shell(aphebc) damage(290) velocity(895) filler(93))
+	("100_rus_slope_multipliers")
+
+	; BR–412
+	("penetration_long" shell(aphe) range(220) a(209) b(189) c(167) d(147) e(130))  ;RHA
+ ;//("penetration_long" shell(aphe) range(220) a(185) b(170) c(150) d(133) e(118))  ;FHA
+
+	; BR–412B
+	("penetration_long" shell(aphebc) range(220) a(210) b(195) c(173) d(152) e(137))  ;RHA
+ ;//("penetration_long" shell(aphebc) range(220) a(187) b(176) c(163) d(152) e(141))  ;FHA
+
+	{parameters "aphebc" ; BR–412B
+		("global velocity" gv(915))
+	}
+
+	("accuracy_direct" r1(0.55) range_ap(220) range_he(220) range_heat(220))
+}

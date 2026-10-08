@@ -1,0 +1,30 @@
+{bullet
+	{tag "bomb size3 he fg itemin2hands"}
+	{desc "V-1 Rocket"}
+	{inventory
+		{size 8 4}
+		{weight 1000}
+	}	
+	{mass 2000}
+	{entity "v1_rocket"}
+	{view "v1_rocket"
+		{tail "rocket_smoke_st" "tail"}
+
+	}
+	("he_level_7" weight(345) filler(125))
+	{detonationThickness 1}
+	{applyProjectile}
+	{damage add blastwave	
+		{energy 22}
+		{area 22 25}
+	}
+	{damage add blastwave	
+		{energy 28}
+		{area 26 28}
+	}
+	{damage add blastwave	 
+		{energy 22}
+		{area 24 28}
+	}
+
+}

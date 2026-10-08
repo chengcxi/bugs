@@ -1,0 +1,11 @@
+{from "pattern pistol"
+	{filling "ammo pistol" 13}
+	{entity "hipower_1935"}
+	{fireSound	"pistol/tt"}
+	{fireSoundclose	"pistol/tt/3p/"}
+	{reloadSound "tt"}
+	{calibre 9}
+	{mass 1.00}
+
+	("velocity" mps(335))
+}

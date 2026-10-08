@@ -1,0 +1,36 @@
+{breed
+	{behaviour soldier}
+	{portrait "ger_ss"}
+	{skin "ger_collab_2"}
+;	{skin "arm_ger_wss_var1_mg_asst_1"}
+	{icon "smg"}
+	{icon_priority 3}
+	{nationality ger}
+	{armors
+;		{head ger_m43_cap_gebirgs}
+;		{head ger_m40_ss}
+		{head ger_m43_cap_tank}
+	}
+	{perks
+		(include "ability.inc")
+		("smg_skill_rank_4")
+			("tier4_standard")
+	}
+	{veterancy
+		(include "ability.inc")
+		("veterancy_lvl_3")
+				
+	}
+	{inventory
+		{item "mp28" filled}
+		{item "mp40 ammo" 192}
+		
+		{item "nbk39 grenade" 2.25 0.5}
+		{item "m24" 4.25 0.5}
+		{item "m24_geballteladung" 2.25 0.5}
+
+		{item "bandage_ger" 5 2.5}
+		
+		{in_hands 0}
+	}
+}

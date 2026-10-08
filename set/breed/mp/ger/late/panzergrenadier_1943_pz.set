@@ -1,0 +1,30 @@
+{breed
+	{behaviour soldier}
+	{skin "ger_heer_45_liberm_mg_1"}
+	{portrait "ger_pzgrenadier"}
+	{icon "bazooka"}
+	{icon_priority 0}
+	{tags "soldier_pzscheck"}
+	{nationality ger}
+	{armors
+		{head ger_m42_helmet_marsh}
+	}
+	{perks
+		(include "ability.inc")
+		("rifle_skill_rank_2")
+				("tier4_defense")
+	}
+	{veterancy
+		(include "ability.inc")
+		("veterancy_lvl_3")
+	}
+	{inventory
+		{item "panzershreck_54 weapon" filled}
+		{item "panzershreck ammo" 5.5 0.5}
+
+		{item "bandage_ger" 5.5 0.5}
+		{item "shovel_ger"}
+
+		{in_hands 0}
+	}
+}

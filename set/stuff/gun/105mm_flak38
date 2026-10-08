@@ -1,0 +1,63 @@
+;LR Arm edited
+;06.12.2025
+;_________________________________________
+; ARTY German heavy AA-gun
+;=========================================
+
+
+{from "pattern gun"
+	{filling "bulletger_105"}
+	{fireSound "gun/gun_122_152_short"}
+;//	{fireSoundclose "gun/gun_122_152_short"}
+	{fireSoundclose "gun/gun_88"}
+	{reloadSound "tank/reload_big"}
+;//	{reloadSound "utility/"}
+;//	("range_210")
+	("range_230")																								;//ARm 080326 +
+;//	("heavy_artillery")
+	("heavy_aa")
+	{calibre 105}
+;//	{range 250 250} ; // 19km
+;//	{range 475 475}								;290126	(500) - (475)
+
+;//	("reload time" seconds(9))
+	("reload time" seconds(13))					;290126 (9) - (13)
+
+	("velocity m/s" ap(860) apcr(1) he(880) heat(1))
+	("armor health" damage(325))
+	("armor health custom" shell(aphe) damage(325) velocity(860) filler(230))
+	("105_slope_multipliers")
+
+	; Pzgr. Rot
+	("penetration_medium" shell(aphe) range(230) a(212) b(193) c(172) d(153) e(136))
+
+	; Gr.39 Hl/B
+	("penetration_medium" shell(heat) range(230) a(104) b(104) c(104) d(104) e(104))	; // never used by s 10.5cm K 18
+
+;//	{parameters "he"
+;//		{range 190 190}
+;//		{range 360 360}		
+;//	}
+
+	{parameters "he"										; SPgGr.
+		(mod "mp" {unlimitedRangeTPC 1})	;// unrestricts range in TPC/FPC for shooting at aircraft
+		{FalloffStrength 0}
+	}
+
+;//	("accuracy_indirect"		; // Applies logic for accuracy of indirect weapons over 200m
+;//		r1(0.55)				; // Accuracy radius for direct-fire munitions
+;//		r2(5)					; // Accuracy radius for indirect fire
+;//		rmax(27)				; // Accuracy radius for indirect fire at maximum range
+;//		range_ap(250)			; // Range after which accuracy drops to prevent farshooting
+;//		range_he(190)			; // Range after which accuracy drops to prevent farshooting
+;//		range_heat(190)			; // Range after which accuracy drops to prevent farshooting
+;//	)
+	
+	("accuracy_direct" 
+		r1(0.65) 
+		range_ap(210) 
+		range_he(210) 
+		range_heat(210)
+	)
+	
+}

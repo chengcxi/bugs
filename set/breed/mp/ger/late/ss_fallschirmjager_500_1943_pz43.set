@@ -1,0 +1,30 @@
+{breed
+	{behaviour soldier}
+	{skin "ger_luft_44_fj_mg_asst"}
+	{portrait "ger_elite"}
+	{icon "bazooka"}
+	{icon_priority 1}
+	{tags "soldier_pzscheck"}
+	{nationality ger_fallschirmjaeger}
+	{armors
+		{head ger_stalhelm_fj_43_camo_3_strap}
+	}
+	{perks
+		(include "ability.inc")
+		("rifle_skill_rank_2")
+				("tier4_defense")
+	}
+	{veterancy
+		(include "ability.inc")
+		("veterancy_lvl_5")
+	}
+	{inventory
+		{item "panzershreck_54 weapon" filled}
+		{item "panzershreck ammo" 5.5 0.5}
+
+		{item "bandage_ger" 5.5 0.5}
+		{item "shovel_ger"}
+
+		{in_hands 0}
+	}
+}

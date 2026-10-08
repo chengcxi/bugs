@@ -1,0 +1,16 @@
+{from "pattern mgun"
+	{filling "ammo 7x63" 250}
+	{entity "us-browningm1919a6"}
+	{fireSound "smallarms/s3/d1/USA/M1919A4/"}
+	{fireSoundclose "smallarms/s3/d1/USA/M1919A4/"}
+	{reloadSound "bar"}
+	{inventory 	{handle_bone "handle_box"}}
+	{rechargeTime 11}	
+	{calibre 7.62}
+	{mass 15}
+	("fire rate" rpm(600))
+	("velocity" mps(850))
+	("burst_long")
+	("spreading_low")
+}
+;Cost=40;

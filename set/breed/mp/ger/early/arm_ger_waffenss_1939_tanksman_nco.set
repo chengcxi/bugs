@@ -1,0 +1,33 @@
+{breed
+	{behaviour soldier}
+	{skin "ger_heer_39_pz_pio_nco_rfl"}
+;//	{portrait "smg"}
+	{portrait "ger_ss"}	
+	{icon "tech"}
+	{icon_priority 0}
+	{tags "crew"}
+	{nationality ger_sttroop}
+	{armors
+		{head ger_m34_sidecap_pz_scout_off}
+	}
+	{perks
+		(include "ability.inc")
+		("tank_commander")
+				("tier3_defense")
+				("binocular_vision")
+	}
+	{veterancy
+		(include "ability.inc")
+		("veterancy_lvl_4")
+	}
+	{inventory
+
+		{item "p38" filled}
+		{item "pistol ammo" 24 8}
+
+		{item "bandage_ger" 2.5 0.5}
+				{item "binocular"}
+
+		{in_hands 0}
+	}
+}

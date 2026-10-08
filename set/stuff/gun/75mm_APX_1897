@@ -1,0 +1,28 @@
+;LR Arm edited
+;_________________________________________
+; French cannon in German service
+;=========================================
+
+
+{from "pattern gun"			; L/17 "panzerb2"
+
+	{filling "bullet_75x241"}
+	{fireSound "cannon/s3/d1/Shared/Cannon_75to76mm_LV/"}
+	{fireSoundclose "cannon/s3/d1/Shared/Cannon_75to76mm_LV/"}
+	{reloadSound "tank/1p/medium/"}
+	("range_180")
+	{calibre 75}
+	("reload time" seconds(6.9))
+
+	;// french sources has muzzle velocity at 220m/s
+	("velocity m/s" ap(500) apcr(1) he(500) heat(1))
+	("armor health" damage(200))
+	("armor health custom" shell(aphe) damage(200) velocity(500) filler(285))
+	("armor health custom" shell(he) damage(200) velocity(500) filler(695))
+	("76_slope_multipliers")
+
+	; Obus de rupture Mle1910M (APHE)
+	("penetration_medium" shell(aphe) range(180) a(55) b(49) c(43) d(37) e(33)) ;//mv 475m/s
+
+	("accuracy_direct" r1(1.00) range_ap(180) range_he(170) range_heat(170))					;// Measure in degrees of IK error when AI is allowed to shoot
+}
