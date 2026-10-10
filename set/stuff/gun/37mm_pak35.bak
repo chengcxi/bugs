@@ -16,7 +16,7 @@
 
 	("velocity m/s" ap(740) apcr(1020) he(680) heat(110))
 	("armor health" damage(100))
-	("armor health custom" shell(aphe) damage(100) velocity(740) filler(22))
+	("armor health custom" shell(aphe) damage(100) filler(22))
 	("37_slope_multipliers")
 
 	("accuracy_direct_arrowhead" r1(0.93) range_ap(160) range_he(160) range_heat(110))

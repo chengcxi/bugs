@@ -1,0 +1,430 @@
+-- File conquest.rus ДО
+
+Purchases["conquest.rus"] = {
+	{Repeat = 0, --infinite
+		Units = {
+		-- ========================================================================================= part 1 =============================================================================================================================				
+																																													-- ==================================================		
+																																													--;       EARLY		         MID		   LATE	
+-- Infantry
+	-- Infantry squads
+--		{priority = 1.0, type = {"Infantry", "Squad", "Command",}, 														unit = "squad_officer_con(rus)"},							--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945 ;+
+		{priority = 2.5, type = {"Infantry", "Squad", "Border",}, 														unit = "squad_border(rus)"},								--;	     :      : 1941 : 1942 : 1943 :      :      ;+
+		{priority = 1.7, type = {"Infantry", "Squad", "Partisan",}, 													unit = "squad_partisan_con(rus)"},							--;	     :      : 1941 : 1942 : 1943 :      :      ;+
+		{priority = 1.7, type = {"Infantry", "Squad", "Penal",}, 														unit = "squad_penal_con(rus)"},								--;	     :      :      : 1942 : 1943 :      :      ;+
+		{priority = 2.5, type = {"Infantry", "Squad", "Reg",}, 															unit = "squad_conscripts_con(rus)"},						--;	1939 : 1940 : 1941 : 1942 :      :      :      ;+
+		{priority = 2.5, type = {"Infantry", "Squad", "Recon",}, 														unit = "squad_recon_con(rus)"},								--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945 ;+
+		{priority = 2.5, type = {"Infantry", "Squad", "Reg",}, 															unit = "squad_rifleunit_alt_con(rus)"},						--;	     : 1940 :      : 1942 : 1943 :      :      ;+
+		{priority = 1.5, type = {"Infantry", "Squad", "AT",}, 															unit = "squad_at_rifle_con(rus)"},							--;	     :      : 1941 : 1942 :      :      :      ;+
+				
+		{priority = 2.5, type = {"Infantry", "Squad", "Reg",}, 															unit = "squad_rifleunit_con(rus)"},							--;	1939 : 1940 : 1941 : 1942 : 1943 :      :      ;+				
+		{priority = 2.5, type = {"Infantry", "Squad", "Reg",}, 															unit = "squad_smg_con(rus)"},								--;	1939 : 1940 : 1941 : 1942 : 1943 :      :      ;+
+		{priority = 2.0, type = {"Infantry", "Squad", "NKVD",},															unit = "squad_nkvd_rifle_con(rus)"},						--;	1939 : 1940 : 1941 :      :      :      :      ;+				
+		{priority = 2.0, type = {"Infantry", "Squad", "NKVD",}, 														unit = "squad_nkvd_at_rifle_con(rus)"},						--;	     :      : 1941 : 1942 :      :      :      ;+				
+
+		{priority = 1.5, type = {"Infantry", "Squad", "Reg",}, 															unit = "squad_sapper_con(rus)"},							--;	1939 : 1940 : 1941 : 1942 :      :      :      ;+							
+		{priority = 0.7, type = {"Infantry", "Squad", "NKVD", "Spetz",}, 												unit = "squad_nkvd_mountain_con(rus)"},						--;	1939 : 1940 : 1941 : 1942 :      :      :      ;+				
+		{priority = 2.0, type = {"Infantry", "Squad", "Spetz",}, 														unit = "squad_mountainrifles_con(rus)"},					--;	     :      : 1941 : 1942 : 1943 :      :      ;+
+		{priority = 2.5, type = {"Infantry", "Squad", "Guards",}, 														unit = "squad_guardsrifle_con(rus)"},						--;	     :      : 1941 : 1942 : 1943 :      :      ;+
+		{priority = 1.5, type = {"Infantry", "Squad", "Guards",}, 														unit = "squad_guards_smg_con(rus)"},						--;	     :      : 1941 : 1942 : 1943 :      :      ;+	
+		{priority = 2.5, type = {"Infantry", "Squad", "Storm",}, 														unit = "squad_assaultsappers_con(rus)"},					--;	     :      :      :      :      : 1944 : 1945 ;+
+		{priority = 2.5, type = {"Infantry", "Squad", "Storm",}, 														unit = "squad_assaultsappers_flame_con(rus)"},				--;	     :      :      :      :      : 1944 : 1945 ;+
+
+		{priority = 0.7, type = {"Infantry", "Squad", "VMF",}, 															unit = "squad_marines_reg_con(rus)"},						--;	     : 1940 : 1941 :      :      :      :      ;+	
+
+		{priority = 1.5, type = {"Infantry", "Squad", "Para",}, 														unit = "squad_paras_con(rus)"},								--;	     :      :      : 1942 : 1943 :      :      ;+
+		{priority = 0.7, type = {"Infantry", "Squad", "Spetz",}, 														unit = "squad_spetsnaz(rus)"},								--;	     :      : 1941 : 1942 : 1943 : 1944 : 1945 ;+
+		{priority = 1.5, type = {"Infantry", "Squad", "VMF",}, 															unit = "squad_marines_con(rus)"},							--;	     :      : 1941 : 1942 : 1943 :      :      ;+
+		{priority = 2.5, type = {"Infantry", "Squad", "NKVD", "Recon",}, 												unit = "squad_nkvd_recon_con(rus)"},						--;	     :      : 1941 : 1942 : 1943 : 1944 :      ;+
+		{priority = 2.5, type = {"Infantry", "Squad", "Reg",}, 															unit = "squad_smg_mg_43_con(rus)"},							--;	     :      :      :      : 1943 : 1944 :      ;+
+		{priority = 2.5, type = {"Infantry", "Squad", "Reg",}, 															unit = "squad_smg_mg_43_heavy_con(rus)"},					--;	     :      :      :      : 1943 : 1944 :      ;+
+		{priority = 2.5, type = {"Infantry", "Squad", "Reg",}, 															unit = "squad_rifle_43_con(rus)"},							--;	     :      :      :      : 1943 : 1944 :      ;+
+		{priority = 2.5, type = {"Infantry", "Squad", "Reg",},															unit = "squad_rifle_43_heavy_con(rus)"},					--;	     :      :      :      : 1943 : 1944 :      ;+				
+				--44
+		{priority = 3.0, type = {"Infantry", "Squad", "Reg",}, 															unit = "squad_smg_mg_44_con(rus)"},          				--;     :      :      :      :      : 1944 : 1945 ;+
+		{priority = 2.5, type = {"Infantry", "Squad", "Guards",}, 														unit = "squad_guardsrifle_44_con(rus)"},        			--;     :      :      :      :      : 1944 : 1945 ;+
+		{priority = 2.5, type = {"Infantry", "Squad", "Guards",}, 														unit = "squad_guards_smg_mg_44_con(rus)"},    				--;     :      :      :      :      : 1944 : 1945 ;+
+		{priority = 2.5, type = {"Infantry", "Squad", "Guards",}, 														unit = "squad_guards_cav_44_con(rus)"},       				--;     :      :      :      :      : 1944 : 1945 ;+
+		{priority = 3.0, type = {"Infantry", "Squad", "VMF",}, 															unit = "squad_cav_44_con(rus)"},              				--;      :      :      :      :      : 1944 : 1945 ;+
+		{priority = 2.5, type = {"Infantry", "Squad", "VMF",}, 															unit = "squad_guards_marines_44_con(rus)"},   				--;     :      :      :      :      : 1944 : 1945 ;+
+				--45
+		{priority = 2.2, type = {"Infantry", "Squad", "Reg",}, 															unit = "squad_sapper_44_con(rus)"},            				--;      :      :      :      :      : 1944 : 1945 ;+
+		{priority = 2.5, type = {"Infantry", "Squad", "Storm",}, 														unit = "squad_assaultsappers_con(rus)"},      				--;     :      :      :      :      : 1944 : 1945 ;+
+		{priority = 2.5, type = {"Infantry", "Squad", "Storm",}, 														unit = "squad_assaultsappers_flame_con(rus)"},				--;     :      :      :      :      : 1944 : 1945 ;+
+		{priority = 2.5, type = {"Infantry", "Squad", "Storm",}, 														unit = "squad_assaultsappers_at_con(rus)"},   				--;     :      :      :      :      : 1945 ;+
+		{priority = 2.2, type = {"Infantry", "Squad", "Para",}, 														unit = "squad_guards_paras_con(rus)"},        				--;     :      :      : 1942 : 1943 :      :      ;+
+		{priority = 1.2, type = {"Infantry", "Squad", "Spetz",}, 														unit = "squad_mountain_cav_44_con(rus)"},     				--;     :      :      :      :      :      : 1945 ;+
+				
+	-- Infantry motor squads
+--		{priority = 1.0, type = {"Infantry", "Squad", "Motorize", "Command",}, 											unit = "squad_officer_gaz_con"},							--;	     : 1940 : 1941 : 1942 : 1943 : 1944 : 1945 ;+
+		{priority = 1.7, type = {"Infantry", "Squad", "Motorize", "Reg",}, 												unit = "squad_rifle_motorised_con"},						--;	1939 : 1940 : 1941 : 1942 :      :      : ;+			
+--		{priority = 1.0, type = {"Infantry", "Squad", "Motorize", "Command",}, 											unit = "ba20_command"},										--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945 ;+			
+		{priority = 1.7, type = {"Infantry", "Squad", "Motorize", "Guards",}, 											unit = "squad_guardsrifle_motorised_con"},					--;	     :      : 1941 : 1942 : 1943 :      :      ;+	
+		{priority = 1.7, type = {"Infantry", "Squad", "Motorize", "Guards",}, 											unit = "squad_guardsrifle_44_motor_con(rus)"},				--;	     :      :      :      :      : 1944 : 1945 ;+
+		{priority = 1.7, type = {"Infantry", "Squad", "Motorize", "Guards",}, 											unit = "squad_guards_smg_mg_44_motor_con(rus)"},			--;	     :      :      :      :      : 1944 : 1945 ;+
+				
+	-- Infantry single
+--		{priority = 1.0, type = {"Infantry", "Team", "Reg", "Command",}, unit = "single_officer(rus)"},																				--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945 ;+
+		{priority = 1.5, type = {"Infantry", "Team", "Reg", "AT",}, unit = "single_at(rus)"},																						--;	     :      : 1941 : 1942 :      :      :      ;+
+		{priority = 1.5, type = {"Infantry", "Team", "Reg", "AT",}, unit = "single_at2(rus)"},																						--;	     :      : 1941 : 1942 : 1943 :      :      ;+
+		{priority = 1.3, type = {"Infantry", "Team", "Reg", "AT",}, unit = "single_at_pzs_late_con(rus)"},																			--;	     :      :      :      :      : 1944 : 1945 ;+
+		{priority = 1.3, type = {"Infantry", "Team", "Reg", "AT",}, unit = "single_at_late_con(rus)"},																				--;	     :      :      :      :      : 1944 : 1945 ;+
+		{priority = 1.0, type = {"Infantry", "Team", "Reg", "AT",}, unit = "single_riflegrenade(rus)"},																				--;	     : 1940 : 1941 : 1942 : 1943 :      :      ;+		
+		{priority = 1.0, type = {"Infantry", "Reg", "Team",}, unit = "single_flamer(rus)"},																							--;	     : 1940 : 1941 : 1942 : 1943 : 1944 : 1945 ;+
+		{priority = 1.0, type = {"Infantry", "Reg", "Team", "Sniper",}, 												unit = "single_sniper(rus)"},								--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945 ;+		
+	-- Infantry single support				
+--		{priority = 1.0, type = {"Infantry", "Team",}, unit = "single_medic(rus)"},																									--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945 ;+
+--		{priority = 0.5, type = {"Infantry", "Team",}, unit = "single_ap_miner(rus)"},																								--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945 ;+
+--		{priority = 0.5, type = {"Infantry", "Team",}, unit = "single_at_miner(rus)"},																								--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945 ;+
+--		{priority = 0.5, type = {"Infantry", "Team",}, unit = "single_engineer(rus)"},																								--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945 ;+
+--		{priority = 1.0, type = {"Infantry", "Team",}, unit = "single_tankman(rus)"},																								--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945 ;+
+
+	-- Cannons
+--		{priority = 1.0, type = {"Cannon", "Supply", "Ammo",}, 															unit = "inf_crate_rus"},									--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945 ;+
+--		{priority = 1.0, type = {"Cannon", "Supply", "Ammo",}, 															unit = "ap_2"},												--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945 ;+
+	--HMGs			2.5/2.0
+		{priority = 3.0, type = {"Infantry", "Team", "MG",}, 															unit = "maxim"},											--;	1939 : 1940 : 1941 : 1942 :      :      :      ;+
+		{priority = 3.0, type = {"Infantry", "Team", "MG",}, 															unit = "ds39_stand"},										--;	1939 : 1940 : 1941 : 1942 :      :      :      ;+
+		{priority = 3.5, type = {"Infantry", "Team", "MG",}, 															unit = "sg43_stand"},										--;	     :      :      :      : 1943 : 1944 : 1945 ;+
+		{priority = 3.0, type = {"Infantry", "Team", "MG",},															unit = "dshk_stan"},										--;	     :      : 1941 : 1942 : 1943 : 1944 : 1945 ;+
+		{priority = 2.0, type = {"Cannon", "AA",}, 																		unit = "dshk_aa"},											--;	     :      :      : 1942 : 1943 : 1944 : 1945 ;+
+	--AA-guns		1.0
+--		{priority = 1.0, type = {"Cannon", "AA",}, 																		unit = "25mm_72k"},											--;	1939 : 1940 : 1941 : 1942 :      :      :      ;+
+--		{priority = 1.0, type = {"Cannon", "AA",}, 																		unit = "37mm_61k"},											--;	     :      : 1941 : 1942 : 1943 : 1944 : 1945 ;+
+		{priority = 0.5, type = {"Cannon", "AA", "AT",}, 																unit = "76mm_m1938"},										--;	1939 : 1940 : 1941 :      :      :      :      ;+
+		{priority = 0.5, type = {"Cannon", "AA", "AT",}, 																unit = "85mm_52k"},											--;	     :      :      : 1942 : 1943 : 1944 : 1945 ;+
+	--AT-guns		2.0
+		{priority = 2.0, type = {"Cannon", "AT",}, 																		unit = "37mm_m30"},											--;	1939 : 1940 : 1941 :      :      :      :      ;+
+		{priority = 2.0, type = {"Cannon", "AT",},	 																	unit = "45mm_m37"},											--;	1939 : 1940 : 1941 : 1942 :      :      :      ;+
+--		{priority = 2.0, type = {"Cannon", "AT",}, 																		unit = "45mm_m42"},											--;	     :      :      : 1942 : 1943 : 1944 : 1945 ;+
+		{priority = 1.3, type = {"Cannon", "AT",}, 																		unit = "57mm_zis2"},										--;	     :      : 1941 : 1942 : 1943 :      :      ;+
+		{priority = 0.4, type = {"Cannon", "AT",}, 																		unit = "76mm_bpk76"},										--;	1939 : 1940 :      :      :      :      :      ;+
+		{priority = 1.3, type = {"Cannon", "AT",}, 																		unit = "76mm_m1902"},										--;	1939 :      :      :      :      :      :      ;+
+		{priority = 1.3, type = {"Cannon", "AT",}, 																		unit = "76mm_m1933"},										--;	     : 1940 :      :      :      :      :      ;+
+		{priority = 1.3, type = {"Cannon", "AT",},																		unit = "76mm_f22"},											--;	     : 1940 : 1941 :      :      :      :      ;+
+		{priority = 1.3, type = {"Cannon", "AT",}, 																		unit = "76mm_zis3"},										--;	     :      :      : 1942 : 1943 : 1944 :      ;+
+		{priority = 1.3, type = {"Cannon", "AT",}, 																		unit = "100mm_bs3"},										--;	     :      :      :      :      : 1944 : 1945 ;+	
+	--Mortars
+		{priority = 3.3, type = {"Cannon", "Mortar",}, 																	unit = "82mm_bm37"},										--;	1939 : 1940 : 1941 : 1942 :      :      :      ;+
+		{priority = 3.0, type = {"Cannon", "Mortar",}, 																	unit = "120mm_pm38"},										--;	     :      : 1941 : 1942 : 1943 : 1944 : 1945 ;+							
+		{priority = 0.3, type = {"Cannon", "AT",},																		unit = "m41_ampulomet"},									--;	     :      : 1941 : 1942 : 1943 :      :      ;+
+	--Inf.Sup.Guns	1.5
+		{priority = 1.0, type = {"Cannon", "Support",}, 																unit = "76mm_m1927"},										--;	1939 : 1940 : 1941 : 1942 :      :      :      ;+
+		{priority = 1.0, type = {"Cannon", "Support",}, 																unit = "76mm_m43"},											--;	     :      :      :      : 1943 : 1944 : 1945 ;+
+	--Artillery
+		{priority = 0.5, type = {"Cannon", "Artillery", "Howitzer",}, 	mult = 2,	maxCount = 4,						unit = "107mm_m1910_30"},									--;	1939 : 1940 :      :      :      :      :      ;+
+		{priority = 0.5, type = {"Cannon", "Artillery", "Howitzer",}, 	mult = 2,	maxCount = 4,						unit = "122mm_m1910"},										--;	     : 1940 : 1941 :      :      :      :      ;+
+		{priority = 0.5, type = {"Cannon", "Artillery", "Howitzer",}, 	mult = 2,	maxCount = 3,						unit = "122mm_m30"},										--;	     :      :      : 1942 : 1943 : 1944 : 1945 ;+
+--		{priority = 0.1, type = {"Cannon", "Artillery", "Howitzer",}, 													unit = "122mm_a19"},										--;	     :      :      : 1942 : 1943 : 1944 : 1945 ;+
+--		{priority = 0.1, type = {"Cannon", "Artillery", "Howitzer",}, 													unit = "152mm_ml20"},										--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945 ;+
+--		{priority = 0.1, type = {"Cannon", "Artillery", "Howitzer",}, 													unit = "152mm_br2"},										--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 :      ;+
+--		{priority = 0.1, type = {"Cannon", "Artillery", "Howitzer",}, 													unit = "203mm_b4"},											--;	     :      : 1941 : 1942 : 1943 : 1944 : 1945 ;+
+--		{priority = 0.1, type = {"Cannon", "Artillery", "Howitzer",}, 													unit = "280mm_br5"},										--;	     :      :      :      :      : 1944 : 1945 ;+
+	--Rocket Artillery
+		{priority = 0.7, type = {"Cannon", "Artillery", "MLRS",}, 					maxCount = 4,	cooldown = 10,		unit = "300mm_m30"},										--;	     :      :      :      : 1943 :      :      ;+	--"no_scavenge"	
+		{priority = 0.7, type = {"Cannon", "Artillery", "MLRS",}, 					maxCount = 3,	cooldown = 15,		unit = "300mm_m31"},										--;	1939 : 1940 : 1941 :      :      : 1944 : 1945 ;+	--"no_scavenge"	 
+	-- Wheel vehicles
+																																													-- ===================================================		
+																																													--;       EARLY		         MID		   LATE
+		{priority = 1.5, type = {"Vehicle", "MG",}, 					mult = 5,										unit = "m72"},												--;	     :      : 1941 : 1942 : 1943 : 1944 : 1945 ;+
+		{priority = 1.5, type = {"Vehicle", "AA",}, 																	unit = "gaz_aaa_maximx4"},									--;	1939 : 1940 : 1941 :      :      :      :      ;+
+		{priority = 1.5, type = {"Vehicle", "AA",}, 																	unit = "zis5_dshk"},										--;	     : 1940 : 1941 : 1942 : 1943 : 1944 :      ;+
+	--AA				
+		{priority = 1.5, type = {"Vehicle", "AA",}, 																	unit = "gaz_aaa_72k"},										--;	     : 1940 : 1941 : 1942 : 1943 :      :      ;+
+		{priority = 1.5, type = {"Vehicle", "AA", "AT",}, 							maxCount = 3,	cooldown = 10,		unit = "yag10_29k"},										--;	1939 : 1940 : 1941 : 1942 :      :      :      ;+
+	--Rocket Artillery	
+		{priority = 1.5, type = {"Vehicle", "Artillery", "MLRS",}, 					maxCount = 5,	cooldown = 5,			unit = "zis6_bm8_48"},										--;	     :      : 1941 : 1942 : 1943 :      :      ;+	--"no_scavenge"
+		{priority = 1.7, type = {"Vehicle", "Artillery", "MLRS",}, 					maxCount = 4,	cooldown = 10,		unit = "zis6_bm13_16"},										--;	     :      :      : 1942 : 1943 :      :      ;+	--"no_scavenge"	
+		{priority = 1.7, type = {"Vehicle", "Artillery", "MLRS",}, 					maxCount = 4,	cooldown = 10,		unit = "bm13_studebaker"},									--;	     :      :      :      :      : 1944 : 1945 ;+	--"no_scavenge"	
+		{priority = 1.0, type = {"Vehicle", "Artillery", "MLRS",}, 					maxCount = 3,	cooldown = 15,		unit = "bm31_12"},											--;	     :      :      :      :      : 1944 : 1945 ;+	--"no_scavenge"					
+--		{priority = 1.5, type = {"Vehicle",  "Unarmed", "Transport",}, 													unit = "gaz67"},											--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945 ;+
+--		{priority = 0.5, type = {"Vehicle", "MG",}, 																	unit = "gaz67b"},											--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945 ;+
+	-- BTR			0.5-1.0	
+		{priority = 0.5, type = {"Armored", "MG",}, 					mult = 2, 										unit = "fai_m"},											--;	1939 :      :      :      :      :      :      ;+
+		{priority = 1.0, type = {"Armored", "MG",}, 					mult = 2,										unit = "ba20"},												--;	1939 :      :      :      :      :      :      ;+
+		{priority = 1.0, type = {"Armored", "MG",}, 					mult = 2,										unit = "ba6"},												--;	1939 : 1940 :      :      :      :      :      ;+
+		{priority = 1.0, type = {"Armored", "MG",}, 					mult = 2,										unit = "ba10"},												--;	     :      : 1941 : 1942 : 1943 :      :      ;+
+		{priority = 1.0, type = {"Armored", "MG",}, 					mult = 2,										unit = "ba64"},												--;	     :      :      : 1942 : 1943 : 1944 : 1945 ;+
+		{priority = 0.7, type = {"Armored", "MG",},																		unit = "universal_carrier_rus"},							--;	     :      : 1941 : 1942 : 1943 : 1944 : 1945 ;+
+		{priority = 0.7, type = {"Armored", "MG",},																		unit = "mmg_carrier_rus"},									--;	     :      : 1941 : 1942 : 1943 : 1944 : 1945 ;+
+		{priority = 0.7, type = {"Armored", "MG",}, 																	unit = "m3a1e1_scout_mgun"},								--;	     :      :      : 1942 : 1943 : 1944 : 1945 ;+
+	-- Support		  0.1
+--		{priority = 1.0, type = {"Vehicle", "Unarmed", "Transport",}, 													unit = "gaz_aaa"},											--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945 ;+
+		{priority = 0.3, type = {"Vehicle", "Unarmed", "Transport",}, 	mult = 4, 	maxCount = 4,						unit = "zis5"},												--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945 ;+
+		{priority = 0.1, type = {"Vehicle", "Unarmed", "Supply", "Ammo",}, 			maxCount = 1,						unit = "gaz_aaa_supply"},									--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945 ;+
+		{priority = 0.2, type = {"Vehicle", "Unarmed", "Supply", "Fuel",}, 			maxCount = 2,	cooldown = 15,		unit = "gaz_fuel"},											--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945 ;+
+		{priority = 0.4, type = {"Vehicle", "Unarmed","Supply", "Engineer",},	mult = 2, maxCount = 4,	cooldown = 10,	unit = "zis5eng"},											--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945 ;+
+	-- Halftracks
+																																													-- ===================================================		
+																																													--;       EARLY		         MID		   LATE	
+	-- Tanks
+	-- Tankettes
+--		{priority = 0.1, type = {"Armored", "MG",}, 																	unit = "t20"},												--;	1939 :      :      :      :      :      :      ;
+--		{priority = 0.7, type = {"Armored", "MG",}, 																	unit = "t27"},												--;	1939 : 1940 :      :      :      :      :      ;				
+	-- Light tanks
+		{priority = 1.0, type = {"Tank", "Light",}, 																	unit = "t37a"},												--;	1939 :      :      :      :      :      :      ;
+		{priority = 1.5, type = {"Tank", "Light",}, 																	unit = "t40"},												--;	     : 1940 : 1941 :      :      :      :      ;
+		{priority = 1.5, type = {"Tank", "Light",}, 																	unit = "t30"},												--;	     :      : 1941 : 1942 :      :      :      ;
+		{priority = 1.5, type = {"Tank", "Light",}, 																	unit = "t60"},												--;	     :      :      :      : 1943 : 1944 : 1945 ;
+		-- Rocket Light	
+		{priority = 1.0, type = {"Tank", "Light", "Artillery", "MLRS",}, mult = 2, 	maxCount = 2,	cooldown = 15,	unit = "t60_bm8_24"},											--;	     :      :      : 1942 : 1943 : 1944 : 1945 ;
+		{priority = 1.5, type = {"Tank", "Light", "Main",}, 															unit = "t50"},												--;	     :      : 1941 : 1942 :      :      :      ;
+		{priority = 1.5, type = {"Tank", "Light", "Main",}, 															unit = "t70"},												--;	     :      : 1941 : 1942 :      :      :      ;
+		{priority = 1.5, type = {"Tank", "Light", "Main",}, 															unit = "t70m"},												--;	     :      :      :      : 1943 : 1944 :      ;
+
+		{priority = 0.7, type = {"Tank", "Light", "Main",}, 															unit = "bt2_da2"},											--;	1939 :      :      :      :      :      :      ;
+		{priority = 2.3, type = {"Tank", "Light", "Main",}, 						maxCount = 5,	cooldown = 5,			unit = "bt2"},												--;	1939 : 1940 :      :      :      :      :      ;
+		{priority = 2.5, type = {"Tank", "Light", "Main",}, 						maxCount = 7,	cooldown = 5,			unit = "bt5"},												--;	1939 : 1940 : 1941 :      :      :      :      ;
+		{priority = 1.7, type = {"Tank", "Light", "Main",}, 						maxCount = 6,	cooldown = 5,			unit = "bt7"},												--;	     : 1940 : 1941 :      :      :      :      ;
+				
+		{priority = 2.5, type = {"Tank", "Light", "Main",}, 															unit = "t26_31"},											--;	1939 :      :      :      :      :      :      ;
+		{priority = 0.5, type = {"Tank", "Light", "Main",}, 						maxCount = 3,	cooldown = 10,		unit = "kht26"},											--;	1939 :      :      :      :      :      :      ;
+		{priority = 2.5, type = {"Tank", "Light", "Main",}, 															unit = "t26_33"},											--; 1939 :      :      :      :      :      :      ;
+		{priority = 2.5, type = {"Tank", "Light", "Main",}, 															unit = "t26_39"},											--;	1939 :      :      :      :      :      :      ;
+		{priority = 0.5, type = {"Tank", "Light", "Main",}, 						maxCount = 3,	cooldown = 10,		unit = "kht130"},											--;	     : 1940 :      :      :      :      :      ;
+				
+		{priority = 1.0, type = {"Tank", "Light", "Main",}, 						maxCount = 3,	cooldown = 10,		unit = "m3_stuart_late_rus"},								--;	     :      : 1941 :      :      :      :      ;
+		{priority = 1.0, type = {"Tank", "Light", "Main",}, 						maxCount = 3,	cooldown = 10,		unit = "m3a1_stuart_rus"},									--;	     :      :      : 1942 : 1943 :      :      ;
+		{priority = 2.0, type = {"Tank", "Light", "Main",}, 						maxCount = 4,	cooldown = 10,		unit = "valentine2"},										--;	     :      : 1941 :      :      :      :      ;
+		{priority = 2.0, type = {"Tank", "Light", "Main",}, 						maxCount = 4,	cooldown = 10,		unit = "valentine7"},										--;	     :      :      : 1942 :      :      :      ;
+		{priority = 1.7, type = {"Tank", "Light", "Main",}, 						maxCount = 4,	cooldown = 10,		unit = "valentine9"},										--;	     :      :      :      : 1943 : 1944 :      ;				
+	-- Medium tanks
+		{priority = 1.7, type = {"Tank", "Medium", "Main",}, 						maxCount = 3,	cooldown = 15,		unit = "m3_lee_rus"},										--;	     :      : 1941 :      :      :      :      ;
+		{priority = 1.7, type = {"Tank", "Medium", "Main",}, 						maxCount = 3,	cooldown = 15,		unit = "m4a2_75_early_rus"},								--;	     :      : 1941 :      :      :      :      ;
+		{priority = 2.0, type = {"Tank", "Medium", "Main",}, 						maxCount = 3,	cooldown = 15,		unit = "m4a2_75_late_rus"},									--;	     :      :      : 1942 :      :      :      ;
+		{priority = 2.0, type = {"Tank", "Medium", "Main",}, 						maxCount = 3,	cooldown = 15,		unit = "m4a2_76w_early_rus"},								--;	     :      :      :      : 1943 :      :      ;
+		{priority = 2.0, type = {"Tank", "Medium", "Main",}, 						maxCount = 3,	cooldown = 15,		unit = "m4a2_76w_late_rus"},								--;	     :      :      :      :      : 1944 : 1945 ;
+
+		{priority = 2.7, type = {"Tank", "Medium", "Main",}, 						maxCount = 6,	cooldown = 3,			unit = "t28"},												--;	1939 :      :      :      :      :      :      ;
+		{priority = 2.5, type = {"Tank", "Medium", "Main",}, 						maxCount = 5,	cooldown = 5,			unit = "t28_38"},											--;	     : 1940 :      :      :      :      :      ;
+		{priority = 2.5, type = {"Tank", "Medium", "Main",}, 						maxCount = 3,	cooldown = 5,			unit = "t28e"},												--;	     :      : 1941 :      :      :      :      ;	--"no_scavenge"	
+		{priority = 3.0, type = {"Tank", "Medium", "Main",}, 						maxCount = 7,	cooldown = 4,			unit = "t3476_40"},											--;	     : 1940 :      :      :      :      :      ;
+		{priority = 3.0, type = {"Tank", "Medium", "Main",}, 						maxCount = 10,	cooldown = 3,		unit = "t3476_41"},											--;	     :      : 1941 :      :      :      :      ;
+		{priority = 3.0, type = {"Tank", "Medium", "Main",}, 															unit = "t3476_41e"},										--;	     :      : 1941 : 1942 :      :      :      ;
+		{priority = 3.0, type = {"Tank", "Medium", "Main",}, 															unit = "t3457_41"},											--;	     :      : 1941 :      :      :      :      ;
+		{priority = 3.0, type = {"Tank", "Medium", "Main",}, 															unit = "t3476_42"},											--;	     :      :      : 1942 :      :      :      ;
+		{priority = 2.0, type = {"Tank", "Medium", "Main",}, 															unit = "t3476_43"},											--;	     :      :      :      : 1943 :      :      ;
+		{priority = 3.0, type = {"Tank", "Medium", "Main",}, 															unit = "t3457_43"},											--;	     :      :      :      : 1943 :      :      ;
+		{priority = 0.7, type = {"Tank", "Medium", "Main",}, 						maxCount = 3,	cooldown = 10,		unit = "t3476_43_flame"},									--;	     :      :      :      : 1943 :      :      ;
+		{priority = 2.5, type = {"Tank", "Medium", "Main",}, 															unit = "t3485_44"},											--;	     :      :      :      :      : 1944 :      ;
+		{priority = 2.5, type = {"Tank", "Medium", "Main",}, 															unit = "t3485_44a"},										--;	     :      :      :      :      : 1944 : 1945 ;
+		{priority = 2.5, type = {"Tank", "Medium", "Main",}, 															unit = "t3485_44b"},										--;	     :      :      :      :      : 1944 : 1945 ;
+		{priority = 0.7, type = {"Tank", "Medium", "Main",}, 						maxCount = 2,	cooldown = 15,		unit = "t3485_44_flame"},									--;	     :      :      :      :      : 1944 : 1945 ;
+		{priority = 0.7, type = {"Tank", "Medium", "Main",}, 						maxCount = 2,	cooldown = 15,		unit = "t3485_44a_flame"},									--;	     :      :      :      :      :      : 1945 ;						
+	-- Heavy tanks
+		{priority = 1.1, type = {"Tank", "Heavy", "Main",}, 						maxCount = 1,						unit = "churchill3"},										--;	     :      :      : 1942 : 1943 :      :      ;	
+		{priority = 1.6, type = {"Tank", "Heavy", "Main",}, 						maxCount = 3,	cooldown = 10,		unit = "t35"},												--;	1939 :      :      :      :      :      :      ;	--"no_scavenge"	
+		{priority = 1.1, type = {"Tank", "Heavy", "Main",}, 						maxCount = 2,	cooldown = 15,		unit = "t35_late"},											--;	     : 1940 : 1941 :      :      :      :      ;	--"no_scavenge"	
+		{priority = 0.7, type = {"Tank", "Heavy", "Main", "Prototype",},			maxCount = 1,						unit = "smk"},												--;	1939 : 1940 :      :      :      :      :      ;	--"no_scavenge"	
+		{priority = 1.3, type = {"Tank", "Heavy", "Main",}, 						maxCount = 3,	cooldown = 10,		unit = "kv1_39"},											--;	1939 : 1940 :      :      :      :      :      ;	--"no_scavenge"	
+		{priority = 1.0, type = {"Tank", "Heavy", "Main",}, 						maxCount = 5,	cooldown = 5,			unit = "kv1_40"},											--;	     : 1940 : 1941 :      :      :      :      ;	--"no_scavenge"	
+		{priority = 1.7, type = {"Tank", "Heavy", "Main",}, 						maxCount = 3,	cooldown = 10,		unit = "kv1_40e"},											--;	     : 1940 : 1941 : 1942 :      :      :      ;	--"no_scavenge"	
+		{priority = 1.3, type = {"Tank", "Heavy", "Main",}, 						maxCount = 6,	cooldown = 5,			unit = "kv1_41"},											--;	     :      : 1941 : 1942 :      :      :      ;
+		{priority = 0.5, type = {"Tank", "Heavy", "Main",}, 						maxCount = 1, 						unit = "kv8"},												--;	     :      :      : 1942 : 1943 :      :      ;
+		{priority = 1.7, type = {"Tank", "Heavy", "Main",}, 						maxCount = 5,	cooldown = 7,			unit = "kv1_42"},											--;	     :      :      : 1942 : 1943 :      :      ;
+		{priority = 0.7, type = {"Tank", "Heavy", "Main",}, 						maxCount = 3,	cooldown = 10,		unit = "kv2_40"},											--;	     : 1940 : 1941 : 1942 :      :      :      ;	--"no_scavenge"	
+		{priority = 1.7, type = {"Tank", "Heavy", "Main",},																unit = "kv1s"},												--;	     :      :      : 1942 : 1943 :      :      ;
+		{priority = 1.8, type = {"Tank", "Heavy", "Main",}, 															unit = "kv85"},												--;	     :      :      :      : 1943 : 1944 :      ;
+		{priority = 2.0, type = {"Tank", "Heavy", "Main",}, 															unit = "is1_43"},											--;	     :      :      :      : 1943 :      :      ;
+		{priority = 1.7, type = {"Tank", "Heavy", "Main",}, 						maxCount = 5,	cooldown = 7,			unit = "is2_43"},											--;	     :      :      :      : 1943 :      :      ;	--"no_scavenge"	
+		{priority = 2.5, type = {"Tank", "Heavy", "Main",}, 															unit = "is2_44"},											--;	     :      :      :      :      : 1944 : 1945 ;	--"no_scavenge"	
+		{priority = 2.5, type = {"Tank", "Heavy", "Main",}, 															unit = "is2_45"},											--;	     :      :      :      :      :      : 1945 ;	--"no_scavenge"	
+																																													-- ===================================================		
+																																													--;       EARLY		         MID		   LATE
+-- SPG
+	-- SPG-Art.
+	-- SPG-Sup.
+		{priority = 1.5, type = {"Tank", "Light", "Support",},						maxCount = 3, 						unit = "bt7a"},												--;	1939 : 1940 : 1941 :      :      :      :      ;
+		{priority = 1.5, type = {"Tank", "Light", "Support",}, 			mult = 2, 	maxCount = 4,	cooldown = 10, 		unit = "su26"},												--;	     :      : 1941 : 1942 : 1943 : 1944 :      ;				
+		{priority = 1.3, type = {"Tank", "Medium", "Artillery",}, 					maxCount = 3, 						unit = "su122"},											--;	     :      :      : 1942 : 1943 :      :      ;
+		{priority = 1.0, type = {"Tank", "Heavy", "AT", "TD",},						maxCount = 3,	cooldown = 10,		unit = "su152"},											--;	     :      :      :      : 1943 :      :      ;	--"no_scavenge"	
+		{priority = 0.9, type = {"Tank", "Heavy", "AT", "TD",},						maxCount = 4,	cooldown = 7,		unit = "su152_late"},										--;	     :      :      :      :      : 1944 :      ;
+		{priority = 1.2, type = {"Tank", "Heavy", "AT", "TD",}, 					maxCount = 5,	cooldown = 7,		unit = "isu152"},											--;	     :      :      :      :      : 1944 : 1945 ;	--"no_scavenge"					
+	-- SPG-AA
+	-- SPG-AT-Support
+		{priority = 1.7, type = {"Tank", "Light", "AT", "Hunter",},					maxCount = 3,	cooldown = 10,		unit = "zis30"},											--;	     :      : 1941 : 1942 : 1943 :      :      ;
+		{priority = 1.7, type = {"Tank", "Light", "Support", "Hunter",}, mult = 2,										unit = "su76"},												--;	     :      :      : 1942 : 1943 :      :      ;	
+	-- SPG Reactive	0.5
+	-- SPG-AT
+		{priority = 2.5, type = {"Tank", "Medium", "AT", "TD",}, 														unit = "su85"},												--;	     :      :      :      : 1943 :      :      ;
+		{priority = 1.7, type = {"Tank", "Medium", "AT", "TD",}, 														unit = "su85m"},											--;	     :      :      :      :      : 1944 :      ;
+		{priority = 2.0, type = {"Tank", "Medium", "AT", "TD",}, 														unit = "su100"},											--;	     :      :      :      :      : 1944 : 1945 ;	--"no_scavenge"	
+		{priority = 1.5, type = {"Tank", "Heavy", "AT", "TD",}, 														unit = "isu122s"},											--;	     :      :      :      :      : 1944 : 1945 ;	--"no_scavenge"					
+				
+		-- ========================================================================================= part 2 ==============================================================================================================================		
+																																													-- ===================================================
+																																													--;		   EARLY		     MID		   LATE
+-- Aircraft
+	--Recon
+		{priority = 2.5, type = {"Aircraft", "ReconPlane",}, 						maxCount = 12,	cooldown = 7,		unit = "ai_po2"},									--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945 ;		;2.5
+	--Fighters-assault		
+		{priority = 3.5, type = {"Aircraft", "_Fighter",}, 				mult = 2,	maxCount = 12,	cooldown = 5,		unit = "yak1_ser69_ai"},							--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945 ;		;4.0
+		{priority = 3.0, type = {"Aircraft", "_Fighter",}, 				mult = 2,	maxCount = 6,	cooldown = 5,		unit = "ussr-p-39_ai"},								--;	     :      : 1941 : 1942 : 1943 : 1944 : 1945 ;		;3.0
+--Heavy Assault	
+		{priority = 2.5, type = {"Aircraft", "_Bomber",}, 				mult = 2,	maxCount = 2,	cooldown = 10,		unit = "il2_mod41_ai"},								--;	     : 1940 : 1941 : 1942 : 1943 : 1944 : 1945 ;		;2.5
+		{priority = 2.5, type = {"Aircraft", "_HvFighter",}, 						maxCount = 2,	cooldown = 10,		unit = "il2_mod42_ai"},								--;	     :      :      : 1942 : 1943 : 1944 : 1945 ;		;2.5
+	--Light bombers
+		{priority = 3.0, type = {"Aircraft", "_Bomber",}, 				mult = 3,	maxCount = 6,	cooldown = 10,		unit = "po2_rocket_ai"},							--;	     :      :      : 1942 : 1943 : 1944 : 1945 ;		;3.0
+		{priority = 3.0, type = {"Aircraft", "_Bomber",}, 				mult = 3,	maxCount = 6,	cooldown = 10,		unit = "po2_flame_ai"},								--;	     :      :      : 1942 : 1943 : 1944 : 1945 ;		;3.0
+	--Medium bombers	
+		{priority = 2.0, type = {"Aircraft", "_HvBomber",}, 						maxCount = 2,	cooldown = 15,		unit = "rus-b25_ai"},								--;	     :      :      : 1942 : 1943 : 1944 : 1945 ;		;2.0
+	--Para-planes
+--		{priority = 1.0, type = {"Aircraft", "Paratrooper",}, 															unit = "squad_rus_paras_con"},								--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945 ;
+--		{priority = 1.0, type = {"Aircraft", "Paratrooper",}, 															unit = "squad_rus_paras_con_late"},							--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945 ;	
+-- Infantry																																											--;		   EARLY		     MID		   LATE		
+	-- Infantry Regular squads	
+		{priority = 3.3, type = {"Infantry", "Squad", "Reg", "Full",}, 													unit = "squad_rkka_infantry_1939(rus)"},					--;	1939 : 1940 :      :      :      :      :      ;+
+		{priority = 3.3, type = {"Infantry", "Squad", "Reg", "Full",}, 													unit = "squad_rkka_infantry_1941(rus)"},					--;	     :      : 1941 : 1942 :      :      :      ;+						
+		{priority = 3.3, type = {"Infantry", "Squad", "Reg", "Full",}, 													unit = "squad_rkka_infantry_1943(rus)"},					--;	     :      :      :      : 1943 : 1944 :      ;+
+		{priority = 3.3, type = {"Infantry", "Squad", "Reg", "Full",}, 													unit = "squad_rkka_infantry_1945(rus)"},					--;	     :      :      :      :      :      : 1945 ;+
+	-- Infantry squads							
+		{priority = 1.5, type = {"Infantry", "Squad", "Para",}, 														unit = "squad_rus_paratroopers_1940(rus)"},					--;	     : 1940 : 1941 : 1942 : 1943 :      :      ;+
+		{priority = 1.5, type = {"Infantry", "Squad", "NKVD",}, 														unit = "squad_nkvd_1940(rus)"},								--; 1939 : 1940 : 1941 :      : 	 :      :      ;+
+		{priority = 2.0, type = {"Infantry", "Squad", "Border",}, 														unit = "squad_border_1941(rus)"},							--;	     :      : 1941 : 1942 : 1943 :      :      ;+
+		{priority = 1.5, type = {"Infantry", "Squad", "Reg", "Elite",}, 												unit = "squad_rifleunit_elite(rus)"},						--;	     :      :      : 1942 : 1943 : 1944 : 1945 ;+
+		{priority = 2.0, type = {"Infantry", "Squad", "Storm",}, 														unit = "squad_assault_soldiers(rus)"},						--;	     :      : 1941 : 1942 : 1943 :      :      ;+	
+		{priority = 2.0, type = {"Infantry", "Squad", "Storm",}, 														unit = "squad_assaultsappers_extcq(rus)"},					--;	     :      :      : 1942 : 1943 : 1944 : 1945 ;+	
+		{priority = 1.5, type = {"Infantry", "Squad",}, 			unit = "squad_cossacks_con(rus)"},																				--;	     :      :      :      : 1943 : 1944 : 1945 ;+		
+		{priority = 1.5, type = {"Infantry", "Squad", "VMF",}, 															unit = "squad_vmf_marines(rus)"},							--;	     :      : 1941 : 1942 : 1943 : 1944 :      ;+						
+	-- Infantry motor squads
+--		{priority = 1.5, type = {"Infantry", "Squad",}, 			unit = "squad_gaz67_medic(rus)"},																				--;	     : 1940 : 1941 : 1942 : 1943 : 1944 : 1945 ;+				
+	-- Infantry support				
+		{priority = 1.0, type = {"Infantry", "Squad",}, 			unit = "squad_rus_atminer_1943(rus)"},																			--;	     :      :      :      : 1943 : 1944 : 1945 ;+	
+		{priority = 0.5, type = {"Infantry", "Squad",}, 			unit = "squad_engineer(rus)"},																					--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945 ;+			
+		{priority = 0.3, type = {"Infantry", "Squad",}, 			unit = "squad_miner_ap(rus)"},																					--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945 ;+			
+		{priority = 0.3, type = {"Infantry", "Squad",}, 			unit = "squad_miner_at(rus)"},																					--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945 ;+			
+		{priority = 0.3, type = {"Infantry", "Squad",}, 			unit = "squad_engineer(rus)"},																					--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945 ;+			
+--		{priority = 1.0, type = {"Infantry", "Squad",}, 			unit = "squad_artillerymen(rus)"},																				--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945 ;+	
+	-- Infantry single				
+		{priority = 1.5, type = {"Infantry", "Team",}, 				unit = "squad_assault_mg(rus)"},																				--;	1939 : 1940 : 1941 : 1942 : 1943 :      :      ;+
+		{priority = 1.5, type = {"Infantry", "Team",}, 				unit = "squad_arm_rus_mgsupport_1944(rus)"},																	--;	     :      :      :      :      : 1944 : 1945 ;+				
+--		{priority = 0.3, type = {"Infantry", "Team",}, 				unit = "single_signaller_nobuy(rus)"},																			--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945 ;+
+	-- Infantry single support				
+		{priority = 1.0, type = {"Infantry", "Squad", "Signal",}, 														unit = "single_signaller_extcq(rus)"},						--;	     : 1940 : 1941 : 1942 : 1943 : 1944 : 1945 ;+			
+--		{priority = 0.3, type = {"Infantry", "Squad",}, 			unit = "squad_mech_tankman_early_rus(rus)"},																	--;	1939 : 1940 : 1941 :      :      :      :      ;+			
+--		{priority = 0.3, type = {"Infantry", "Squad",}, 			unit = "squad_mech_tankman_mid_rus(rus)"},																		--;	     :      :      : 1942 : 1943 :      :      ;+			
+--		{priority = 0.3, type = {"Infantry", "Squad",}, 			unit = "squad_mech_tankman_late_rus(rus)"},																		--;	     :      :      :      :      : 1944 : 1945 ;+							
+	-- RKKA Assault tank troopers
+		{priority = 0.1, type = {"Tank", "Medium", "TankTeam", "Squad",}, 												unit = "squad_1939_stormtroopers_t28(rus)"},				--;	1939 :      :      :      :      :      :      ;+
+		{priority = 0.7, type = {"Tank", "Heavy", "TankTeam", "Squad",}, 												unit = "squad_1939_stormtroopers_kv1_39(rus)"},				--;	1939 : 1940 :      :      :      :      :      ;+
+		{priority = 1.3, type = {"Tank", "Medium", "TankTeam", "Squad",}, 												unit = "squad_1940_stormtroopers_t3476(rus)"},				--;	1939 : 1940 :      :      :      :      :      ;+
+		{priority = 0.3, type = {"Tank", "Heavy", "TankTeam", "Squad",}, 												unit = "squad_1940_stormtroopers_kv1_40(rus)"},				--;	1939 : 1940 :      :      :      :      :      ;+
+		{priority = 0.3, type = {"Tank", "Heavy", "TankTeam", "Squad",}, 												unit = "squad_1940_stormtroopers_kv1_40e(rus)"},			--;	1939 : 1940 : 1941 :      :      :      :      ;+
+		{priority = 1.3, type = {"Tank", "Medium", "TankTeam", "Squad",},												unit = "squad_1941_stormtroopers_t3476_41e(rus)"},			--;	1939 : 1940 : 1941 :      :      :      :      ;+
+		{priority = 0.7, type = {"Tank", "Heavy", "TankTeam", "Squad",}, 												unit = "squad_1941_stormtroopers_kv1_41(rus)"},				--;	1939 : 1940 : 1941 :      :      :      :      ;+
+		{priority = 1.3, type = {"Tank", "Medium", "TankTeam", "Squad",}, 												unit = "squad_1942_stormtroopers_t3476_42(rus)"},			--;	1939 : 1940 : 1941 : 1942 :      :      :      ;+
+		{priority = 0.7, type = {"Tank", "Medium", "TankTeam", "Squad",}, 												unit = "squad_1943_stormtroopers_t3485_43(rus)"},			--;	1939 : 1940 : 1941 : 1942 : 1943 :      :      ;+
+		{priority = 0.7, type = {"Tank", "Heavy", "TankTeam", "Squad",}, 												unit = "squad_1943_stormtroopers_is1_43(rus)"},				--;	1939 : 1940 : 1941 : 1942 : 1943 :      :      ;+
+		{priority = 0.7, type = {"Tank", "Heavy", "TankTeam", "Squad",}, 												unit = "squad_1943_stormtroopers_is2_43(rus)"},				--;	1939 : 1940 : 1941 : 1942 : 1943 :      :      ;+
+--NW	{priority = 0.7, type = {"Tank", "Medium", "TankTeam", "Squad",}, 												unit = "squad_1944_stormtroopers_t4485(rus)"},				--;	1939 : 1940 : 1941 : 1942 : 1943 :      :      ;+
+--NW	{priority = 0.7, type = {"Tank", "Heavy", "TankTeam", "Squad",}, 												unit = "squad_1944_stormtroopers_kv85(rus)"},				--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 :      ;+
+		{priority = 0.7, type = {"Tank", "Heavy", "TankTeam", "Squad",}, 												unit = "squad_1944_stormtroopers_is2_44(rus)"},				--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 :      ;+
+		{priority = 0.7, type = {"Tank", "Heavy", "TankTeam", "Squad",}, 												unit = "squad_1945_stormtroopers_is2_45(rus)"},				--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945 ;+
+		{priority = 0.7, type = {"Tank", "Heavy", "TankTeam", "Squad",}, 												unit = "squad_1945_stormtroopers_is_3(rus)"},				--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945 ;+
+--NW	{priority = 0.7, type = {"Tank", "Heavy", "TankTeam", "Squad",}, 												unit = "squad_1945_stormtroopers_is4(rus)"},				--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945 ;+				
+
+-- Cannons
+	-- MG & Cannons
+		{priority = 3.0, type = {"Infantry", "Team", "MG", "Prototype",}, 												unit = "kpv_1944"},											--;	     :      :      :      : 1943 : 1944 : 1945 ;						
+		{priority = 3.0, type = {"Infantry", "Team", "MG",}, 			mult = 2,										unit = "broneschitok_2_dp"},								--;	1939 : 1940 : 1941 :      :      :      :      ;
+	--Mortars
+		{priority = 1.3, type = {"Cannon", "Mortar", "Prototype",}, 				maxCount = 4,	cooldown = 7,			unit = "125mm_pma40_prot"},									--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945 ;	--"no_scavenge"	
+		{priority = 2.7, type = {"Cannon", "Mortar",}, 								maxCount = 4,	cooldown = 15,		unit = "82mm_bm37_ai"},										--;	     :      : 1941 : 1942 : 1943 : 1944 : 1945 ;	--"no_scavenge"				
+		{priority = 1.7, type = {"Cannon", "Mortar",}, 								maxCount = 3,	cooldown = 10,		unit = "160mm_mt_13_mortar"},								--;	     :      :      :      : 1943 : 1944 : 1945 ;	--"no_scavenge"	
+	-- AA-guns
+		{priority = 0.3, type = {"Cannon", "Spotlight",},							maxCount = 2,	cooldown = 15,		unit = "ZP_3154B"},											--;	     :      : 1941 : 1942 : 1943 : 1944 : 1945	;+
+	-- AT-guns
+		{priority = 1.0, type = {"Cannon", "AT",}, 																		unit = "57mm_zis2_late"},									--;	     :      :      :      : 1943 : 1944 : 1945 ;
+		{priority = 1.0, type = {"Cannon", "AT",}, 																		unit = "d-44"},												--;	     :      :      :      : 1943 : 1944 : 1945 ;	--"no_scavenge"	
+																																													-- ===================================================		
+										--;       EARLY		         MID		   LATE
+-- Vehicles
+	-- Wheel vehicles		
+		{priority = 2.0, type = {"Vehicle", "MG",}, 					mult = 2,										unit = "m72o"},												--;	     : 1940 : 1941 : 1942 : 1943 : 1944 : 1945 ;
+		-- AA-guns	
+		{priority = 1.0, type = {"Vehicle", "AA",}, 																	unit = "94km"},												--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945 ;
+		-- Support-Vehicles				
+		{priority = 0.7, type = {"Vehicle", "Support",}, 																unit = "gaz_su12"},											--;	1939 : 1940 : 1941 :      :      :      :      ;+
+		{priority = 1.5, type = {"Vehicle", "AA",}, 																	unit = "zis5_61k"},											--;	     :      : 1941 : 1942 : 1943 : 1944 : 1945 ;+
+		-- BTR
+		{priority = 1.0, type = {"Armored", "MG",}, 					mult = 2,										unit = "ba11"},												--;	     : 1940 : 1941 : 1942 : 1943 : 1944 : 1945 ;
+		{priority = 1.0, type = {"Armored", "MG", "AA",}, 				mult = 2,										unit = "ba64"},												--;	     :      : 1941 : 1942 : 1943 : 1944 : 1945 ;
+		{priority = 0.7, type = {"Armored", "MG", "Transport",}, 														unit = "m2_halftrack_rus"},									--;	     :      : 1941 : 1942 : 1943 : 1944 : 1945 ;
+																																													-- ===================================================		
+																																													--;        EARLY		     MID		  LATE
+-- Tanks
+	-- Light tanks
+		{priority = 1.5, type = {"Tank", "Light", "Main",}, 															unit = "t50e"},												--;	     :      :      :      : 1943 : 1944 : 1945 ;
+		{priority = 1.5, type = {"Tank", "Light", "Main",}, 															unit = "t70_45"},											--;	     :      :      :      :      :      : 1945 ;
+		-- AA-tanks	
+		{priority = 1.5, type = {"Tank", "Light", "AA",}, 																unit = "zsu_37"},											--;	     :      :      :      : 1943 : 1944 : 1945 ;
+	-- Medium tanks	2.0-2.5
+		{priority = 1.5, type = {"Tank", "Medium", "Prototype",}, 					maxCount = 2,	cooldown = 15,		unit = "it_3"},												--;	1939 : 1940 :      :      :      :      :      ;	--"no_scavenge"	
+		{priority = 1.0, type = {"Tank", "Medium", "Prototype",}, 					maxCount = 2,	cooldown = 15,		unit = "a32_39"},											--;	1939 : 1940 :      :      :      :      :      ;	--"no_scavenge"	
+		{priority = 1.3, type = {"Tank", "Medium", "Main", "Prototype",}, 			maxCount = 2,	cooldown = 15,		unit = "t28_85"},											--;	     :      : 1941 :      :      :      :      ;	--"no_scavenge"				
+		{priority = 3.0, type = {"Tank", "Medium",}, 								maxCount = 5,	cooldown = 5,			unit = "t3485_43"},											--;	     :      :      :      : 1943 :      :      ;	--"no_scavenge"																			
+		{priority = 2.5, type = {"Tank", "Medium", "Main",}, 															unit = "t4485"},											--;	     :      :      :      :      : 1944 : 1945 ;	--"no_scavenge"	
+		{priority = 2.0, type = {"Tank", "Medium", "Main",}, 															unit = "t34_100"},											--;	     :      :      :      :      :      : 1945 ;	--"no_scavenge"					
+		{priority = 2.5, type = {"Tank", "Medium", "Main", "Prototype",}, 												unit = "t44_122"},											--;	     :      :      :      :      :      : 1945 ;	--"no_scavenge"	
+		{priority = 2.5, type = {"Tank", "Medium", "Main", "Prototype",}, 												unit = "t44100"},											--;	     :      :      :      :      :      : 1945 ;	--"no_scavenge"	
+	-- Heavy tanks	
+		{priority = 1.1, type = {"Tank", "Heavy", "Main", "Prototype",}, 			maxCount = 2,	cooldown = 15,		unit = "matilda_f96"},										--;	1939 : 1940 : 1941 :      :      :      :      ;	--"no_scavenge"	
+		{priority = 0.8, type = {"Tank", "Heavy", "Main",}, 						maxCount = 2,	cooldown = 15,		unit = "kv2_39"},											--;	1939 : 1940 :      :      :      :      :      ;	--"no_scavenge"		
+		{priority = 1.0, type = {"Tank", "Heavy", "Main", "Prototype",}, 			maxCount = 1, 						unit = "kv2_zis6"},											--;	     :      : 1941 : 1942 :      :      :      ;	--"no_scavenge"	
+		{priority = 0.7, type = {"Tank", "Heavy", "Main", "Prototype",}, 			maxCount = 2,	cooldown = 15,		unit = "kv1_122"},											--;	     :      : 1941 : 1942 :      :      :      ;	--"no_scavenge"	
+--		{priority = 1.5, type = {"Tank", "Heavy", "Prototype",}, 					maxCount = 2,	cooldown = 15,		unit = "kv-3"},												--;	     :      :      : 1942 : 1943 :      :      ;	--"no_scavenge"	
+		{priority = 1.0, type = {"Tank", "Heavy", "Prototype",}, 					maxCount = 1, 						unit = "kv5"},												--;	     :      :      : 1942 :      :      :      ;	--"no_scavenge"	
+		{priority = 1.5, type = {"Tank", "Heavy", "Main", "Prototype",}, 			maxCount = 1, 						unit = "kv220"},											--;	     :      :      : 1942 : 1943 :      :      ;	--"no_scavenge"	
+		{priority = 1.5, type = {"Tank", "Heavy", "Main", "Prototype",}, 			maxCount = 1, 						unit = "kv_220"},											--;	     :      :      : 1942 : 1943 :      :      ;	--"no_scavenge"	
+		{priority = 0.9, type = {"Tank", "Heavy", "Main", "Prototype",}, 			maxCount = 1, 						unit = "kv4b"},												--;	     :      :      :      : 1943 : 1944 : 1945 ;	--"no_scavenge"	
+--		{priority = 1.3, type = {"Tank", "Heavy", "Prototype",}, 					maxCount = 2,	cooldown = 15,		unit = "object248"},										--;	     :      :      :      : 1943 : 1944 :      ;			
+		{priority = 1.3, type = {"Tank", "Heavy", "Main", "Prototype",}, 												unit = "kv122"},											--;	     :      :      :      : 1943 : 1944 :      ;	--"no_scavenge"	
+		{priority = 1.5, type = {"Tank", "Heavy", "Main",},							maxCount = 3,	cooldown = 15,		unit = "is_3"},												--;	     :      :      :      :      : 1944 : 1945 ;
+		{priority = 1.3, type = {"Tank", "Heavy", "Main", "Prototype",},			maxCount = 2,	cooldown = 15,		unit = "is_4_100"},											--;	     :      :      :      :      : 1944 : 1945 ;	--"no_scavenge"					
+		{priority = 1.5, type = {"Tank", "Heavy", "Main", "Prototype",},			maxCount = 3,	cooldown = 15,		unit = "is_4"},												--;	     :      :      :      :      :      : 1945 ;
+		{priority = 1.5, type = {"Tank", "Heavy", "Main", "Prototype",}, 			maxCount = 3,	cooldown = 15,		unit = "is_6"},												--;	     :      :      :      :      :      : 1945 ;	--"no_scavenge"						
+		{priority = 1.0, type = {"Tank", "Heavy", "Main", "Prototype",}, 			maxCount = 2,	cooldown = 15,		unit = "is_7"},												--;	     :      :      :      :      :      : 1945 : 	--"no_scavenge"	
+	-- Super Heavy tanks				
+		{priority = 0.5, type = {"Tank", "Heavy", "Prototype",}, 					maxCount = 1, 						unit = "t_42"},												--;	1939 : 1940 :      :      :      :      :      ;	--"no_scavenge"	
+	-- Trophy
+		{priority = 0.7, type = {"Tank", "Medium", "Prototype",}, 					maxCount = 1,						unit = "t_v_85"},											--;	     :      :      :      : 1943 : 1944 :      ;	--"no_scavenge"	
+		{priority = 0.7, type = {"Tank", "Medium", "Prototype",}, 					maxCount = 1, 						unit = "panther_5"},										--;	     :      :      :      :      :      : 1945 ;	--"no_scavenge"	
+	-- Tank Reactive			
+		{priority = 0.6, type = {"Tank", "Light", "Artillery", "Prototype", "MLRS",},	maxCount = 2,	cooldown = 15,	unit = "rbt_5"},											--;	     : 1940 : 1941 : 1942 :      :      :      ;	--"no_scavenge"					
+																																													-- ===================================================		
+										--;       EARLY		         MID		   LATE
+-- SPG
+	-- SPG-Art.
+		{priority = 1.1, type = {"Tank", "Heavy", "Artillery",},		mult = 2,	maxCount = 2,	cooldown = 15,		unit = "su14"},												--;	     : 1940 : 1941 : 1942 : 1943 : 1944 : 1945 ;
+		{priority = 0.9, type = {"Tank", "Heavy", "Artillery",},					maxCount = 1,	cooldown = 15,		unit = "su14_2"},											--;	     :      : 1941 : 1942 : 1943 : 1944 : 1945 ;
+	-- SPG-Sup.
+		{priority = 1.0, type = {"Tank", "Light", "Artillery",}, 		mult = 2,	maxCount = 4,	cooldown = 15,		unit = "su5"},												--;	     : 1940 : 1941 : 1942 : 1943 : 1944 : 1945 ;	--"no_scavenge"							
+		{priority = 1.0, type = {"Tank", "Medium", "Artillery",}, 					maxCount = 2,	cooldown = 15,		unit = "su122e"},											--;	     :      : 1941 :      :      :      :      ;	--"no_scavenge"	
+	-- SPG-AA.	
+		{priority = 0.7, type = {"Tank", "Light","AA",}, 							maxCount = 3,	cooldown = 10,		unit = "bt2_25mm_auto_rus"},								--;	     : 1940 : 1941 : 1942 : 1943 : 1944 : 1945 ;	--"no_scavenge"		
+	-- SPG-AT-Support
+		{priority = 1.0, type = {"Tank", "Light", "AT",}, 							maxCount = 1,	cooldown = 15,		unit = "marder139_rus"},									--;	     :      : 1941 : 1942 : 1943 :      :     ;+	--"no_scavenge"							
+	-- SPG Reactive
+	-- SPG-AT
+		{priority = 0.7, type = {"Tank", "Heavy", "AT", "TD", "Prototype",}, 		maxCount = 1, 						unit = "su100y"},											--;	     : 1940 : 1941 : 1942 :      :      :      ;	--"no_scavenge"	
+		{priority = 1.3, type = {"Tank", "Medium", "AT", "TD",}, 					maxCount = 1, 						unit = "su57b"},											--;	     :      :      : 1942 : 1943 : 1944 :      ;	--"no_scavenge"							
+		{priority = 1.7, type = {"Tank", "Medium", "AT", "TD",},					maxCount = 3,	cooldown = 10,		unit = "su122p"},											--;	     :      :      :      :      : 1944 : 1945 ;	--"no_scavenge"	
+		{priority = 1.3, type = {"Tank", "Medium", "AT", "TD",},					maxCount = 1, 						unit = "wolverine"},										--;	     :      :      :      : 1943 : 1944 : 1945 ;	--"no_scavenge"	
+		{priority = 1.7, type = {"Tank", "Heavy", "AT", "TD", "Prototype",},		maxCount = 4,	cooldown = 10,		unit = "isu_152_2"},										--;	     :      :      :      :      :      : 1945 ;	--"no_scavenge"	
+	-- Special tanks
+		{priority = 0.1, type = {"Tank", "Medium", "Supply", "Ammo",}, 				maxCount = 1, 						unit = "t34_44supply"},										--;	     :      :      :      : 1943 : 1944 : 1945 ;
+		{priority = 0.2, type = {"Tank", "Medium", "Supply", "Engineer",}, 			maxCount = 2,	cooldown = 15, 		unit = "t34_44nohead"},										--;	     :      :      :      : 1943 : 1944 : 1945 ;
+-- Mech-squads	
+		{priority = 1.0, type = {"Tank", "Light", "Squad",}, 						maxCount = 3,	cooldown = 15,		unit = "ussr_mechsquad5_light_39_1"},						--;	1939 :      :      :      :      :      :      ;			
+		{priority = 1.0, type = {"Tank", "Light", "Squad",}, 						maxCount = 3,	cooldown = 15,		unit = "ussr_mechsquad5_light_40_1"},						--;	     : 1940 : 1941 :      :      :      :      ;			
+		{priority = 0.7, type = {"Tank", "Light", "Squad",}, 						maxCount = 3,	cooldown = 15,		unit = "ussr_mechsquad5_light_42_2"},						--;	     :      :      : 1942 : 1943 :      :      ;
+		{priority = 1.0, type = {"Tank", "Medium", "Squad",}, 						maxCount = 2,	cooldown = 15,		unit = "ussr_mechsquad4_medium_41_1"},						--;	     :      : 1941 : 1942 :      :      :      ;
+		{priority = 1.0, type = {"Tank", "Medium", "Squad",}, 						maxCount = 2,	cooldown = 15,		unit = "ussr_mechsquad4_medium_43_1"},						--;	     :      :      :      : 1943 :      :      ;
+		{priority = 0.7, type = {"Tank", "Heavy", "Squad",}, 						maxCount = 2,	cooldown = 15,		unit = "ussr_mechsquad3_heavy_42_1"},						--;	     :      :      : 1942 : 1943 :      :      ;
+		{priority = 1.0, type = {"Tank", "Medium", "Squad",}, 						maxCount = 2,	cooldown = 15,		unit = "ussr_mechsquad4_medium_44_1"},						--;	     :      :      :      :      : 1944 : 1945 ;
+		{priority = 0.7, type = {"Tank", "Heavy", "Squad",}, 						maxCount = 2,	cooldown = 15,		unit = "ussr_mechsquad3_heavy_45_1"}						--;	     :      :      :      :      :      : 1945 ;					;//END!			
+									
+						
+		}
+	}
+}

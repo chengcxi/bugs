@@ -1,0 +1,373 @@
+; File: 		_dcg_script_air_attack_script_ext.inc
+; Catalog: 		map\multi\_dcg_script
+; Created by: 	nikral
+; Modify by:	Max Drechsler
+; DSL 			GEM ENGINE 2 Gates of Hell
+; Version:		6.7
+; Description: Никрал – дополнительный механизм авиации с фильтрацией по эрам, транспортниками и таймером исчезновения.
+
+; File: 		_dcg_script_air_attack_script_ext.inc
+; Catalog: 		map\multi\_dcg_script
+; Created by: 	nikral
+; Modify by:	Max Drechsler
+; DSL 			GEM ENGINE 2 Gates of Hell
+; Version:		6.8
+; Description: Никрал – дополнительный механизм авиации с фильтрацией по эрам, транспортниками и таймером исчезновения.
+
+{"[nikral] call ai airstrike on player"
+	{condition
+		{terms
+			{"1.entities"
+				{selector
+					{source advanced}
+					{ignore_captured_by_user 0}
+					{group
+						{include
+							{prop {prop vehicle}}
+							{state {state user_control}}
+							{state {state operatable}}
+						}
+						{exclude
+							{state {state inactive}}
+							{prop {prop airborne}}
+						}
+					}
+				}
+			}
+		}
+	}
+	{actions
+		(include "/map/multi/_dcg_script/_dcg_script_air_attack_script/_dcg_script_air_attack_script_bot_airstrike_timer.inc")
+
+		; ===== БОЕВЫЕ САМОЛЁТЫ =====
+		{"switch"
+			{"case"
+				{condition {type cmp_i} {var "tier2$"} {op "=="} {value 0}}
+				{"if"
+					{condition {type rand} {value 0.25}}
+					{"actor_to_waypoint"
+						{selector
+							{source advanced}
+							{ignore_captured_by_user 0}
+							{group
+								{include
+									{tag {tag air_vehicle}}
+									{tag {tag hidden}}
+								}
+								{exclude
+									{tag {tag late_war}}
+									{tag {tag nk_disabled}}
+									{tag {tag enemy_paradrop_plane}}
+								}
+							}
+							(include "/map/multi/_dcg_script/_dcg_script_air_attack_script/_dcg_script_air_attack_script_amount.inc")
+						}
+						{waypoint "3000"}
+						{clone}
+						{approach "safe teleport & rotate"}
+					}
+					{"entity_state"
+						{selector
+							{source advanced}
+							{ignore_captured_by_user 0}
+							{group
+								{include
+									{tag {tag air_vehicle}}
+									{tag {tag hidden}}
+								}
+								{exclude
+									{tag {tag late_war}}
+									{tag {tag nk_disabled}}
+									{tag {tag enemy_paradrop_plane}}
+								}
+							}
+						}
+						{tag_add enemy_air}
+					}
+				}
+			}
+			{"default" ; tier2 == 1
+				{"if"
+					{condition {type rand} {value 0.25}}
+					{"actor_to_waypoint"
+						{selector
+							{source advanced}
+							{ignore_captured_by_user 0}
+							{group
+								{include
+									{tag {tag air_vehicle}}
+									{tag {tag hidden}}
+								}
+								{exclude
+									{tag {tag early_war}}
+									{tag {tag nk_disabled}}
+									{tag {tag enemy_paradrop_plane}}
+								}
+							}
+							(include "/map/multi/_dcg_script/_dcg_script_air_attack_script/_dcg_script_air_attack_script_amount.inc")
+						}
+						{waypoint "3000"}
+						{clone}
+						{approach "safe teleport & rotate"}
+					}
+					{"entity_state"
+						{selector
+							{source advanced}
+							{ignore_captured_by_user 0}
+							{group
+								{include
+									{tag {tag air_vehicle}}
+									{tag {tag hidden}}
+								}
+								{exclude
+									{tag {tag early_war}}
+									{tag {tag nk_disabled}}
+									{tag {tag enemy_paradrop_plane}}
+								}
+							}
+						}
+						{tag_add enemy_air}
+					}
+				}
+			}
+		}
+
+		; ===== ТРАНСПОРТНЫЕ/ДЕСАНТНЫЕ САМОЛЁТЫ (зеркальные координаты) =====
+		{"switch"
+			{"case"
+				{condition {type cmp_i} {var "user_team$"} {op "=="} {value 1}}
+				{"actor_to_waypoint"
+					{selector
+						{source advanced}
+						{ignore_captured_by_user 0}
+						{group
+							{include
+								{tag {tag air_vehicle}}
+								{tag {tag hidden}}
+								{tag {tag enemy_paradrop_plane}}
+							}
+							{exclude {tag {tag nk_disabled}}}
+						}
+						{amount 2}
+					}
+					{waypoint "0"}
+					{clone}
+					{approach "safe teleport & rotate"}
+				}
+				{"entity_state"
+					{selector
+						{source advanced}
+						{ignore_captured_by_user 0}
+						{group
+							{include
+								{tag {tag air_vehicle}}
+								{tag {tag hidden}}
+								{tag {tag enemy_paradrop_plane}}
+							}
+							{exclude {tag {tag nk_disabled}}}
+						}
+						{amount 2}
+					}
+					{tag_add enemy_air}
+				}
+				{"delay" {time 0.2}}
+				{"actor_state"
+					{selector
+						{source advanced}
+						{ignore_captured_by_user 0}
+						{group
+							{include
+								{tag {tag air_vehicle}}
+								{tag {tag hidden}}
+								{tag {tag enemy_paradrop_plane}}
+							}
+							{exclude {tag {tag nk_disabled}}}
+						}
+						{amount 2}
+					}
+					{fire_mode return}
+					{movement {speed fast}}
+				}
+				{"delay" {time 0.2}}
+				{"action"
+					{selector
+						{source advanced}
+						{ignore_captured_by_user 0}
+						{group
+							{include
+								{tag {tag air_vehicle}}
+								{tag {tag hidden}}
+								{tag {tag enemy_paradrop_plane}}
+							}
+							{exclude {tag {tag nk_disabled}}}
+						}
+						{amount 2}
+					}
+					{drop orders}
+					{action move}
+					{target {ignore_captured_by_user 0} {amount 1} {tag spawn_a}}
+				}
+				{"delay" {time 0.1}}
+				{"effect"
+					{selector
+						{source advanced}
+						{ignore_captured_by_user 0}
+						{group
+							{include
+								{tag {tag air_vehicle}}
+								{tag {tag hidden}}
+								{tag {tag enemy_paradrop_plane}}
+							}
+							{exclude {tag {tag nk_disabled}}}
+						}
+						{amount 2}
+					}
+					{effect takeoff_load}
+				}
+			}
+			{"default" ; user_team$ != 1
+				{"actor_to_waypoint"
+					{selector
+						{source advanced}
+						{ignore_captured_by_user 0}
+						{group
+							{include
+								{tag {tag air_vehicle}}
+								{tag {tag hidden}}
+								{tag {tag enemy_paradrop_plane}}
+							}
+							{exclude {tag {tag nk_disabled}}}
+						}
+						{amount 2}
+					}
+					{waypoint "6"}
+					{clone}
+					{approach "safe teleport & rotate"}
+				}
+				{"entity_state"
+					{selector
+						{source advanced}
+						{ignore_captured_by_user 0}
+						{group
+							{include
+								{tag {tag air_vehicle}}
+								{tag {tag hidden}}
+								{tag {tag enemy_paradrop_plane}}
+							}
+							{exclude {tag {tag nk_disabled}}}
+						}
+						{amount 2}
+					}
+					{tag_add enemy_air}
+				}
+				{"delay" {time 0.2}}
+				{"actor_state"
+					{selector
+						{source advanced}
+						{ignore_captured_by_user 0}
+						{group
+							{include
+								{tag {tag air_vehicle}}
+								{tag {tag hidden}}
+								{tag {tag enemy_paradrop_plane}}
+							}
+							{exclude {tag {tag nk_disabled}}}
+						}
+						{amount 2}
+					}
+					{fire_mode return}
+					{movement {speed fast}}
+				}
+				{"delay" {time 0.2}}
+				{"action"
+					{selector
+						{source advanced}
+						{ignore_captured_by_user 0}
+						{group
+							{include
+								{tag {tag air_vehicle}}
+								{tag {tag hidden}}
+								{tag {tag enemy_paradrop_plane}}
+							}
+							{exclude {tag {tag nk_disabled}}}
+						}
+						{amount 2}
+					}
+					{drop orders}
+					{action move}
+					{target {ignore_captured_by_user 0} {amount 1} {tag spawn_b}}
+				}
+				{"delay" {time 0.1}}
+				{"effect"
+					{selector
+						{source advanced}
+						{ignore_captured_by_user 0}
+						{group
+							{include
+								{tag {tag air_vehicle}}
+								{tag {tag hidden}}
+								{tag {tag enemy_paradrop_plane}}
+							}
+							{exclude {tag {tag nk_disabled}}}
+						}
+						{amount 2}
+					}
+					{effect takeoff_load}
+				}
+			}
+		}
+
+		{"delay" {time 0.1}}
+		{"animate"
+			{selector
+				{source advanced}
+				{ignore_captured_by_user 0}
+				{group
+					{include {tag {tag air_vehicle}}}
+					{exclude {tag {tag hidden}}}
+				}
+			}
+			{animation wheels}
+			{speed 10}
+		}
+		{"trigger" {name "[nikral] call ai airstrike on player"}}
+		{"sound" {name "world/alarm/sirene00"}}
+		{"switch"
+			{"case" {condition {type rand} {value 0.33}}
+				{"talk"
+					{selector {ignore_captured_by_user 0} {amount 1} {tag player} {zone "gamezone"} {type human} {state "not dead"}}
+					{text "mission/multi/nk_enemy_planes_attack_1"}
+				}
+			}
+			{"case" {condition {type rand} {value 0.5}}
+				{"talk"
+					{selector {ignore_captured_by_user 0} {amount 1} {tag player} {zone "gamezone"} {type human} {state "not dead"}}
+					{text "mission/multi/nk_enemy_planes_attack_2"}
+				}
+			}
+			{"default"
+				{"talk"
+					{selector {ignore_captured_by_user 0} {amount 1} {tag player} {zone "gamezone"} {type human} {state "not dead"}}
+					{text "mission/multi/nk_enemy_planes_attack_3"}
+				}
+			}
+		}	
+	}
+		; ===== ПРИНУДИТЕЛЬНЫЙ ВОЗВРАТ ВСЕХ САМОЛЁТОВ ЧЕРЕЗ 90 СЕКУНД =====
+	{"delay" {time 180}}
+	{"actor_to_waypoint"
+		{selector
+			{source advanced}
+			{ignore_captured_by_user 0}
+			{group
+				{include
+					{tag {tag enemy_air}}
+					{state {state operatable}}
+				}
+			}
+		}
+		{waypoint "3000"}
+		{approach "safe teleport & rotate"}
+	}
+	
+}

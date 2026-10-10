@@ -11,7 +11,7 @@
 	{fireSoundclose "cannon/s4/3p/Shared/Cannon_85to100mm/"}
 	{reloadSound "utility/"}
 ;//	("range_210")
-	("range_220")																								;//ARm 080326 +
+	("range_220_aa")																								;//ARm 080326 +
 	{calibre 88}
 	("heavy_aa")
 ;//	{range 450 450} 																									;//ARm+
@@ -21,8 +21,8 @@
 
 	("velocity m/s" ap(780) apcr(930) he(820) heat(600))
 	("armor health" damage(240))
-	("armor health custom" shell(apcbche) damage(240) velocity(780) filler(102))
-	("armor health custom" shell(apcbche2) damage(240) velocity(780) filler(160))
+	("armor health custom" shell(apcbche) damage(240) filler(102))
+	("armor health custom" shell(apcbche2) damage(240) filler(160))
 	("88_ger_slope_multipliers")
 
 	; Pzgr.39 ;late war Flak ammo used after mid 1942

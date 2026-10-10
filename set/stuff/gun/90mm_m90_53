@@ -11,7 +11,7 @@
 	{fireSoundclose "gun/gun_88"}
 	{reloadSound "tank/reload_big"}
 ;//	("range_220")
-	("range_220")																								;//ARm 080326 +
+	("range_220_aa")																								;//ARm 080326 +
 	{calibre 90}
 	("heavy_aa")
 ;//	{range 500 500}									;//+ARm
@@ -20,7 +20,7 @@
 
 	("velocity m/s" ap(830) apcr(0) he(830) heat(0))
 	("armor health" damage(260))
-	("armor health custom" shell(apcbche) damage(260) velocity(830) filler(102))
+	("armor health custom" shell(apcbche) damage(260) filler(102))
 	("90_slope_multipliers")
 
 	; mod.43

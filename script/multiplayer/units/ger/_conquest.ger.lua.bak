@@ -1,0 +1,435 @@
+Purchases["conquest.ger"] = {
+	{Repeat = 0, --infinite
+		Units = {
+			---[====[
+			--				IDIOTS-1.3		REGULAR-2.0		REGULAR MOTOR-1.5		ELITE-1.5 		ELITE MOTOR-1.0			SUPERELITE=0.7		SINGLE=1.0		
+		-- Infantry																											-- Infantry				--;EARLY		         MID		   LATE	
+				---[[
+			-- Infantry squads																								-- Infantry squads
+				{priority = 2.5, type = {"Infantry", "Squad",}, unit = "squad_luftwaffe_con(ger)"},													--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945	;+
+				{priority = 2.5, type = {"Infantry", "Squad",}, unit = "squad_sicherung_con(ger)"},													--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945	;+
+				{priority = 2.5, type = {"Infantry", "Squad",}, unit = "squad_recon_con(ger)"},														--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945	;+
+				{priority = 2.5, type = {"Infantry", "Squad",}, unit = "squad_jaeger_con(ger)"},													--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945	;+
+				{priority = 1.3, type = {"Infantry", "Squad",}, unit = "squad_strafbatallion_con(ger)"},											--;	     : 1940 : 1941 :      :      :      :     	;+
+				{priority = 2.5, type = {"Infantry", "Squad",}, unit = "squad_regular_con(ger)"},													--;	     : 1940 : 1941 : 1942 : 1943 : 1944 : 1945	;+
+				{priority = 2.5, type = {"Infantry", "Squad",}, unit = "squad_pionier_con(ger)"},													--;	     : 1940 : 1941 : 1942 : 1943 : 1944 : 1945	;+
+				--{priority = 0.5, type = {"Infantry", "Squad",}, unit = "squad_osttruppen_con(ger)"},												--;	     :      : 1941 : 1942 : 1943 :      :     	;+
+				{priority = 2.0, type = {"Infantry", "Squad",}, unit = "squad_pz_pio_con"},															--;	     :      : 1941 : 1942 : 1943 : 1944 : 1945	;+
+				{priority = 2.0, type = {"Infantry", "Squad",}, unit = "squad_blau_con(ger)"},														--;	     :      : 1941 : 1942 : 1943 :      :     	;+
+				{priority = 2.0, type = {"Infantry", "Squad",}, unit = "squad_gebirgsjaeger_con(ger)"},												--;	     :      : 1941 : 1942 :      :      :     	;+
+				{priority = 2.0, type = {"Infantry", "Squad",}, unit = "squad_regular_vet_con(ger)"},												--;	     :      :      : 1942 : 1943 :      :     	;+
+				{priority = 1.7, type = {"Infantry", "Squad",}, unit = "squad_brandenburger_con(ger)"},												--;	     :      :      : 1942 : 1943 : 1944 : 1945	;+
+				{priority = 2.0, type = {"Infantry", "Squad",}, unit = "squad_volksg_sturm_con(ger)"},												--;	     :      :      :      : 1943 : 1944 :     
+				{priority = 2.0, type = {"Infantry", "Team", "AT",}, unit = "squad_at_late_con(ger)"},												--;	     :      :      :      : 1943 : 1944 : 1945	;+
+				{priority = 2.5, type = {"Infantry", "Squad",}, unit = "squad_gebirgsjaeger_late_con(ger)"},										--;	     :      :      :      :      : 1944 : 1945	;+
+				{priority = 2.5, type = {"Infantry", "Squad",}, unit = "squad_fusilier_late_con(ger)"},												--;	     :      :      :      :      : 1944 : 1945	;+ 	;+
+				{priority = 2.0, type = {"Infantry", "Squad",}, unit = "squad_sturmjager_con(ger)"},												--;	     :      :      :      :      : 1944 : 1945	;+
+				{priority = 1.7, type = {"Infantry", "Squad",}, unit = "squad_fallschirm_recon_late_con(ger)"},										--;	     :      :      :      :      : 1944 : 1945	;+
+				{priority = 2.0, type = {"Infantry", "Squad",}, unit = "squad_lw_jaeger_con(ger)"},													--;	     :      :      :      :      :      : 1945	;+
+				{priority = 0.7, type = {"Infantry", "Squad",}, unit = "squad_volksg_heavy_con(ger)"},												--;	     :      :      :      :      :      : 1945	;+
+
+			-- Infantry motor squads																						-- Infantry motor squads
+				{priority = 1.5, type = {"Infantry", "Squad",}, unit = "squad_regular_motor_con"},													--;	1939 : 1940 : 1941 :      :      :      :     	;+
+				--{priority = 1.3, type = {"Infantry", "Squad", "Command",}, unit = "squad_officer_con(ger)"},										--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945	;+
+				{priority = 1.5, type = {"Infantry", "Squad",}, unit = "squad_pzg_lehr_armor_con"},													--;	     :      :      :      : 1943 : 1944 : 1945	;+
+				{priority = 1.0, type = {"Infantry", "Squad",}, unit = "squad_gd_motor_con"},														--;	     :      : 1941 : 1942 : 1943 : 1944 :     	;+
+				{priority = 1.3, type = {"Infantry", "Squad",}, unit = "squad_recon_armor_con"},													--;	     :      : 1941 : 1942 : 1943 :      :     	;+
+				{priority = 1.5, type = {"Infantry", "Squad",}, unit = "squad_regular_armor_con"},													--;	1939 : 1940 : 1941 :      :      :      :     	;+
+				{priority = 1.0, type = {"Infantry", "Squad",}, unit = "squad_recon_motor_con"},													--;	     :      : 1941 : 1942 : 1943 : 1944 :     
+				{priority = 1.0, type = {"Infantry", "Squad",}, unit = "squad_fallschirmjaeger_con(ger)"},											--;	     :      : 1941 : 1942 : 1943 : 1944 :     	;+
+				{priority = 0.7, type = {"Infantry", "Squad",}, unit = "squad_fallschirmjaeger_motor_con"},											--;	     :      :      :      :      : 1944 : 1945	;+
+				{priority = 1.5, type = {"Infantry", "Squad",}, unit = "squad_fallschirmjaeger_extcq(ger)"},										--;	     :      :      :      :      : 1944 : 1945	;+			
+				--{priority = 1.3, type = {"Infantry", "Squad", "Command",}, unit = "squad_officer_kubel_con"},										--;	     :      : 1941 : 1942 : 1943 : 1944 : 1945	;+
+				--{priority = 0.3, type = {"Infantry", "Squad", "Command",}, unit = "squad_officer_250_3_con"},										--;	     :      :      : 1942 : 1943 : 1944 : 1945	;+	
+
+			-- Infantry single																								-- Infantry single
+				--{priority = 1.0, type = {"Infantry", "Team",}, unit = "single_engineer(ger)"},													--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945	;+
+				{priority = 1.0, type = {"Infantry", "Team",}, unit = "single_flamer(ger)"},														--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945	;+
+				{priority = 1.0, type = {"Infantry", "Team",}, unit = "single_sniper(ger)"},														--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945	;+
+				{priority = 1.0, type = {"Infantry", "Team", "AT",}, unit = "single_at(ger)"},														--;	1939 : 1940 :      :      :      :      :    
+				{priority = 1.0, type = {"Infantry", "Team", "AT",}, unit = "single_riflegrenade(ger)"},											--;	     : 1940 : 1941 : 1942 : 1943 :      :     	;+
+				--{priority = 1.0, type = {"Infantry", "Team",}, unit = "single_ap_miner(ger)"},													--;	     :      : 1941 : 1942 : 1943 :      :     	;+
+				--{priority = 1.0, type = {"Infantry", "Team",}, unit = "single_at_miner(ger)"},													--;	     :      : 1941 : 1942 : 1943 :      :     	;+
+				{priority = 1.0, type = {"Infantry", "Team", "AT",}, unit = "single_at_pzs_late_con(ger)"},											--;	     :      :      :      : 1943 : 1944 : 1945	;+
+
+			-- Infantry single support				
+				--{priority = 1.0, type = {"Infantry", "Team",}, unit = "single_tankman(ger)"},														--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945	;+
+				{priority = 1.0, type = {"Infantry", "Team",}, unit = "single_medic(ger)"},															--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945	;+
+				--{priority = 1.0, type = {"Infantry", "Team", "Command",}, unit = "single_officer(ger)"},											--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945	;+
+				--]]
+
+		-- Cannons																										-- Cannons				--;EARLY		         MID		   LATE
+				--						MG=2.5		AA=1.0 		Heavy AA=0.5		AT=2.0		MORTARS=2.0	 	INF.SUPPORT=1.5(1.0)		ARTY=0.5		HEAVY ARTY=0.3 		SUPER ARTY=0.1		
+				---[[
+				--{priority = 1.0, type = {"Cannon", "Supply", "Ammo",}, unit = "inf_crate_ger"},													--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945	;+
+				--{priority = 1.0, type = {"Cannon", "Supply", "Ammo",}, unit = "infantry_cart_if8"},												--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945	;+
+				--{priority = 1.0, type = {"Cannon", "Supply", "Ammo",}, unit = "ammo_trailer"},													--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945	;+
+				{priority = 0.3, type = {"Cannon", "Spotlight",}, unit = "150mm_sw34_ger"},															--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945	;+
+
+		--HMGs				2.5
+				{priority = 3.0, type = {"Infantry", "Team", "MG",},  unit = "mg34_lafette"},														--;	1939 : 1940 : 1941 :      :      :      :     	;+
+				{priority = 2.5, type = {"Infantry", "Team", "MG",},  unit = "mg42_lafette"},														--;	     :      :      : 1942 : 1943 :      :     	;+
+				--{priority = 0.1, type = {"Cannon", "MG",}, unit = "panzernest_krab_ger"},															--;	     :      :      : 1942 : 1943 :      :     	;+
+		--AA-guns			1.0
+				--{priority = 1.0, type = {"Cannon", "AA",}, unit = "20mm_flak30"},																	--;	1939 : 1940 : 1941 :      :      :      :     	;+
+				{priority = 0.5, type = {"Cannon", "AA", "AT",}, unit = "88mm_flak18"},																--;	     : 1940 : 1941 :      :      :      :     	;+
+				--{priority = 1.0, type = {"Cannon", "AA",}, unit = "37mm_flak37"},																	--;	     :      : 1941 : 1942 : 1943 :      :     	;+
+				--{priority = 1.0, type = {"Cannon", "AA",}, unit = "20mm_flak38"},																	--;	     :      :      : 1942 : 1943 : 1944 :     	;+
+				--{priority = 1.0, type = {"Cannon", "AA",}, unit = "50mm_flak41"},																	--;	     :      :      : 1942 : 1943 : 1944 : 1945	;+
+				{priority = 1.0, type = {"Cannon", "AA", "AT",}, unit = "88mm_flak36"},																--;	     :      :      : 1942 : 1943 :      :     	;+
+				--{priority = 1.0, type = {"Cannon", "AA",}, unit = "20mm_flakvierling38"},															--;	     :      :      :      : 1943 : 1944 : 1945	;+
+		--AT-guns			2.0
+				{priority = 1.0, type = {"Cannon", "AT",}, unit = "28mm_pzb41"},																	--;	1939 :      :      :      :      :      :     	;+
+				{priority = 1.0, type = {"Cannon", "AT",}, unit = "37mm_pak36"},																	--;	1939 : 1940 :      :      :      :      :     	;+
+				{priority = 0.7, type = {"Cannon", "AT",}, unit = "47mm_pakt"},																		--;	1939 : 1940 :      :      :      :      :     	;+
+				{priority = 1.0, type = {"Cannon", "AT",}, unit = "50mm_pak38"},																	--;	     : 1940 : 1941 :      :      :      :     	;+
+				{priority = 1.0, type = {"Cannon", "AT",}, unit = "75mm_pak9738"},																	--;	     : 1940 : 1941 : 1942 :      :      :     	;+
+				{priority = 1.0, type = {"Cannon", "AT",}, unit = "75mm_pak40"},																	--;	     :      :      : 1942 : 1943 : 1944 : 1945	;+
+				{priority = 1.0, type = {"Cannon", "AT",}, unit = "88mm_pak4341"},																	--;	     :      :      :      : 1943 : 1944 : 1945	;+	--"no_scavenge"
+		--Mortars
+				{priority = 3.0, type = {"Cannon", "Mortar",}, unit = "80mm_sgrw34"},																--;	1939 : 1940 : 1941 : 1942 : 1943 :      :     	;+	--"no_scavenge"
+				{priority = 2.7, type = {"Cannon", "Mortar",}, unit = "100mm_nbw35"},																--;	     : 1940 : 1941 : 1942 : 1943 : 1944 : 1945	;+	--"no_scavenge"
+				{priority = 3.0, type = {"Cannon", "Mortar",}, unit = "120mm_sgrw42"},																--;	     :      : 1941 : 1942 : 1943 : 1944 : 1945	;+	--"no_scavenge"
+				{priority = 1.3, type = {"Cannon", "Mortar",}, unit = "200mm_ldgw40"},																--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945	;+	--"no_scavenge"
+		--Inf.Sup.Guns
+				{priority = 1.0, type = {"Cannon", "Support",}, unit = "75mm_leig18"},																--;	1939 : 1940 : 1941 :      :      :      :     	;+
+				--{priority = 1.0, type = {"Cannon", "Support",}, unit = "75mm_lg40"},																--;	     : 1940 : 1941 : 1942 : 1943 :      :     	;+
+				{priority = 0.5, type = {"Cannon", "Support",}, unit = "75mm_legebig18"},															--;	     :      :      : 1942 : 1943 : 1944 : 1945	;+
+				{priority = 0.3, type = {"Cannon", "Support",}, unit = "150mm_sig33"},																--;	     : 1940 : 1941 : 1942 :      :      :     	;+	--"no_scavenge"
+		--Artillery
+				{priority = 0.5, type = {"Cannon", "Artillery",}, unit = "105mm_lefh18"},															--;	1939 : 1940 : 1941 :      :      :      :     	;+
+				{priority = 0.5, type = {"Cannon", "Artillery",}, unit = "105mm_lefh18_40"},														--;	     :      :      : 1942 : 1943 : 1944 : 1945	;+
+				--{priority = 0.3, type = {"Cannon", "Artillery",}, unit = "105mm_sk18"},																--;	     :      :      :      : 1943 : 1944 : 1945	;+
+				--{priority = 0.3, type = {"Cannon", "Artillery",}, unit = "150mm_sfh18"},															--;	     :      :      : 1942 : 1943 : 1944 : 1945	;+
+				--{priority = 0.3, type = {"Cannon", "Artillery",}, unit = "155mm_gpf_ger"},															--;	     : 1940 : 1941 : 1942 : 1943 : 1944 : 1945	;+
+				--{priority = 0.2, type = {"Cannon", "Artillery",}, unit = "170mm_k18"},															--;	1939 : 1940 : 1941 :      :      :      :     	;+
+				--{priority = 0.2, type = {"Cannon", "Artillery",}, unit = "210mm_morser18"},														--;	     :      :      : 1942 : 1943 : 1944 : 1945	;+
+				{priority = 0.1, type = {"Cannon", "Artillery",}, unit = "600mm_thor"},																--;	     :      :      : 1942 : 1943 : 1944 : 1945	;+	--"no_scavenge"
+		--Rocket Artillery
+				{priority = 1.0, type = {"Cannon", "Artillery",}, unit = "150mm_nebelwerfer41"},													--;	     :      : 1941 : 1942 : 1943 : 1944 :      	;+	--"no_scavenge"
+				{priority = 1.0, type = {"Cannon", "Artillery",}, unit = "210mm_nebelwerfer42"},													--;	     :      :      : 1942 : 1943 : 1944 : 1945	;+	--"no_scavenge"
+				{priority = 0.7, type = {"Cannon", "Artillery",}, unit = "300mm_nebelwerfer42"},													--;	     :      :      :      :      : 1944 : 1945	;+	--"no_scavenge"
+				--]]
+
+		-- Wheel vehicles
+				--						Ultra Light=1.5			Light=1.0 		 Light-AT=1.5		Light-AA=1.0		Medium=0.5		Ammo=0.1
+				---[[
+				{priority = 1.5, type = {"Vehicle", "MG",}, unit = "bmw_r71"},																		--;	1939 : 1940 : 1941 : 1942 : 1943 :      :     	;+
+				{priority = 1.0, type = {"Vehicle", "MG",}, unit = "kfz15"},																		--;	1939 : 1940 :      :      :      :      :     	;+
+				--{priority = 1.0, type = {"Vehicle", "Unarmed", "Transport",}, unit = "kubelwagen"},												--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945	;+
+				{priority = 1.0, type = {"Vehicle", "MG",}, unit = "kubelwagen_mg"},																--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945	;+
+				{priority = 1.0, type = {"Vehicle", "MG",}, unit = "kubelwagen_dak"},																--;	     :      : 1941 : 1942 : 1943 : 1944 : 1945	;+
+				{priority = 1.0, type = {"Vehicle", "AA",}, unit = "blitz3_6_flak30"},																--;	1939 : 1940 :      :      :      :      :     	;+
+				{priority = 1.0, type = {"Armored", "MG",}, unit = "kfz13"},																		--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945	;+
+				{priority = 1.0, type = {"Armored", "MG",}, unit = "sdkfz221"},																		--;	1939 : 1940 :      :      :      :      :     	;+
+				{priority = 1.0, type = {"Armored", "AA",}, unit = "sdkfz222a"},																	--;	     :      : 1941 : 1942 :      :      :     	;+
+				{priority = 1.0, type = {"Armored", "AA",}, unit = "sdkfz231"},																		--;	1939 : 1940 : 1941 :      :      :      :      	;+
+				{priority = 1.5, type = {"Armored",}, unit = "p204_f"},																				--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945	;+
+				{priority = 0.5, type = {"Armored", "AA",}, unit = "sdkfz234_1"},																	--;	     :      :      :      :      : 1944 : 1945	;+
+				{priority = 0.5, type = {"Armored", "AT",}, unit = "sdkfz234_2"},																	--;	     :      :      :      :      : 1944 : 1945	;+
+				{priority = 0.5, type = {"Armored", "Support",}, unit = "sdkfz234_3"},																--;	     :      :      :      :      : 1944 : 1945	;+
+				{priority = 0.5, type = {"Armored", "AT",}, unit = "sdkfz234_4"},																	--;	     :      :      :      :      : 1944 : 1945	;+
+				--{priority = 1.0, type = {"Vehicle", "Unarmed", "Transport",}, unit = "blitz3_6"},													--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945	;+
+				{priority = 0.1, type = {"Vehicle", "Unarmed", "Supply", "Ammo",}, unit = "blitz3_6_art_ammo"},										--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945	;+
+				--{priority = 1.0, type = {"Vehicle", "Unarmed", "Supply", "Fuel",}, unit = "blitz3_6_fuel"},										--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945	;+
+				--{priority = 1.0, type = {"Vehicle", "Unarmed","Supply", "Engineer",}, unit = "blitz3_6_engineering"},								--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945	;+
+				{priority = 0.1, type = {"Vehicle", "Unarmed","Supply", "Ammo",}, unit = "sdkfz6_ammo"},											--;	     :      :      :      : 1943 : 1944 : 1945	;+				
+				--]]
+
+		-- Halftracks
+				--		idiots=0.3-0.5		Ultra Light=1.5		Light=1.0 	 Light-AA=1.0      Light-AT=1.5		Light-Mortar=1.5	Medium-AA=0.7	Medium-AT=0.7	Heavy-AA=1.3	Reactive=0.5
+				---[[
+				--{priority = 0.5, type = {"Vehicle", "Unarmed", "Supply", "Engineer",}, unit = "kettenkrad_eng"},									--;	     :      : 1941 : 1942 : 1943 : 1944 : 1945	;+	
+				--{priority = 0.5, type = {"Vehicle", "Unarmed", "Transport",}, unit = "sdkfz10"},													--;	1939 : 1940 : 1941 :      :      :      :     	;+	
+		-- Halftracks MG
+				--{priority = 1.0, type = {"Armored", "MG",}, unit = "sdkfz250a_1"},																--;	     :      :      : 1942 : 1943 : 1944 : 1945	;+	
+				{priority = 0.5, type = {"Armored", "MG", "Transport",}, unit = "sdkfz251b"},														--;	1939 : 1940 : 1941 :      :      :      :  		;+	
+				{priority = 0.5, type = {"Armored", "MG", "Transport",}, unit = "unic304f"},														--;	     : 1940 : 1941 : 1942 : 1943 :      :  		;+	
+				{priority = 0.5, type = {"Armored", "MG", "Transport",}, unit = "sdkfz251c"},														--;	     :      : 1941 : 1942 : 1943 :      :  		;+	
+				{priority = 0.5, type = {"Armored", "MG", "Transport",}, unit = "sdkfz251d_1"},														--;	     :      :      :      : 1943 : 1944 : 1945	;+	
+				{priority = 0.3, type = {"Armored", "MG",}, unit = "sdkfz251d_16"},																	--;	     :      :      :      : 1943 : 1944 : 1945	;+	
+		-- Halftracks AT
+				{priority = 1.0, type = {"Vehicle", "AT",}, unit = "sdkfz10_pak38"},																--;	     : 1940 : 1941 :      :      :      :     	;+	
+				{priority = 1.0, type = {"Armored", "AA", "AT",}, unit = "sdkfz8_flak18"},															--;	     : 1940 : 1941 : 1942 :      :      :     	;+	--"no_scavenge"				
+				{priority = 0.5, type = {"Armored", "AT",}, unit = "sdkfz250a_11"},																	--;	     :      :      : 1942 : 1943 : 1944 : 1945	;+	
+				--{priority = 0.7, type = {"Armored", "AT",}, unit = "sdkfz251d_22"},																--;	     :      :      :      :      : 1944 : 1945	;+			
+		-- Halftrack Mortar/Artillery
+				{priority = 1.3, type = {"Armored", "Mortar",}, unit = "sdkfz251c_2"},																--;	     : 1940 : 1941 : 1942 :      :      :     	;+	
+				{priority = 0.7, type = {"Armored", "Artillery",}, unit = "sdkfz251d_1_stuka"},														--;	     :      :      :      : 1943 : 1944 : 1945	;+	--"no_scavenge"	
+				{priority = 2.0, type = {"Armored", "Artillery",}, unit = "panzerwerfer42"},														--;	     :      :      : 1942 : 1943 : 1944 : 1945	;+	--"no_scavenge"	
+		-- Halftracks AA
+				{priority = 1.0, type = {"Armored", "AA",}, unit = "sdkfz250a_9"},																	--;	     :      :      : 1942 : 1943 : 1944 : 1945	;+	
+				{priority = 1.0, type = {"Armored", "AA",}, unit = "sdkfz251d_17"},																	--;	     :      :      :      : 1943 : 1944 : 1945	;+	
+				{priority = 0.5, type = {"Armored", "AA",}, unit = "sdkfz251d_21"},																	--;	     :      :      :      : 1943 : 1944 : 1945	;+	
+				{priority = 0.7, type = {"Vehicle", "AA",}, unit = "sdkfz10_4"},																	--;	     : 1940 : 1941 :      :      :      :     	;+	
+				{priority = 0.7, type = {"Vehicle", "AA",}, unit = "sdkfz6_2"},																		--;	     : 1940 : 1941 :      :      :      :     	;+	
+				{priority = 0.7, type = {"Armored", "AA",}, unit = "sdkfz7_1"},																		--;	     :      :      :      : 1943 : 1944 : 1945  ;+	
+				{priority = 0.7, type = {"Armored", "AA",}, unit = "sdkfz7_2"},																		--;	     :      :      :      : 1943 : 1944 : 1945	;+	
+				--]]
+
+		-- Tanks
+				--		idiots=0.3-0.5		Shit=0.7		Good=1.5		Main=2.0		Expert=1.0		Killer=0.5
+				---[[
+			-- Light tanks
+				{priority = 1.3, type = {"Tank", "Light",}, unit = "panzer1b"},																		--;	1939 : 1940 :      :      :      :      :     	;+
+				{priority = 1.0, type = {"Tank", "Light",}, unit = "panzer1f"},																		--;	     :      : 1941 : 1942 :      :      :     	;+
+				{priority = 2.5, type = {"Tank", "Light",}, unit = "panzer2c"},																		--;	1939 : 1940 :      :      :      :      :     	;+
+				{priority = 2.5, type = {"Tank", "Light",}, unit = "panzer2f"},																		--;	     :      : 1941 : 1942 :      :      :     	;+
+				{priority = 1.5, type = {"Tank", "Light",}, unit = "panzer2l"},																		--;	     :      :      :      : 1943 : 1944 : 1945	;+
+				{priority = 3.0, type = {"Tank", "Light",}, unit = "pz35t"},																		--;	1939 :      :      :      :      :      :     	;+
+				{priority = 3.0, type = {"Tank", "Light",}, unit = "pz38t_a"},																		--;	1939 :      :      :      :      :      :     	;+
+				{priority = 3.0, type = {"Tank", "Light",}, unit = "pz38t_f"},																		--;	     : 1940 : 1941 :      :      :      :     	;+
+				{priority = 2.0, type = {"Tank", "Light",}, unit = "pz38t_g"},																		--;	     : 1940 : 1941 :      :      :      :     	;+
+				{priority = 2.0, type = {"Tank", "Light",}, unit = "pz38h_735"},																	--;	1939 : 1940 :      :      :      :      :    	;+
+			-- Medium tanks
+				--		idiots=0.3-0.5		Shit=0.7		Main=2.0		V.Good=1.5		Expert=1.0		Killer=0.5
+				{priority = 2.5, type = {"Tank", "Medium",}, 										unit = "panzer35s"},							--;	1939 :      :      :      :      :      :     	;+
+				{priority = 3.0, type = {"Tank", "Medium",}, 										unit = "panzer3e"},								--;	1939 :      :      :      :      :      :     	;+
+				{priority = 3.0, type = {"Tank", "Medium",}, 										unit = "panzer3f"},								--;	     : 1940 :      :      :      :      :     	;+
+				{priority = 3.0, type = {"Tank", "Medium",}, 										unit = "panzer3h"},								--;	     : 1940 : 1941 :      :      :      :     	;+
+				{priority = 3.0, type = {"Tank", "Medium",}, 										unit = "panzer3j"},								--;	     : 1940 : 1941 :      :      :      :     	;+
+				{priority = 3.3, type = {"Tank", "Medium",}, 										unit = "panzer3j1"},							--;	     :      : 1941 : 1942 :      :      :      	;+
+				{priority = 3.0, type = {"Tank", "Medium",}, 										unit = "panzer3l"},								--;	     :      :      : 1942 : 1943 :      :     	;+
+				{priority = 3.0, type = {"Tank", "Medium",},										unit = "panzer3m"},								--;	     :      :      :      : 1943 :      :     	;+
+				{priority = 3.0, type = {"Tank", "Medium",}, 										unit = "panzer3n"},								--;	     :      :      :      : 1943 : 1944 : 1945	;+
+				{priority = 3.0, type = {"Tank", "Medium",}, 										unit = "panzer3_flamm"},						--;	     :      :      : 1942 : 1943 : 1944 : 1945	;+
+				{priority = 3.0, type = {"Tank", "Medium",}, 										unit = "panzer4b"},								--;	1939 : 1940 :      :      :      :      :     	;+
+				{priority = 3.0, type = {"Tank", "Medium",}, 										unit = "panzer4d"},								--;	     : 1940 :      :      :      :      :     	;+
+				{priority = 3.0, type = {"Tank", "Medium",}, 										unit = "panzer4f1"},							--;	     :      : 1941 :      :      :      :     	;+
+				{priority = 3.0, type = {"Tank", "Medium",}, 										unit = "panzer4f2"},							--;	     :      : 1941 : 1942 :      :      :     	;+
+				{priority = 3.0, type = {"Tank", "Medium",}, 										unit = "panzer4g"},								--;	     :      :      : 1942 : 1943 :      :     	;+
+				{priority = 3.3, type = {"Tank", "Medium",}, 										unit = "panzer4h"},								--;	     :      :      :      : 1943 : 1944 :     	;+
+				{priority = 2.0, type = {"Tank", "Medium",}, 										unit = "panzer4j"},								--;	     :      :      :      :      : 1944 : 1945	;+
+			-- Heavy tanks
+				--		idiots=0.3-0.5		Shit=0.7		Main=2.0		V.Good=1.5		Expert=1.0		Killer=0.5
+				{priority = 3.0, type = {"Tank", "Heavy",}, 										unit = "panzer5d"},								--;	     :      :      :      : 1943 : 1944 : 1945	;+	--"no_scavenge"
+				{priority = 3.0, type = {"Tank", "Heavy",}, 										unit = "panzer5a"},								--;	     :      :      :      :      : 1944 : 1945	;+	--"no_scavenge"
+				{priority = 3.0, type = {"Tank", "Heavy",}, 										unit = "panzer5g"},								--;	     :      :      :      :      : 1944 : 1945	;+
+
+				{priority = 0.5, type = {"Tank", "Heavy",}, 										unit = "panzerb2"},								--;	1939 : 1940 : 1941 :      :      :      :     	;+	--"no_scavenge"
+				{priority = 0.3, type = {"Tank", "Heavy",}, 										unit = "flammpanzer_b2"},						--;	1939 : 1940 : 1941 :      :      :      :     	;+	--"no_scavenge"
+				{priority = 3.0, type = {"Tank", "Heavy",}, 										unit = "tiger1h"},								--;	     :      :      :      : 1943 : 1944 :     	;+	--"no_scavenge"
+				{priority = 2.3, type = {"Tank", "Heavy",}, 										unit = "tiger1e"},								--;	     :      :      :      :      : 1944 : 1945	;+
+				{priority = 2.7, type = {"Tank", "Heavy",}, 										unit = "tiger1hunt"},							--;	     :      :      :      :      : 1944 : 1945	;+	
+				{priority = 2.5, type = {"Tank", "Heavy",}, 										unit = "tiger2h"},								--;	     :      :      :      :      : 1944 : 1945	;+	--"no_scavenge"
+				--]]
+
+		-- SPG
+				--		Main=2.0	V.Good=1.5		Expert=1.0		Shit=0.7	Killer=0.5		idiots=0.3-0.5
+			---[[
+			-- SPG-Art.
+				{priority = 1.3, type = {"Tank", "Light", "Artillery",}, unit = "grille_k"},														--;	     :      :      :      : 1943 : 1944 : 1945	;+	--"no_scavenge"
+				{priority = 1.3, type = {"Tank", "Light", "Artillery",}, unit = "wespe"},															--;	     :      :      : 1942 : 1943 : 1944 : 1945	;+	--"no_scavenge"
+				{priority = 1.0, type = {"Tank", "Medium", "Artillery",}, unit = "hummel"},															--;	     :      :      :      :      : 1944 : 1945	;+	--"no_scavenge"
+			-- SPG-Sup.	
+				{priority = 1.3, type = {"Tank", "Light", "Support",}, unit = "bison"},																--;	1939 : 1940 : 1941 :      :      :      :     	;+	--"no_scavenge"
+				{priority = 1.5, type = {"Tank", "Medium", "Support",}, unit = "stuh42"},															--;	     :      :      : 1942 : 1943 : 1944 : 1945	;+	--"no_scavenge"
+				{priority = 1.3, type = {"Tank", "Medium", "Support",}, unit = "sig33b"},															--;	     :      : 1941 : 1942 :      :      :     	;+	--"no_scavenge"
+				{priority = 1.0, type = {"Tank", "Medium", "Support",}, unit = "sturmpanzer4"},														--;	     :      :      :      :      :      : 1945	;+	--"no_scavenge"
+			-- SPG-AA.		
+				{priority = 0.5, type = {"Tank", "Light", "AA",}, unit = "grille_m"},																--;	     :      :      :      : 1943 : 1944 :    	;+	--"no_scavenge"
+				{priority = 0.5, type = {"Tank", "Medium", "AA",}, unit = "wirbelwind"},															--;	     :      :      :      : 1943 :      :     	;+	--"no_scavenge"
+				{priority = 0.5, type = {"Tank", "Medium", "AA",}, unit = "ostwind"},																--;	     :      :      :      :      : 1944 : 1945	;+	--"no_scavenge"			
+			-- SPG-AT-Support
+				{priority = 1.3, type = {"Tank", "light", "AT",}, unit = "lorraine_37l"},															--;	     : 1940 : 1941 :      :      :      :     	;+
+				{priority = 1.5, type = {"Tank", "Light", "AT",}, unit = "panzerjager1"},															--;	1939 : 1940 :      :      :      :      :     	;+
+				{priority = 1.3, type = {"Tank", "Light", "AT",}, unit = "marder2"},																--;	     :      :      : 1942 : 1943 :      :     	;+
+				{priority = 1.5, type = {"Tank", "Light", "AT",}, unit = "marder3m"},																--;	     :      :      :      :      : 1944 : 1945  ;+	
+				{priority = 1.3, type = {"Tank", "Light", "AT",}, unit = "geschutzwagen_39h"},														--;	     :      :      :      : 1943 : 1944 :    	;+					
+				{priority = 1.0, type = {"Tank", "Medium", "AT",}, unit = "nashorn"},																--;	     :      :      :      : 1943 : 1944 : 1945	;+	--"no_scavenge"			
+			-- SPG Reactive
+				{priority = 0.5, type = {"Tank", "Light", "Artillery",}, unit = "pz38h_w40"},														--;	     : 1940 : 1941 :      :      :      :     	;+	--"no_scavenge"
+				{priority = 0.3, type = {"Tank", "Heavy", "AT",}, unit = "sturmtiger"},																--;	     :      :      :      :      :      : 1945	;+	--"no_scavenge"						
+			-- SPG-AT
+				{priority = 2.0, type = {"Tank", "Medium", "AT",}, unit = "stug3b"},																--;	1939 : 1940 :      :      :      :      :     	;+
+				{priority = 2.5, type = {"Tank", "Medium", "AT",}, unit = "stug3f"},																--;	     :      : 1941 :      :      :      :     	;+
+				{priority = 2.5, type = {"Tank", "Medium", "AT",}, unit = "stug3g"},																--;	     :      :      : 1942 :      :      :     	;+
+				{priority = 2.5, type = {"Tank", "Medium", "AT",}, unit = "stug3g_late"},															--;	     :      :      :      : 1943 :      :     	;+
+				{priority = 2.5, type = {"Tank", "Medium", "AT",}, unit = "jagdpanzer4_l48_early"},													--;	     :      :      : 1942 :      :      :     	;+	--"no_scavenge"
+				{priority = 2.5, type = {"Tank", "Medium", "AT",}, unit = "jagdpanzer4_l48"},														--;	     :      :      :      : 1943 :      :     	;+
+				{priority = 2.5, type = {"Tank", "Medium", "AT",}, unit = "panzer4_70_v"},															--;	     :      :      :      :      : 1944 : 1945	;+
+				{priority = 3.0, type = {"Tank", "Light", "AT",}, unit = "hetzer"},																	--;	     :      :      :      : 1943 : 1944 : 1945	;+		
+
+				{priority = 1.2, type = {"Tank", "Heavy", "AT",}, unit = "ferdinand"},																--;	     :      :      :      : 1943 : 1944 :     	;+	--"no_scavenge"
+				{priority = 1.5, type = {"Tank", "Heavy", "AT",}, unit = "jagdpanther"},															--;	     :      :      :      :      : 1944 : 1945	;+	--"no_scavenge"
+				{priority = 1.2, type = {"Tank", "Heavy", "AT",}, unit = "jagdtiger"},																--;	     :      :      :      :      :      : 1945	;+	--"no_scavenge"
+				--]]
+				
+				
+				--------------------------------ARM---------------------------------------
+			--				IDIOTS-1.3		REGULAR-2.0		REGULAR MOTOR-1.5		ELITE-1.5 		ELITE MOTOR-1.0			SUPERELITE=0.7		SINGLE=1.0		
+			-- Infantry																															  	     			--;EARLY          MID		   LATE	
+			---[[	
+			-- Infantry squads
+				-- Infantry Regular squads	
+						{priority = 4.0, type = {"Infantry", "Squad",}, 			unit = "squad_ger_regelmasige_infanterie(ger)"},				--;	1939 : 1940 : 1941 :      :      :      :    	;+ 
+						{priority = 4.0, type = {"Infantry", "Squad",}, 			unit = "squad_ger_regelmasige_infanterie_1942(ger)"},			--;	     :      :      : 1942 : 1943 :      :     	;+
+						{priority = 4.0, type = {"Infantry", "Squad",}, 			unit = "squad_ger_regelmasige_infanterie_1944(ger)"},			--;	     :      :      :      :      : 1944 : 1945	;+		
+				-- Infantry squads			
+						{priority = 1.3, type = {"Infantry", "Squad",}, 			unit = "squad_arm_wh_sonderabteilung_1936(ger)"},				--;	1939 :      :      :      :      :      :     	;+
+						{priority = 2.0, type = {"Infantry", "Squad",}, 			unit = "squad_waffen_ss_1941(ger)"},							--;	     : 1940 : 1941 :      :      :      :     	;+
+						{priority = 1.7, type = {"Infantry", "Squad",}, 			unit = "squad_arm_fallschirmjager_7d_1940(ger)"},				--;	     : 1940 : 1941 : 1942 :      :      :     	;+							
+						{priority = 1.3, type = {"Infantry", "Squad",}, 			unit = "squad_arm_wh_bewahrungstruppe540_1940(ger)"},			--;	     :      : 1941 : 1942 :      :      :     	;+	
+						{priority = 2.0, type = {"Infantry", "Squad",}, 			unit = "squad_arm_ger_waffenss_sq1_1942(ger)"},					--;	     :      :      : 1942 : 1943 : 1944 :    	;+	
+						{priority = 2.0, type = {"Infantry", "Squad",}, 			unit = "squad_sturm_jaegers(ger)"},								--;	     :      :      : 1942 : 1943 : 1944 :     	;+									
+						{priority = 1.0, type = {"Infantry", "Squad",}, 			unit = "squad_waffen_ss_fin_freiwilligen_bat_1943(ger)"},		--;	     :      :      :      : 1943 : 1944 : 1945	;+
+						{priority = 1.7, type = {"Infantry", "Squad",}, 			unit = "squad_panzergrenadier_1943(ger)"},						--;	     :      :      :      : 1943 : 1944 : 1945	;+
+						{priority = 1.7, type = {"Infantry", "Squad",}, 			unit = "squad_ss_fallschirmjager_500_1943(ger)"},				--;	     :      :      :      : 1943 : 1944 : 1945	;+
+						{priority = 2.0, type = {"Infantry", "Squad",}, 			unit = "squad_waffen_ss_1944(ger)"},							--;	     :      :      :      :      : 1944 : 1945	;+
+	
+					-- ROA	
+						{priority = 1.5, type = {"Infantry", "Squad",}, 			unit = "squad_roa(ger)"},										--;	     :      :      : 1942 : 1943 : 1944 :     	;+
+				-- Infantry motor squads
+						{priority = 1.5, type = {"Infantry", "Squad",}, 			unit = "squad_vehicle_arm_wh_panzergrenadier_1940"},			--;	     : 1940 : 1941 : 1942 :      :      :     	;+
+						{priority = 0.7, type = {"Infantry", "Squad",}, 			unit = "squad_pz_pio_302_con(ger)"},							--;	     :      :      : 1942 : 1943 : 1944 : 1945 ;+
+						{priority = 1.3, type = {"Infantry", "Squad",}, 			unit = "squad_gd_motor_arm(ger)"},								--;	     :      :      : 1942 : 1943 :      :     	;+						
+						{priority = 0.7, type = {"Infantry", "Squad",}, 			unit = "squad_gebirgssturm_extcq(ger)"},						--;	     :      :      :      : 1943 : 1944 : 1945	;+
+						{priority = 0.7, type = {"Infantry", "Squad",}, 			unit = "squad_gebirgspzb_extcq(ger)"},							--;	     :      :      :      : 1943 : 1944 : 1945	;+
+						{priority = 0.7, type = {"Infantry", "Squad",}, 			unit = "squad_gebirgs_extcq(ger)"},								--;	     :      :      :      : 1943 : 1944 : 1945	;+
+						{priority = 1.5, type = {"Infantry", "Squad",}, 			unit = "squad_sturm_jaegers_motor(ger)"},						--;	     :      :      :      : 1943 : 1944 : 1945	;+
+						{priority = 0.7, type = {"Infantry", "Squad",}, 			unit = "squad_pz_pio_303b_con(ger)"},							--;	     :      :      :      : 1943 : 1944 : 1945	;+	
+						
+				-- Infantry MG-teams
+						{priority = 3.0, type = {"Infantry", "Team", "MG",}, 		unit = "mg34_tripod"},											--;	1939 : 1940 : 1941 : 1942 :      :      :    	;+
+						{priority = 2.5, type = {"Infantry", "Team", "MG",}, 		unit = "mg42_tripod"},											--;	     :      :      : 1942 : 1943 : 1944 : 1945	;+					
+						{priority = 2.5, type = {"Infantry", "Team", "MG",}, 		unit = "mg131_lafette"},										--;	     :      :      :      :      : 1944 : 1945	;+				
+						{priority = 3.0, type = {"Infantry", "Team", "MG",}, 		unit = "mg131_tripod"},											--;	     :      :      :      : 1943 : 1944 : 1945	;+										
+			-- Guns
+				-- MG & Cannons
+						{priority = 1.5, type = {"Cannon", "MG",}, 					unit = "20mm_kwk30_inf"},										--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945	;+	
+						{priority = 2.0, type = {"Cannon", "AT",}, 					unit = "solothurn_s18_100"},									--;	     :      :      : 1942 : 1943 : 1944 : 1945	;+
+										
+				-- AA-guns
+						{priority = 0.7, type = {"Cannon", "AA", "AT",},			unit = "9cm_flak41i"},											--;	     : 1940 : 1941 :      :      :      :     	;+	--"no_scavenge"	
+						{priority = 1.0, type = {"Cannon", "AA", "AT",},			unit = "105mm_flak38"},											--;	     :      :      :      : 1943 : 1944 : 1945	;+	--"no_scavenge"	
+				-- AT-guns		
+						{priority = 1.0, type = {"Cannon", "AT",}, 					unit = "75mm_pak41"},											--;	     :      : 1941 : 1942 :      :      :     	;+	
+						{priority = 0.7, type = {"Cannon", "AT",}, 					unit = "pak_44"},												--;	     :      :      :      :      :      : 1945	;+	--"no_scavenge"		
+				-- Reactive systems	
+						--{priority = 0.7, type = {"Cannon", "Artillery",}, 			unit = "28cm_wkspr_stan"},									--;	     :      :      : 1942 : 1943 : 1944 : 1945	;+				
+			-- Vehicles
+						{priority = 0.1, type = {"Vehicle", "Unarmed", "Supply",}, 	unit = "opel_blitz_omnibus"},									--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945	;+	
+						{priority = 0.1, type = {"Vehicle", "Unarmed", "Supply",}, 	unit = "sdkfz6_weapon"},										--;	     :      :      :      : 1943 : 1944 : 1945	;+	
+						{priority = 0.3, type = {"Armored", "MG", "Transport",}, 	unit = "sdkfz251_20"},											--;	     :      :      : 1942 :      :      :     	;+							
+			-- BTR
+						{priority = 0.7, type = {"Armored", "AT",}, 				unit = "daf_39_com"},											--;	1939 : 1940 : 1941 :      :      :      :     	;+	
+						{priority = 1.5, type = {"Armored", "AT",}, 				unit = "daf_39"},												--;	1939 : 1940 :      :      :      :      :     	;+			
+						{priority = 0.4, type = {"Armored", "AT",}, 				unit = "ba6_roa"},												--;	     :      :      : 1942 : 1943 :      :     	;+		
+						--ó{priority = 1.3, type = {"Armored", "Mortar",}, 			unit = "sdkfz251d_2xgrw42"},									--;	     :      :      : 1942 : 1943 : 1944 : 1945  ;+									
+				-- Reactive systems			
+						--{priority = 0.2, type = {"Cannon", "Artillery",}, 			unit = "v2_a4"},											--;	     :      :      :      :      : 1944 : 1945	;+	--"no_scavenge"													
+
+			-- Tanks
+				-- Light tanks
+					--		Main=2.0	V.Good=1.5		Expert=1.0		Shit=0.7	Killer=0.5		idiots=0.3-0.5
+						--{priority = 0.1, type = {"Tank", "Light",}, 				unit = "panzer731r"},											--;	     :      : 1941 :      :      :      :     	;+	
+						{priority = 0.1, type = {"Tank", "Light",}, 				unit = "panzer742r"},											--;	     :      : 1941 :      :      :      :     
+						{priority = 1.5, type = {"Tank", "Light",}, 				unit = "panzer_2j"},											--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945
+				-- Medium tanks
+					--		Main=2.0	V.Good=1.5		Expert=1.0		Shit=0.7	Killer=0.5		idiots=0.3-0.5
+						{priority = 1.3, type = {"Tank", "Medium",}, 				unit = "nbfz"},													--;	1939 : 1940 : 1941 :      :      :      :       ;+	--"no_scavenge"	
+						{priority = 1.3, type = {"Tank", "Medium",}, 				unit = "t34_kwk37"},											--;	     :      : 1941 : 1942 :      :      :       ;+					;Trophy						
+						{priority = 1.3, type = {"Tank", "Medium",}, 				unit = "pzvd_pziv_turret"},										--;	     :      :      : 1942 :      :      :       ;+	--"no_scavenge"	;Prototype
+						{priority = 1.3, type = {"Tank", "Medium",}, 				unit = "vk3601h"},												--;	     :      :      : 1942 :      :      :       ;+	--"no_scavenge"	;Prototype	
+						{priority = 1.5, type = {"Tank", "Medium",}, 				unit = "vk_3002"},												--;	     :      :      : 1942 :      :      :       ;+	--"no_scavenge"	;Prototype
+						--{priority = 1.3, type = {"Tank", "Medium",}, 				unit = "sherman5c_ger"},										--;	     :      :      :      :      : 1944 : 1945  ;+
+						{priority = 1.7, type = {"Tank", "Medium", "Support",}, 	unit = "strumpanzer5g"},										--;	     :      :      :      :      : 1944 : 1945  ;+	--"no_scavenge"	;Prototype
+						{priority = 2.5, type = {"Tank", "Medium",}, 				unit = "panther_f"},											--;	     :      :      :      :      : 1944 : 1945  ;+	--"no_scavenge"	;Prototype
+						{priority = 2.5, type = {"Tank", "Medium",}, 				unit = "panther_ii-hd"},										--;	     :      :      :      :      :      : 1945  ;+	--"no_scavenge"	;Prototype
+						{priority = 2.5, type = {"Tank", "Medium",}, 				unit = "panther_ii_88"},										--;	     :      :      :      :      :      : 1945  ;+	--"no_scavenge"	;Prototype
+					-- AA				
+						{priority = 1.0, type = {"Tank", "Medium", "AA",}, 			unit = "coelian_i"},											--;	     :      :      :      :      :      : 1945  ;+	--"no_scavenge"	;Prototype
+						{priority = 0.7, type = {"Tank", "Medium", "AA",}, 			unit = "coelian_ii"},											--;	     :      :      :      :      :      : 1945  ;+	--"no_scavenge"	;PAPER Prototype
+					--ROA
+						{priority = 0.9, type = {"Tank", "Medium",}, 				unit = "pzkw747_76_41"},										--;	     :      : 1941 : 1942 :      :      :       ;+
+						{priority = 0.9, type = {"Tank", "Medium",}, 				unit = "pzkw747_57_43"},										--;	     :      :      : 1942 : 1943 :      :       ;+
+	
+				-- Heavy tanks	
+					--		Main=2.0	V.Good=1.5		Expert=1.0		Shit=0.7	Killer=0.5		idiots=0.3-0.5
+						{priority = 0.9, type = {"Tank", "Heavy",}, 				unit = "char_2c"},												--;	1939 :      :      :      :      :      :       ;+	--"no_scavenge"
+						{priority = 0.7, type = {"Tank", "Heavy",}, 				unit = "char_2c_bis"},											--;	     : 1940 :      :      :      :      :       ;+	--"no_scavenge"
+						{priority = 0.7, type = {"Tank", "Heavy",}, 				unit = "char_2c_armored"},										--;	     : 1940 :      :      :      :      :       ;+	--"no_scavenge"					;Prototype
+						{priority = 0.5, type = {"Tank", "Heavy",}, 				unit = "char_2c_bis_armored"},									--;	     :      : 1941 :      :      :      :       ;+	--"no_scavenge"					;Prototype	
+						{priority = 1.3, type = {"Tank", "Heavy",}, 				unit = "vk6501h"},												--;	     : 1940 : 1941 :      :      :      :       ;+	--"no_scavenge"					;Prototype
+						{priority = 2.0, type = {"Tank", "Heavy",}, 				unit = "tiger1h_early"},										--;	     :      :      : 1942 :      :      :       ;+	--"no_scavenge"
+						{priority = 2.0, type = {"Tank", "Heavy",}, 				unit = "tiger_p"},												--;	     :      :      :      : 1943 :      :       ;+	--"no_scavenge"							
+						{priority = 2.0, type = {"Tank", "Heavy",}, 				unit = "pz6p_panzerbefehiswagen"},								--;	     :      :      :      :      : 1944 : 1945  ;+	
+						{priority = 2.3, type = {"Tank", "Heavy",}, 				unit = "tiger2p"},												--;	     :      :      :      : 1943 : 1944 : 1945  ;+	--"no_scavenge"
+						{priority = 2.0, type = {"Tank", "Heavy",}, 				unit = "pzkpfw_6_ausf_b_tiger_sla16"},							--;	     :      :      :      :      :      : 1945  ;+	--"no_scavenge"					;Prototype
+						{priority = 1.7, type = {"Tank", "Heavy",}, 				unit = "pz6bh_105mm"},											--;	     :      :      :      :      :      : 1945  ;+	--"no_scavenge"					;Prototype
+						{priority = 1.7, type = {"Tank", "Heavy",}, 				unit = "lowehd"},												--;	     :      :      :      :      :      : 1945  ;+	--"no_scavenge"	;PAPER Prototype
+						{priority = 1.2, type = {"Tank", "Heavy",}, 				unit = "pzkpfw_8_maus"},										--;	     :      :      :      :      :      : 1945  ;+
+						{priority = 1.2, type = {"Tank", "Heavy",}, 				unit = "e_100a"},												--;	     :      :      :      :      :      : 1945  ;+	--"no_scavenge"					;Prototype
+						{priority = 1.2, type = {"Tank", "Heavy",}, 				unit = "e_100b"},												--;	     :      :      :      :      :      : 1945  ;+	--"no_scavenge"					;Prototype
+						{priority = 1.0, type = {"Tank", "Heavy",}, 				unit = "e_100c"},												--;	     :      :      :      :      :      : 1945  ;+	--"no_scavenge"					;Prototype
+						
+						{priority = 0.7, type = {"Tank", "Heavy",}, 				unit = "pzkw753_40"},											--;	     :      : 1941 :      :      :      :       ;+	
+						{priority = 0.5, type = {"Tank", "Heavy",}, 				unit = "pzkw754"},												--;	     :      : 1941 :      :      :      :       ;+	
+						{priority = 0.7, type = {"Tank", "Heavy",}, 				unit = "pzkw753_41"},											--;	     :      : 1941 : 1942 :      :      :       ;+
+						{priority = 0.4, type = {"Tank", "Heavy",}, 				unit = "pzkw755_s"},											--;	     :      :      : 1942 :      :      :       ;+
+						{priority = 0.3, type = {"Tank", "Heavy",}, 				unit = "pz756r"},												--;	     :      :      : 1942 : 1943 :      :       ;+	--"no_scavenge"	
+					--ROA
+						{priority = 0.3, type = {"Tank", "Heavy",}, 				unit = "pzkpfw_kw_la753r_ger"},									--;	     :      :      : 1942 :      :      :       ;+
+						--{priority = 1.0, type = {"Tank", "Heavy",}, 				unit = "pzkpfw_kw_la753r"},										--;	     :      :      : 1942 : 1943 :      :       ;+					
+				-- SPG
+					-- SPG-Art.
+						{priority = 1.3, type = {"Tank", "Medium", "Artillery",}, 	unit = "geschuetzwagen_ivb"},									--;	     : 1940 : 1941 :      :      :      :       ;+	--"no_scavenge"					;Prototype
+						{priority = 1.3, type = {"Tank", "Light", "Artillery",}, 	unit = "bison2"},												--;	1939 : 1940 : 1941 :      :      :      :       ;+	--"no_scavenge"				
+					-- SPG-Sup.
+					
+					-- SPG-AA.	
+						{priority = 0.7, type = {"Tank", "Light", "AA",}, 			unit = "flakpanzer1a"},											--;	1939 : 1940 : 1941 :      :      :      :       ;+
+					-- SPG-AT-Support
+						{priority = 1.5, type = {"Tank", "Light", "AT",}, 			unit = "panzerjager1_b"},										--;	1939 : 1940 : 1941 :      :      :      :       ;+	
+						{priority = 1.0, type = {"Tank", "Light", "AT",}, 			unit = "t26_pak9738_ger"},										--;	     :      : 1941 : 1942 : 1943 :      :       ;+	
+						{priority = 0.7, type = {"Tank", "Light", "AT",}, 			unit = "pzkpfw_2hvk903"},										--;	     :      : 1941 : 1942 :      :      :       ;+
+					--	{priority = 1.5, type = {"Tank", "Light", "AT",}, 			unit = "marder139"},											--;	     :      : 1941 : 1942 :      :      :       ;+		
+						{priority = 1.5, type = {"Tank", "Light", "AT",}, 			unit = "marder3h"},												--;	     :      :      : 1942 : 1943 : 1944 : 1945  ;+					
+						{priority = 1.3, type = {"Tank", "Medium", "AT",},			unit = "dicker_max"},											--;	     :      : 1941 : 1942 :      :      :       ;+	--"no_scavenge"
+						{priority = 1.3, type = {"Tank", "Heavy", "AT",},			unit = "sturer_emil"},											--;	     :      :      : 1942 : 1943 :      :       ;+	--"no_scavenge"					
+					-- SPG Reactive
+						{priority = 1.0, type = {"Armored", "Artillery",}, 			unit = "zgkw303f"},												--;	     :      : 1941 : 1942 : 1943 : 1944 : 1945  ;+	--"no_scavenge"
+						--{priority = 1.0, type = {"Vehicle", "Artillery",}, 			unit = "blitz3_6_raketenwerfer"},							--;	     :      :      : 1942 : 1943 : 1944 : 1945  ;+
+					-- SPG-AT
+						{priority = 1.5, type = {"Tank", "Medium", "AT",}, 			unit = "stug3a"},												--;	1939 : 1940 :      :      :      :      :       ;+	
+						{priority = 2.5, type = {"Tank", "Medium", "AT",}, 			unit = "stug4g"},												--;	     :      :      :      : 1943 : 1944 :       ;+
+						{priority = 1.2, type = {"Tank", "Heavy", "AT",}, 			unit = "elefant"},												--;	     :      :      :      :      : 1944 : 1945  ;+	--"no_scavenge"
+						{priority = 1.4, type = {"Tank", "Heavy", "AT",}, 			unit = "jagdtiger88"},											--;	     :      :      :      :      : 1944 : 1945  ;+	--"no_scavenge"			
+		
+				-- Special tanks		
+						{priority = 0.2, type = {"Tank", "Medium", "Support",},		unit = "bergepanther"},											--;	     :      :      :      : 1943 : 1944 : 1945  ;+	--"no_scavenge"
+						{priority = 0.2, type = {"Tank", "Medium", "Support",},		unit = "bergetiger"},											--;	     :      :      :      :      :      : 1945  ;+	--"no_scavenge"		;//END!								
+
+--- [ Less AirCraft addon replacement ] ---	
+			---[====
+				--Aircraft
+					--Recon
+						{priority = 2.5, type = {"Aircraft", "ReconPlane",}, 		unit = "ai_fi156"},												--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945 ;+
+					--Fighters-assault		
+						{priority = 6.0, type = {"Aircraft", "Fighter",}, 			unit = "bf109_e4b_ai"},											--;	1939 : 1940 : 1941 : 1942 : 1943 :      :      ;+						
+						{priority = 4.0, type = {"Aircraft", "Fighter",}, 			unit = "bf109_f2_ai"},											--;	     :      : 1941 : 1942 :      :      :      ;+						
+						{priority = 4.0, type = {"Aircraft", "Fighter",}, 			unit = "bf109_f4_ai"},											--;	     :      :      : 1942 : 1943 :      :      ;+
+						{priority = 6.0, type = {"Aircraft", "Fighter",}, 			unit = "bf109_g6_ai"},											--;	     :      :      :      :      : 1944 : 1945 ;+
+					--Heavy Assault		
+						--{priority = 0.0, type = {"Aircraft", "Fighter",}, 		unit = "bf110_e2"},												--;	     :      :      : 1942 : 1943 : 1944 : 1945 ;+
+						--{priority = 0.0, type = {"Aircraft", "Fighter",}, 		unit = "bf110_e2_ai"},											--;	     :      :      : 1942 : 1943 : 1944 : 1945 ;+
+						--{priority = 0.0, type = {"Aircraft", "Fighter",}, 		unit = "bf110_f4"},												--;	     : 1940 : 1941 : 1942 : 1943 : 1944 : 1945 ;+
+						{priority = 2.0, type = {"Aircraft", "Fighter",}, 			unit = "bf110_f4_ai"},											--;	     : 1940 : 1941 : 1942 : 1943 : 1944 : 1945 ;+
+					--Light bombers
+						{priority = 6.0, type = {"Aircraft", "Fighter",}, 			unit = "ju-87_ai"},												--;	1939 : 1940 : 1941 : 1942 : 1943 :      :      ;+
+					--Jet bombers		
+						{priority = 2.0, type = {"Aircraft", "Fighter",}, 			unit = "me-262_a1_new_ai"},										--;	     :      :      :      :      :      : 1945 ;+
+						{priority = 2.5, type = {"Aircraft", "Fighter",}, 			unit = "me_262_50mm_ai"},										--;	     :      :      :      :      : 1944 : 1945 ;+
+						{priority = 1.5, type = {"Aircraft", "Fighter",}, 			unit = "me_262_rockets_210x2_ai"},								--;	     :      :      :      :      : 1944 : 1945 ;+
+						{priority = 1.5, type = {"Aircraft", "Fighter",}, 			unit = "me_262_rockets_250x2_ai"}								--;	     :      :      :      :      : 1944 : 1945 ;+
+
+					--Para-planes
+						--{priority = 0.7, type = {"Aircraft", "Paratrooper",}, 	unit = "squad_fallschirmjaeger_para_con_late"},					--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945 ;+
+						--{priority = 0.7, type = {"Aircraft", "Paratrooper",}, 	unit = "squad_fallschirmjaeger_para_con"}						--;	1939 : 1940 : 1941 : 1942 : 1943 : 1944 : 1945 ;+	
+			---]====]
+--- [ / Less AirCraft addon replacement ] ---	
+			
+			------------------------------ /ARM END ---------------------------------------		
+		}
+	}
+}

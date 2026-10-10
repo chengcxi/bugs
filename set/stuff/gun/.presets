@@ -1051,7 +1051,7 @@
 ;//------------------------------ AA Heavy
 
 
-(define "range_210"								;//ARm
+(define "range_210_aa"								;//ARm
 	("standard_firing_arc")
 	; {range 210 210}
 	{range 420 420}
@@ -1061,7 +1061,7 @@
 	("direct_settings")
 )
 
-(define "range_220"								;ARm 080326+
+(define "range_220_aa"								;ARm 080326+
 	("standard_firing_arc")
 	; {range 220 220}
 	{range 440 440}
@@ -1071,7 +1071,7 @@
 	("direct_settings")
 )
 
-(define "range_230"								;ARm 080326+						
+(define "range_230_aa"								;ARm 080326+						
 	("standard_firing_arc")
 	; {range 230 230}
 	{range 450 460}									

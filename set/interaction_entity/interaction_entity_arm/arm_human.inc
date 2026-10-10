@@ -81,9 +81,24 @@
 		}	
 	}
 
-	{on "armce_barrage"
+	{on "armce_barrage_hard"
 		; + ARM 05.10.2026 v4: handler for {effect}-based artillery targeting (spawn at entity position)
 		{spawn "artillery_barrage_122_ai"}
+	}
+
+	{on "armce_barrage_heroic"
+		; + ARM 06.10.2026: heroic difficulty barrage (122mm, same as hard)
+		{spawn "artillery_barrage_122_ai"}
+	}
+
+	{on "armce_barrage_easy"
+		; + ARM 06.10.2026 H1: easy difficulty barrage (mortar 80mm)
+		{spawn "mortar_barrage_80_ai"}
+	}
+
+	{on "armce_barrage_normal"
+		; + ARM 06.10.2026 H1: normal difficulty barrage (mortar 120mm)
+		{spawn "mortar_barrage_120_ai"}
 	}
 
 	{on "tag_ai_engineer"

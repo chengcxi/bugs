@@ -613,6 +613,24 @@
 	}
 )
 
+(define "8x_barrage"
+	{on spawn
+		{if not tagged "fired"
+			{tags add "fired"}
+
+			("rnd_art_bomb" delay(0.5) shell(%shell) postion(%postion))
+			("rnd_art_bomb" delay(2.0) shell(%shell) postion(%postion))
+			("rnd_art_bomb" delay(3.5) shell(%shell) postion(%postion))
+			("rnd_art_bomb" delay(5.0) shell(%shell) postion(%postion))
+			("rnd_art_bomb" delay(6.5) shell(%shell) postion(%postion))
+			("rnd_art_bomb" delay(8.0) shell(%shell) postion(%postion))
+			("rnd_art_bomb" delay(9.5) shell(%shell) postion(%postion))
+			("rnd_art_bomb" delay(11.0) shell(%shell) postion(%postion))			
+			{hide 12}
+		}
+	}
+)
+
 (define "2x3_barrage" ;// >200mm
 	{on spawn
 		{if not tagged "fired"
@@ -723,6 +741,84 @@
 			("rnd_art_bomb" delay(11) shell(%shell) postion(%postion))
 			("rnd_art_bomb" delay(11) shell(%shell) postion(%postion))
 			{hide 15}
+		}
+	}
+)
+
+(define "12xcon_mortar_barrage"
+	{on spawn
+		{if not tagged "fired"
+			{tags add "fired"}
+			("rnd_art_bomb" delay(1) shell(%shell) postion(%postion))
+			("rnd_art_bomb" delay(1) shell(%shell) postion(%postion))
+			("rnd_art_bomb" delay(1) shell(%shell) postion(%postion))
+			("rnd_art_bomb" delay(1) shell(%shell) postion(%postion))
+
+			("rnd_art_bomb" delay(6) shell(%shell) postion(%postion))
+			("rnd_art_bomb" delay(6) shell(%shell) postion(%postion))
+			("rnd_art_bomb" delay(6) shell(%shell) postion(%postion))
+			("rnd_art_bomb" delay(6) shell(%shell) postion(%postion))
+
+			("rnd_art_bomb" delay(11) shell(%shell) postion(%postion))
+			("rnd_art_bomb" delay(11) shell(%shell) postion(%postion))
+			("rnd_art_bomb" delay(11) shell(%shell) postion(%postion))
+			("rnd_art_bomb" delay(11) shell(%shell) postion(%postion))
+			{hide 15}
+		}
+	}
+)
+
+(define "36xcon_mortar_barrage"
+	{on spawn
+		{if not tagged "fired"
+			{tags add "fired"}
+
+			("rnd_art_bomb" delay(1) shell(%shell) postion(%postion))
+			("rnd_art_bomb" delay(1) shell(%shell) postion(%postion))
+			("rnd_art_bomb" delay(1) shell(%shell) postion(%postion))
+			("rnd_art_bomb" delay(1) shell(%shell) postion(%postion))
+
+			("rnd_art_bomb" delay(6) shell(%shell) postion(%postion))
+			("rnd_art_bomb" delay(6) shell(%shell) postion(%postion))
+			("rnd_art_bomb" delay(6) shell(%shell) postion(%postion))
+			("rnd_art_bomb" delay(6) shell(%shell) postion(%postion))
+
+			("rnd_art_bomb" delay(11) shell(%shell) postion(%postion))
+			("rnd_art_bomb" delay(11) shell(%shell) postion(%postion))
+			("rnd_art_bomb" delay(11) shell(%shell) postion(%postion))
+			("rnd_art_bomb" delay(11) shell(%shell) postion(%postion))
+
+			("rnd_art_bomb" delay(16) shell(%shell) postion(%postion))
+			("rnd_art_bomb" delay(16) shell(%shell) postion(%postion))
+			("rnd_art_bomb" delay(16) shell(%shell) postion(%postion))
+			("rnd_art_bomb" delay(16) shell(%shell) postion(%postion))
+
+			("rnd_art_bomb" delay(21) shell(%shell) postion(%postion))
+			("rnd_art_bomb" delay(21) shell(%shell) postion(%postion))
+			("rnd_art_bomb" delay(21) shell(%shell) postion(%postion))
+			("rnd_art_bomb" delay(21) shell(%shell) postion(%postion))
+
+			("rnd_art_bomb" delay(26) shell(%shell) postion(%postion))
+			("rnd_art_bomb" delay(26) shell(%shell) postion(%postion))
+			("rnd_art_bomb" delay(26) shell(%shell) postion(%postion))
+			("rnd_art_bomb" delay(26) shell(%shell) postion(%postion))
+
+			("rnd_art_bomb" delay(31) shell(%shell) postion(%postion))
+			("rnd_art_bomb" delay(31) shell(%shell) postion(%postion))
+			("rnd_art_bomb" delay(31) shell(%shell) postion(%postion))
+			("rnd_art_bomb" delay(31) shell(%shell) postion(%postion))
+
+			("rnd_art_bomb" delay(36) shell(%shell) postion(%postion))
+			("rnd_art_bomb" delay(36) shell(%shell) postion(%postion))
+			("rnd_art_bomb" delay(36) shell(%shell) postion(%postion))
+			("rnd_art_bomb" delay(36) shell(%shell) postion(%postion))
+
+			("rnd_art_bomb" delay(41) shell(%shell) postion(%postion))
+			("rnd_art_bomb" delay(41) shell(%shell) postion(%postion))
+			("rnd_art_bomb" delay(41) shell(%shell) postion(%postion))
+			("rnd_art_bomb" delay(41) shell(%shell) postion(%postion))
+
+			{hide 45}
 		}
 	}
 )
@@ -1117,8 +1213,21 @@
 	("8x2_barrage" shell(artillery_single_122_rus_dummy) postion(1200))
 }
 ;================================ < ARm
+;------
+{"mortar_barrage_80_ai"
+	("36xcon_mortar_barrage" shell(mortar_single_80_dummy) postion(2800))
+}
+;------
+{"mortar_barrage_120_ai"
+	("36xcon_mortar_barrage" shell(mortar_single_120_dummy) postion(2600))
+}
+;------
 {"artillery_barrage_122_ai"
 	("32x2_barrage" shell(artillery_single_122_rus_dummy) postion(2600))
+}
+;------
+{"artillery_barrage_240_ai" ;// 1 battery, 2 guns firing 3 shells each
+	("8x_barrage" shell(artillery_single_240_dummy) postion(800))
 }
 ;================================ > ARm
 

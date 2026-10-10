@@ -86,6 +86,11 @@
 ;//}
 
 {"searchlight"
+;	{on spawn
+;		{if user_control
+;			{tags add "switch_to_ai"}
+;		}
+;	}
 	{on "construction_sandbag_cannon_standard" overload
 		{call "random_heavy_sandbag_ring"}
 	}

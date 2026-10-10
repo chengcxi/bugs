@@ -1,0 +1,1336 @@
+require([[/script/multiplayer/modes/utility]])
+
+-- Time from start of match AI will wait before attempting to buy a unit.
+local StartSpawnTime = {
+	-- Bot is defender
+	DefenseMin = 2 * 60 * 1000, 
+	DefenseMax = 3 * 60 * 1000, 
+	-- Bot is attacker. Controlled by preptime now. 
+	AttackMin = 1 * 1000,
+			  -- PT replacer (7 * 60 * 1000)
+	AttackMax = 1 * 1000,
+			  -- PT replacer (8 * 60 * 1000)
+
+}
+
+-- Time from last purchase AI will wait before attempting to buy a new unit.
+local SpawnCooldownTime = {
+-- Values are in milliseconds.
+local SpawnCooldownTimeByDifficulty = {
+
+-- EASY DIFFICULT
+	easy = {
+	-- Time between each wave
+	DCGWaveOffMin = 2.75 * 60 * 1000, 
+	DCGWaveOffMax = 3.25 * 60 * 1000,
+        -- Time between each wave (Defender)
+	DCGWaveOffMin_Defender = 2.75 * 60 * 1000, 
+        DCGWaveOffMax_Defender = 4.25 * 60 * 1000,
+        -- Time between each wave (Attacker)
+        DCGWaveOffMin_Attacker = 2.75 * 60 * 1000, 				
+        DCGWaveOffMax_Attacker = 3.25 * 60 * 1000,				
+	-- Time between each spawn
+	DCGMin = 2 * 1000, 
+	DCGMax = 2 * 1000,
+	},
+-- NORMAL DIFFICULT
+	normal = {
+	-- Time between each wave
+	DCGWaveOffMin = 2.50 * 60 * 1000, 
+	DCGWaveOffMax = 3.00 * 60 * 1000,
+        -- Time between each wave (Defender)
+	DCGWaveOffMin_Defender = 2.50 * 60 * 1000, 
+        DCGWaveOffMax_Defender = 4.00 * 60 * 1000,
+        -- Time between each wave (Attacker)
+        DCGWaveOffMin_Attacker = 2.50 * 60 * 1000, 				
+        DCGWaveOffMax_Attacker = 3.00 * 60 * 1000,				
+	-- Time between each spawn
+	DCGMin = 2 * 1000, 
+	DCGMax = 2 * 1000,
+	},
+-- HARD DIFFICULT [THE ARM STANDARD]
+	hard = {
+	-- Time between each wave
+	DCGWaveOffMin = 2.25 * 60 * 1000, 
+	DCGWaveOffMax = 2.75 * 60 * 1000,
+        -- Time between each wave (Defender)
+	DCGWaveOffMin_Defender = 2.25 * 60 * 1000, 
+        DCGWaveOffMax_Defender = 3.75 * 60 * 1000,
+        -- Time between each wave (Attacker)
+        DCGWaveOffMin_Attacker = 2.25 * 60 * 1000, 				
+        DCGWaveOffMax_Attacker = 2.75 * 60 * 1000,				
+	-- Time between each spawn
+	DCGMin = 2 * 1000, 
+	DCGMax = 2 * 1000,
+	},
+-- HEROIC DIFFICULT
+	heroic = {
+	-- Time between each wave
+	DCGWaveOffMin = 2.00 * 60 * 1000, 
+	DCGWaveOffMax = 2.50 * 60 * 1000,
+        -- Time between each wave (Defender)
+	DCGWaveOffMin_Defender = 2.00 * 60 * 1000, 
+        DCGWaveOffMax_Defender = 3.50 * 60 * 1000,
+        -- Time between each wave (Attacker)
+        DCGWaveOffMin_Attacker = 2.00 * 60 * 1000, 				
+        DCGWaveOffMax_Attacker = 2.50 * 60 * 1000,				
+	-- Time between each spawn
+	DCGMin = 2 * 1000, 
+	DCGMax = 2 * 1000,
+	},
+}
+
+-- Number of possible units than can be in a wave attack
+local WaveUnitByDifficulty = {
+-- EASY DIFFICULT
+        easy = {
+	Min = 7,
+	Max = 11,
+	Min_Attacker = 13,										
+	Max_Attacker = 16,
+        },
+-- NORMAL DIFFICULT
+	normal = {
+	Min = 9,
+	Max = 13,
+	Min_Attacker = 15,										
+	Max_Attacker = 18,
+	},
+-- HARD DIFFICULT [THE ARM STANDARD]
+	hard = {
+	Min = 11,
+	Max = 15,
+	Min_Attacker = 17,										
+                       -- (20) - (20) - (19) - (17)
+	Max_Attacker = 20,										
+                       -- (23) - (23) - (22) - (20)
+	},
+-- HEROIC DIFFICULT
+	heroic = {
+	Min = 13,
+	Max = 17,
+	Min_Attacker = 19,										
+	Max_Attacker = 22,										
+	},
+}
+
+local function GetBotDifficultyKey()
+	return BotApi.Instance.difficulty or "normal"
+end
+
+local function GetStartSpawnTime()
+	return StartSpawnTime
+end
+
+local function GetSpawnCooldownTime()
+	return SpawnCooldownTimeByDifficulty[GetBotDifficultyKey()] or SpawnCooldownTimeByDifficulty.normal
+end
+
+local function GetWaveUnit()
+	return WaveUnitByDifficulty[GetBotDifficultyKey()] or WaveUnitByDifficulty.normal
+end
+
+local function RollWaveUnitTotal()
+	local waveUnit = GetWaveUnit()
+	return math.random(waveUnit.Min, waveUnit.Max)
+end
+
+-- Sets time limit AI will wait for a unit it has chosen to buy if the unit is not yet available
+local UnitSpawnWaitTime = 1.5 * 60000 -- 1:30min (ms) 
+
+-- Time delay for units to get a new move order after spawn move order. Loops.
+local OrderRotationPeriod = 1.0 * 60000 -- 1:00 min (ms)
+
+local botDefender
+enableWaveCounter = true
+local function isAttackerOrDefender()
+	botDefender = not BotApi.Conquest.Attacking
+	if printDebug then print("Print: botDefender", botDefender) end
+end
+
+local function setVarsInMissionScript()
+	-- Mission script var is from the user's perspective.
+	BotApi.Scene:SetVar("user_is_defender", botDefender and 0 or 1)
+
+	local nationMap = { rus = 1, ger = 2, fin = 3, usa = 4, eng = 5, jap = 11 }
+	local difficultyMap = { easy = 1, normal = 2, hard = 3, heroic = 4 }
+	local spawnMap = { a = 1, b = 2 }
+	local playerSpawnNameMap = {
+		a1 = 1, a2 = 2, a3 = 3, a4 = 4,
+		b1 = 5, b2 = 6, b3 = 7, b4 = 8,
+	}
+
+	BotApi.Scene:SetVar("bot_army", nationMap[BotApi.Instance.army] or 0)
+	BotApi.Scene:SetVar("bot_difficulty", difficultyMap[BotApi.Instance.difficulty] or 0)
+	BotApi.Scene:SetVar("bots_spawnside", spawnMap[spawnSide] or 0)
+	BotApi.Scene:SetVar("player_spawn_name", playerSpawnNameMap[BotApi.Conquest.PlayerSpawnPoint] or 0)
+
+	BotApi.Scene:SetVar("enemyid", BotApi.Instance.playerId)
+	BotApi.Scene:SetVar("id_1st_enemy", BotApi.Conquest.FirstEnemyId)
+	BotApi.Scene:SetVar("id_defenderbot", BotApi.Conquest.DefenderBotId)
+	BotApi.Scene:SetVar("id_1st_player", BotApi.Conquest.FirstPlayerId)
+end
+
+local waveSpawnPossible
+local waveSpawnActive = true
+local waveUnitCount = 0
+local waveNumber = 0
+local waveUnitTotal = math.random(WaveUnit.Min, WaveUnit.Max)
+if printDebug then print("Print: waveUnitTotal", waveUnitTotal) end
+function WaveAttack()
+	if not botDefender then
+		waveSpawnPossible = true
+	end
+
+	if waveSpawnPossible then
+		if waveUnitCount >= waveUnitTotal then
+			waveUnitTotal = math.random(WaveUnit.Min_Attacker, WaveUnit.Max_Attacker)
+			if printDebug then print("Print: waveUnitTotal", waveUnitTotal) end
+			waveSpawnActive = false
+			waveUnitCount = 0
+			waveNumber = waveNumber + 1
+			if printDebug then print("Print: waveNumber", waveNumber) end
+		else
+			waveSpawnActive = true
+		end
+	end
+end
+
+function WaveUnitCounter()
+	if waveSpawnPossible then
+		waveUnitCount = waveUnitCount + 1
+		if printDebug then print("Print: waveUnitCount =", waveUnitCount) end
+	end
+end
+
+local firstPurchase = true
+function GameModeSpawnCooldown()
+	WaveAttack()
+	local spawnTime
+	if botDefender and firstPurchase then
+		spawnTime = {Min = StartSpawnTime.DefenseMin, Max = StartSpawnTime.DefenseMax}
+	elseif firstPurchase then
+		spawnTime = {Min = StartSpawnTime.AttackMin, Max = StartSpawnTime.AttackMax}
+	elseif not waveSpawnActive then
+	if botDefender then
+            spawnTime = {Min = SpawnCooldownTime.DCGWaveOffMin_Defender, Max = SpawnCooldownTime.DCGWaveOffMax_Defender}
+        else
+            spawnTime = {Min = SpawnCooldownTime.DCGWaveOffMin_Attacker, Max = SpawnCooldownTime.DCGWaveOffMax_Attacker}
+        end
+	else
+		spawnTime = {Min = SpawnCooldownTime.DCGMin, Max = SpawnCooldownTime.DCGMax}
+	end
+	local cooldown = math.random(spawnTime.Min, spawnTime.Max)
+	firstPurchase = false
+	return cooldown
+end
+
+function table.shuffle(tbl)
+	local rand = math.random
+	for i = #tbl, 2, -1 do
+	  local j = rand(i)
+	  tbl[i], tbl[j] = tbl[j], tbl[i]
+	end
+	return tbl
+end
+  
+-- Function to shuffle the flags table
+local function shuffleFlags(flags)
+	if waveNumber <= 1 then
+		table.sort(flags, function(a, b) return a.name < b.name end)
+	else
+		table.shuffle(flags)
+	end
+end
+
+-- Function to calculate flag priority for attacker
+local function calculateAttackerPriority(f, enemyTeam, team, firstEnemyFlagEncountered)
+    if f.owner == enemyTeam and not firstEnemyFlagEncountered then
+        firstEnemyFlagEncountered = true
+        return f.priority, firstEnemyFlagEncountered
+    elseif f.owner == enemyTeam or f.owner == team then
+        return f.priority * 0, firstEnemyFlagEncountered
+    end
+    return f.priority, firstEnemyFlagEncountered
+end
+
+-- Function to calculate flag priority for defender
+local function calculateDefenderPriority(f, enemyTeam, team)
+    if f.owner == enemyTeam then
+        return f.priority * 2
+    elseif f.owner == team then
+        return f.priority * 0.5
+    end
+    return f.priority
+end
+
+function GetFlagToCapture(flagPoints, getPriority, flags)
+	local alliedFlags, opponentFlags, neutralFlags, totalFlags = CalculateFlagStatistics(BotApi.Scene.Flags)
+	local capturableFlags = CalculateCapturableFlags(totalFlags, alliedFlags)
+
+	PrintFlagDebugInfo(alliedFlags, opponentFlags, neutralFlags, totalFlags, capturableFlags, teamIsLosing)
+    
+    searchDestroy = CalculateSearchDestroyValue(capturableFlags, alliedFlags, opponentFlags)
+	
+	if waveNumber <= 1 then
+        shuffleFlags(flags)
+    end
+	local firstEnemyFlagEncountered = false
+
+	return GetRandomItem(flags, function(f)
+		if not botDefender then
+			-- bot prioritize one flag (1st in flags table that is enemy)
+			local priority
+			priority, firstEnemyFlagEncountered = calculateAttackerPriority(f, enemyTeam, team, firstEnemyFlagEncountered)
+			return priority
+		else
+			return calculateDefenderPriority(f, enemyTeam, team)
+		end
+	end)
+end
+
+local function SceneVar(name, default)
+	local v = BotApi.Scene:GetVar(name)
+	if v ~= nil then
+		return v
+	end
+	return default
+end
+
+local function SetSceneVar(name, value)
+	BotApi.Scene:SetVar(name, value)
+end
+
+local ArtilleryOrderState = {
+	bought = 0,
+	target = 0,
+	toSpawn = 0,
+	lastResetState = 0
+}
+		
+local function RollArtilleryCount()
+	return math.random(1, 3)
+end
+
+local PendingArtillerySpawnTag = false
+local PendingArtillerySpawnUnit = nil
+
+local ScriptedArtillerySquads = {}
+local PendingArtillerySquads = {}
+
+local PendingArtilleryTagJobs = {}
+local ArtilleryTagPulseLocked = false
+local ARTY_TAG_MAX_PULSES = 6
+
+local function SquadExists(squad)
+	if not squad or squad == 0 then
+		return false
+	end
+
+	for _, s in pairs(BotApi.Scene.Squads) do
+		if s == squad then
+					return true
+				end
+			end
+
+	return false
+end
+
+local RepairReturnIssued = {}
+local RepairReturnPulseCount = {}
+
+local REPAIR_RETURN_PULSE_MS = 8000
+local REPAIR_RETURN_MAX_PULSES = 6
+
+local function IsValidRepairSquad(squad)
+	return squad and squad ~= 0 and SquadExists(squad)
+end
+
+local function ClearRepairReturnState(squad)
+	if not squad then
+		return
+	end
+
+	RepairReturnIssued[squad] = nil
+	RepairReturnPulseCount[squad] = nil
+end
+
+local function IsRepairReturnReady(squad)
+	if not IsValidRepairSquad(squad) then
+		return false
+	end
+
+	return BotApi.Scene:IsSquadTagged(squad, "ai_ready_to_move")
+			end
+
+local function HasAnyWaypoints()
+	local waypoints = BotApi.Scene.Waypoints
+
+	if not waypoints then
+		return false
+	end
+
+	return next(waypoints) ~= nil
+end
+
+local function GiveRepairReturnFlagOrder(squad)
+	if not IsValidRepairSquad(squad) then
+		return false
+	end
+
+	local sceneFlags = BotApi.Scene.Flags
+
+	if not sceneFlags then
+		if printDebug then
+			print("[REPAIR RETURN] no Scene.Flags, seek and destroy", squad)
+		end
+
+		BotApi.Commands:SeekAndDestroy(squad)
+		return true
+	end
+
+	local flags = {}
+
+	for i, flag in pairs(sceneFlags) do
+		if flag and flag.name then
+			table.insert(flags, {
+				id = i,
+				name = flag.name,
+				priority = getDefaultFlagPriority(flag),
+				owner = flag.occupant
+			})
+		end
+	end
+
+	if #flags == 0 then
+		if printDebug then
+			print("[REPAIR RETURN] no valid flags, seek and destroy", squad)
+		end
+
+		BotApi.Commands:SeekAndDestroy(squad)
+		return true
+	end
+
+	local flag = GetFlagToCapture(sceneFlags, getDefaultFlagPriority, flags)
+
+	local flagName = nil
+
+	if type(flag) == "table" then
+		flagName = flag.name
+	elseif type(flag) == "string" then
+		flagName = flag
+	end
+
+	if not flagName then
+		if printDebug then
+			print("[REPAIR RETURN] no flag found, seek and destroy", squad)
+		end
+
+		BotApi.Commands:SeekAndDestroy(squad)
+		return true
+	end
+
+	if printDebug then
+		print("[REPAIR RETURN] direct flag order", squad, flagName)
+	end
+
+	BotApi.Commands:CaptureFlag(squad, flagName)
+	return true
+end
+
+local function GiveRepairReturnBattleOrder(squad)
+	if not IsValidRepairSquad(squad) then
+		return false
+	end
+
+	if HasAnyWaypoints() and type(GotoNextWaypoint) == "function" then
+		if printDebug then
+			print("[REPAIR RETURN] waypoint order", squad)
+		end
+
+		if GotoNextWaypoint(squad) then
+			return true
+		end
+	end
+
+	return GiveRepairReturnFlagOrder(squad)
+end
+
+local function StartRepairReturnPulse(squad)
+	if not IsRepairReturnReady(squad) then
+		ClearRepairReturnState(squad)
+		return
+	end
+
+	if RepairReturnPulseCount[squad] ~= nil then
+		return
+	end
+
+	RepairReturnPulseCount[squad] = 0
+
+	local function Pulse()
+		if not IsValidRepairSquad(squad) then
+			ClearRepairReturnState(squad)
+			return
+		end
+
+		if not IsRepairReturnReady(squad) then
+			ClearRepairReturnState(squad)
+			return
+		end
+
+		RepairReturnPulseCount[squad] = RepairReturnPulseCount[squad] + 1
+
+		GiveRepairReturnBattleOrder(squad)
+
+		if RepairReturnPulseCount[squad] >= REPAIR_RETURN_MAX_PULSES then
+			if printDebug then
+				print("[REPAIR RETURN] pulse finished", squad)
+			end
+
+			RepairReturnPulseCount[squad] = nil
+			return
+		end
+
+		BotApi.Events:SetQuantTimer(Pulse, REPAIR_RETURN_PULSE_MS)
+	end
+
+	Pulse()
+end
+
+local function ProcessRepairReturnSquads()
+	if not BotApi.Scene.Squads then
+		return
+	end
+
+	for _, squad in pairs(BotApi.Scene.Squads) do
+		if IsValidRepairSquad(squad) then
+			if IsRepairReturnReady(squad) then
+				if not RepairReturnIssued[squad] then
+					RepairReturnIssued[squad] = true
+
+					if printDebug then
+						print("[REPAIR RETURN] starting return-to-battle pulse", squad)
+					end
+
+					StartRepairReturnPulse(squad)
+				end
+			else
+				ClearRepairReturnState(squad)
+			end
+		end
+	end
+end
+
+local function IsValidQueuedArtilleryJob(job)
+	if not job then
+		return false
+	end
+
+	if not job.squad or job.squad == 0 then
+		return false
+	end
+
+	if not job.unitName or job.unitName == "" then
+		return false
+	end
+
+	if string.sub(job.unitName, 1, 6) == "squad_" then
+		return false
+	end
+
+	if PendingArtillerySquads[job.squad] ~= true
+	and ScriptedArtillerySquads[job.squad] ~= true
+	then
+		return false
+	end
+
+	return true
+end
+
+local function IsScriptedArtillerySquad(squad)
+	return ScriptedArtillerySquads[squad] == true
+end
+
+local function IsReservedArtillerySquad(squad)
+	if not squad or squad == 0 then
+		return false
+	end
+
+	if PendingArtillerySquads[squad] == true then
+		return true
+	end
+
+	if ScriptedArtillerySquads[squad] == true then
+		return true
+	end
+
+	return false
+end
+
+local function HasType(unitInfo, wanted)
+	if not unitInfo or not unitInfo.type then
+		return false
+	end
+
+	for _, v in ipairs(unitInfo.type) do
+		if v == wanted then
+			return true
+		end
+	end
+
+	return false
+end
+
+local function TypeList(unitInfo)
+	if not unitInfo or not unitInfo.type then
+		return "nil"
+	end
+
+	local out = {}
+	for _, v in ipairs(unitInfo.type) do
+		table.insert(out, tostring(v))
+	end
+	return table.concat(out, ",")
+end
+
+local function IsArtilleryPiece(unitInfo)
+	return HasType(unitInfo, "Artillery")
+end
+
+local function IsArtilleryOrderEnabled()
+	return SceneVar("ai_artillery_order", 0) == 1
+end
+
+local function IsArtilleryTaggingPending()
+	return false
+end
+
+local firstPurchase = true
+
+function GameModeSpawnCooldown()
+	if IsArtilleryTaggingPending() then
+		return 10 * 1000
+	end
+
+	if IsArtilleryOrderEnabled() and ArtilleryOrderState.toSpawn > 0 then
+		return 8 * 1000
+	end
+
+	WaveAttack()
+
+	local spawnTime
+	local startSpawnTime = GetStartSpawnTime()
+	local spawnCooldownTime = GetSpawnCooldownTime()
+
+	if botDefender and firstPurchase then
+		spawnTime = {
+			Min = startSpawnTime.DefenseMin,
+			Max = startSpawnTime.DefenseMax
+		}
+	elseif firstPurchase then
+		spawnTime = {
+			Min = startSpawnTime.AttackMin,
+			Max = startSpawnTime.AttackMax
+		}
+	elseif not waveSpawnActive then
+		spawnTime = {
+			Min = spawnCooldownTime.DCGWaveOffMin,
+			Max = spawnCooldownTime.DCGWaveOffMax
+		}
+	else
+		spawnTime = {
+			Min = spawnCooldownTime.DCGMin,
+			Max = spawnCooldownTime.DCGMax
+		}
+	end
+
+	local cooldown = math.random(spawnTime.Min, spawnTime.Max)
+	firstPurchase = false
+	return cooldown
+end
+
+local function RefreshArtilleryOrderState()
+	local resetNow = SceneVar("ai_artillery_order_reset", 0) == 1
+
+	if resetNow and ArtilleryOrderState.lastResetState == 0 then
+		ArtilleryOrderState.bought = 0
+		SetSceneVar("ai_artillery_order_reset", 0)
+		SetSceneVar("ai_artillery_bought", 0)
+		SetSceneVar("ai_artillery_done", 0)
+	end
+
+	ArtilleryOrderState.lastResetState = resetNow and 1 or 0
+end
+
+local function GetOrderedArtilleryUnit(units)
+	if not units then
+		return nil
+	end
+
+	local unitsToSpawn = {}
+	local income = BotApi.Commands:Income(BotApi.Instance.playerId)
+
+	for _, unit in pairs(units) do
+		local min_team = unit.min_team
+		local min_income = unit.min_income
+		local available = BotApi.Commands:IsUnitAvailable(unit.unit)
+		local isArtillery = IsArtilleryPiece(unit)
+
+		if not min_income then min_income = -1 end
+		if not min_team then min_team = 0 end
+
+		if teamSize >= min_team and available and isArtillery then
+			table.insert(unitsToSpawn, unit)
+		end
+	end
+
+	if #unitsToSpawn == 0 then
+		return nil
+	end
+
+	local picked = GetRandomItem(unitsToSpawn, function(t)
+		return t.priority
+	end)
+
+	if picked then
+		picked.ordered_artillery = true
+		print(
+			"[ARTY] PICKED=" .. tostring(picked.unit) ..
+			" priority=" .. tostring(picked.priority) ..
+			" types=" .. TypeList(picked)
+		)
+	end
+
+	return picked
+end
+
+function GetModeSpecificUnitToSpawn(purchase, units)
+	RefreshArtilleryOrderState()
+
+	if not IsArtilleryOrderEnabled() then
+		return nil
+	end
+
+	if ArtilleryOrderState.target <= 0 then
+		return nil
+	end
+
+	if ArtilleryOrderState.toSpawn <= 0 then
+		ArtilleryOrderState.target = 0
+		ArtilleryOrderState.toSpawn = 0
+		SetSceneVar("ai_artillery_done", 1)
+		SetSceneVar("ai_artillery_order", 0)
+		SetSceneVar("ai_artillery_order_reset", 0)
+		return nil
+	end
+	
+	if not purchase then
+		return nil
+	end
+
+	if not purchase.purchases then
+		return nil
+	end
+
+	if not purchase.idx then
+		return nil
+	end
+
+	local startIdx = purchase.idx
+	local idx = startIdx
+	local firstPass = true
+
+	while idx do
+		local entry = purchase.purchases[idx]
+		local currentUnits = entry and entry.Units
+
+		local artilleryUnit = GetOrderedArtilleryUnit(currentUnits)
+
+		if artilleryUnit then
+			artilleryUnit.ordered_artillery = true
+			ArtilleryOrderState.toSpawn = ArtilleryOrderState.toSpawn - 1
+
+			PendingArtillerySpawnTag = true
+			PendingArtillerySpawnUnit = artilleryUnit.unit
+
+			-- IMPORTANT:
+			-- Once the last artillery piece has been selected, release the normal purchase gate.
+			-- Do not wait for OnModeSpecificUnitSpawned(), because that can leave normal spawning stuck.
+			if ArtilleryOrderState.toSpawn <= 0 then
+				SetSceneVar("ai_artillery_done", 1)
+				SetSceneVar("ai_artillery_order", 0)
+				SetSceneVar("ai_artillery_order_reset", 0)
+			end
+
+			return artilleryUnit
+		end
+
+		idx = next(purchase.purchases, idx)
+		if idx == nil then
+			idx = next(purchase.purchases, nil)
+		end
+
+		if not firstPass and idx == startIdx then
+			break
+		end
+
+		firstPass = false
+	end
+
+	return nil
+end
+
+function OnModeSpecificUnitSpawned(spawnInfo)
+	if not spawnInfo then
+		return
+	end
+
+	if not spawnInfo.ordered_artillery then
+		return
+	end
+
+	if SceneVar("ai_artillery_warning_fired", 0) == 0 then
+		SetSceneVar("ai_artillery_warning_fired", 1)
+		SetSceneVar("ai_artillery_warning_request", 1)
+	end
+
+	ArtilleryOrderState.bought = ArtilleryOrderState.bought + 1
+	SetSceneVar("ai_artillery_bought", ArtilleryOrderState.bought)
+
+	if ArtilleryOrderState.target > 0 and ArtilleryOrderState.bought >= ArtilleryOrderState.target then
+		ArtilleryOrderState.target = 0
+		ArtilleryOrderState.toSpawn = 0
+		SetSceneVar("ai_artillery_done", 1)
+		SetSceneVar("ai_artillery_order", 0)
+		SetSceneVar("ai_artillery_order_reset", 0)
+	end
+end
+
+function GetCurrentSpawnWaitTime()
+    return UnitSpawnWaitTime
+end
+
+function GetUnitToSpawn(units)
+	if not units then
+		return nil
+	end
+
+	local unitsToSpawn = {}
+	
+	local income = BotApi.Commands:Income(BotApi.Instance.playerId)
+
+	if printDebug then print("Player#".. BotApi.Instance.playerId.. " Units") end
+	for i, unit in pairs(units) do
+		local min_team = unit.min_team  -- not used
+		local min_income = unit.min_income -- not used
+		local available = BotApi.Commands:IsUnitAvailable(unit.unit)
+		
+		if not min_income then min_income = -1 end
+		if not min_team then min_team = 0 end
+		
+		--if printDebug then print("------ Unit", unit.unit) end
+
+		if teamSize >= min_team and income >= min_income and available then
+			if not IsArtilleryPiece(unit) then
+				table.insert(unitsToSpawn, unit)
+			end
+		end
+	end
+
+	-- TODO: instead of return nil, find the shortest tts and delay calling function again by that time 
+	if #unitsToSpawn == 0 then
+		return nil
+	end
+
+	return GetRandomItem(unitsToSpawn, function(t)
+		-- search "type" array for specific element
+		local function UnitType(val)
+			if not t.type then
+				return false
+			end
+			for _, value in ipairs(t.type) do
+				if value == val then
+					return true
+				end
+			end
+			return false
+		end
+
+		if UnitType("Squad") then
+			return t.priority * 1.75
+		end
+
+		if UnitType("Cannon") then
+			return t.priority * 0.80
+		end
+
+		return t.priority
+	end)
+end
+
+local function ShouldAllowArtilleryOrder()
+	local userTeam = SceneVar("user_team", 0)
+	local tier1 = SceneVar("tier1", 0)
+
+	return userTeam > 0 and tier1 >= 1
+end
+
+local function StartArtilleryOrder()
+	if SceneVar("ai_artillery_order", 0) == 1 then
+		return
+	end
+
+	ArtilleryOrderState.bought = 0
+	ArtilleryOrderState.target = RollArtilleryCount()
+	ArtilleryOrderState.toSpawn = ArtilleryOrderState.target
+	ArtilleryOrderState.lastResetState = 0
+
+	waveSpawnActive = true
+	waveSpawnPossible = true
+	waveUnitCount = 0
+
+	SetSceneVar("ai_artillery_order", 1)
+	SetSceneVar("ai_artillery_order_reset", 1)
+	SetSceneVar("ai_artillery_bought", 0)
+	SetSceneVar("ai_artillery_done", 0)
+	SetSceneVar("ai_artillery_warning_fired", 0)
+	SetSceneVar("ai_artillery_target_count", ArtilleryOrderState.target)
+end
+
+local ARTY_TEST_DELAY = 30 * 1000 -- 30 seconds
+local artilleryStartDelayDone = false
+local artilleryStartDelayTimer = nil
+
+local function StartArtilleryStartDelay()
+	if artilleryStartDelayDone or artilleryStartDelayTimer then
+		return
+	end
+
+	artilleryStartDelayTimer = BotApi.Events:SetQuantTimer(function()
+		artilleryStartDelayTimer = nil
+		artilleryStartDelayDone = true
+	end, ARTY_TEST_DELAY)
+end
+
+local DEBUG_SKIP_ARTY_DELAY = false
+
+local function RollArtilleryDelayMs()
+	local roll = math.random()
+
+	if roll < 0.15 then
+		return 700 * 1000
+	elseif roll < 0.30 then
+		return 750 * 1000
+	elseif roll < 0.45 then
+		return 800 * 1000
+	elseif roll < 0.60 then
+		return 850 * 1000
+	elseif roll < 0.70 then
+		return 900 * 1000
+	elseif roll < 0.80 then
+		return 1000 * 1000
+	else
+		return 1100 * 1000
+	end
+end
+
+local artilleryOrderTriggered = false
+local artilleryDelayTimer = nil
+local artilleryDelayReady = false
+
+local function StartArtilleryDelayTimer()
+	if artilleryDelayTimer or artilleryDelayReady or artilleryOrderTriggered then
+		return
+	end
+
+	local delayMs = RollArtilleryDelayMs()
+
+	artilleryDelayTimer = BotApi.Events:SetQuantTimer(function()
+		artilleryDelayTimer = nil
+		artilleryDelayReady = true
+	end, delayMs)
+end
+
+local function UpdateArtilleryOrderScheduler()
+	if artilleryOrderTriggered then
+		return
+	end
+
+	if not ShouldAllowArtilleryOrder() then
+		return
+	end
+
+	StartArtilleryStartDelay()
+
+	if not artilleryStartDelayDone then
+		return
+	end
+
+	if DEBUG_SKIP_ARTY_DELAY then
+		artilleryDelayReady = true
+	end
+
+	if not artilleryDelayReady then
+		StartArtilleryDelayTimer()
+		return
+	end
+
+	if math.random() <= 0.35 then
+		StartArtilleryOrder()
+	end
+
+	if SceneVar("ai_artillery_order", 0) == 1 then
+		artilleryOrderTriggered = true
+	end
+end
+
+function OnGameStart()
+	PendingArtilleryTagJobs = {}
+	ArtilleryTagPulseLocked = false
+	PendingArtillerySpawnTag = false
+	PendingArtillerySpawnUnit = nil
+
+	SetSceneVar("ai_artillery_engaged", 0)
+	SetSceneVar("ai_artillery_tag_request", 0)
+	SetSceneVar("ai_artillery_tag_busy", 0)
+	SetSceneVar("ai_artillery_on", 0)
+	SetSceneVar("ai_artillery_loop_busy", 0)
+
+    isAttackerOrDefender()
+    setVarsInMissionScript()
+
+	waveUnitTotal = RollWaveUnitTotal()
+	if printDebug then
+		print("Print: difficulty =", tostring(GetBotDifficultyKey()))
+		print("Print: waveUnitTotal", waveUnitTotal)
+	end
+
+    OnGameStartUtility("conquest")
+end
+
+function OnGameQuant()
+	UpdateArtilleryOrderScheduler()
+	TrySpawnUnit()
+	
+	ProcessRepairReturnSquads()
+
+	local waypoints = BotApi.Scene.Waypoints
+
+	if #waypoints == 0 then
+		for i, squad in pairs(BotApi.Scene.Squads) do
+			if not IsReservedArtillerySquad(squad) and not Context.SquadTimers[squad] then
+				SetSquadOrder(CaptureFlag, squad, OrderRotationPeriod)
+			end
+		end
+	end
+end
+
+function GotoNextWaypoint(squad)
+	local waypoints = BotApi.Scene.Waypoints
+
+	if not waypoints then
+		return false
+	end
+
+	local validWaypoints = {}
+
+	for _, waypoint in pairs(waypoints) do
+		table.insert(validWaypoints, waypoint)
+	end
+
+	if #validWaypoints == 0 then
+		return false
+	end
+
+	BotApi.Commands:CaptureFlag(squad, validWaypoints[math.random(#validWaypoints)])
+
+	if printDebug then
+		print("Print: #captureFlag call inside GoToNextWaypoint")
+	end
+
+	return true
+end
+
+local ArtilleryPulseTimers = {}
+
+local function IsArtilleryCombatLocked(squad)
+	if not IsScriptedArtillerySquad(squad) then
+		return false
+	end
+
+	if SceneVar("ai_artillery_engaged", 0) == 1 then
+		return true
+	end
+
+	if BotApi.Scene:IsSquadTagged(squad, "ai_artillery_hold") then
+		return true
+	end
+
+	if BotApi.Scene:IsSquadTagged(squad, "ai_artillery_too_close") then
+		return true
+	end
+
+	if BotApi.Scene:IsSquadTagged(squad, "ai_artillery_in_range") then
+		return true
+	end
+
+	return false
+end
+
+local function GiveArtilleryFlagMoveOrder(squad)
+	if not squad or squad == 0 then
+		return
+	end
+
+	if not SquadExists(squad) then
+		return
+	end
+
+	local flags = {}
+    for i, flag in pairs(BotApi.Scene.Flags) do
+		table.insert(flags, {
+			id = i,
+			name = flag.name,
+			priority = getDefaultFlagPriority(flag),
+			owner = flag.occupant
+		})
+    end
+	
+	local flag = GetFlagToCapture(BotApi.Scene.Flags, getDefaultFlagPriority, flags)
+
+	if not flag then
+		if printDebug then
+		end
+		return
+	end
+
+	if printDebug then
+	end
+
+	return BotApi.Commands:CaptureFlag(squad, flag.name)
+end
+
+local function GiveNormalArtilleryMoveOrder(squad)
+	if not squad or squad == 0 then
+		return
+	end
+
+	if not SquadExists(squad) then
+		return
+	end
+
+	if BotApi.Scene:IsSquadTagged(squad, "i_see_you") then
+		return
+	end
+
+	if IsArtilleryCombatLocked(squad) then
+		return
+	end
+
+	local waypoints = BotApi.Scene.Waypoints
+
+	if #waypoints == 0 then
+		GiveArtilleryFlagMoveOrder(squad)
+	else
+		GotoNextWaypoint(squad)
+	end
+end
+
+local ARTY_MOVE_PULSE_MS = 8000
+
+local function StartScriptedArtilleryPulse(squad)
+	if not squad or squad == 0 then
+		return
+	end
+
+	if ArtilleryPulseTimers[squad] then
+		return
+	end
+
+	ArtilleryPulseTimers[squad] = BotApi.Events:SetQuantTimer(function()
+		ArtilleryPulseTimers[squad] = nil
+
+		if not SquadExists(squad) then
+			PendingArtillerySquads[squad] = nil
+			ScriptedArtillerySquads[squad] = nil
+			return
+		end
+
+		if PendingArtillerySquads[squad] == true and not IsScriptedArtillerySquad(squad) then
+			StartScriptedArtilleryPulse(squad)
+			return
+		end
+
+		if not IsScriptedArtillerySquad(squad) then
+			return
+		end
+
+		if not BotApi.Scene:IsSquadTagged(squad, "i_see_you") then
+			StartScriptedArtilleryPulse(squad)
+			return
+		end
+
+		GiveNormalArtilleryMoveOrder(squad)
+
+		StartScriptedArtilleryPulse(squad)
+	end, ARTY_MOVE_PULSE_MS)
+end
+
+function InitialArtilleryMove(squad)
+	StartScriptedArtilleryPulse(squad)
+end
+
+function OnWaypoint(args)
+	if printDebug then print("Print: #GotoNextWaypoint call inside OnWaypoint") end
+
+	if IsReservedArtillerySquad(args.squadId) then
+		return
+	end
+
+		GotoNextWaypoint(args.squadId)
+end
+
+-- NOTE: Returns true if squad tagged "_lua_mi" or "_lua_alert".
+-- NOTE: "_lua_mi" = reserved for mission script use.
+-- NOTE: "_lua_alert" = squad abruptly runs into enemy force seek&destroy.
+function IsSquadInScript(squad)
+
+	if IsReservedArtillerySquad(squad) then
+		return true
+	end
+
+	if BotApi.Scene:IsSquadTagged(squad, "i_see_you") then
+		return true
+	end
+
+	if BotApi.Scene:IsSquadTagged(squad, "_lua_mi")
+	or BotApi.Scene:IsSquadTagged(squad, "repairing")
+	or BotApi.Scene:IsSquadTagged(squad, "turret_brake")
+	or BotApi.Scene:IsSquadTagged(squad, "gun_brake")
+	or BotApi.Scene:IsSquadTagged(squad, "ai_lunge_mine_busy")
+
+	then
+		if printDebug then
+			print("Print: SQUADinSCRIPT thus no action squad", squad, "Player#", BotApi.Instance.playerId, "Team", team)
+		end
+		return true
+	end
+
+	if BotApi.Scene:IsSquadTagged(squad, "_lua_alert") then
+		if printDebug then
+			print("Print: SQUADinALERT thus seek by squad", squad, "Player#", BotApi.Instance.playerId, "Team", team)
+		end
+		BotApi.Commands:SeekAndDestroy(squad)
+		return true
+	end
+end
+
+	-- NOTE: Returns true if squad tagged "_lua_ignore" for general ignore.
+function IsSquadToIgnore(squad)
+	if BotApi.Scene:IsSquadTagged(squad, "_lua_ignore") then
+		return true
+	end
+end
+
+function CaptureFlag(squad)
+	local flags = {}
+    for i, flag in pairs(BotApi.Scene.Flags) do
+        table.insert(flags, {id = i, name = flag.name, priority = getDefaultFlagPriority(flag), owner = flag.occupant})
+    end
+	
+	local flag = GetFlagToCapture(BotApi.Scene.Flags, getDefaultFlagPriority, flags)
+
+	if not flag then
+		if printDebug then print("Print: No Flags so SeekAndDestroy by squad ", squad, "Player#", BotApi.Instance.playerId) end
+		BotApi.Commands:SeekAndDestroy(squad)
+		return
+	end
+
+	if IsSquadInScript(squad) then
+		return
+	end
+
+	if IsSquadToIgnore(squad) then
+		local rndAI = math.random()
+		if searchDestroy > rndAI then
+			if printDebug then print("Print: [see_enemy] seek by squad ", squad, "Player#", BotApi.Instance.playerId) end
+			BotApi.Commands:SeekAndDestroy(squad)
+			return
+		else
+			if printDebug then print("Print: [see_enemy] donothing by squad ", squad, "Player#", BotApi.Instance.playerId) end
+			return
+		end
+	end
+
+	if printDebug then print("Print: [notags] ctf by squad", squad, "Player#", BotApi.Instance.playerId, "Flag name: ", flag.name) end
+	return BotApi.Commands:CaptureFlag(squad, flag.name)
+end
+
+function OnGameSpawn(args)
+	local justRegisteredArtillery = false
+
+	local spawnInfoUnit = Context and Context.SpawnInfo and Context.SpawnInfo.unit
+	local spawnInfoOrdered = Context and Context.SpawnInfo and Context.SpawnInfo.ordered_artillery
+
+	print(
+		"[ARTY SPAWN CHECK] squad=", tostring(args.squadId),
+		" pending=", tostring(PendingArtillerySpawnTag),
+		" pendingUnit=", tostring(PendingArtillerySpawnUnit),
+		" spawnInfoUnit=", tostring(spawnInfoUnit),
+		" ordered=", tostring(spawnInfoOrdered)
+	)
+
+	if PendingArtillerySpawnTag
+	and args.squadId
+	and args.squadId ~= 0
+	and Context
+	and Context.SpawnInfo
+	and Context.SpawnInfo.ordered_artillery == true
+	and tostring(Context.SpawnInfo.unit) == tostring(PendingArtillerySpawnUnit)
+	and IsArtilleryPiece(Context.SpawnInfo)
+	then
+		justRegisteredArtillery = true
+
+		ScriptedArtillerySquads[args.squadId] = true
+		PendingArtillerySquads[args.squadId] = nil
+
+		print(
+			"[ARTY] REGISTERED REAL ARTILLERY SPAWN squad=", tostring(args.squadId),
+			" unit=", tostring(Context.SpawnInfo.unit),
+			" spawned=", tostring(ArtilleryOrderState.bought),
+			" target=", tostring(ArtilleryOrderState.target),
+			" scripted=true"
+		)
+
+		PendingArtillerySpawnTag = false
+		PendingArtillerySpawnUnit = nil
+	end
+
+if justRegisteredArtillery then
+	SetSceneVar("ai_artillery_on", 1)
+	SetSceneVar("ai_artillery_warning_request", 1)
+	return
+end
+
+	local waypoints = BotApi.Scene.Waypoints
+	if #waypoints == 0 then
+		SetSquadOrder(CaptureFlag, args.squadId, OrderRotationPeriod)
+	else
+		GotoNextWaypoint(args.squadId)
+		if printDebug then print("Print: #waypoints != 0") end
+	end
+end
+
+-- Notifies the mission script that player defense prep time is over.
+function OnPrepTimeOver()
+	BotApi.Scene:SetVar("prep_inform", 1)
+	if printDebug then print("Print: prep_inform set to 1, Player defense prep is over.") end
+end
+
+BotApi.Events:Subscribe(BotApi.Events.GameStart, OnGameStart)
+BotApi.Events:Subscribe(BotApi.Events.GameEnd, OnGameStop)
+BotApi.Events:Subscribe(BotApi.Events.Quant, OnGameQuant)
+BotApi.Events:Subscribe(BotApi.Events.GameSpawn, OnGameSpawn)
+BotApi.Events:Subscribe(BotApi.Events.Waypoint, OnWaypoint)
+BotApi.Events:Subscribe(BotApi.Events.PrepTimeOver, OnPrepTimeOver)

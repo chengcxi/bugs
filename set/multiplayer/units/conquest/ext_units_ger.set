@@ -4455,7 +4455,9 @@
 ;--																															39(1-4)sr
 {"char_2c"
 	("vehicle2" side(ger) period(early) min_stage(2) max_stage(4) cw(0) cp(30) ap(500) crew1(tankman:11) crew2(tank_commander:1))
-	{cost 1250}
+	{cost 1450}
+;	{cost_ap 0}
+	{cost_sp 2}		
 ;//	{tags "limit1"}
 ;// CP 30 = 30 + 0(11+1)
 }
@@ -4463,7 +4465,9 @@
 ;--																															40(5-6)sr
 {"char_2c_armored"
 	("vehicle2" side(ger) period(early) min_stage(5) max_stage(6) cw(0) cp(30) crew1(tankman:11) crew2(tank_commander:1))
-	{cost 1650}
+	{cost 1750}
+;	{cost_ap 0}
+	{cost_sp 2}
 ;//	{tags "limit1"}
 ;// CP 30 = 30 + 0(11+1)
 }
@@ -4471,9 +4475,9 @@
 ;--																															40(5-6)sr
 {"char_2c_bis"
 	("vehicle2" side(ger) period(early) min_stage(5) max_stage(6) cw(0) cp(35) crew1(tankman:11) crew2(tank_commander:1))
-	{cost 1925}
-	{cost_ap 300}
-	{cost_sp 2}	
+	{cost 2225}
+	{cost_ap 350}
+	{cost_sp 6}	
 ;//	{tags "limit1"}
 ;// CP 35 = 35 + 0(11+1)
 }
@@ -4481,15 +4485,16 @@
 ;--																															41(7-8)sr
 {"char_2c_bis_armored"
 	("vehicle2" side(ger) period(early) min_stage(7) max_stage(8) cw(0) cp(35) crew1(tankman:11) crew2(tank_commander:1))
-	{cost 2175}
-	{cost_ap 300}
-	{cost_sp 4}	
+	{cost 2675}
+	{cost_ap 350}
+	{cost_sp 6}	
 ;//	{tags "limit1"}
 ;// CP 35 = 35 + 0(11+1)
 }
 
 ;--																															40(5-6)
 ;--																															41(7-8)
+;R40
 {"vk6501h"
 	("vehicle2" side(ger) period(early) min_stage(5) max_stage(8) cw(0) cp(25) crew1(tankman:4) crew2(tank_commander:1))
 	{cost 2250}
@@ -4819,11 +4824,11 @@
 ;--																															41(7-8)
 ;--																															42(9-10)
 {"pzkpfw_2hvk903"
-	("vehicle2" side(ger) period(mid) min_stage(7) max_stage(10) cw(0) cp(20) crew1(tankman:2) crew2(tank_commander:1))
+	("vehicle2" side(ger) period(mid) min_stage(7) max_stage(10) cw(0) cp(12) crew1(tankman:2) crew2(tank_commander:1))
 	{cost 650}
 	{cost_ap 125}	
 ;//	{tags "limit2"}
-;//	CP 20 = 20 + 3(0)
+;//	CP 15 = 12 + 3(3)
 }
 
 ;--																															41(7-8)
